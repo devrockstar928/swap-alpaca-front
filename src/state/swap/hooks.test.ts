@@ -1,12 +1,10 @@
+import { ChainId, SUSHI_ADDRESS } from '@sushiswap/sdk'
 import { parse } from 'qs'
-
-import { ChainId, SUSHI_ADDRESS } from '@sushiswap/core-sdk'
-
 import { Field } from './actions'
 import { queryParametersToSwapState } from './hooks'
 
 describe('hooks', () => {
-  const sushiAddress = SUSHI_ADDRESS[ChainId.ETHEREUM]
+  const sushiAddress = SUSHI_ADDRESS[ChainId.MAINNET]
   describe('#queryParametersToSwapState', () => {
     test('ETH to DAI', () => {
       expect(

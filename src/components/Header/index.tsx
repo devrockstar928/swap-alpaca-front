@@ -1,23 +1,21 @@
-import { ChainId, Currency, NATIVE, SUSHI_ADDRESS } from '@sushiswap/core-sdk'
-import { Feature, featureEnabled } from '../../functions/feature'
-import React from 'react'
-
-import { ANALYTICS_URL } from '../../constants'
-import Buy from '../../features/on-ramp/ramp'
-import ExternalLink from '../ExternalLink'
-import Image from 'next/image'
-import LanguageSwitch from '../LanguageSwitch'
-import Link from 'next/link'
-import More from './More'
-import NavLink from '../NavLink'
 import { Popover } from '@headlessui/react'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { ChainId, NATIVE, SUSHI_ADDRESS } from '@sushiswap/sdk'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { ANALYTICS_URL } from '../../constants'
+import { Feature, featureEnabled } from '../../functions/feature'
+import { useActiveWeb3React } from '../../services/web3'
+import { useETHBalances } from '../../state/wallet/hooks'
+import ExternalLink from '../ExternalLink'
+import LanguageSwitch from '../LanguageSwitch'
+import NavLink from '../NavLink'
 import QuestionHelper from '../QuestionHelper'
 import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
-import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../services/web3'
-import { useETHBalances } from '../../state/wallet/hooks'
-import { useLingui } from '@lingui/react'
+import More from './More'
 
 // import { ExternalLink, NavLink } from "./Link";
 // import { ReactComponent as Burger } from "../assets/images/burger.svg";
@@ -102,7 +100,7 @@ function AppBar(): JSX.Element {
 
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {chainId && [ChainId.ETHEREUM].includes(chainId) && library && library.provider.isMetaMask && (
+                    {chainId && [ChainId.MAINNET].includes(chainId) && library && library.provider.isMetaMask && (
                       <>
                         <QuestionHelper text={i18n._(t`Add xSUSHI to your MetaMask wallet`)}>
                           <div

@@ -1,20 +1,19 @@
-import { CRXSUSHI, SUSHI } from '../../../config/tokens'
-import { ChainId, SUSHI_ADDRESS, Token } from '@sushiswap/core-sdk'
-import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
-import { e10, tryParseAmount } from '../../../functions'
-import { useActiveWeb3React } from '../../../services/web3'
-import { useZenkoContract } from '../../../hooks/useContract'
-import { useCallback, useEffect, useMemo } from 'react'
-
 import { BigNumber } from '@ethersproject/bignumber'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
-import useBaseStrategy from './useBaseStrategy'
-import { useBentoBalance } from '../../bentobox/hooks'
-import useBentoBoxTrait from '../traits/useBentoBoxTrait'
 import { useLingui } from '@lingui/react'
+import { ChainId, SUSHI_ADDRESS, Token } from '@sushiswap/sdk'
+import { useCallback, useEffect, useMemo } from 'react'
+import { CRXSUSHI, SUSHI } from '../../../config/tokens'
+import { e10, tryParseAmount } from '../../../functions'
+import { useZenkoContract } from '../../../hooks/useContract'
 import useSushiPerXSushi from '../../../hooks/useXSushiPerSushi'
+import { useActiveWeb3React } from '../../../services/web3'
+import { useBentoBalance } from '../../bentobox/hooks'
 import { useTokenBalances } from '../../wallet/hooks'
+import useBentoBoxTrait from '../traits/useBentoBoxTrait'
+import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
+import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   name: i18n._(t`Cream → Bento`),
@@ -28,13 +27,13 @@ export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
-    chainId: ChainId.ETHEREUM,
-    address: SUSHI_ADDRESS[ChainId.ETHEREUM],
+    chainId: ChainId.MAINNET,
+    address: SUSHI_ADDRESS[ChainId.MAINNET],
     decimals: 18,
     symbol: 'SUSHI',
   },
   outputToken: {
-    chainId: ChainId.ETHEREUM,
+    chainId: ChainId.MAINNET,
     address: '0x228619CCa194Fbe3Ebeb2f835eC1eA5080DaFbb2',
     decimals: 8,
     symbol: 'crXSUSHI',
@@ -45,7 +44,7 @@ const useStakeSushiToCreamToBentoStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
   const { account } = useActiveWeb3React()
   const zenkoContract = useZenkoContract()
-  const balances = useTokenBalances(account, [SUSHI[ChainId.ETHEREUM]])
+  const balances = useTokenBalances(account, [SUSHI[ChainId.MAINNET]])
   const sushiPerXSushi = useSushiPerXSushi(true)
   const crxSushiBentoBalance = useBentoBalance(CRXSUSHI.address)
 
@@ -64,7 +63,7 @@ const useStakeSushiToCreamToBentoStrategy = (): StrategyHook => {
     if (!balances) return
 
     setBalances({
-      inputTokenBalance: balances[SUSHI[ChainId.ETHEREUM].address],
+      inputTokenBalance: balances[SUSHI[ChainId.MAINNET].address],
       outputTokenBalance: tryParseAmount(crxSushiBentoBalance?.value?.toFixed(8) || '0', CRXSUSHI),
     })
   }, [balances, setBalances, crxSushiBentoBalance?.value])

@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
 
 const explorers = {
   etherscan: (link: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
@@ -83,7 +83,7 @@ interface ChainObject {
 }
 
 const chains: ChainObject = {
-  [ChainId.ETHEREUM]: {
+  [ChainId.MAINNET]: {
     link: 'https://etherscan.io',
     builder: explorers.etherscan,
   },

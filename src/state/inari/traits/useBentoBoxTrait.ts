@@ -1,13 +1,13 @@
-import { useActiveWeb3React } from '../../../services/web3'
-import { ApprovalState } from '../../../hooks/useApproveCallback'
-import { useInariContract } from '../../../hooks/useContract'
-import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
-import useBentoMasterApproveCallback, { BentoMasterApproveCallback } from '../../../hooks/useBentoMasterApproveCallback'
-import useTrait, { BaseTrait } from './useTrait'
-import { BaseStrategyHook } from '../strategies/useBaseStrategy'
+import { CurrencyAmount, Token } from '@sushiswap/sdk'
 import { useCallback } from 'react'
-import { useDerivedInariState } from '../hooks'
+import { ApprovalState } from '../../../hooks/useApproveCallback'
+import useBentoMasterApproveCallback, { BentoMasterApproveCallback } from '../../../hooks/useBentoMasterApproveCallback'
+import { useInariContract } from '../../../hooks/useContract'
+import { useActiveWeb3React } from '../../../services/web3'
 import { useTransactionAdder } from '../../transactions/hooks'
+import { useDerivedInariState } from '../hooks'
+import { BaseStrategyHook } from '../strategies/useBaseStrategy'
+import useTrait, { BaseTrait } from './useTrait'
 
 const TRAIT_CONFIG = {
   overrides: ['execute', 'approveCallback', 'bentoApproveCallback'],

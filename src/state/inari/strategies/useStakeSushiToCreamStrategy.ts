@@ -1,18 +1,17 @@
+import { I18n } from '@lingui/core'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { ChainId, CurrencyAmount, SUSHI_ADDRESS, Token } from '@sushiswap/sdk'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { CRXSUSHI, SUSHI, XSUSHI } from '../../../config/tokens'
-import { ChainId, CurrencyAmount, SUSHI_ADDRESS, Token } from '@sushiswap/core-sdk'
-import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
+import { tryParseAmount } from '../../../functions'
 import { useApproveCallback } from '../../../hooks/useApproveCallback'
 import { useInariContract, useZenkoContract } from '../../../hooks/useContract'
 import { useActiveWeb3React } from '../../../services/web3'
-import { useCallback, useEffect, useMemo, useRef } from 'react'
-
-import { I18n } from '@lingui/core'
-import { t } from '@lingui/macro'
-import { tryParseAmount } from '../../../functions'
-import useBaseStrategy from './useBaseStrategy'
-import { useDerivedInariState } from '../hooks'
-import { useLingui } from '@lingui/react'
 import { useTokenBalances } from '../../wallet/hooks'
+import { useDerivedInariState } from '../hooks'
+import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
+import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   name: i18n._(t`SUSHI → Cream`),
@@ -28,13 +27,13 @@ export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
-    chainId: ChainId.ETHEREUM,
-    address: SUSHI_ADDRESS[ChainId.ETHEREUM],
+    chainId: ChainId.MAINNET,
+    address: SUSHI_ADDRESS[ChainId.MAINNET],
     decimals: 18,
     symbol: 'SUSHI',
   },
   outputToken: {
-    chainId: ChainId.ETHEREUM,
+    chainId: ChainId.MAINNET,
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
     symbol: 'XSUSHI',
@@ -47,7 +46,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
   const { zapIn, inputValue } = useDerivedInariState()
   const zenkoContract = useZenkoContract()
   const inariContract = useInariContract()
-  const balances = useTokenBalances(account, [SUSHI[ChainId.ETHEREUM], CRXSUSHI])
+  const balances = useTokenBalances(account, [SUSHI[ChainId.MAINNET], CRXSUSHI])
   const cTokenAmountRef = useRef<CurrencyAmount<Token>>(null)
   const approveAmount = useMemo(() => (zapIn ? inputValue : cTokenAmountRef.current), [inputValue, zapIn])
 
@@ -94,7 +93,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
         balances[CRXSUSHI.address].toFixed().toBigNumber(CRXSUSHI.decimals).toString()
       )
       setBalances({
-        inputTokenBalance: balances[SUSHI[ChainId.ETHEREUM].address],
+        inputTokenBalance: balances[SUSHI[ChainId.MAINNET].address],
         outputTokenBalance: CurrencyAmount.fromRawAmount(XSUSHI, bal.toString()),
       })
     }

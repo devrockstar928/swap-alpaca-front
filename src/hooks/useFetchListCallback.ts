@@ -1,14 +1,14 @@
-import { AppDispatch } from '../state'
-import { ChainId } from '@sushiswap/core-sdk'
-import { TokenList } from '@uniswap/token-lists'
-import { fetchTokenList } from '../state/lists/actions'
-import { getNetworkLibrary } from '../functions/getNetworkLibrary'
-import { getTokenList } from '../functions/list'
 import { nanoid } from '@reduxjs/toolkit'
-import { resolveENSContentHash } from '../functions/ens'
-import { useActiveWeb3React } from '../services/web3'
+import { ChainId } from '@sushiswap/sdk'
+import { TokenList } from '@uniswap/token-lists'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import { resolveENSContentHash } from '../functions/ens'
+import { getNetworkLibrary } from '../functions/getNetworkLibrary'
+import { getTokenList } from '../functions/list'
+import { useActiveWeb3React } from '../services/web3'
+import { AppDispatch } from '../state'
+import { fetchTokenList } from '../state/lists/actions'
 
 export function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean) => Promise<TokenList> {
   const { chainId, library } = useActiveWeb3React()
@@ -16,8 +16,8 @@ export function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean
 
   const ensResolver = useCallback(
     (ensName: string) => {
-      if (!library || chainId !== ChainId.ETHEREUM) {
-        if (chainId === ChainId.ETHEREUM) {
+      if (!library || chainId !== ChainId.MAINNET) {
+        if (chainId === ChainId.MAINNET) {
           const networkLibrary = getNetworkLibrary()
           if (networkLibrary) {
             return resolveENSContentHash(ensName, networkLibrary)

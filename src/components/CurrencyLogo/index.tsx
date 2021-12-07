@@ -1,12 +1,11 @@
-import { ChainId, Currency, WNATIVE } from '@sushiswap/core-sdk'
+import { ChainId, Currency, WNATIVE } from '@sushiswap/sdk'
 import React, { FunctionComponent, useMemo } from 'react'
-
-import Logo from '../Logo'
-import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import useHttpLocations from '../../hooks/useHttpLocations'
+import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
+import Logo from '../Logo'
 
 const BLOCKCHAIN = {
-  [ChainId.ETHEREUM]: 'ethereum',
+  [ChainId.MAINNET]: 'ethereum',
   [ChainId.BSC]: 'binanace',
   [ChainId.CELO]: 'celo',
   [ChainId.FANTOM]: 'fantom',
@@ -80,7 +79,7 @@ const TelosLogo =
   'https://raw.githubusercontent.com/sushiswap/logos/main/network/telos/0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E.jpg'
 
 const LOGO: { readonly [chainId in ChainId]?: string } = {
-  [ChainId.ETHEREUM]: EthereumLogo,
+  [ChainId.MAINNET]: EthereumLogo,
   [ChainId.FANTOM]: FantomLogo,
   [ChainId.FANTOM_TESTNET]: FantomLogo,
   [ChainId.MATIC]: MaticLogo,

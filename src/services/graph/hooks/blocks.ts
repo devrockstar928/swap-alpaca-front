@@ -1,9 +1,9 @@
-import { getAverageBlockTime, getBlock, getMassBlocks } from '../fetchers'
-import { useActiveWeb3React } from '../../../services/web3'
-import useSWR, { SWRConfiguration } from 'swr'
-import { useMemo } from 'react'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
 import stringify from 'fast-json-stable-stringify'
+import { useMemo } from 'react'
+import useSWR, { SWRConfiguration } from 'swr'
+import { useActiveWeb3React } from '../../../services/web3'
+import { getAverageBlockTime, getBlock, getMassBlocks } from '../fetchers'
 
 interface useBlockProps {
   timestamp?: number
@@ -13,7 +13,7 @@ interface useBlockProps {
 }
 
 export function useBlock(
-  { timestamp, daysAgo, chainId = ChainId.ETHEREUM, shouldFetch = true }: useBlockProps = {},
+  { timestamp, daysAgo, chainId = ChainId.MAINNET, shouldFetch = true }: useBlockProps = {},
   swrConfig: SWRConfiguration = undefined
 ) {
   shouldFetch = shouldFetch && !!chainId
@@ -54,7 +54,7 @@ export function useMassBlocks({ timestamps, swrConfig = undefined }: useMassBloc
   return data
 }
 
-export function useAverageBlockTime({ chainId = ChainId.ETHEREUM, swrConfig = undefined }) {
+export function useAverageBlockTime({ chainId = ChainId.MAINNET, swrConfig = undefined }) {
   const { data } = useSWR(
     chainId ? ['averageBlockTime', chainId] : null,
     (_, chainId) => getAverageBlockTime(chainId),

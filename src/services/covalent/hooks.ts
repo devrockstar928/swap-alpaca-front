@@ -1,3 +1,5 @@
+import { ChainId } from '@sushiswap/sdk'
+import useSWR from 'swr'
 import {
   getBlock,
   getBlockHeights,
@@ -16,11 +18,9 @@ import {
   getTransaction,
   getTransfers,
 } from './fetchers'
-import useSWR from 'swr'
-import { ChainId } from '@sushiswap/core-sdk'
 
 // CLASS A
-export function useTokenBalances({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function useTokenBalances({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/address/${address}/balances_v2/`,
     () => getTokenBalances(chainId, address),
@@ -29,7 +29,7 @@ export function useTokenBalances({ fallbackData = undefined, chainId = ChainId.E
   return data
 }
 
-export function usePortfolio({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function usePortfolio({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/add{ data }s/${address}/portfolio_v2/`,
     () => getPortfolio(chainId, address),
@@ -38,7 +38,7 @@ export function usePortfolio({ fallbackData = undefined, chainId = ChainId.ETHER
   return data
 }
 
-export function useTransfers({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function useTransfers({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/address/${address}/transfers_v2/`,
     () => getTransfers(chainId, address),
@@ -47,7 +47,7 @@ export function useTransfers({ fallbackData = undefined, chainId = ChainId.ETHER
   return data
 }
 
-export function useBlock({ fallbackData = undefined, chainId = ChainId.ETHEREUM, blockHeight }) {
+export function useBlock({ fallbackData = undefined, chainId = ChainId.MAINNET, blockHeight }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/block_v2/${blockHeight}/`,
     () => getBlock(chainId, blockHeight),
@@ -56,7 +56,7 @@ export function useBlock({ fallbackData = undefined, chainId = ChainId.ETHEREUM,
   return data
 }
 
-export function useBlockHeights({ fallbackData = undefined, chainId = ChainId.ETHEREUM, startDate, endDate }) {
+export function useBlockHeights({ fallbackData = undefined, chainId = ChainId.MAINNET, startDate, endDate }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/block_v2/${startDate}/${endDate}/`,
     () => getBlockHeights(chainId, startDate, endDate),
@@ -65,7 +65,7 @@ export function useBlockHeights({ fallbackData = undefined, chainId = ChainId.ET
   return data
 }
 
-export function useLogs({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function useLogs({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/events/address/${address}/`,
     () => getLogs(chainId, address),
@@ -74,7 +74,7 @@ export function useLogs({ fallbackData = undefined, chainId = ChainId.ETHEREUM, 
   return data
 }
 
-export function useLogsForTopic({ fallbackData = undefined, chainId = ChainId.ETHEREUM, topic }) {
+export function useLogsForTopic({ fallbackData = undefined, chainId = ChainId.MAINNET, topic }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/events/topics/${topic}/`,
     () => getLogsForTopic(chainId, topic),
@@ -83,7 +83,7 @@ export function useLogsForTopic({ fallbackData = undefined, chainId = ChainId.ET
   return data
 }
 
-export function useNftMetadata({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address, tokenId }) {
+export function useNftMetadata({ fallbackData = undefined, chainId = ChainId.MAINNET, address, tokenId }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/tokens/${address}/nft_metadata/${tokenId}/`,
     () => getNftMetadata(chainId, address, tokenId),
@@ -92,7 +92,7 @@ export function useNftMetadata({ fallbackData = undefined, chainId = ChainId.ETH
   return data
 }
 
-export function useNftTokenIds({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function useNftTokenIds({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/tokens/${address}/nft_token_ids/`,
     () => getNftTokenIds(chainId, address),
@@ -101,7 +101,7 @@ export function useNftTokenIds({ fallbackData = undefined, chainId = ChainId.ETH
   return data
 }
 
-export function useNftTransactions({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address, tokenId }) {
+export function useNftTransactions({ fallbackData = undefined, chainId = ChainId.MAINNET, address, tokenId }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/tokens/${address}/nft_transactions/${tokenId}/`,
     () => getNftTransactions(chainId, address, tokenId),
@@ -110,7 +110,7 @@ export function useNftTransactions({ fallbackData = undefined, chainId = ChainId
   return data
 }
 
-export function useHoldersChanges({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function useHoldersChanges({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/tokens/${address}/token_holders_changes/`,
     () => getHoldersChanges(chainId, address),
@@ -119,7 +119,7 @@ export function useHoldersChanges({ fallbackData = undefined, chainId = ChainId.
   return data
 }
 
-export function useHolders({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {
+export function useHolders({ fallbackData = undefined, chainId = ChainId.MAINNET, address }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/tokens/${address}/token_holders/`,
     () => getTokenHolders(chainId, address),
@@ -128,7 +128,7 @@ export function useHolders({ fallbackData = undefined, chainId = ChainId.ETHEREU
   return data
 }
 
-export function useTokenMetadata({ fallbackData = undefined, chainId = ChainId.ETHEREUM, id }) {
+export function useTokenMetadata({ fallbackData = undefined, chainId = ChainId.MAINNET, id }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/tokens/tokenlists/${id}/`,
     () => getTokenMetadata(chainId, id),
@@ -137,7 +137,7 @@ export function useTokenMetadata({ fallbackData = undefined, chainId = ChainId.E
   return data
 }
 
-export function useTransaction({ fallbackData = undefined, chainId = ChainId.ETHEREUM, txHash }) {
+export function useTransaction({ fallbackData = undefined, chainId = ChainId.MAINNET, txHash }) {
   const { data } = useSWR(
     `https://api.covalenthq.com/v1/${chainId}/trasaction_v2/${txHash}/`,
     () => getTransaction(chainId, txHash),

@@ -1,42 +1,39 @@
-import { Currency, CurrencyAmount, Token } from '@sushiswap/core-sdk'
-import React, { useEffect, useState } from 'react'
+import { isAddress } from '@ethersproject/address'
+import { BigNumber } from '@ethersproject/bignumber'
+import { ArrowRightIcon } from '@heroicons/react/outline'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { ChainId, Currency, CurrencyAmount } from '@sushiswap/sdk'
+import Head from 'next/head'
 import Link from 'next/link'
-import { useClaimCallback, useUserUnclaimedAmount } from '../../state/claim/weekly/hooks'
+import React, { useEffect, useState } from 'react'
+import Button from '../../components/Button'
+import Container from '../../components/Container'
+import Dots from '../../components/Dots'
+import DoubleGlowShadow from '../../components/DoubleGlowShadow'
+import ExternalLink from '../../components/ExternalLink'
+import Loader from '../../components/Loader'
+import QuestionHelper from '../../components/QuestionHelper'
+import Fraction from '../../entities/Fraction'
+import BalancePanel from '../../features/inari/BalancePanel'
+import InariButton from '../../features/inari/Button'
+import InariDescription from '../../features/inari/InariDescription'
+import SideSwitch from '../../features/inari/SideSwitch'
+import StrategySelector from '../../features/inari/StrategySelector'
+import StrategyStepDisplay from '../../features/inari/StrategyStepDisplay'
+import { formatNumber } from '../../functions/format'
+import NetworkGuard from '../../guards/Network'
+import { useActiveWeb3React } from '../../services/web3'
+import { ApplicationModal } from '../../state/application/actions'
+import { useModalOpen, useToggleSelfClaimModal } from '../../state/application/hooks'
 import {
   useClaimCallback as useProtocolClaimCallback,
   useUserUnclaimedAmount as useUserUnclaimedProtocolAmount,
 } from '../../state/claim/protocol/hooks'
-import { useModalOpen, useToggleSelfClaimModal } from '../../state/application/hooks'
-
-import { ApplicationModal } from '../../state/application/actions'
-import { BigNumber } from '@ethersproject/bignumber'
-import Button from '../../components/Button'
-import Container from '../../components/Container'
-import Dots from '../../components/Dots'
-import ExternalLink from '../../components/ExternalLink'
-import Fraction from '../../entities/Fraction'
-import Head from 'next/head'
-import Loader from '../../components/Loader'
-import QuestionHelper from '../../components/QuestionHelper'
-import { formatNumber } from '../../functions/format'
-import { isAddress } from '@ethersproject/address'
-import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../services/web3'
-import { useLingui } from '@lingui/react'
-import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
-
-import DoubleGlowShadow from '../../components/DoubleGlowShadow'
-import InariButton from '../../features/inari/Button'
-import InariDescription from '../../features/inari/InariDescription'
-import SideSwitch from '../../features/inari/SideSwitch'
-import { ArrowRightIcon } from '@heroicons/react/outline'
-import BalancePanel from '../../features/inari/BalancePanel'
+import { useClaimCallback, useUserUnclaimedAmount } from '../../state/claim/weekly/hooks'
 import { useDerivedInariState, useInariState, useSelectedInariStrategy } from '../../state/inari/hooks'
-import NetworkGuard from '../../guards/Network'
-import { ChainId } from '@sushiswap/core-sdk'
-import StrategyStepDisplay from '../../features/inari/StrategyStepDisplay'
-import StrategySelector from '../../features/inari/StrategySelector'
 import { Field } from '../../state/inari/types'
+import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 
 const Strategies = () => {
   const { i18n } = useLingui()
@@ -422,6 +419,6 @@ const WeeklyVesting = () => {
   )
 }
 
-Strategies.Guard = NetworkGuard([ChainId.ETHEREUM])
+Strategies.Guard = NetworkGuard([ChainId.MAINNET])
 
 export default Strategies

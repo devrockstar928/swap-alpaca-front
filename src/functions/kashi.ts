@@ -1,5 +1,8 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
+import { Contract } from '@ethersproject/contracts'
+import { Web3Provider } from '@ethersproject/providers'
 import {
+  ChainId,
   FACTOR_PRECISION,
   FULL_UTILIZATION_MINUS_MAX,
   INTEREST_ELASTICITY,
@@ -11,12 +14,9 @@ import {
   PROTOCOL_FEE_DIVISOR,
   STARTING_INTEREST_PER_YEAR,
 } from '@sushiswap/sdk'
-import { ZERO, e10 } from './math'
-import { getCurrency } from './currency/getCurrency'
-import { ChainId } from '@sushiswap/core-sdk'
 import { getSigner } from '../functions/contract'
-import { Contract } from '@ethersproject/contracts'
-import { Web3Provider } from '@ethersproject/providers'
+import { getCurrency } from './currency/getCurrency'
+import { e10, ZERO } from './math'
 
 export async function signMasterContractApproval(
   bentoBoxContract: Contract | null,

@@ -1,16 +1,14 @@
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { Token } from '@sushiswap/sdk'
+import { TokenList } from '@uniswap/token-lists'
 import React, { useState } from 'react'
 import AutoSizer from 'react-virtualized-auto-sizer'
-
-import Column from '../../components/Column'
+import ModalHeader from '../../components/ModalHeader'
+import { classNames } from '../../functions'
 import CurrencyModalView from './CurrencyModalView'
 import ManageLists from './ManageLists'
 import ManageTokens from './ManageTokens'
-import ModalHeader from '../../components/ModalHeader'
-import { Token } from '@sushiswap/core-sdk'
-import { TokenList } from '@uniswap/token-lists'
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
-import { classNames } from '../../functions'
 
 function Manage({
   onDismiss,

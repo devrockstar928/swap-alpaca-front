@@ -1,12 +1,11 @@
-import { Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@sushiswap/core-sdk'
-import { DAI, SUSHI, USDC } from '../config/tokens'
-import { useMemo, useState } from 'react'
-
 import { splitSignature } from '@ethersproject/bytes'
+import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
+import { useMemo, useState } from 'react'
+import { DAI, SUSHI, USDC } from '../config/tokens'
 import { useActiveWeb3React } from '../services/web3'
+import { useSingleCallResult } from '../state/multicall/hooks'
 import { useEIP2612Contract } from './useContract'
 import useIsArgentWallet from './useIsArgentWallet'
-import { useSingleCallResult } from '../state/multicall/hooks'
 import useTransactionDeadline from './useTransactionDeadline'
 
 enum PermitType {
@@ -54,12 +53,6 @@ const PERMITTABLE_TOKENS: {
       name: 'USD Coin',
       version: '2',
     },
-  },
-  [5]: {
-    [SUSHI[5].address]: { type: PermitType.AMOUNT, name: 'SushiSwap' },
-  },
-  [42]: {
-    [SUSHI[42].address]: { type: PermitType.AMOUNT, name: 'SushiSwap' },
   },
 }
 

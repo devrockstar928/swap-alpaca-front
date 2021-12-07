@@ -1,10 +1,9 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@sushiswap/core-sdk'
-
+import { ChainId, Currency, NATIVE, WNATIVE } from '@sushiswap/sdk'
+import { useMemo } from 'react'
 import { tryParseAmount } from '../functions/parse'
 import { useActiveWeb3React } from '../services/web3'
-import { useCurrencyBalance } from '../state/wallet/hooks'
-import { useMemo } from 'react'
 import { useTransactionAdder } from '../state/transactions/hooks'
+import { useCurrencyBalance } from '../state/wallet/hooks'
 import { useWETH9Contract } from './useContract'
 
 export enum WrapType {

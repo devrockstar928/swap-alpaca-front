@@ -1,14 +1,13 @@
-import { AutoRow, RowFixed } from '../../components/Row'
+import { Token } from '@sushiswap/sdk'
 import React, { CSSProperties } from 'react'
-import { useIsTokenActive, useIsUserAddedToken } from '../../hooks/Tokens'
-
-import { AutoColumn } from '../../components/Column'
-import Button from '../../components/Button'
 import { CheckCircle } from 'react-feather'
+import styled from 'styled-components'
+import Button from '../../components/Button'
+import { AutoColumn } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import ListLogo from '../../components/ListLogo'
-import { Token } from '@sushiswap/core-sdk'
-import styled from 'styled-components'
+import { AutoRow, RowFixed } from '../../components/Row'
+import { useIsTokenActive, useIsUserAddedToken } from '../../hooks/Tokens'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 
 const TokenSection = styled.div<{ dim?: boolean }>`

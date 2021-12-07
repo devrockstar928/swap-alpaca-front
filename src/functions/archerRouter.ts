@@ -1,3 +1,4 @@
+import { getAddress } from '@ethersproject/address'
 import {
   ChainId,
   Currency,
@@ -6,11 +7,8 @@ import {
   SwapParameters,
   Trade,
   TradeOptions,
-  TradeOptionsDeadline,
   TradeType,
-} from '@sushiswap/core-sdk'
-
-import { getAddress } from '@ethersproject/address'
+} from '@sushiswap/sdk'
 import invariant from 'tiny-invariant'
 import warning from 'tiny-warning'
 
@@ -69,12 +67,12 @@ export abstract class ArcherRouter {
     trade: Trade<Currency, Currency, TradeType>,
     options: ArcherTradeOptions
   ): ArcherSwapParameters {
-    const etherIn = trade.inputAmount.currency === Ether.onChain(ChainId.ETHEREUM)
-    const etherOut = trade.outputAmount.currency === Ether.onChain(ChainId.ETHEREUM)
+    const etherIn = trade.inputAmount.currency === Ether.onChain(ChainId.MAINNET)
+    const etherOut = trade.outputAmount.currency === Ether.onChain(ChainId.MAINNET)
     // the router does not support both ether in and out
     invariant(!(etherIn && etherOut), 'ETHER_IN_OUT')
     invariant(!('ttl' in options) || options.ttl > 0, 'TTL')
-    invariant('ethTip' in options && options.ethTip?.currency === Ether.onChain(ChainId.ETHEREUM))
+    invariant('ethTip' in options && options.ethTip?.currency === Ether.onChain(ChainId.MAINNET))
 
     const to: string = validateAndParseAddress(options.recipient)
     const amountInCurrency = trade.maximumAmountIn(options.allowedSlippage)

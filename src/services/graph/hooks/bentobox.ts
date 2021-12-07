@@ -1,7 +1,7 @@
-import useSWR, { SWRConfiguration } from 'swr'
-import { getKashiPairs, getBentoBox, getBentoStrategies } from '../fetchers/bentobox'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
 import stringify from 'fast-json-stable-stringify'
+import useSWR, { SWRConfiguration } from 'swr'
+import { getBentoBox, getBentoStrategies, getKashiPairs } from '../fetchers/bentobox'
 
 interface useKashiPairsProps {
   chainId: ChainId
@@ -11,7 +11,7 @@ interface useKashiPairsProps {
 }
 
 export function useKashiPairs({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,
@@ -31,12 +31,7 @@ interface useBentoBoxProps {
   swrConfig?: SWRConfiguration
 }
 
-export function useBentoBox({
-  chainId = ChainId.ETHEREUM,
-  variables,
-  shouldFetch = true,
-  swrConfig,
-}: useBentoBoxProps) {
+export function useBentoBox({ chainId = ChainId.MAINNET, variables, shouldFetch = true, swrConfig }: useBentoBoxProps) {
   const { data } = useSWR(
     shouldFetch ? ['bentoBox', chainId, stringify(variables)] : null,
     () => getBentoBox(chainId, variables),
@@ -55,7 +50,7 @@ interface useBentoStrategiesProps {
 
 // subset of tokens, not strategies
 export function useBentoStrategies({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,

@@ -1,3 +1,6 @@
+import { ChainId } from '@sushiswap/sdk'
+import { request } from 'graphql-request'
+import { GRAPH_HOST } from '../constants'
 import {
   masterChefV1PairAddressesQuery,
   masterChefV1SushiPerBlockQuery,
@@ -8,11 +11,7 @@ import {
   poolsQuery,
   poolsV2Query,
 } from '../queries'
-
-import { ChainId } from '@sushiswap/core-sdk'
-import { GRAPH_HOST } from '../constants'
 import { getTokenSubset } from './exchange'
-import { request } from 'graphql-request'
 
 export const MINICHEF = {
   [ChainId.MATIC]: 'sushiswap/matic-minichef',
@@ -23,21 +22,21 @@ export const MINICHEF = {
   [ChainId.MOONRIVER]: 'sushiswap/moonriver-minichef',
 }
 
-export const miniChef = async (query, chainId = ChainId.ETHEREUM, variables = undefined) =>
+export const miniChef = async (query, chainId = ChainId.MAINNET, variables = undefined) =>
   request(`${GRAPH_HOST[chainId]}/subgraphs/name/${MINICHEF[chainId]}`, query, variables)
 
 export const MASTERCHEF_V2 = {
-  [ChainId.ETHEREUM]: 'sushiswap/master-chefv2',
+  [ChainId.MAINNET]: 'sushiswap/master-chefv2',
 }
 
-export const masterChefV2 = async (query, chainId = ChainId.ETHEREUM, variables = undefined) =>
+export const masterChefV2 = async (query, chainId = ChainId.MAINNET, variables = undefined) =>
   request(`${GRAPH_HOST[chainId]}/subgraphs/name/${MASTERCHEF_V2[chainId]}`, query, variables)
 
 export const MASTERCHEF_V1 = {
-  [ChainId.ETHEREUM]: 'sushiswap/master-chef',
+  [ChainId.MAINNET]: 'sushiswap/master-chef',
 }
 
-export const masterChefV1 = async (query, chainId = ChainId.ETHEREUM, variables = undefined) =>
+export const masterChefV1 = async (query, chainId = ChainId.MAINNET, variables = undefined) =>
   request(`${GRAPH_HOST[chainId]}/subgraphs/name/${MASTERCHEF_V1[chainId]}`, query, variables)
 
 export const getMasterChefV1TotalAllocPoint = async () => {
@@ -67,7 +66,7 @@ export const getMasterChefV1PairAddreses = async () => {
 export const getMasterChefV2Farms = async (variables = undefined) => {
   const { pools } = await masterChefV2(poolsV2Query, undefined, variables)
 
-  const tokens = await getTokenSubset(ChainId.ETHEREUM, {
+  const tokens = await getTokenSubset(ChainId.MAINNET, {
     tokenAddresses: Array.from(pools.map((pool) => pool.rewarder.rewardToken)),
   })
 
@@ -84,12 +83,12 @@ export const getMasterChefV2PairAddreses = async () => {
   return pools
 }
 
-export const getMiniChefFarms = async (chainId = ChainId.ETHEREUM, variables = undefined) => {
+export const getMiniChefFarms = async (chainId = ChainId.MAINNET, variables = undefined) => {
   const { pools } = await miniChef(miniChefPoolsQuery, chainId, variables)
   return pools
 }
 
-export const getMiniChefPairAddreses = async (chainId = ChainId.ETHEREUM) => {
+export const getMiniChefPairAddreses = async (chainId = ChainId.MAINNET) => {
   console.debug('getMiniChefPairAddreses')
   const { pools } = await miniChef(miniChefPairAddressesQuery, chainId)
   return pools

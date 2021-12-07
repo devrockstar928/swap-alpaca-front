@@ -1,17 +1,16 @@
-import { AutoRow, RowBetween } from '../../../components/Row'
-import { Currency, Token } from '@sushiswap/core-sdk'
+import { Currency, Token } from '@sushiswap/sdk'
 import React, { useState } from 'react'
-
-import { AutoColumn } from '../../../components/Column'
+import styled from 'styled-components'
 import Button from '../../../components/Button'
 import CloseIcon from '../../../components/CloseIcon'
+import { AutoColumn } from '../../../components/Column'
 import CurrencyLogo from '../../../components/CurrencyLogo'
 import ExternalLink from '../../../components/ExternalLink'
 import Modal from '../../../components/Modal'
+import { AutoRow, RowBetween } from '../../../components/Row'
 import { getExplorerLink } from '../../../functions/explorer'
-import styled from 'styled-components'
-import { useActiveWeb3React } from '../../../services/web3'
 import { useUnsupportedTokens } from '../../../hooks/Tokens'
+import { useActiveWeb3React } from '../../../services/web3'
 
 const DetailsFooter = styled.div<{ show: boolean }>`
   padding-top: calc(16px + 2rem);

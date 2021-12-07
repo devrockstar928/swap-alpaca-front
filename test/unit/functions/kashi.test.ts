@@ -1,5 +1,3 @@
-import '../../../src/bootstrap'
-
 import { BigNumber } from '@ethersproject/bignumber'
 import {
   MAXIMUM_INTEREST_PER_YEAR,
@@ -7,8 +5,8 @@ import {
   MINIMUM_INTEREST_PER_YEAR,
   MINIMUM_TARGET_UTILIZATION,
   STARTING_INTEREST_PER_YEAR,
-} from '@sushiswap/core-sdk'
-
+} from '@sushiswap/sdk'
+import '../../../src/bootstrap'
 import { e10, ZERO } from '../../../src/functions'
 import {
   accrue,

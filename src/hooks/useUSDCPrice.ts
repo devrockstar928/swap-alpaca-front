@@ -1,7 +1,6 @@
-import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@sushiswap/core-sdk'
-
-import { useActiveWeb3React } from '../services/web3'
+import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@sushiswap/sdk'
 import { useMemo } from 'react'
+import { useActiveWeb3React } from '../services/web3'
 import { useV2TradeExactOut } from './useV2Trades'
 
 // import { wrappedCurrency } from "../functions/currency/wrappedCurrency";
@@ -9,7 +8,7 @@ import { useV2TradeExactOut } from './useV2Trades'
 // Stablecoin amounts used when calculating spot price for a given currency.
 // The amount is large enough to filter low liquidity pairs.
 const STABLECOIN_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Token> } = {
-  [ChainId.ETHEREUM]: CurrencyAmount.fromRawAmount(USD[ChainId.ETHEREUM], 100_000e6),
+  [ChainId.MAINNET]: CurrencyAmount.fromRawAmount(USD[ChainId.MAINNET], 100_000e6),
   [ChainId.ROPSTEN]: CurrencyAmount.fromRawAmount(USD[ChainId.ROPSTEN], 100_000e6),
   [ChainId.KOVAN]: CurrencyAmount.fromRawAmount(USD[ChainId.KOVAN], 100_000e6),
   [ChainId.MATIC]: CurrencyAmount.fromRawAmount(USD[ChainId.MATIC], 100_000e6),
