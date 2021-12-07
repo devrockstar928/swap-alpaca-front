@@ -1,15 +1,13 @@
-import {
-  ChainId,
-  Currency,
-  KASHI_ADDRESS,
-  NATIVE,
-  Token,
-  USDC_ADDRESS,
-  WNATIVE,
-  WNATIVE_ADDRESS,
-} from '@sushiswap/core-sdk'
+import { defaultAbiCoder } from '@ethersproject/abi'
+import { getAddress } from '@ethersproject/address'
+import { BigNumber } from '@ethersproject/bignumber'
+import { ChainId, KASHI_ADDRESS, NATIVE, WNATIVE_ADDRESS } from '@sushiswap/sdk'
+import { bentobox } from '@sushiswap/sushi-data'
 import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
-import { ZERO, e10, maximum, minimum } from '../../../functions/math'
+import Fraction from '../../../entities/Fraction'
+import { getOracle } from '../../../entities/Oracle'
+import { toAmount, toShare } from '../../../functions/bentobox'
+import { getCurrency } from '../../../functions/currency'
 import {
   accrue,
   accrueTotalAssetWithFee,
@@ -18,23 +16,14 @@ import {
   interestAccrue,
   takeFee,
 } from '../../../functions/kashi'
-import { toAmount, toShare } from '../../../functions/bentobox'
-import { useBentoBoxContract, useBoringHelperContract } from '../../../hooks/useContract'
-
-import { BigNumber } from '@ethersproject/bignumber'
-import Fraction from '../../../entities/Fraction'
-import { bentobox } from '@sushiswap/sushi-data'
-import { defaultAbiCoder } from '@ethersproject/abi'
-import { getAddress } from '@ethersproject/address'
-import { getCurrency } from '../../../functions/currency'
-import { getOracle } from '../../../entities/Oracle'
+import { e10, maximum, minimum, ZERO } from '../../../functions/math'
 import { toElastic } from '../../../functions/rebase'
-import { useActiveWeb3React } from '../../../services/web3'
 import { useAllTokens } from '../../../hooks/Tokens'
-import { useBlockNumber } from '../../../state/application/hooks'
+import { useBentoBoxContract, useBoringHelperContract } from '../../../hooks/useContract'
 import usePrevious from '../../../hooks/usePrevious'
-import { useSingleCallResult } from '../../../state/multicall/hooks'
 import { useBentoStrategies } from '../../../services/graph/hooks'
+import { useActiveWeb3React } from '../../../services/web3'
+import { useBlockNumber } from '../../../state/application/hooks'
 
 enum ActionType {
   UPDATE = 'UPDATE',
@@ -208,7 +197,7 @@ export function KashiProvider({ children }) {
   const tokens = useAllTokens()
   const strategies = useBentoStrategies({
     chainId,
-    shouldFetch: chainId && (chainId === ChainId.ETHEREUM || chainId === ChainId.MATIC),
+    shouldFetch: chainId && (chainId === ChainId.MAINNET || chainId === ChainId.MATIC),
   })
 
   // const info = useSingleCallResult(boringHelperContract, 'getUIInfo', [
@@ -223,7 +212,7 @@ export function KashiProvider({ children }) {
       !account ||
       !chainId ||
       ![
-        ChainId.ETHEREUM,
+        ChainId.MAINNET,
         ChainId.KOVAN,
         ChainId.BSC,
         ChainId.MATIC,

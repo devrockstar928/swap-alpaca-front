@@ -1,13 +1,13 @@
-import { AXSUSHI, SUSHI } from '../../../config/tokens'
-import { ChainId, SUSHI_ADDRESS } from '@sushiswap/core-sdk'
-import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
-import { useEffect, useMemo } from 'react'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../services/web3'
-import useBaseStrategy from './useBaseStrategy'
 import { useLingui } from '@lingui/react'
+import { ChainId, SUSHI_ADDRESS } from '@sushiswap/sdk'
+import { useEffect, useMemo } from 'react'
+import { AXSUSHI, SUSHI } from '../../../config/tokens'
+import { useActiveWeb3React } from '../../../services/web3'
 import { useTokenBalances } from '../../wallet/hooks'
+import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
+import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   name: i18n._(t`SUSHI → Aave`),
@@ -23,13 +23,13 @@ export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
-    chainId: ChainId.ETHEREUM,
-    address: SUSHI_ADDRESS[ChainId.ETHEREUM],
+    chainId: ChainId.MAINNET,
+    address: SUSHI_ADDRESS[ChainId.MAINNET],
     decimals: 18,
     symbol: 'SUSHI',
   },
   outputToken: {
-    chainId: ChainId.ETHEREUM,
+    chainId: ChainId.MAINNET,
     address: '0xF256CC7847E919FAc9B808cC216cAc87CCF2f47a',
     decimals: 18,
     symbol: 'aXSUSHI',
@@ -39,7 +39,7 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
 const useStakeSushiToAaveStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
   const { account } = useActiveWeb3React()
-  const balances = useTokenBalances(account, [SUSHI[ChainId.ETHEREUM], AXSUSHI])
+  const balances = useTokenBalances(account, [SUSHI[ChainId.MAINNET], AXSUSHI])
   const general = useMemo(() => GENERAL(i18n), [i18n])
   const { setBalances, ...strategy } = useBaseStrategy({
     id: 'stakeSushiToAaveStrategy',
@@ -51,7 +51,7 @@ const useStakeSushiToAaveStrategy = (): StrategyHook => {
     if (!balances) return
 
     setBalances({
-      inputTokenBalance: balances[SUSHI[ChainId.ETHEREUM].address],
+      inputTokenBalance: balances[SUSHI[ChainId.MAINNET].address],
       outputTokenBalance: balances[AXSUSHI.address],
     })
   }, [balances, setBalances])

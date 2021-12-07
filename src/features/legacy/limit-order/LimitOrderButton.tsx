@@ -1,22 +1,22 @@
-import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
-import { BENTOBOX_ADDRESS, ChainId, Currency } from '@sushiswap/core-sdk'
-import { LimitOrder } from '@sushiswap/limit-order-sdk'
-import Button, { ButtonProps } from '../../../components/Button'
-import { Field, setFromBentoBalance } from '../../../state/limit-order/actions'
-import React, { FC, useCallback, useState } from 'react'
-import { useAddPopup, useWalletModalToggle } from '../../../state/application/hooks'
-import { useDerivedLimitOrderInfo, useLimitOrderState } from '../../../state/limit-order/hooks'
-import useLimitOrderApproveCallback, { BentoApprovalState } from '../../../hooks/useLimitOrderApproveCallback'
-import Alert from '../../../components/Alert'
-import { AppDispatch } from '../../../state'
-import ConfirmLimitOrderModal from './ConfirmLimitOrderModal'
-import Dots from '../../../components/Dots'
-import { OrderExpiration } from '../../../state/limit-order/reducer'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../services/web3'
-import { useDispatch } from 'react-redux'
-import useLimitOrders from '../../../hooks/useLimitOrders'
 import { useLingui } from '@lingui/react'
+import { LimitOrder } from '@sushiswap/limit-order-sdk'
+import { BENTOBOX_ADDRESS, Currency } from '@sushiswap/sdk'
+import React, { FC, useCallback, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import Alert from '../../../components/Alert'
+import Button, { ButtonProps } from '../../../components/Button'
+import Dots from '../../../components/Dots'
+import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
+import useLimitOrderApproveCallback, { BentoApprovalState } from '../../../hooks/useLimitOrderApproveCallback'
+import useLimitOrders from '../../../hooks/useLimitOrders'
+import { useActiveWeb3React } from '../../../services/web3'
+import { AppDispatch } from '../../../state'
+import { useAddPopup, useWalletModalToggle } from '../../../state/application/hooks'
+import { Field, setFromBentoBalance } from '../../../state/limit-order/actions'
+import { useDerivedLimitOrderInfo, useLimitOrderState } from '../../../state/limit-order/hooks'
+import { OrderExpiration } from '../../../state/limit-order/reducer'
+import ConfirmLimitOrderModal from './ConfirmLimitOrderModal'
 
 interface LimitOrderButtonProps extends ButtonProps {
   currency: Currency
@@ -85,7 +85,7 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
     )
 
     try {
-      await order.signOrderWithProvider(chainId, library)
+      // await order.signOrderWithProvider(chainId, library)
       setOpenConfirmationModal(false)
 
       const resp = await order.send()

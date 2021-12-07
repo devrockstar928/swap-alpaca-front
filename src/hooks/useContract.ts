@@ -1,48 +1,48 @@
+import { AddressZero } from '@ethersproject/constants'
+import { Contract } from '@ethersproject/contracts'
+import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import {
   BAR_ADDRESS,
   BENTOBOX_ADDRESS,
   BORING_HELPER_ADDRESS,
-  CHAINLINK_ORACLE_ADDRESS,
   ChainId,
+  CHAINLINK_ORACLE_ADDRESS,
   ENS_REGISTRAR_ADDRESS,
-  KASHI_ADDRESS,
+  FACTORY_ADDRESS,
   MAKER_ADDRESS,
   MASTERCHEF_ADDRESS,
   MASTERCHEF_V2_ADDRESS,
   MERKLE_DISTRIBUTOR_ADDRESS,
   MINICHEF_ADDRESS,
   MULTICALL2_ADDRESS,
+  ROUTER_ADDRESS,
   SUSHI_ADDRESS,
   TIMELOCK_ADDRESS,
   WNATIVE_ADDRESS,
-} from '@sushiswap/core-sdk'
-import { ROUTER_ADDRESS, FACTORY_ADDRESS } from '@sushiswap/sdk'
-import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
+} from '@sushiswap/sdk'
+import { useMemo } from 'react'
 import {
   ARGENT_WALLET_DETECTOR_ABI,
   ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS,
 } from '../constants/abis/argent-wallet-detector'
-import { AddressZero } from '@ethersproject/constants'
 import BAR_ABI from '../constants/abis/bar.json'
 import BENTOBOX_ABI from '../constants/abis/bentobox.json'
 import BORING_HELPER_ABI from '../constants/abis/boring-helper.json'
 import CHAINLINK_ORACLE_ABI from '../constants/abis/chainlink-oracle.json'
 import CLONE_REWARDER_ABI from '../constants/abis/clone-rewarder.json'
 import COMPLEX_REWARDER_ABI from '../constants/abis/complex-rewarder.json'
-import { Contract } from '@ethersproject/contracts'
 import EIP_2612_ABI from '../constants/abis/eip-2612.json'
-import ENS_ABI from '../constants/abis/ens-registrar.json'
 import ENS_PUBLIC_RESOLVER_ABI from '../constants/abis/ens-public-resolver.json'
-import ERC20_ABI from '../constants/abis/erc20.json'
+import ENS_ABI from '../constants/abis/ens-registrar.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
+import ERC20_ABI from '../constants/abis/erc20.json'
 import FACTORY_ABI from '../constants/abis/factory.json'
 import INARI_ABI from '../constants/abis/inari.json'
-import IUniswapV2PairABI from '../constants/abis/uniswap-v2-pair.json'
-import LIMIT_ORDER_ABI from '../constants/abis/limit-order.json'
 import LIMIT_ORDER_HELPER_ABI from '../constants/abis/limit-order-helper.json'
+import LIMIT_ORDER_ABI from '../constants/abis/limit-order.json'
 import MAKER_ABI from '../constants/abis/maker.json'
-import MASTERCHEF_ABI from '../constants/abis/masterchef.json'
 import MASTERCHEF_V2_ABI from '../constants/abis/masterchef-v2.json'
+import MASTERCHEF_ABI from '../constants/abis/masterchef.json'
 import MEOWSHI_ABI from '../constants/abis/meowshi.json'
 import MERKLE_DISTRIBUTOR_ABI from '../constants/abis/merkle-distributor.json'
 import MINICHEF_ABI from '../constants/abis/minichef-v2.json'
@@ -51,11 +51,11 @@ import ROUTER_ABI from '../constants/abis/router.json'
 import SUSHI_ABI from '../constants/abis/sushi.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
 import UNI_FACTORY_ABI from '../constants/abis/uniswap-v2-factory.json'
+import IUniswapV2PairABI from '../constants/abis/uniswap-v2-pair.json'
 import WETH9_ABI from '../constants/abis/weth.json'
 import ZENKO_ABI from '../constants/abis/zenko.json'
 import { getContract } from '../functions/contract'
 import { useActiveWeb3React } from '../services/web3'
-import { useMemo } from 'react'
 
 const UNI_FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
 
@@ -89,7 +89,7 @@ export function useWETH9Contract(withSignerIfPossible?: boolean): Contract | nul
 export function useArgentWalletDetectorContract(): Contract | null {
   const { chainId } = useActiveWeb3React()
   return useContract(
-    chainId === ChainId.ETHEREUM ? ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS : undefined,
+    chainId === ChainId.MAINNET ? ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS : undefined,
     ARGENT_WALLET_DETECTOR_ABI,
     false
   )

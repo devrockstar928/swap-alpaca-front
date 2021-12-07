@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { PairType } from './enum'
+import { getAddress } from '@ethersproject/address'
 import { Disclosure, Tab, Transition } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Token, ZERO } from '@sushiswap/sdk'
+import React, { useState } from 'react'
 import { useActiveWeb3React } from '../../services/web3'
-import { Token, ZERO } from '@sushiswap/core-sdk'
-import { getAddress } from '@ethersproject/address'
+import { PairType } from './enum'
 import { useUserInfo } from './hooks'
-import ManageSwapPair from './ManageSwapPair'
-import ManageKashiPair from './ManageKashiPair'
 import InformationDisclosure from './InformationDisclosure'
 import InvestmentDetails from './InvestmentDetails'
 import ManageBar from './ManageBar'
+import ManageKashiPair from './ManageKashiPair'
+import ManageSwapPair from './ManageSwapPair'
 
 const FarmListItemDetails = ({ farm }) => {
   const { i18n } = useLingui()

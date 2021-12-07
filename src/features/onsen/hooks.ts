@@ -1,3 +1,5 @@
+import { Zero } from '@ethersproject/constants'
+import { Contract } from '@ethersproject/contracts'
 import {
   ChainId,
   CurrencyAmount,
@@ -6,17 +8,14 @@ import {
   MASTERCHEF_V2_ADDRESS,
   MINICHEF_ADDRESS,
   SUSHI,
-} from '@sushiswap/core-sdk'
-import { Chef, PairType } from './enum'
-import { Dispatch, useCallback, useEffect, useMemo, useState } from 'react'
-import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from '../../state/multicall/hooks'
-import { useMasterChefContract, useMasterChefV2Contract, useMiniChefContract } from '../../hooks/useContract'
-
-import { Contract } from '@ethersproject/contracts'
-import { Zero } from '@ethersproject/constants'
+} from '@sushiswap/sdk'
 import concat from 'lodash/concat'
-import { useActiveWeb3React } from '../../services/web3'
 import zip from 'lodash/zip'
+import { Dispatch, useCallback, useEffect, useMemo, useState } from 'react'
+import { useMasterChefContract, useMasterChefV2Contract, useMiniChefContract } from '../../hooks/useContract'
+import { useActiveWeb3React } from '../../services/web3'
+import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from '../../state/multicall/hooks'
+import { Chef } from './enum'
 
 export function useChefContract(chef: Chef) {
   const masterChefContract = useMasterChefContract()
@@ -36,7 +35,7 @@ export function useChefContract(chef: Chef) {
 }
 
 const CHEFS = {
-  [ChainId.ETHEREUM]: [Chef.MASTERCHEF, Chef.MASTERCHEF_V2],
+  [ChainId.MAINNET]: [Chef.MASTERCHEF, Chef.MASTERCHEF_V2],
   [ChainId.MATIC]: [Chef.MINICHEF],
 }
 

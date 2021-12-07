@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
 
 // CLASS A
 
@@ -7,46 +7,46 @@ const fetcher = (url: string) =>
     .then((res) => res.json())
     .then((data) => data.data)
 
-export const getTokenBalances = (chainId = ChainId.ETHEREUM, address) =>
+export const getTokenBalances = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/address/${address}/balances_v2/`)
 
-export const getPortfolio = (chainId = ChainId.ETHEREUM, address) =>
+export const getPortfolio = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/address/${address}/portfolio_v2/`)
 
-export const getTransfers = (chainId = ChainId.ETHEREUM, address) =>
+export const getTransfers = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/address/${address}/transfers_v2/`)
 
-export const getBlock = (chainId = ChainId.ETHEREUM, blockHeight) =>
+export const getBlock = (chainId = ChainId.MAINNET, blockHeight) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/block_v2/${blockHeight}/`)
 
-export const getBlockHeights = (chainId = ChainId.ETHEREUM, startDate, endDate) =>
+export const getBlockHeights = (chainId = ChainId.MAINNET, startDate, endDate) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/block_v2/${startDate}/${endDate}/`)
 
-export const getLogs = (chainId = ChainId.ETHEREUM, address) =>
+export const getLogs = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/events/address/${address}/`)
 
-export const getLogsForTopic = (chainId = ChainId.ETHEREUM, topic) =>
+export const getLogsForTopic = (chainId = ChainId.MAINNET, topic) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/events/topics/${topic}/`)
 
-export const getNftMetadata = (chainId = ChainId.ETHEREUM, address, tokenId) =>
+export const getNftMetadata = (chainId = ChainId.MAINNET, address, tokenId) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/tokens/${address}/nft_metadata/${tokenId}/`)
 
-export const getNftTokenIds = (chainId = ChainId.ETHEREUM, address) =>
+export const getNftTokenIds = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/tokens/${address}/nft_token_ids/`)
 
-export const getNftTransactions = (chainId = ChainId.ETHEREUM, address, tokenId) =>
+export const getNftTransactions = (chainId = ChainId.MAINNET, address, tokenId) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/tokens/${address}/nft_transactions/${tokenId}/`)
 
-export const getHoldersChanges = (chainId = ChainId.ETHEREUM, address) =>
+export const getHoldersChanges = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/tokens/${address}/token_holders_changes/`)
 
-export const getTokenHolders = (chainId = ChainId.ETHEREUM, address) =>
+export const getTokenHolders = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/tokens/${address}/token_holders/`)
 
-export const getTokenMetadata = (chainId = ChainId.ETHEREUM, id) =>
+export const getTokenMetadata = (chainId = ChainId.MAINNET, id) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/tokens/tokenlists/${id}/`)
 
-export const getTransaction = (chainId = ChainId.ETHEREUM, txHash) =>
+export const getTransaction = (chainId = ChainId.MAINNET, txHash) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/trasaction_v2/${txHash}/`)
 
 export const getChains = () => fetcher(`https://api.covalenthq.com/v1/chains/`)
@@ -55,5 +55,5 @@ export const getChainsStatus = () =>
   fetcher(`https://api.covalenthq.com/v1/chains/status/?key=ckey_cba3674f2ce5450f9d5dd290589`)
 
 // TODO: CLASS B
-export const getSushiSwapLiquidityTransactions = (chainId = ChainId.ETHEREUM, address) =>
+export const getSushiSwapLiquidityTransactions = (chainId = ChainId.MAINNET, address) =>
   fetcher(`https://api.covalenthq.com/v1/${chainId}/address/${address}/stacks/sushiswap/acts/`)

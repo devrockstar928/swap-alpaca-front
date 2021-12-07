@@ -1,3 +1,7 @@
+import { ChainId } from '@sushiswap/sdk'
+import stringify from 'fast-json-stable-stringify'
+import useSWR, { SWRConfiguration } from 'swr'
+import { useActiveWeb3React } from '../../../services/web3'
 import {
   getAlcxPrice,
   getAvaxPrice,
@@ -10,28 +14,23 @@ import {
   getMaticPrice,
   getMovrPrice,
   getMphPrice,
+  getNativePrice,
   getOnePrice,
+  getPairs,
   getPicklePrice,
   getRulerPrice,
   getSpellPrice,
   getStakePrice,
   getSushiPrice,
-  getToken,
   getTokenDayData,
   getTokenPairs,
   getTokens,
   getTransactions,
   getTruPrice,
   getYggPrice,
-  getNativePrice,
-  getPairs,
 } from '../fetchers'
-import useSWR, { SWRConfiguration } from 'swr'
-import { ChainId } from '@sushiswap/core-sdk'
 import { ethPriceQuery } from '../queries'
-import { useActiveWeb3React } from '../../../services/web3'
 import { useBlock } from './blocks'
-import stringify from 'fast-json-stable-stringify'
 
 interface useFactoryProps {
   chainId: number
@@ -41,7 +40,7 @@ interface useFactoryProps {
 }
 
 export function useFactory({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,
@@ -62,7 +61,7 @@ interface useNativePriceProps {
 }
 
 export function useNativePrice({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,
@@ -113,7 +112,7 @@ export function useMovrPrice(swrConfig: SWRConfiguration = undefined) {
 export function useYggPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
   const { data } = useSWR(
-    chainId && chainId === ChainId.ETHEREUM ? ['yggPrice', stringify(variables)] : null,
+    chainId && chainId === ChainId.MAINNET ? ['yggPrice', stringify(variables)] : null,
     () => getYggPrice(),
     swrConfig
   )
@@ -123,7 +122,7 @@ export function useYggPrice(variables = undefined, swrConfig: SWRConfiguration =
 export function useRulerPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
   const { data } = useSWR(
-    chainId && chainId === ChainId.ETHEREUM ? ['rulerPrice', stringify(variables)] : null,
+    chainId && chainId === ChainId.MAINNET ? ['rulerPrice', stringify(variables)] : null,
     () => getRulerPrice(variables),
     swrConfig
   )
@@ -133,7 +132,7 @@ export function useRulerPrice(variables = undefined, swrConfig: SWRConfiguration
 export function useTruPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
   const { data } = useSWR(
-    chainId && chainId === ChainId.ETHEREUM ? ['truPrice', stringify(variables)] : null,
+    chainId && chainId === ChainId.MAINNET ? ['truPrice', stringify(variables)] : null,
     () => getTruPrice(),
     swrConfig
   )
@@ -142,7 +141,7 @@ export function useTruPrice(variables = undefined, swrConfig: SWRConfiguration =
 
 export function useAlcxPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
-  const shouldFetch = chainId && chainId === ChainId.ETHEREUM
+  const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(
     shouldFetch ? ['aclxPrice', stringify(variables)] : null,
     () => getAlcxPrice(variables),
@@ -153,7 +152,7 @@ export function useAlcxPrice(variables = undefined, swrConfig: SWRConfiguration 
 
 export function useCvxPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
-  const shouldFetch = chainId && chainId === ChainId.ETHEREUM
+  const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(
     shouldFetch ? ['cvxPrice', stringify(variables)] : null,
     () => getCvxPrice(variables),
@@ -165,7 +164,7 @@ export function useCvxPrice(variables = undefined, swrConfig: SWRConfiguration =
 export function usePicklePrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
   const { data } = useSWR(
-    chainId && chainId === ChainId.ETHEREUM ? ['picklePrice', stringify(variables)] : null,
+    chainId && chainId === ChainId.MAINNET ? ['picklePrice', stringify(variables)] : null,
     () => getPicklePrice(),
     swrConfig
   )
@@ -175,7 +174,7 @@ export function usePicklePrice(variables = undefined, swrConfig: SWRConfiguratio
 export function useMphPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { chainId } = useActiveWeb3React()
   const { data } = useSWR(
-    chainId && chainId === ChainId.ETHEREUM ? ['mphPrice', stringify(variables)] : null,
+    chainId && chainId === ChainId.MAINNET ? ['mphPrice', stringify(variables)] : null,
     () => getMphPrice(),
     swrConfig
   )
@@ -212,7 +211,7 @@ interface useLiquidityPositionsProps {
 }
 
 export function useLiquidityPositions(
-  { timestamp, block, chainId = ChainId.ETHEREUM, shouldFetch = true, user }: useLiquidityPositionsProps,
+  { timestamp, block, chainId = ChainId.MAINNET, shouldFetch = true, user }: useLiquidityPositionsProps,
   swrConfig: SWRConfiguration = undefined
 ) {
   const blockFetched = useBlock({ timestamp, chainId, shouldFetch: shouldFetch && !!timestamp })
@@ -244,7 +243,7 @@ interface useSushiPairsProps {
 }
 
 export function useSushiPairs({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,
@@ -265,7 +264,7 @@ interface useTokensProps {
 }
 
 export function useTokens(
-  { chainId = ChainId.ETHEREUM, variables, shouldFetch = true }: useTokensProps,
+  { chainId = ChainId.MAINNET, variables, shouldFetch = true }: useTokensProps,
   swrConfig: SWRConfiguration = undefined
 ) {
   const { data } = useSWR(
@@ -286,7 +285,7 @@ interface useTokenDayDataProps {
 }
 
 export function useTokenDayData(
-  { timestamp, block, chainId = ChainId.ETHEREUM, shouldFetch = true, token, first }: useTokenDayDataProps,
+  { timestamp, block, chainId = ChainId.MAINNET, shouldFetch = true, token, first }: useTokenDayDataProps,
   swrConfig: SWRConfiguration = undefined
 ) {
   const blockFetched = useBlock({ timestamp, chainId, shouldFetch: shouldFetch && !!timestamp })
@@ -319,7 +318,7 @@ interface useDayDataProps {
 }
 
 export function useDayData(
-  { timestamp, block, chainId = ChainId.ETHEREUM, shouldFetch = true, first }: useDayDataProps,
+  { timestamp, block, chainId = ChainId.MAINNET, shouldFetch = true, first }: useDayDataProps,
   swrConfig: SWRConfiguration = undefined
 ) {
   const blockFetched = useBlock({ timestamp, chainId, shouldFetch: shouldFetch && !!timestamp })
@@ -348,7 +347,7 @@ interface useTransactionsProps {
 }
 
 export function useTransactions({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,
@@ -369,7 +368,7 @@ interface useTokenPairsProps {
 }
 
 export function useTokenPairs({
-  chainId = ChainId.ETHEREUM,
+  chainId = ChainId.MAINNET,
   variables,
   shouldFetch = true,
   swrConfig = undefined,

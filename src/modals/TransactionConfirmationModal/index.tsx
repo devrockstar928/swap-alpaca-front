@@ -1,21 +1,20 @@
-import { AlertTriangle, ArrowUpCircle, CheckCircle } from 'react-feather'
-import { ChainId, Currency } from '@sushiswap/core-sdk'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { ChainId, Currency } from '@sushiswap/sdk'
+import Lottie from 'lottie-react'
 import React, { FC } from 'react'
-import { Trans, t } from '@lingui/macro'
-
+import { AlertTriangle, ArrowUpCircle } from 'react-feather'
+import loadingRollingCircle from '../../animation/loading-rolling-circle.json'
 import Button from '../../components/Button'
 import CloseIcon from '../../components/CloseIcon'
 import ExternalLink from '../../components/ExternalLink'
 import Image from '../../components/Image'
-import Lottie from 'lottie-react'
 import Modal from '../../components/Modal'
 import ModalHeader from '../../components/ModalHeader'
 import { RowFixed } from '../../components/Row'
 import { getExplorerLink } from '../../functions/explorer'
-import loadingRollingCircle from '../../animation/loading-rolling-circle.json'
-import { useActiveWeb3React } from '../../services/web3'
 import useAddTokenToMetaMask from '../../hooks/useAddTokenToMetaMask'
-import { useLingui } from '@lingui/react'
+import { useActiveWeb3React } from '../../services/web3'
 
 interface ConfirmationPendingContentProps {
   onDismiss: () => void

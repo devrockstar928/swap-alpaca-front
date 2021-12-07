@@ -1,12 +1,11 @@
-import { blockQuery, blocksQuery, massBlocksQuery } from '../queries'
-import { getUnixTime, startOfHour, subDays, subHours } from 'date-fns'
-
-import { ChainId } from '@sushiswap/core-sdk'
-import { GRAPH_HOST } from '../constants'
+import { ChainId } from '@sushiswap/sdk'
+import { getUnixTime, startOfHour, subHours } from 'date-fns'
 import { request } from 'graphql-request'
+import { GRAPH_HOST } from '../constants'
+import { blockQuery, blocksQuery, massBlocksQuery } from '../queries'
 
 export const BLOCKS = {
-  [ChainId.ETHEREUM]: 'blocklytics/ethereum-blocks',
+  [ChainId.MAINNET]: 'blocklytics/ethereum-blocks',
   [ChainId.XDAI]: 'matthewlilley/xdai-blocks',
   [ChainId.MATIC]: 'matthewlilley/polygon-blocks',
   [ChainId.FANTOM]: 'matthewlilley/fantom-blocks',
@@ -20,11 +19,11 @@ export const BLOCKS = {
   [ChainId.MOONRIVER]: 'sushiswap/moonriver-blocks',
 }
 
-export const fetcher = async (chainId = ChainId.ETHEREUM, query, variables = undefined) => {
+export const fetcher = async (chainId = ChainId.MAINNET, query, variables = undefined) => {
   return request(`${GRAPH_HOST[chainId]}/subgraphs/name/${BLOCKS[chainId]}`, query, variables)
 }
 
-export const getBlock = async (chainId = ChainId.ETHEREUM, timestamp: number) => {
+export const getBlock = async (chainId = ChainId.MAINNET, timestamp: number) => {
   const { blocks } = await fetcher(
     chainId,
     blockQuery,
@@ -41,12 +40,12 @@ export const getBlock = async (chainId = ChainId.ETHEREUM, timestamp: number) =>
   return { number: Number(blocks?.[0]?.number) }
 }
 
-export const getBlocks = async (chainId = ChainId.ETHEREUM, variables) => {
+export const getBlocks = async (chainId = ChainId.MAINNET, variables) => {
   const { blocks } = await fetcher(chainId, blocksQuery, variables)
   return blocks
 }
 
-export const getMassBlocks = async (chainId = ChainId.ETHEREUM, timestamps) => {
+export const getMassBlocks = async (chainId = ChainId.MAINNET, timestamps) => {
   const data = await fetcher(chainId, massBlocksQuery(timestamps))
   return Object.values(data).map((entry) => ({
     number: Number(entry[0].number),
@@ -56,7 +55,7 @@ export const getMassBlocks = async (chainId = ChainId.ETHEREUM, timestamps) => {
 
 // Grabs the last 1000 (a sample statistical) blocks and averages
 // the time difference between them
-export const getAverageBlockTime = async (chainId = ChainId.ETHEREUM) => {
+export const getAverageBlockTime = async (chainId = ChainId.MAINNET) => {
   // console.log('getAverageBlockTime')
   const now = startOfHour(Date.now())
   const blocks = await getBlocks(chainId, {

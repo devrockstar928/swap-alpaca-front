@@ -1,13 +1,10 @@
+import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Trade, TradeType } from '@sushiswap/sdk'
 import {
   ALLOWED_PRICE_IMPACT_HIGH,
   ALLOWED_PRICE_IMPACT_LOW,
   ALLOWED_PRICE_IMPACT_MEDIUM,
   BLOCKED_PRICE_IMPACT_NON_EXPERT,
 } from '../constants'
-import { ChainId, Currency, CurrencyAmount, Fraction, JSBI, Percent, Trade, TradeType } from '@sushiswap/core-sdk'
-
-import { Field } from '../state/swap/actions'
-import { basisPointsToPercent } from './convert'
 
 const THIRTY_BIPS_FEE = new Percent(JSBI.BigInt(30), JSBI.BigInt(10000))
 const ONE_HUNDRED_PERCENT = new Percent(JSBI.BigInt(10000), JSBI.BigInt(10000))

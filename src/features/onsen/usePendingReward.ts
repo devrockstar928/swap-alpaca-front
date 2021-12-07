@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from 'react'
-import { useCloneRewarderContract, useComplexRewarderContract } from '../../hooks/useContract'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId } from '@sushiswap/core-sdk'
-import { Chef } from './enum'
+import { ChainId } from '@sushiswap/sdk'
+import { useEffect, useMemo, useState } from 'react'
 import Fraction from '../../entities/Fraction'
+import { useCloneRewarderContract, useComplexRewarderContract } from '../../hooks/useContract'
 import { useActiveWeb3React } from '../../services/web3'
 import { useBlockNumber } from '../../state/application/hooks'
+import { Chef } from './enum'
 
 const usePending = (farm) => {
   const [balance, setBalance] = useState<string>('0')
@@ -19,7 +19,7 @@ const usePending = (farm) => {
 
   const contract = useMemo(
     () => ({
-      [ChainId.ETHEREUM]: cloneRewarder,
+      [ChainId.MAINNET]: cloneRewarder,
       [ChainId.MATIC]: complexRewarder,
       [ChainId.XDAI]: complexRewarder,
       [ChainId.HARMONY]: complexRewarder,

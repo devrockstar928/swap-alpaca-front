@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
 
 const Arbitrum = 'https://raw.githubusercontent.com/sushiswap/icons/master/network/arbitrum.jpg'
 const Avalanche = 'https://raw.githubusercontent.com/sushiswap/icons/master/network/avalanche.jpg'
@@ -24,7 +24,7 @@ const Telos =
   'https://raw.githubusercontent.com/sushiswap/logos/main/network/telos/0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E.jpg'
 
 export const NETWORK_ICON = {
-  [ChainId.ETHEREUM]: Mainnet,
+  [ChainId.MAINNET]: Mainnet,
   [ChainId.ROPSTEN]: Ropsten,
   [ChainId.RINKEBY]: Rinkeby,
   [ChainId.GÖRLI]: Goerli,
@@ -55,7 +55,7 @@ export const NETWORK_ICON = {
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
-  [ChainId.ETHEREUM]: 'Ethereum',
+  [ChainId.MAINNET]: 'Ethereum',
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Görli',

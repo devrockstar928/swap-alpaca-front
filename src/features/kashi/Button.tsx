@@ -1,15 +1,14 @@
-import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BENTOBOX_ADDRESS, WNATIVE_ADDRESS } from '@sushiswap/core-sdk'
-import useKashiApproveCallback, { BentoApprovalState } from '../../hooks/useKashiApproveCallback'
-
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { BENTOBOX_ADDRESS, WNATIVE_ADDRESS } from '@sushiswap/sdk'
+import React from 'react'
 import Alert from '../../components/Alert'
 import Button from '../../components/Button'
 import Dots from '../../components/Dots'
-import React from 'react'
-import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
+import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
+import useKashiApproveCallback, { BentoApprovalState } from '../../hooks/useKashiApproveCallback'
 import { useActiveWeb3React } from '../../services/web3'
-import { useLingui } from '@lingui/react'
 
 export function KashiApproveButton({ content, color }: any): any {
   const { i18n } = useLingui()

@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
 
 export enum Feature {
   AMM = 'AMM',
@@ -13,7 +13,7 @@ export enum Feature {
 }
 
 const features = {
-  [ChainId.ETHEREUM]: [
+  [ChainId.MAINNET]: [
     Feature.AMM,
     Feature.LIQUIDITY_MINING,
     Feature.BENTOBOX,

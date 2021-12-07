@@ -1,14 +1,14 @@
-import { NETWORK_ICON, NETWORK_LABEL } from '../../config/networks'
-import React, { FC, Fragment } from 'react'
-import { Trans, useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/core-sdk'
-import HeadlessUIModal from '../../components/Modal/HeadlessUIModal'
-import Image from 'next/image'
-import NavLink from '../../components/NavLink'
-import { SUPPORTED_NETWORKS } from '../../modals/NetworkModal'
-import Typography from '../../components/Typography'
-import cookie from 'cookie-cutter'
 import { t } from '@lingui/macro'
+import { Trans, useLingui } from '@lingui/react'
+import { ChainId } from '@sushiswap/sdk'
+import cookie from 'cookie-cutter'
+import Image from 'next/image'
+import React, { FC, Fragment } from 'react'
+import HeadlessUIModal from '../../components/Modal/HeadlessUIModal'
+import NavLink from '../../components/NavLink'
+import Typography from '../../components/Typography'
+import { NETWORK_ICON, NETWORK_LABEL } from '../../config/networks'
+import { SUPPORTED_NETWORKS } from '../../modals/NetworkModal'
 import { useActiveWeb3React } from '../../services/web3'
 
 interface NetworkGuardProps {
@@ -55,7 +55,7 @@ const Component: FC<NetworkGuardProps> = ({ children, networks = [] }) => {
                 onClick={() => {
                   const params = SUPPORTED_NETWORKS[key]
                   cookie.set('chainId', key)
-                  if (key === ChainId.ETHEREUM) {
+                  if (key === ChainId.MAINNET) {
                     library?.send('wallet_switchEthereumChain', [{ chainId: '0x1' }, account])
                   } else {
                     library?.send('wallet_addEthereumChain', [params, account])

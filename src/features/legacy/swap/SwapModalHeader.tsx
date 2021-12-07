@@ -1,20 +1,13 @@
-import { AlertTriangle, ArrowDown } from 'react-feather'
-import { Currency, Percent, TradeType, Trade as V2Trade } from '@sushiswap/core-sdk'
-import React, { useState } from 'react'
-import { isAddress, shortenAddress } from '../../../functions'
-
-import { AdvancedSwapDetails } from './AdvancedSwapDetails'
-import Card from '../../../components/Card'
-import CurrencyLogo from '../../../components/CurrencyLogo'
-import { Field } from '../../../state/swap/actions'
-import { RowBetween } from '../../../components/Row'
-import TradePrice from './TradePrice'
-import Typography from '../../../components/Typography'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../services/web3'
 import { useLingui } from '@lingui/react'
+import { Currency, Percent, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
+import React, { useState } from 'react'
+import { AlertTriangle, ArrowDown } from 'react-feather'
+import CurrencyLogo from '../../../components/CurrencyLogo'
+import { isAddress, shortenAddress, warningSeverity } from '../../../functions'
 import { useUSDCValue } from '../../../hooks/useUSDCPrice'
-import { warningSeverity } from '../../../functions'
+import { AdvancedSwapDetails } from './AdvancedSwapDetails'
+import TradePrice from './TradePrice'
 
 export default function SwapModalHeader({
   trade,

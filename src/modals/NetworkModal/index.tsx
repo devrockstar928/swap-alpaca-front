@@ -1,14 +1,13 @@
-import { NETWORK_ICON, NETWORK_LABEL } from '../../config/networks'
-import { useModalOpen, useNetworkModalToggle } from '../../state/application/hooks'
-
-import { ApplicationModal } from '../../state/application/actions'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@sushiswap/sdk'
+import cookie from 'cookie-cutter'
 import Image from 'next/image'
+import React from 'react'
 import Modal from '../../components/Modal'
 import ModalHeader from '../../components/ModalHeader'
-import React from 'react'
-import cookie from 'cookie-cutter'
+import { NETWORK_ICON, NETWORK_LABEL } from '../../config/networks'
 import { useActiveWeb3React } from '../../services/web3'
+import { ApplicationModal } from '../../state/application/actions'
+import { useModalOpen, useNetworkModalToggle } from '../../state/application/hooks'
 
 export const SUPPORTED_NETWORKS: {
   [chainId in ChainId]?: {
@@ -23,7 +22,7 @@ export const SUPPORTED_NETWORKS: {
     blockExplorerUrls: string[]
   }
 } = {
-  [ChainId.ETHEREUM]: {
+  [ChainId.MAINNET]: {
     chainId: '0x1',
     chainName: 'Ethereum',
     nativeCurrency: {
@@ -212,7 +211,7 @@ export default function NetworkModal(): JSX.Element | null {
 
       <div className="grid grid-flow-row-dense grid-cols-1 gap-5 overflow-y-auto md:grid-cols-2">
         {[
-          ChainId.ETHEREUM,
+          ChainId.MAINNET,
           ChainId.MATIC,
           ChainId.FANTOM,
           ChainId.ARBITRUM,
@@ -251,7 +250,7 @@ export default function NetworkModal(): JSX.Element | null {
                 toggleNetworkModal()
                 const params = SUPPORTED_NETWORKS[key]
                 cookie.set('chainId', key)
-                if (key === ChainId.ETHEREUM) {
+                if (key === ChainId.MAINNET) {
                   library?.send('wallet_switchEthereumChain', [{ chainId: '0x1' }, account])
                 } else {
                   library?.send('wallet_addEthereumChain', [params, account])

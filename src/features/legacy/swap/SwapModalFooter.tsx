@@ -1,10 +1,9 @@
-import { Currency, TradeType, Trade as V2Trade } from '@sushiswap/core-sdk'
-import React, { ReactNode } from 'react'
-
-import { ButtonError } from '../../../components/Button'
-import { SwapCallbackError } from './styleds'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
+import React, { ReactNode } from 'react'
+import { ButtonError } from '../../../components/Button'
+import { SwapCallbackError } from './styleds'
 
 export default function SwapModalFooter({
   trade,

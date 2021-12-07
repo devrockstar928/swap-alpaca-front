@@ -1,11 +1,10 @@
-import React, { useCallback, useState } from 'react'
-import { FC } from 'react'
-import { useActiveWeb3React } from '../../services/web3'
-import { ChainId } from '@sushiswap/core-sdk'
-import Button from '../Button'
-import { classNames } from '../../functions'
 import { Transition } from '@headlessui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
+import { ChainId } from '@sushiswap/sdk'
+import React, { FC, useCallback, useState } from 'react'
+import { classNames } from '../../functions'
+import { useActiveWeb3React } from '../../services/web3'
+import Button from '../Button'
 
 const images = [
   {
@@ -26,7 +25,7 @@ const Banner: FC = () => {
     setSlideIndex((prevState) => (prevState - 1 + images.length) % images.length)
   }, [])
 
-  if (chainId !== ChainId.ETHEREUM) return <></>
+  if (chainId !== ChainId.MAINNET) return <></>
 
   const slides = images.map(({ image, url }, index) => {
     return (

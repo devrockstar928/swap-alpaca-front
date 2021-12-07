@@ -1,17 +1,17 @@
-import { ZERO, calculateGasMargin } from '../functions'
-import { getSignatureWithProviderBentobox, STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
-import { setFromBentoBalance, setLimitOrderApprovalPending } from '../state/limit-order/actions'
-import { useBentoBoxContract, useLimitOrderHelperContract } from './useContract'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useDerivedLimitOrderInfo, useLimitOrderApprovalPending, useLimitOrderState } from '../state/limit-order/hooks'
 import { getAddress } from '@ethersproject/address'
 import { AddressZero, HashZero } from '@ethersproject/constants'
-import { Field } from '../state/swap/actions'
-import { Token } from '@sushiswap/core-sdk'
+import { getSignatureWithProviderBentobox, STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
+import { Token } from '@sushiswap/sdk'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { calculateGasMargin, ZERO } from '../functions'
 import { useActiveWeb3React } from '../services/web3'
 import { useBentoMasterContractAllowed } from '../state/bentobox/hooks'
-import { useDispatch } from 'react-redux'
+import { setLimitOrderApprovalPending } from '../state/limit-order/actions'
+import { useDerivedLimitOrderInfo, useLimitOrderApprovalPending, useLimitOrderState } from '../state/limit-order/hooks'
+import { Field } from '../state/swap/actions'
 import { useTransactionAdder } from '../state/transactions/hooks'
+import { useBentoBoxContract, useLimitOrderHelperContract } from './useContract'
 
 export enum BentoApprovalState {
   UNKNOWN,
@@ -94,7 +94,7 @@ const useLimitOrderApproveCallback = () => {
           approved: true,
           nonce: nonce.toString(),
         },
-        chainId,
+        chainId as any,
         library
       )
 

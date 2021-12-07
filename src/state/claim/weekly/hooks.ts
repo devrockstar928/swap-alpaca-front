@@ -1,13 +1,13 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, Token, SUSHI } from '@sushiswap/core-sdk'
-import { WEEKLY_MERKLE_ROOT as MERKLE_ROOT } from './../../../constants/index'
 import { getAddress, isAddress } from '@ethersproject/address'
-import { useEffect, useState } from 'react'
 import { TransactionResponse } from '@ethersproject/providers'
+import { ChainId, Currency, CurrencyAmount, JSBI, SUSHI } from '@sushiswap/sdk'
+import { useEffect, useState } from 'react'
 import { calculateGasMargin } from '../../../functions/trade'
-import { useActiveWeb3React } from '../../../services/web3'
 import { useMerkleDistributorContract } from '../../../hooks/useContract'
+import { useActiveWeb3React } from '../../../services/web3'
 import { useSingleCallResult } from '../../multicall/hooks'
 import { useTransactionAdder } from '../../transactions/hooks'
+import { WEEKLY_MERKLE_ROOT as MERKLE_ROOT } from './../../../constants/index'
 
 interface UserClaimData {
   index: number

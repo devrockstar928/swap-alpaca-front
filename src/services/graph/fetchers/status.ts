@@ -1,8 +1,8 @@
-import { ChainId } from '@sushiswap/core-sdk'
-import { GRAPH_HOST } from '../constants'
+import { ChainId } from '@sushiswap/sdk'
 import { request } from 'graphql-request'
+import { GRAPH_HOST } from '../constants'
 
-export const status = async (chainId = ChainId.ETHEREUM, subgraphName) =>
+export const status = async (chainId = ChainId.MAINNET, subgraphName) =>
   request(
     `${GRAPH_HOST[chainId]}/index-node/graphql`,
     `

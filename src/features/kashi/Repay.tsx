@@ -1,39 +1,28 @@
-import { ExchangeRateCheckBox, SwapCheckbox } from './Checkbox'
-import { KashiApproveButton, TokenApproveButton } from './Button'
-import {
-  Percent,
-  SUSHISWAP_MULTISWAPPER_ADDRESS,
-  SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS,
-  WNATIVE,
-} from '@sushiswap/core-sdk'
-import React, { useContext, useMemo, useState } from 'react'
-import { Warning, Warnings } from '../../entities/Warnings'
-import { ZERO, e10, maximum, minimum } from '../../functions/math'
-import { computeRealizedLPFeePercent, warningSeverity } from '../../functions/prices'
-import { hexConcat, hexlify } from '@ethersproject/bytes'
-import { toAmount, toShare } from '../../functions/bentobox'
-import {
-  useExpertModeManager,
-  useUserSlippageTolerance,
-  useUserSlippageToleranceWithDefault,
-} from '../../state/user/hooks'
-import { useV2TradeExactIn, useV2TradeExactOut } from '../../hooks/useV2Trades'
-
-import { AddressZero } from '@ethersproject/constants'
+import { defaultAbiCoder } from '@ethersproject/abi'
 import { BigNumber } from '@ethersproject/bignumber'
+import { hexConcat, hexlify } from '@ethersproject/bytes'
+import { AddressZero } from '@ethersproject/constants'
+import { Percent, SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS, WNATIVE } from '@sushiswap/sdk'
+import React, { useMemo, useState } from 'react'
 import Button from '../../components/Button'
-import { Field } from '../../state/swap/actions'
 import { KashiCooker } from '../../entities'
+import { TransactionReview } from '../../entities/TransactionReview'
+import { Warning, Warnings } from '../../entities/Warnings'
+import { toAmount, toShare } from '../../functions/bentobox'
+import { e10, maximum, minimum, ZERO } from '../../functions/math'
+import { tryParseAmount } from '../../functions/parse'
+import { computeRealizedLPFeePercent, warningSeverity } from '../../functions/prices'
+import { useCurrency } from '../../hooks/Tokens'
+import { useV2TradeExactOut } from '../../hooks/useV2Trades'
+import { useActiveWeb3React } from '../../services/web3'
+import { useExpertModeManager, useUserSlippageToleranceWithDefault } from '../../state/user/hooks'
+import { KashiApproveButton, TokenApproveButton } from './Button'
+import { ExchangeRateCheckBox, SwapCheckbox } from './Checkbox'
+import { useKashiInfo } from './context'
 import SmartNumberInput from './SmartNumberInput'
 import TradeReview from './TradeReview'
-import { TransactionReview } from '../../entities/TransactionReview'
 import TransactionReviewView from './TransactionReview'
 import WarningsView from './WarningsList'
-import { defaultAbiCoder } from '@ethersproject/abi'
-import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../services/web3'
-import { useCurrency } from '../../hooks/Tokens'
-import { useKashiInfo } from './context'
 
 interface RepayProps {
   pair: any

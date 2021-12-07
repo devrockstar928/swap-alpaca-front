@@ -1,8 +1,6 @@
-import { Currency, CurrencyAmount, Pair, computePairAddress } from '@sushiswap/core-sdk'
-import { FACTORY_ADDRESS } from '@sushiswap/sdk'
-
-import IUniswapV2PairABI from '@sushiswap/core/abi/IUniswapV2Pair.json'
 import { Interface } from '@ethersproject/abi'
+import IUniswapV2PairABI from '@sushiswap/core/abi/IUniswapV2Pair.json'
+import { computePairAddress, Currency, CurrencyAmount, FACTORY_ADDRESS, Pair } from '@sushiswap/sdk'
 import { useMemo } from 'react'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 

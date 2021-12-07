@@ -1,16 +1,12 @@
-import { ChainId, Currency, CurrencyAmount, Ether, Percent, TradeType, Trade as V2Trade } from '@sushiswap/core-sdk'
-import React, { useMemo } from 'react'
-import { RowBetween, RowFixed } from '../../../components/Row'
-
-import { ANALYTICS_URL } from '../../../constants'
-import ExternalLink from '../../../components/ExternalLink'
-import FormattedPriceImpact from './FormattedPriceImpact'
-import QuestionHelper from '../../../components/QuestionHelper'
-import SwapRoute from './SwapRoute'
-import { computeRealizedLPFeePercent } from '../../../functions/prices'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../services/web3'
 import { useLingui } from '@lingui/react'
+import { Currency, Percent, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
+import React, { useMemo } from 'react'
+import QuestionHelper from '../../../components/QuestionHelper'
+import { RowBetween, RowFixed } from '../../../components/Row'
+import { computeRealizedLPFeePercent } from '../../../functions/prices'
+import FormattedPriceImpact from './FormattedPriceImpact'
+import SwapRoute from './SwapRoute'
 
 export interface AdvancedSwapDetailsProps {
   trade?: V2Trade<Currency, Currency, TradeType>

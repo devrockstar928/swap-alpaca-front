@@ -1,12 +1,10 @@
-import { useAppSelector } from '../hooks'
-import { Token } from '@sushiswap/core-sdk'
+import { Token } from '@sushiswap/sdk'
+import { useMemo } from 'react'
 import { tryParseAmount } from '../../functions'
+import { useAppSelector } from '../hooks'
+import useStakeSushiToAaveStrategy from './strategies/useStakeSushiToAaveStrategy'
 import useStakeSushiToBentoStrategy from './strategies/useStakeSushiToBentoStrategy'
 import { DerivedInariState, InariState } from './types'
-import useStakeSushiToCreamStrategy from './strategies/useStakeSushiToCreamStrategy'
-import useStakeSushiToCreamToBentoStrategy from './strategies/useStakeSushiToCreamToBentoStrategy'
-import useStakeSushiToAaveStrategy from './strategies/useStakeSushiToAaveStrategy'
-import { useMemo } from 'react'
 
 export function useInariState(): InariState {
   return useAppSelector((state) => state.inari)

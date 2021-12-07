@@ -1,13 +1,12 @@
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/core-sdk'
-import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
-
-import ERC20_ABI from '../../constants/abis/erc20.json'
 import { Interface } from '@ethersproject/abi'
-import { isAddress } from '../../functions/validate'
-import { useActiveWeb3React } from '../../services/web3'
-import { useAllTokens } from '../../hooks/Tokens'
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/sdk'
 import { useMemo } from 'react'
+import ERC20_ABI from '../../constants/abis/erc20.json'
+import { isAddress } from '../../functions/validate'
+import { useAllTokens } from '../../hooks/Tokens'
 import { useMulticall2Contract } from '../../hooks/useContract'
+import { useActiveWeb3React } from '../../services/web3'
+import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
 import { TokenBalancesMap } from './types'
 
 /**

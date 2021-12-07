@@ -1,10 +1,9 @@
-import { Currency, Price } from '@sushiswap/core-sdk'
-import React, { useCallback } from 'react'
-
-import Typography from '../../../components/Typography'
-import { classNames } from '../../../functions'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Price } from '@sushiswap/sdk'
+import React, { useCallback } from 'react'
+import Typography from '../../../components/Typography'
+import { classNames } from '../../../functions'
 
 interface TradePriceProps {
   price: Price<Currency, Currency>

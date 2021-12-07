@@ -1,26 +1,25 @@
-import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BAR_ADDRESS, ZERO } from '@sushiswap/core-sdk'
-import React, { useState } from 'react'
-import { SUSHI, XSUSHI } from '../../config/tokens'
-import Button from '../../components/Button'
-import { ChainId } from '@sushiswap/core-sdk'
-import Container from '../../components/Container'
-import Dots from '../../components/Dots'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { BAR_ADDRESS, ChainId, ZERO } from '@sushiswap/sdk'
+import { request } from 'graphql-request'
 import Head from 'next/head'
 import Image from 'next/image'
+import React, { useState } from 'react'
+import Button from '../../components/Button'
+import Container from '../../components/Container'
+import Dots from '../../components/Dots'
 import Input from '../../components/Input'
-import TransactionFailedModal from '../../modals/TransactionFailedModal'
-import { request } from 'graphql-request'
-import { t } from '@lingui/macro'
-import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../services/web3'
-import { useLingui } from '@lingui/react'
-import useSushiBar from '../../hooks/useSushiBar'
-import { useBar, useBlock, useFactory, useNativePrice, useSushiPrice, useTokens } from '../../services/graph'
-import { useTokenBalance } from '../../state/wallet/hooks'
-import { useWalletModalToggle } from '../../state/application/hooks'
+import { SUSHI, XSUSHI } from '../../config/tokens'
 import { classNames } from '../../functions'
 import { aprToApy } from '../../functions/convert/apyApr'
+import { tryParseAmount } from '../../functions/parse'
+import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
+import useSushiBar from '../../hooks/useSushiBar'
+import TransactionFailedModal from '../../modals/TransactionFailedModal'
+import { useBar, useBlock, useFactory, useNativePrice, useTokens } from '../../services/graph'
+import { useActiveWeb3React } from '../../services/web3'
+import { useWalletModalToggle } from '../../state/application/hooks'
+import { useTokenBalance } from '../../state/wallet/hooks'
 
 const INPUT_CHAR_LIMIT = 18
 
@@ -54,7 +53,7 @@ const fetcher = (query) => request('https://api.thegraph.com/subgraphs/name/matt
 export default function Stake() {
   const { i18n } = useLingui()
   const { account } = useActiveWeb3React()
-  const sushiBalance = useTokenBalance(account ?? undefined, SUSHI[ChainId.ETHEREUM])
+  const sushiBalance = useTokenBalance(account ?? undefined, SUSHI[ChainId.MAINNET])
   const xSushiBalance = useTokenBalance(account ?? undefined, XSUSHI)
 
   const { enter, leave } = useSushiBar()
@@ -74,7 +73,7 @@ export default function Stake() {
 
   const parsedAmount = usingBalance ? balance : tryParseAmount(input, balance?.currency)
 
-  const [approvalState, approve] = useApproveCallback(parsedAmount, BAR_ADDRESS[ChainId.ETHEREUM])
+  const [approvalState, approve] = useApproveCallback(parsedAmount, BAR_ADDRESS[ChainId.MAINNET])
 
   const handleInput = (v: string) => {
     if (v.length <= INPUT_CHAR_LIMIT) {
@@ -133,22 +132,22 @@ export default function Stake() {
     }
   }
 
-  const block1d = useBlock({ daysAgo: 1, chainId: ChainId.ETHEREUM })
+  const block1d = useBlock({ daysAgo: 1, chainId: ChainId.MAINNET })
 
-  const exchange = useFactory({ chainId: ChainId.ETHEREUM })
+  const exchange = useFactory({ chainId: ChainId.MAINNET })
 
   const exchange1d = useFactory({
-    chainId: ChainId.ETHEREUM,
+    chainId: ChainId.MAINNET,
     variables: {
       block: block1d,
     },
     shouldFetch: !!block1d,
   })
 
-  const ethPrice = useNativePrice({ chainId: ChainId.ETHEREUM })
+  const ethPrice = useNativePrice({ chainId: ChainId.MAINNET })
 
   const xSushi = useTokens({
-    chainId: ChainId.ETHEREUM,
+    chainId: ChainId.MAINNET,
     variables: { where: { id: XSUSHI.address.toLowerCase() } },
   })?.[0]
 

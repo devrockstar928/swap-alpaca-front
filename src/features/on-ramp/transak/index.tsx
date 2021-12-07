@@ -1,18 +1,18 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { t } from '@lingui/macro'
-import transakSDK from '@transak/transak-sdk'
-import { useActiveWeb3React } from '../../../services/web3'
-import { useCallback } from 'react'
 import { useLingui } from '@lingui/react'
+import { ChainId } from '@sushiswap/sdk'
+import transakSDK from '@transak/transak-sdk'
+import { useCallback } from 'react'
+import { useActiveWeb3React } from '../../../services/web3'
 
 const DEFAULT_NETWORK = {
-  [ChainId.ETHEREUM]: 'ethereum',
+  [ChainId.MAINNET]: 'ethereum',
   [ChainId.BSC]: 'bsc',
   [ChainId.MATIC]: 'matic',
 }
 
 const DEFAULT_CRYPTO_CURRENCY = {
-  [ChainId.ETHEREUM]: 'ETH',
+  [ChainId.MAINNET]: 'ETH',
   [ChainId.BSC]: 'BNB',
   [ChainId.MATIC]: 'MATIC',
 }

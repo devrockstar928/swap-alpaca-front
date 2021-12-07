@@ -1,16 +1,15 @@
-import { AppDispatch, AppState } from '../index'
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price, Token } from '@sushiswap/core-sdk'
-import { Field, typeInput } from './actions'
-import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price, Token } from '@sushiswap/sdk'
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
-import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../services/web3'
-import { useCurrencyBalances } from '../wallet/hooks'
-import { useLingui } from '@lingui/react'
 import { useTotalSupply } from '../../hooks/useTotalSupply'
+import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
+import { useActiveWeb3React } from '../../services/web3'
+import { AppDispatch, AppState } from '../index'
+import { useCurrencyBalances } from '../wallet/hooks'
+import { Field, typeInput } from './actions'
 
 const ZERO = JSBI.BigInt(0)
 

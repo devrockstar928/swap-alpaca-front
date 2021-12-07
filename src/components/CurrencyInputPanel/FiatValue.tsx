@@ -1,7 +1,5 @@
-import { Currency, CurrencyAmount, Percent } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Percent } from '@sushiswap/sdk'
 import React, { useMemo } from 'react'
-
-import { t } from '@lingui/macro'
 import { warningSeverity } from '../../functions/prices'
 
 export function FiatValue({

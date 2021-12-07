@@ -1,13 +1,12 @@
-import { bentoBoxQuery, bentoStrategiesQuery, kashiPairsQuery } from '../queries/bentobox'
+import { ChainId } from '@sushiswap/sdk'
 import { getFraction, toAmount } from '../../../functions'
-
-import { ChainId } from '@sushiswap/core-sdk'
 import { GRAPH_HOST } from '../constants'
-import { getTokenSubset } from './exchange'
 import { pager } from '../functions'
+import { bentoBoxQuery, bentoStrategiesQuery, kashiPairsQuery } from '../queries/bentobox'
+import { getTokenSubset } from './exchange'
 
 export const BENTOBOX = {
-  [ChainId.ETHEREUM]: 'lufycz/bentobox',
+  [ChainId.MAINNET]: 'lufycz/bentobox',
   [ChainId.XDAI]: 'sushiswap/xdai-bentobox',
   [ChainId.MATIC]: 'lufycz/matic-bentobox',
   [ChainId.FANTOM]: 'sushiswap/fantom-bentobox',
@@ -15,10 +14,10 @@ export const BENTOBOX = {
   [ChainId.ARBITRUM]: 'sushiswap/arbitrum-bentobox',
 }
 
-const fetcher = async (chainId = ChainId.ETHEREUM, query, variables = undefined) =>
+const fetcher = async (chainId = ChainId.MAINNET, query, variables = undefined) =>
   pager(`${GRAPH_HOST[chainId]}/subgraphs/name/${BENTOBOX[chainId]}`, query, variables)
 
-export const getKashiPairs = async (chainId = ChainId.ETHEREUM, variables = undefined) => {
+export const getKashiPairs = async (chainId = ChainId.MAINNET, variables = undefined) => {
   const { kashiPairs } = await fetcher(chainId, kashiPairsQuery, variables)
 
   const tokens = await getTokenSubset(chainId, {
@@ -58,13 +57,13 @@ export const getKashiPairs = async (chainId = ChainId.ETHEREUM, variables = unde
   }))
 }
 
-export const getBentoBox = async (chainId = ChainId.ETHEREUM, variables) => {
+export const getBentoBox = async (chainId = ChainId.MAINNET, variables) => {
   const { bentoBoxes } = await fetcher(chainId, bentoBoxQuery, variables)
 
   return bentoBoxes[0]
 }
 
-export const getBentoStrategies = async (chainId = ChainId.ETHEREUM, variables) => {
+export const getBentoStrategies = async (chainId = ChainId.MAINNET, variables) => {
   const { strategies } = await fetcher(chainId, bentoStrategiesQuery, variables)
 
   const SECONDS_IN_YEAR = 60 * 60 * 24 * 365

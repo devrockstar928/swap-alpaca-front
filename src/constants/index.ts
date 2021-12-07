@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent } from '@sushiswap/core-sdk'
+import { ChainId, JSBI, Percent } from '@sushiswap/sdk'
 
 export const POOL_DENY = ['14', '29', '45', '30']
 
@@ -73,7 +73,7 @@ export const BLOCKED_ADDRESSES: string[] = [
 ]
 
 export const ANALYTICS_URL: { [chainId in ChainId]?: string } = {
-  [ChainId.ETHEREUM]: 'https://analytics.sushi.com',
+  [ChainId.MAINNET]: 'https://analytics.sushi.com',
   [ChainId.MATIC]: 'https://analytics-polygon.sushi.com',
   [ChainId.FANTOM]: 'https://analytics-ftm.sushi.com',
   [ChainId.BSC]: 'https://analytics-bsc.sushi.com',
