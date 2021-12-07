@@ -1,4 +1,5 @@
-import { Currency, CurrencyAmount, FACTORY_ADDRESS, Pair, computePairAddress } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Pair, computePairAddress } from '@sushiswap/core-sdk'
+import { FACTORY_ADDRESS } from '@sushiswap/sdk'
 
 import IUniswapV2PairABI from '@sushiswap/core/abi/IUniswapV2Pair.json'
 import { Interface } from '@ethersproject/abi'
