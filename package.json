@@ -65,7 +65,7 @@
     "@ramp-network/ramp-instant-sdk": "^2.4.6",
     "@reduxjs/toolkit": "^1.6.0",
     "@sentry/nextjs": "^6.11.0",
-    "@sushiswap/default-token-list": "18.10.0",
+    "@alpaca-swap/default-token-list": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-default-token-list.git",
     "@sushiswap/sdk": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk.git",
     "@sushiswap/sushi-data": "^1.0.24",
     "@tailwindcss/jit": "^0.1.18",

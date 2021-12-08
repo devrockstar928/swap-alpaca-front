@@ -1,12 +1,12 @@
-import { AppState } from '..'
-import DEFAULT_TOKEN_LIST from '@sushiswap/default-token-list'
+import DEFAULT_TOKEN_LIST from '@alpaca-swap/default-token-list'
 import { TokenList } from '@uniswap/token-lists'
+import { useMemo } from 'react'
+import { AppState } from '..'
 import { UNSUPPORTED_LIST_URLS } from '../../config/token-lists'
 import UNSUPPORTED_TOKEN_LIST from '../../constants/token-lists/sushiswap-v2-unsupported.tokenlist.json'
-import { WrappedTokenInfo } from './wrappedTokenInfo'
 import { sortByListPriority } from '../../functions/list'
 import { useAppSelector } from '../hooks'
-import { useMemo } from 'react'
+import { WrappedTokenInfo } from './wrappedTokenInfo'
 
 export type TokenAddressMap = Readonly<{
   [chainId: number]: Readonly<{
