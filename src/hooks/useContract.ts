@@ -1,6 +1,6 @@
 import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
-import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
+// import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import {
   BAR_ADDRESS,
   BENTOBOX_ADDRESS,
@@ -39,7 +39,6 @@ import ERC20_ABI from '../constants/abis/erc20.json'
 import FACTORY_ABI from '../constants/abis/factory.json'
 import INARI_ABI from '../constants/abis/inari.json'
 import LIMIT_ORDER_HELPER_ABI from '../constants/abis/limit-order-helper.json'
-import LIMIT_ORDER_ABI from '../constants/abis/limit-order.json'
 import MAKER_ABI from '../constants/abis/maker.json'
 import MASTERCHEF_V2_ABI from '../constants/abis/masterchef-v2.json'
 import MASTERCHEF_ABI from '../constants/abis/masterchef.json'
@@ -202,10 +201,10 @@ export function useMeowshiContract(withSignerIfPossible?: boolean): Contract | n
   return useContract('0x650F44eD6F1FE0E1417cb4b3115d52494B4D9b6D', MEOWSHI_ABI, withSignerIfPossible)
 }
 
-export function useLimitOrderContract(withSignerIfPossibe?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
-  return useContract(STOP_LIMIT_ORDER_ADDRESS[chainId], LIMIT_ORDER_ABI, withSignerIfPossibe)
-}
+// export function useLimitOrderContract(withSignerIfPossibe?: boolean): Contract | null {
+//   const { chainId } = useActiveWeb3React()
+//   return useContract(STOP_LIMIT_ORDER_ADDRESS[chainId], LIMIT_ORDER_ABI, withSignerIfPossibe)
+// }
 
 export function useLimitOrderHelperContract(withSignerIfPossible?: boolean): Contract | null {
   return useContract('0xe2f736B7d1f6071124CBb5FC23E93d141CD24E12', LIMIT_ORDER_HELPER_ABI, withSignerIfPossible)

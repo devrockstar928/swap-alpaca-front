@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { LimitOrder } from '@sushiswap/limit-order-sdk'
+// import { LimitOrder } from '@sushiswap/limit-order-sdk'
 import { BENTOBOX_ADDRESS, Currency } from '@sushiswap/sdk'
 import React, { FC, useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -75,14 +75,15 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
         endTime = Number.MAX_SAFE_INTEGER
     }
 
-    const order = new LimitOrder(
-      account,
-      parsedAmounts[Field.INPUT].wrapped,
-      parsedAmounts[Field.OUTPUT].wrapped,
-      recipient ? recipient : account,
-      Math.floor(new Date().getTime() / 1000).toString(),
-      endTime.toString()
-    )
+    const order = null
+    // const order = new LimitOrder(
+    //   account,
+    //   parsedAmounts[Field.INPUT].wrapped,
+    //   parsedAmounts[Field.OUTPUT].wrapped,
+    //   recipient ? recipient : account,
+    //   Math.floor(new Date().getTime() / 1000).toString(),
+    //   endTime.toString()
+    // )
 
     try {
       // await order.signOrderWithProvider(chainId, library)

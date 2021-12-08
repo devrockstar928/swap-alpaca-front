@@ -1,6 +1,6 @@
 import { getAddress } from '@ethersproject/address'
 import { AddressZero, HashZero } from '@ethersproject/constants'
-import { getSignatureWithProviderBentobox, STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
+// import { getSignatureWithProviderBentobox, STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import { Token } from '@sushiswap/sdk'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -41,7 +41,7 @@ const useLimitOrderApproveCallback = () => {
     setLimitOrderPermit(undefined)
   }, [account, chainId])
 
-  const masterContract = chainId && STOP_LIMIT_ORDER_ADDRESS[chainId]
+  const masterContract = '' // chainId && STOP_LIMIT_ORDER_ADDRESS[chainId]
 
   const pendingApproval = useLimitOrderApprovalPending()
   const currentAllowed = useBentoMasterContractAllowed(masterContract, account || AddressZero)
@@ -86,17 +86,18 @@ const useLimitOrderApproveCallback = () => {
 
     try {
       const nonce = await bentoBoxContract?.nonces(account)
-      const { v, r, s } = await getSignatureWithProviderBentobox(
-        {
-          warning: 'Give FULL access to funds in (and approved to) BentoBox?',
-          user: account,
-          masterContract,
-          approved: true,
-          nonce: nonce.toString(),
-        },
-        chainId as any,
-        library
-      )
+      const { v, r, s } = { v: 0, r: 0, s: 0 }
+      // const { v, r, s } = await getSignatureWithProviderBentobox(
+      //   {
+      //     warning: 'Give FULL access to funds in (and approved to) BentoBox?',
+      //     user: account,
+      //     masterContract,
+      //     approved: true,
+      //     nonce: nonce.toString(),
+      //   },
+      //   chainId as any,
+      //   library
+      // )
 
       return {
         outcome: BentoApproveOutcome.SUCCESS,

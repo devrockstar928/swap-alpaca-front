@@ -1,11 +1,11 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { LAMBDA_URL, LimitOrder, OrderStatus } from '@sushiswap/limit-order-sdk'
+// import { LAMBDA_URL, LimitOrder, OrderStatus } from '@sushiswap/limit-order-sdk'
 import { JSBI, Percent, Token } from '@sushiswap/sdk'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import useSWR, { SWRResponse } from 'swr'
 import { useActiveWeb3React } from '../services/web3'
 import { useAllTokens } from './Tokens'
-import { useLimitOrderContract } from './useContract'
+// import { useLimitOrderContract } from './useContract'
 
 interface State {
   pending: {
@@ -28,14 +28,15 @@ interface OpenOrder {
   tokenIn: Token
   tokenOut: Token
   filledPercent: string
-  limitOrder: LimitOrder
-  status: OrderStatus
+  // limitOrder: LimitOrder
+  // status: OrderStatus
   rate: string
 }
 
 const denominator = (decimals: number = 18) => JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(decimals))
 
-const viewUrl = `${LAMBDA_URL}/orders/view`
+const viewUrl = ``
+// const viewUrl = `${LAMBDA_URL}/orders/view`
 const viewFetcher = (url, account, chainId, pendingPage, page) => {
   return fetch(url, {
     method: 'POST',
@@ -47,7 +48,8 @@ const viewFetcher = (url, account, chainId, pendingPage, page) => {
 
 const useLimitOrders = () => {
   const { account, chainId } = useActiveWeb3React()
-  const limitOrderContract = useLimitOrderContract()
+  const limitOrderContract = null
+  // const limitOrderContract = useLimitOrderContract()
   const tokens = useAllTokens()
 
   const [state, setState] = useState<State>({
@@ -110,12 +112,13 @@ const useLimitOrders = () => {
       return
 
     const transform = async (order: any) => {
-      const limitOrder = LimitOrder.getLimitOrder({
-        ...order,
-        chainId: +order.chainId,
-        tokenInDecimals: +order.tokenInDecimals,
-        tokenOutDecimals: +order.tokenOutDecimals,
-      })
+      const limitOrder = null
+      // const limitOrder = LimitOrder.getLimitOrder({
+      //   ...order,
+      //   chainId: +order.chainId,
+      //   tokenInDecimals: +order.tokenInDecimals,
+      //   tokenOutDecimals: +order.tokenOutDecimals,
+      // })
 
       const tokenIn = limitOrder.amountIn.currency
       const tokenOut = limitOrder.amountOut.currency

@@ -1,14 +1,13 @@
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import Lottie from 'lottie-react'
 import React, { FC } from 'react'
-
+import loadingCircle from '../../../animation/loading-circle.json'
 import Badge from '../../../components/Badge'
 import CurrencyLogo from '../../../components/CurrencyLogo'
-import Lottie from 'lottie-react'
-import { OrderStatus } from '@sushiswap/limit-order-sdk'
-import Pagination from './Pagination'
-import loadingCircle from '../../../animation/loading-circle.json'
-import { t } from '@lingui/macro'
 import useLimitOrders from '../../../hooks/useLimitOrders'
-import { useLingui } from '@lingui/react'
+// import { OrderStatus } from '@sushiswap/limit-order-sdk'
+import Pagination from './Pagination'
 
 const CompletedOrders: FC = () => {
   const { i18n } = useLingui()
@@ -46,7 +45,7 @@ const CompletedOrders: FC = () => {
                   className="block overflow-hidden rounded text-high-emphesis bg-dark-800"
                   style={{
                     background:
-                      order.status === OrderStatus.FILLED
+                      order.status === 'Failed' // OrderStatus.FILLED
                         ? 'linear-gradient(90deg, rgba(0, 255, 79, 0.075) 0%, rgba(0, 255, 79, 0) 50%), #202231'
                         : order.status === OrderStatus.CANCELLED
                         ? 'linear-gradient(90deg, rgba(200, 200, 200, 0.075) 0%, rgba(200, 200, 200, 0) 50%), #202231'

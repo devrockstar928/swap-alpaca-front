@@ -2,7 +2,6 @@ import { ArrowDownIcon } from '@heroicons/react/outline'
 import { ExclamationIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import limitOrderPairList from '@sushiswap/limit-order-pair-list/dist/limit-order.pairlist.json'
 import { ChainId, Token } from '@sushiswap/sdk'
 import Lottie from 'lottie-react'
 import Head from 'next/head'
@@ -60,7 +59,7 @@ function LimitOrder() {
     useCurrency(loadedUrlParams?.outputCurrencyId),
   ]
 
-  const pairs = (limitOrderPairList.pairs[chainId] || []).map(([token0, token1]) => [token0.address, token1.address])
+  const pairs = [] //(limitOrderPairList.pairs[chainId] || []).map(([token0, token1]) => [token0.address, token1.address])
 
   // token warning stuff
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false)

@@ -1,28 +1,29 @@
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+// import { LimitOrder } from '@sushiswap/limit-order-sdk'
+import Lottie from 'lottie-react'
 import React, { FC, useState } from 'react'
-
+import loadingCircle from '../../../animation/loading-circle.json'
 import Badge from '../../../components/Badge'
 import Button from '../../../components/Button'
 import CurrencyLogo from '../../../components/CurrencyLogo'
-import { LimitOrder } from '@sushiswap/limit-order-sdk'
-import Lottie from 'lottie-react'
 import NavLink from '../../../components/NavLink'
-import Pagination from './Pagination'
-import TransactionConfirmationModal from '../../../modals/TransactionConfirmationModal'
-import loadingCircle from '../../../animation/loading-circle.json'
-import { t } from '@lingui/macro'
-import { useLimitOrderContract } from '../../../hooks/useContract'
+// import { useLimitOrderContract } from '../../../hooks/useContract'
 import useLimitOrders from '../../../hooks/useLimitOrders'
-import { useLingui } from '@lingui/react'
+import TransactionConfirmationModal from '../../../modals/TransactionConfirmationModal'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
+import Pagination from './Pagination'
 
 const OpenOrders: FC = () => {
   const { i18n } = useLingui()
   const { pending, mutate } = useLimitOrders()
-  const limitOrderContract = useLimitOrderContract(true)
+  // const limitOrderContract = useLimitOrderContract(true)
+  const limitOrderContract = null
   const addTransaction = useTransactionAdder()
   const [hash, setHash] = useState('')
 
-  const cancelOrder = async (limitOrder: LimitOrder, summary: string) => {
+  // const cancelOrder = async (limitOrder: LimitOrder, summary: string) => {
+  const cancelOrder = async (limitOrder: any, summary: string) => {
     const tx = await limitOrderContract.cancelOrder(limitOrder.getTypeHash())
     addTransaction(tx, {
       summary,
@@ -77,14 +78,14 @@ const OpenOrders: FC = () => {
                           <CurrencyLogo size={32} currency={order.tokenOut} />
                         </div>
                         <div className="flex flex-col">
-                          <div>{order.limitOrder.amountOut.toSignificant(6)} </div>
+                          {/* <div>{order.limitOrder.amountOut.toSignificant(6)} </div> */}
                           <div className="text-xs text-left text-secondary">{order.tokenOut.symbol}</div>
                         </div>
                       </div>
                     </div>
                     <div className="font-bold text-left">
                       <div className="flex flex-col">
-                        <div>{order.limitOrder.amountIn.toSignificant(6)} </div>
+                        {/* <div>{order.limitOrder.amountIn.toSignificant(6)} </div> */}
                         <div className="text-xs text-left text-secondary">{order.tokenIn.symbol}</div>
                       </div>
                     </div>
@@ -103,7 +104,8 @@ const OpenOrders: FC = () => {
                           color="pink"
                           variant="outlined"
                           size="xs"
-                          onClick={() => cancelOrder(order.limitOrder, `Cancel order`)}
+                          // onClick={() => cancelOrder(order.limitOrder, `Cancel order`)}
+                          onClick={() => cancelOrder(null, `Cancel order`)}
                         >
                           {i18n._(t`Cancel Order`)}
                         </Button>
