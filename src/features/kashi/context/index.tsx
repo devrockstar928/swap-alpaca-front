@@ -2,7 +2,7 @@ import { defaultAbiCoder } from '@ethersproject/abi'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { ChainId, KASHI_ADDRESS, NATIVE, WNATIVE_ADDRESS } from '@sushiswap/sdk'
-import { bentobox } from '@sushiswap/sushi-data'
+// import { bentobox } from '@sushiswap/sushi-data'
 import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
 import Fraction from '../../../entities/Fraction'
 import { getOracle } from '../../../entities/Oracle'
@@ -119,22 +119,22 @@ async function getPairs(bentoBoxContract, chainId: ChainId) {
     logs = await bentoBoxContract.queryFilter(bentoBoxContract.filters.LogDeploy(masterAddress))
     success = true
   }
-  if (!success) {
-    logs = (
-      (await bentobox.clones({
-        masterAddress,
-        chainId,
-      })) as any
-    ).map((clone) => {
-      return {
-        args: {
-          masterContract: masterAddress,
-          cloneAddress: clone.address,
-          data: clone.data,
-        },
-      }
-    })
-  }
+  // if (!success) {
+  //   logs = (
+  //     (await bentobox.clones({
+  //       masterAddress,
+  //       chainId,
+  //     })) as any
+  //   ).map((clone) => {
+  //     return {
+  //       args: {
+  //         masterContract: masterAddress,
+  //         cloneAddress: clone.address,
+  //         data: clone.data,
+  //       },
+  //     }
+  //   })
+  // }
 
   return logs.map((log) => {
     const deployParams = defaultAbiCoder.decode(['address', 'address', 'address', 'bytes'], log.args?.data)

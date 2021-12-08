@@ -254,6 +254,7 @@ export const COMMON_BASES: ChainTokenList = {
   [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC, OHM, SUSHI[ChainId.MAINNET]],
   [ChainId.MATIC]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.MATIC],
+    MATIC.USV,
     MATIC.USDC,
     MATIC.WBTC,
     MATIC.DAI,

@@ -70,6 +70,7 @@ export const MATIC: { [key: string]: Token } = {
     'Toucan Protocol: Base Carbon Tonne',
     'BCT'
   ),
+  USV: new Token(ChainId.MATIC, '0xAC63686230f64BDEAF086Fe6764085453ab3023F', 9, 'USV', 'Universal Store of Value'),
 }
 
 export const OKEX: { [key: string]: Token } = {
