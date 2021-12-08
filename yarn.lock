@@ -3058,11 +3058,6 @@
     "magic-string" "^0.25.0"
     "string.prototype.matchall" "^4.0.6"
 
-"@sushiswap/chainlink-whitelist@0.2.5":
-  "integrity" "sha512-XJ7D1zOITrLjKYpweHafroxu1xsQ1mJiDsvhjBVs6snT5zNPyfRXNxhB6sD3VXseDkQmqNWtgkSe4UJ8t8TrcQ=="
-  "resolved" "https://registry.npmjs.org/@sushiswap/chainlink-whitelist/-/chainlink-whitelist-0.2.5.tgz"
-  "version" "0.2.5"
-
 "@sushiswap/core@^2.0.0-canary.1":
   "integrity" "sha512-6YFT4EKgm0XgfwCBsKx5HrDtRI6EvhZHipjBKegdTV0b2zKuXnmdyZ+RwPCr0mCKq2pKB0qIiqCxfbgXYDlLCQ=="
   "resolved" "https://registry.npmjs.org/@sushiswap/core/-/core-2.0.0-canary.1.tgz"

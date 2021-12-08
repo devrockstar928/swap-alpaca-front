@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi'
-import IUniswapV2PairABI from '@sushiswap/core/abi/IUniswapV2Pair.json'
 import { computePairAddress, Currency, CurrencyAmount, FACTORY_ADDRESS, Pair } from '@sushiswap/sdk'
 import { useMemo } from 'react'
+import IUniswapV2PairABI from '../abi/IUniswapV2Pair.json'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 
 const PAIR_INTERFACE = new Interface(IUniswapV2PairABI)
