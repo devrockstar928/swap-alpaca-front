@@ -66,6 +66,7 @@
     "@reduxjs/toolkit": "^1.6.0",
     "@sentry/nextjs": "^6.11.0",
     "@sushiswap/chainlink-whitelist": "0.2.5",
+    "swap-alpaca-chainlink-whitelist": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-chainlink-whitelist",
     "@sushiswap/core": "^2.0.0-canary.1",
     "@sushiswap/default-token-list": "18.10.0",
     "@sushiswap/sdk": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk.git",
