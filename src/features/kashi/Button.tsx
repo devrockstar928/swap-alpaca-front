@@ -1,6 +1,6 @@
+import { BENTOBOX_ADDRESS, WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { BENTOBOX_ADDRESS, WNATIVE_ADDRESS } from '@sushiswap/sdk'
 import React from 'react'
 import Alert from '../../components/Alert'
 import Button from '../../components/Button'

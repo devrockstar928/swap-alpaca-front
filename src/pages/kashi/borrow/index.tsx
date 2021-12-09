@@ -1,19 +1,18 @@
-import Provider, { useKashiPairs } from '../../../features/kashi/context'
-import { formatNumber, formatPercent } from '../../../functions/format'
-
-import Card from '../../../components/Card'
-import GradientDot from '../../../components/GradientDot'
-import Head from 'next/head'
-import Image from '../../../components/Image'
-import Layout from '../../../layouts/Kashi'
-import Link from 'next/link'
-import ListHeaderWithSort from '../../../features/kashi/ListHeaderWithSort'
-import MarketHeader from '../../../features/kashi/MarketHeader'
-import React from 'react'
-import { cloudinaryLoader } from '../../../functions/cloudinary'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import Head from 'next/head'
+import Link from 'next/link'
+import React from 'react'
+import Card from '../../../components/Card'
+import GradientDot from '../../../components/GradientDot'
+import Image from '../../../components/Image'
+import Provider, { useKashiPairs } from '../../../features/kashi/context'
+import ListHeaderWithSort from '../../../features/kashi/ListHeaderWithSort'
+import MarketHeader from '../../../features/kashi/MarketHeader'
+import { cloudinaryLoader } from '../../../functions/cloudinary'
+import { formatNumber, formatPercent } from '../../../functions/format'
 import useSearchAndSort from '../../../hooks/useSearchAndSort'
+import Layout from '../../../layouts/Kashi'
 
 function Borrow() {
   const { i18n } = useLingui()
@@ -34,7 +33,7 @@ function Borrow() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`Borrow`)} | Sushi</title>
+        <title>{i18n._(t`Borrow`)} | Radio</title>
         <meta
           key="description"
           name="description"

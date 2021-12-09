@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@alpaca-swap/sdk'
 import React, { useCallback } from 'react'
 import Modal from '../../components/Modal'
 import { ImportToken } from '../SearchModal/ImportToken'

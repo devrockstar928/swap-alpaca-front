@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@alpaca-swap/sdk'
 import React, { CSSProperties } from 'react'
 import { CheckCircle } from 'react-feather'
 import styled from 'styled-components'

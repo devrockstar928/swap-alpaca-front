@@ -1,9 +1,9 @@
+import { ChainId, RADIO_ADDRESS } from '@alpaca-swap/sdk'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, SUSHI_ADDRESS } from '@sushiswap/sdk'
 import { useEffect, useMemo } from 'react'
-import { SUSHI, XSUSHI } from '../../../config/tokens'
+import { RADIO, XRADIO } from '../../../config/tokens'
 import { tryParseAmount } from '../../../functions'
 import { useActiveWeb3React } from '../../../services/web3'
 import { useBentoBalance } from '../../bentobox/hooks'
@@ -13,37 +13,37 @@ import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../
 import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
-  name: i18n._(t`SUSHI → Bento`),
-  steps: [i18n._(t`SUSHI`), i18n._(t`xSUSHI`), i18n._(t`BentoBox`)],
+  name: i18n._(t`RADIO → Bento`),
+  steps: [i18n._(t`RADIO`), i18n._(t`xRADIO`), i18n._(t`BentoBox`)],
   zapMethod: 'stakeSushiToBento',
   unzapMethod: 'unstakeSushiFromBento',
   description:
-    i18n._(t`Stake SUSHI for xSUSHI and deposit into BentoBox in one click. xSUSHI in BentoBox is automatically
+    i18n._(t`Stake RADIO for xRADIO and deposit into BentoBox in one click. xRADIO in BentoBox is automatically
                 invested into a passive yield strategy, and can be lent or used as collateral for borrowing in Kashi.`),
-  inputSymbol: i18n._(t`SUSHI`),
-  outputSymbol: i18n._(t`xSUSHI in BentoBox`),
+  inputSymbol: i18n._(t`RADIO`),
+  outputSymbol: i18n._(t`xRADIO in BentoBox`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
     chainId: ChainId.MAINNET,
-    address: SUSHI_ADDRESS[ChainId.MAINNET],
+    address: RADIO_ADDRESS[ChainId.MAINNET],
     decimals: 18,
-    symbol: 'SUSHI',
+    symbol: 'RADIO',
   },
   outputToken: {
     chainId: ChainId.MAINNET,
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
-    symbol: 'XSUSHI',
+    symbol: 'XRADIO',
   },
 }
 
 const useStakeSushiToBentoStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
   const { account } = useActiveWeb3React()
-  const balances = useTokenBalances(account, [SUSHI[ChainId.MAINNET], XSUSHI])
-  const xSushiBentoBalance = useBentoBalance(XSUSHI.address)
+  const balances = useTokenBalances(account, [RADIO[ChainId.MAINNET], XRADIO])
+  const xSushiBentoBalance = useBentoBalance(XRADIO.address)
 
   // Strategy ends in BentoBox so use BaseBentoBox strategy
   const general = useMemo(() => GENERAL(i18n), [i18n])
@@ -60,8 +60,8 @@ const useStakeSushiToBentoStrategy = (): StrategyHook => {
     if (!balances) return
 
     setBalances({
-      inputTokenBalance: balances[SUSHI_ADDRESS[ChainId.MAINNET]],
-      outputTokenBalance: tryParseAmount(xSushiBentoBalance?.value?.toFixed(18) || '0', XSUSHI),
+      inputTokenBalance: balances[RADIO_ADDRESS[ChainId.MAINNET]],
+      outputTokenBalance: tryParseAmount(xSushiBentoBalance?.value?.toFixed(18) || '0', XRADIO),
     })
   }, [balances, setBalances, xSushiBentoBalance?.value])
 

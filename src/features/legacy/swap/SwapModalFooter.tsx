@@ -1,6 +1,6 @@
+import { Currency, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import React, { ReactNode } from 'react'
 import { ButtonError } from '../../../components/Button'
 import { SwapCallbackError } from './styleds'

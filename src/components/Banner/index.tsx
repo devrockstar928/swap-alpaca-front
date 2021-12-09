@@ -1,6 +1,6 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { Transition } from '@headlessui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
-import { ChainId } from '@sushiswap/sdk'
 import React, { FC, useCallback, useState } from 'react'
 import { classNames } from '../../functions'
 import { useActiveWeb3React } from '../../services/web3'

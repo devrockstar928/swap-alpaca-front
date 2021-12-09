@@ -1,5 +1,5 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId } from '@sushiswap/sdk'
 import { useEffect, useMemo, useState } from 'react'
 import Fraction from '../../entities/Fraction'
 import { useCloneRewarderContract, useComplexRewarderContract } from '../../hooks/useContract'

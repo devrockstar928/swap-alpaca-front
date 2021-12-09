@@ -1,4 +1,4 @@
-import { Currency, Price } from '@sushiswap/sdk'
+import { Currency, Price } from '@alpaca-swap/sdk'
 import { FC, useState } from 'react'
 import { Field } from '../../../state/limit-order/actions'
 import { useDerivedLimitOrderInfo } from '../../../state/limit-order/hooks'

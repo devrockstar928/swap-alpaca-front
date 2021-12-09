@@ -1,6 +1,6 @@
+import { Fraction as SDKFraction } from '@alpaca-swap/sdk'
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { One, Zero } from '@ethersproject/constants'
-import { Fraction as SDKFraction } from '@sushiswap/sdk'
 import { formatBalance, parseBalance } from '../functions'
 import { isEmptyValue } from '../functions/validate'
 

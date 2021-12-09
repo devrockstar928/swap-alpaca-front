@@ -1,6 +1,6 @@
+import { KASHI_ADDRESS } from '@alpaca-swap/sdk'
 import { splitSignature } from '@ethersproject/bytes'
 import { AddressZero, HashZero } from '@ethersproject/constants'
-import { KASHI_ADDRESS } from '@sushiswap/sdk'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import KashiCooker from '../entities/KashiCooker'

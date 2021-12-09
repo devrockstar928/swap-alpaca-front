@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@alpaca-swap/sdk'
 import React, { RefObject, useCallback, useMemo, useRef, useState } from 'react'
 import { Trash } from 'react-feather'
 import CurrencyLogo from '../../components/CurrencyLogo'

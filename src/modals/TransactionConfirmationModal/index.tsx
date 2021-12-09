@@ -1,6 +1,6 @@
+import { ChainId, Currency } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Currency } from '@sushiswap/sdk'
 import Lottie from 'lottie-react'
 import React, { FC } from 'react'
 import { AlertTriangle, ArrowUpCircle } from 'react-feather'

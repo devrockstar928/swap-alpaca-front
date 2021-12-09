@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@alpaca-swap/sdk'
 import { useCallback, useEffect, useMemo } from 'react'
 import { retry, RetryableError, RetryOptions } from '../../functions/retry'
 import { useActiveWeb3React } from '../../services/web3'

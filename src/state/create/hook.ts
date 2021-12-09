@@ -1,6 +1,6 @@
+import { Currency } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/sdk'
 import { useCallback } from 'react'
 import { useCurrency } from '../../hooks/Tokens'
 import { useActiveWeb3React } from '../../services/web3'

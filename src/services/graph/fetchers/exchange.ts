@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@alpaca-swap/sdk'
 import { GRAPH_HOST } from '../constants'
 import { pager } from '../functions'
 import {

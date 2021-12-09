@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@alpaca-swap/sdk'
 import { getExplorerLink } from '../../../src/functions/explorer'
 
 describe('utils', () => {

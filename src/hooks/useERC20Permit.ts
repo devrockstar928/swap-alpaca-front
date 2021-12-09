@@ -1,7 +1,7 @@
+import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { splitSignature } from '@ethersproject/bytes'
-import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import { useMemo, useState } from 'react'
-import { DAI, SUSHI, USDC } from '../config/tokens'
+import { DAI, RADIO, USDC } from '../config/tokens'
 import { useActiveWeb3React } from '../services/web3'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useEIP2612Contract } from './useContract'
@@ -36,7 +36,7 @@ const PERMITTABLE_TOKENS: {
       name: 'Dai Stablecoin',
       version: '1',
     },
-    [SUSHI[1].address]: { type: PermitType.AMOUNT, name: 'SushiSwap' },
+    [RADIO[1].address]: { type: PermitType.AMOUNT, name: 'RadioSwap' },
   },
   [4]: {
     ['0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735']: {
@@ -44,10 +44,10 @@ const PERMITTABLE_TOKENS: {
       name: 'Dai Stablecoin',
       version: '1',
     },
-    [SUSHI[4].address]: { type: PermitType.AMOUNT, name: 'SushiSwap' },
+    [RADIO[4].address]: { type: PermitType.AMOUNT, name: 'RadioSwap' },
   },
   [3]: {
-    [SUSHI[3].address]: { type: PermitType.AMOUNT, name: 'SushiSwap' },
+    [RADIO[3].address]: { type: PermitType.AMOUNT, name: 'RadioSwap' },
     ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: {
       type: PermitType.AMOUNT,
       name: 'USD Coin',
@@ -261,7 +261,7 @@ export function useERC20Permit(
 
 const REMOVE_V2_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'SushiSwap LP Token',
+  name: 'RadioSwap LP Token',
   type: PermitType.AMOUNT,
 }
 

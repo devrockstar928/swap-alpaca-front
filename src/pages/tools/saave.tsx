@@ -1,13 +1,13 @@
-import Container from '../../components/Container'
 import Head from 'next/head'
+import Container from '../../components/Container'
 import Typography from '../../components/Typography'
 
 export default function Saave() {
   return (
     <Container id="saave-page" className="py-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Saave | Sushi</title>
-        <meta key="description" name="description" content="SushiSwap Saave..." />
+        <title>Saave | Radio</title>
+        <meta key="description" name="description" content="RadioSwap Saave..." />
       </Head>
 
       <Container className="text-center">

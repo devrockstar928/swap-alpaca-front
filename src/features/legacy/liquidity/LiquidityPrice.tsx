@@ -1,6 +1,6 @@
+import { Currency, Percent, Price } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Percent, Price } from '@sushiswap/sdk'
 import React from 'react'
 import Typography from '../../../components/Typography'
 import { ONE_BIPS } from '../../../constants'

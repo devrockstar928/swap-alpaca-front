@@ -1,7 +1,6 @@
-import { RowBetween, RowFixed } from '../../../components/Row'
-
-import { AutoColumn } from '../../../components/Column'
 import React from 'react'
+import { AutoColumn } from '../../../components/Column'
+import { RowBetween, RowFixed } from '../../../components/Row'
 
 function TradeSummary() {
   return (
@@ -14,7 +13,7 @@ function TradeSummary() {
           <RowFixed>
             <div className="text-white">
               1.576 →&nbsp;
-              <span className="text-green">1.787 ETH/SUSHI SLP</span>
+              <span className="text-green">1.787 ETH/RADIO SLP</span>
             </div>
           </RowFixed>
         </RowBetween>

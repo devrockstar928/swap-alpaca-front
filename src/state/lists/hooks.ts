@@ -1,10 +1,10 @@
-import DEFAULT_TOKEN_LIST from '@alpaca-swap/default-token-list'
 import { TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { AppState } from '..'
 import { UNSUPPORTED_LIST_URLS } from '../../config/token-lists'
 import UNSUPPORTED_TOKEN_LIST from '../../constants/token-lists/sushiswap-v2-unsupported.tokenlist.json'
 import { sortByListPriority } from '../../functions/list'
+import DEFAULT_TOKEN_LIST from '../../token-list/default.tokenlist.json'
 import { useAppSelector } from '../hooks'
 import { WrappedTokenInfo } from './wrappedTokenInfo'
 

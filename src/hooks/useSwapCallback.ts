@@ -1,6 +1,6 @@
+import { ChainId, Currency, Percent, Router, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
-import { ChainId, Currency, Percent, Router, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import { useMemo } from 'react'
 import { EIP_1559_ACTIVATION_BLOCK } from '../constants'
 import approveAmountCalldata from '../functions/approveAmountCalldata'

@@ -1,6 +1,6 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/sdk'
 import transakSDK from '@transak/transak-sdk'
 import { useCallback } from 'react'
 import { useActiveWeb3React } from '../../../services/web3'

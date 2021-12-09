@@ -1,6 +1,6 @@
+import { WNATIVE } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { WNATIVE } from '@sushiswap/sdk'
 import React, { useState } from 'react'
 import Button from '../../components/Button'
 import KashiCooker from '../../entities/KashiCooker'

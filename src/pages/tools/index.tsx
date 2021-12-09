@@ -1,24 +1,24 @@
 import { ArrowRightIcon } from '@heroicons/react/outline'
-import Container from '../../components/Container'
-import Head from 'next/head'
 import { I18n } from '@lingui/core'
-import Link from 'next/link'
-import Typography from '../../components/Typography'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import Head from 'next/head'
+import Link from 'next/link'
 import { useMemo } from 'react'
+import Container from '../../components/Container'
+import Typography from '../../components/Typography'
 
 const TOOLS = (i18n: I18n) => [
   {
     id: 1,
     name: 'MEOWSHI',
-    description: i18n._(t`Redenominate xSUSHI into MEOWSHI`),
+    description: i18n._(t`Redenominate xRADIO into MEOWSHI`),
     href: '/tools/meowshi',
   },
   {
     id: 2,
     name: 'INARI',
-    description: 'Deposit SUSHI in various strategies & platforms in one click!',
+    description: 'Deposit RADIO in various strategies & platforms in one click!',
     href: '/inari',
   },
 ]
@@ -30,8 +30,8 @@ export default function Tools() {
   return (
     <Container id="tools-page" className="py-4 space-y-4 md:py-8 lg:py-12" maxWidth="xl">
       <Head>
-        <title>Tools | Sushi</title>
-        <meta key="description" name="description" content="SushiSwap tools..." />
+        <title>Tools | Radio</title>
+        <meta key="description" name="description" content="RadioSwap tools..." />
       </Head>
       <Typography variant="h1" component="h1">
         Tools

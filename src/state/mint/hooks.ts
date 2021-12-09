@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price, Token } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price, Token } from '@sushiswap/sdk'
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { tryParseAmount } from '../../functions/parse'

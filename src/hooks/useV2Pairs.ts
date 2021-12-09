@@ -1,5 +1,5 @@
+import { computePairAddress, Currency, CurrencyAmount, FACTORY_ADDRESS, Pair } from '@alpaca-swap/sdk'
 import { Interface } from '@ethersproject/abi'
-import { computePairAddress, Currency, CurrencyAmount, FACTORY_ADDRESS, Pair } from '@sushiswap/sdk'
 import { useMemo } from 'react'
 import IUniswapV2PairABI from '../abi/IUniswapV2Pair.json'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'

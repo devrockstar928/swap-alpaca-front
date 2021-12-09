@@ -4,7 +4,6 @@ import Lottie from 'lottie-react'
 import React, { FC } from 'react'
 import loadingCircle from '../../../animation/loading-circle.json'
 import Badge from '../../../components/Badge'
-import CurrencyLogo from '../../../components/CurrencyLogo'
 import useLimitOrders from '../../../hooks/useLimitOrders'
 // import { OrderStatus } from '@sushiswap/limit-order-sdk'
 import Pagination from './Pagination'
@@ -38,7 +37,7 @@ const CompletedOrders: FC = () => {
               </div>
               <div className="flex items-center justify-end cursor-pointer hover:text-primary">{i18n._(t`Filled`)}</div>
             </div>
-            <div className="flex flex-col gap-2 md:gap-5">
+            {/* <div className="flex flex-col gap-2 md:gap-5">
               {completed.data.map((order, index) => (
                 <div
                   key={index}
@@ -90,7 +89,7 @@ const CompletedOrders: FC = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
             <Pagination
               onChange={completed.setPage}
               totalPages={completed.maxPages}

@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
-import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
-import FarmList from '../../../features/analytics/Farms/FarmList'
 import Search from '../../../components/Search'
+import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
+import Background from '../../../features/analytics/Background'
+import FarmList from '../../../features/analytics/Farms/FarmList'
 import useFarmRewards from '../../../hooks/useFarmRewards'
 import useFuse from '../../../hooks/useFuse'
-import Background from '../../../features/analytics/Background'
 
 export default function Farms(): JSX.Element {
   const farms = useFarmRewards()
@@ -18,7 +18,7 @@ export default function Farms(): JSX.Element {
             token1: farm.pair.token1,
             address: farm.pair.id,
             name: farm.pair.symbol ?? `${farm.pair.token0.symbol}-${farm.pair.token1.symbol}`,
-            type: farm.pair.symbol ? 'Kashi Farm' : 'Sushi Farm',
+            type: farm.pair.symbol ? 'Kashi Farm' : 'Radio Farm',
           },
           rewards: farm.rewards,
           liquidity: farm.tvl,

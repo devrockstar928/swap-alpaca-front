@@ -1,8 +1,8 @@
+import { CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from '@alpaca-swap/sdk'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from '@sushiswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
@@ -173,8 +173,8 @@ function Create() {
   return (
     <>
       <Head>
-        <title>Create Lending Pair | Kashi by Sushi</title>
-        <meta key="description" name="description" content="Create Lending Pair on Kashi by Sushi" />
+        <title>Create Lending Pair | Kashi by Radio</title>
+        <meta key="description" name="description" content="Create Lending Pair on Kashi by Radio" />
       </Head>
       <Card
         className="h-full bg-dark-900"

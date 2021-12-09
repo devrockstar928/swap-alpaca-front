@@ -1,6 +1,3 @@
-import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
-import { Contract } from '@ethersproject/contracts'
-import { Web3Provider } from '@ethersproject/providers'
 import {
   ChainId,
   FACTOR_PRECISION,
@@ -13,7 +10,10 @@ import {
   PROTOCOL_FEE,
   PROTOCOL_FEE_DIVISOR,
   STARTING_INTEREST_PER_YEAR,
-} from '@sushiswap/sdk'
+} from '@alpaca-swap/sdk'
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
+import { Contract } from '@ethersproject/contracts'
+import { Web3Provider } from '@ethersproject/providers'
 import { getSigner } from '../functions/contract'
 import { getCurrency } from './currency/getCurrency'
 import { e10, ZERO } from './math'

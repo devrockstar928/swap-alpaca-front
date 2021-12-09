@@ -1,6 +1,6 @@
+import { Currency, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import React, { useMemo } from 'react'
 import QuestionHelper from '../../components/QuestionHelper'
 import { computeRealizedLPFeePercent } from '../../functions/prices'

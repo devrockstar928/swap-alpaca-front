@@ -1,10 +1,10 @@
+import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { ArrowDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@sushiswap/sdk'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -422,8 +422,8 @@ export default function Remove() {
   return (
     <Container id="remove-liquidity-page" className="py-4 space-y-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Remove Liquidity | Sushi</title>
-        <meta key="description" name="description" content="Remove liquidity from the SushiSwap AMM" />
+        <title>Remove Liquidity | Radio</title>
+        <meta key="description" name="description" content="Remove liquidity from the RadioSwap AMM" />
       </Head>
       <div className="px-4 mb-5">
         <NavLink href="/pool">

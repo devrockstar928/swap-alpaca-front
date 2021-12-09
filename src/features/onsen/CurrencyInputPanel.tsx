@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, Percent, Token } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Percent, Token } from '@sushiswap/sdk'
 import Lottie from 'lottie-react'
 import React, { ReactNode } from 'react'
 import selectCoinAnimation from '../../animation/select-coin.json'

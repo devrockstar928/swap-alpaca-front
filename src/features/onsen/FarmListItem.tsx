@@ -1,13 +1,12 @@
-import { classNames, formatNumber, formatPercent } from '../../functions'
-
 import { Disclosure } from '@headlessui/react'
-import DoubleLogo from '../../components/DoubleLogo'
-import FarmListItemDetails from './FarmListItemDetails'
-import Image from '../../components/Image'
-import { PairType } from './enum'
-import QuestionHelper from '../../components/QuestionHelper'
 import React from 'react'
+import DoubleLogo from '../../components/DoubleLogo'
+import Image from '../../components/Image'
+import QuestionHelper from '../../components/QuestionHelper'
+import { classNames, formatNumber, formatPercent } from '../../functions'
 import { useCurrency } from '../../hooks/Tokens'
+import { PairType } from './enum'
+import FarmListItemDetails from './FarmListItemDetails'
 
 const FarmListItem = ({ farm, ...rest }) => {
   const token0 = useCurrency(farm.pair.token0.id)
@@ -34,7 +33,7 @@ const FarmListItem = ({ farm, ...rest }) => {
                     </span>
                   </div>
                   {farm?.pair?.type === PairType.SWAP && (
-                    <div className="text-xs md:text-base text-secondary">SushiSwap Farm</div>
+                    <div className="text-xs md:text-base text-secondary">RadioSwap Farm</div>
                   )}
                   {farm?.pair?.type === PairType.KASHI && (
                     <div className="text-xs md:text-base text-secondary">Kashi Farm</div>

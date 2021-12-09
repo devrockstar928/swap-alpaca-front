@@ -1,6 +1,6 @@
+import { Currency, Percent, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Percent, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import React, { useMemo } from 'react'
 import QuestionHelper from '../../../components/QuestionHelper'
 import { RowBetween, RowFixed } from '../../../components/Row'
@@ -82,9 +82,9 @@ export function AdvancedSwapDetails({ trade, allowedSlippage }: AdvancedSwapDeta
 
       <RowBetween>
         <RowFixed>
-          <div className="text-sm text-secondary">{i18n._(t`xSUSHI Fee`)}</div>
+          <div className="text-sm text-secondary">{i18n._(t`xRADIO Fee`)}</div>
           <QuestionHelper
-            text={i18n._(t`A portion of each trade (0.05%) goes to xSUSHI holders as a protocol incentive.`)}
+            text={i18n._(t`A portion of each trade (0.05%) goes to xRADIO holders as a protocol incentive.`)}
           />
         </RowFixed>
         <div className="text-sm font-bold text-high-emphesis">

@@ -1,6 +1,6 @@
+import { Percent } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@sushiswap/sdk'
 import React, { useRef, useState } from 'react'
 import { DEFAULT_DEADLINE_FROM_NOW } from '../../constants'
 import { classNames } from '../../functions'

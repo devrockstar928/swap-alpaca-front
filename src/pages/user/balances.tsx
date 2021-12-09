@@ -1,7 +1,7 @@
+import { BENTOBOX_ADDRESS, CurrencyAmount, Token, WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
 import { Transition } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { BENTOBOX_ADDRESS, CurrencyAmount, Token, WNATIVE_ADDRESS } from '@sushiswap/sdk'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Button from '../../components/Button'
@@ -39,7 +39,7 @@ function Balances() {
   return (
     <>
       <Head>
-        <title>Balances | Sushi</title>
+        <title>Balances | Radio</title>
         <meta key="description" name="description" content="" />
       </Head>
       <Card

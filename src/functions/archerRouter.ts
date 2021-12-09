@@ -1,4 +1,3 @@
-import { getAddress } from '@ethersproject/address'
 import {
   ChainId,
   Currency,
@@ -8,7 +7,8 @@ import {
   Trade,
   TradeOptions,
   TradeType,
-} from '@sushiswap/sdk'
+} from '@alpaca-swap/sdk'
+import { getAddress } from '@ethersproject/address'
 import invariant from 'tiny-invariant'
 import warning from 'tiny-warning'
 

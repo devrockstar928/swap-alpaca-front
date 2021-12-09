@@ -1,6 +1,6 @@
+import { ChainId, Currency, NATIVE, Token } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Currency, NATIVE, Token } from '@sushiswap/sdk'
 import { useRouter } from 'next/router'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'

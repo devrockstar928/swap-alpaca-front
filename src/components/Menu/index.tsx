@@ -1,27 +1,26 @@
 import { Popover, Transition } from '@headlessui/react'
-import React, { Fragment } from 'react'
-
-import ExternalLink from '../ExternalLink'
 import { I18n } from '@lingui/core'
-import Image from 'next/image'
-import { classNames } from '../../functions/styling'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import Image from 'next/image'
+import React, { Fragment } from 'react'
+import { classNames } from '../../functions/styling'
+import ExternalLink from '../ExternalLink'
 
 const items = (i18n: I18n) => [
   {
     name: i18n._(t`Docs`),
-    description: i18n._(t`Documentation for users of Sushi.`),
+    description: i18n._(t`Documentation for users of Radio.`),
     href: 'https://docs.sushi.com',
   },
   {
     name: i18n._(t`Dev`),
-    description: i18n._(t`Documentation for developers of Sushi.`),
+    description: i18n._(t`Documentation for developers of Radio.`),
     href: 'https://dev.sushi.com',
   },
   {
     name: i18n._(t`Open Source`),
-    description: i18n._(t`Sushi is a supporter of Open Source.`),
+    description: i18n._(t`Radio is a supporter of Open Source.`),
     href: 'https://github.com/sushiswap',
   },
   {

@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@sushiswap/sdk'
+import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@alpaca-swap/sdk'
 import { useMemo } from 'react'
 import { useActiveWeb3React } from '../services/web3'
 import { useV2TradeExactOut } from './useV2Trades'

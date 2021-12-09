@@ -1,7 +1,7 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/sdk'
 import Head from 'next/head'
 import React from 'react'
 import Alert from '../../../components/Alert'
@@ -22,7 +22,7 @@ function OpenOrdersPage() {
   return (
     <Container id="open-order-page" className="py-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Open Orders | Sushi</title>
+        <title>Open Orders | Radio</title>
         <meta name="description" content="Open orders..." />
       </Head>
       <div className="min-w-0 md:min-w-[672px]">

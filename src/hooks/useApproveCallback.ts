@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, Percent, ROUTER_ADDRESS, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, CurrencyAmount, Percent, ROUTER_ADDRESS, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import { useCallback, useMemo } from 'react'
 import { calculateGasMargin } from '../functions/trade'
 import { useActiveWeb3React } from '../services/web3'

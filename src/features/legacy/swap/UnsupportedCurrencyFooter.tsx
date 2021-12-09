@@ -1,4 +1,4 @@
-import { Currency, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@alpaca-swap/sdk'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from '../../../components/Button'
