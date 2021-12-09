@@ -1,7 +1,7 @@
+import { Percent } from '@alpaca-swap/sdk'
 import { AdjustmentsIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@sushiswap/sdk'
 import React, { useRef, useState } from 'react'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'

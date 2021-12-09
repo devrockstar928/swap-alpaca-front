@@ -1,6 +1,6 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { Trans, useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/sdk'
 import cookie from 'cookie-cutter'
 import Image from 'next/image'
 import React, { FC, Fragment } from 'react'

@@ -1,25 +1,25 @@
-import { Borrow, Repay } from '../../../features/kashi'
-import Provider, { useKashiInfo, useKashiPair } from '../../../features/kashi/context'
+import { Tab } from '@headlessui/react'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
-import { formatNumber, formatPercent } from '../../../functions/format'
 import Card from '../../../components/Card'
 import Dots from '../../../components/Dots'
 import GradientDot from '../../../components/GradientDot'
-import Head from 'next/head'
 import Image from '../../../components/Image'
-import { KashiCooker } from '../../../entities'
-import Layout from '../../../layouts/Kashi'
 import QuestionHelper from '../../../components/QuestionHelper'
-import { Tab } from '@headlessui/react'
+import { KashiCooker } from '../../../entities'
+import { Borrow, Repay } from '../../../features/kashi'
+import Provider, { useKashiInfo, useKashiPair } from '../../../features/kashi/context'
 import { cloudinaryLoader } from '../../../functions/cloudinary'
-import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../services/web3'
-import { useLingui } from '@lingui/react'
-import { useRouter } from 'next/router'
+import { formatNumber, formatPercent } from '../../../functions/format'
 import { useToken } from '../../../hooks/Tokens'
-import { useTransactionAdder } from '../../../state/transactions/hooks'
-import { useV2Pair } from '../../../hooks/useV2Pairs'
 import useUSDCPrice from '../../../hooks/useUSDCPrice'
+import { useV2Pair } from '../../../hooks/useV2Pairs'
+import Layout from '../../../layouts/Kashi'
+import { useActiveWeb3React } from '../../../services/web3'
+import { useTransactionAdder } from '../../../state/transactions/hooks'
 
 function Pair() {
   const router = useRouter()
@@ -48,11 +48,11 @@ function Pair() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)} | Sushi</title>
+        <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)} | Radio</title>
         <meta
           key="description"
           name="description"
-          content={`Borrow ${pair?.asset?.symbol} against ${pair?.collateral?.symbol} collateral on Kashi by Sushi`}
+          content={`Borrow ${pair?.asset?.symbol} against ${pair?.collateral?.symbol} collateral on Kashi by Radio`}
         />
       </Head>
       <Card
@@ -265,7 +265,7 @@ const PairLayout = ({ children }) => {
                 </div>
               </>
             )}
-            {pair && pair.oracle.name === 'SushiSwap' && (
+            {pair && pair.oracle.name === 'RadioSwap' && (
               <>
                 <div className="flex justify-between pt-3">
                   <div className="text-xl text-high-emphesis">{i18n._(t`SLP`)}</div>

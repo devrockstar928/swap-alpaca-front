@@ -1,9 +1,3 @@
-import { getAddress } from '@ethersproject/address'
-import { BigNumber } from '@ethersproject/bignumber'
-import { Switch } from '@headlessui/react'
-import { MinusIcon, PlusIcon } from '@heroicons/react/solid'
-import { i18n } from '@lingui/core'
-import { t } from '@lingui/macro'
 import {
   ChainId,
   CurrencyAmount,
@@ -14,7 +8,13 @@ import {
   Token,
   USD,
   ZERO,
-} from '@sushiswap/sdk'
+} from '@alpaca-swap/sdk'
+import { getAddress } from '@ethersproject/address'
+import { BigNumber } from '@ethersproject/bignumber'
+import { Switch } from '@headlessui/react'
+import { MinusIcon, PlusIcon } from '@heroicons/react/solid'
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
 import React, { useState } from 'react'
 import Button, { ButtonError } from '../../components/Button'
 import Dots from '../../components/Dots'

@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@alpaca-swap/sdk'
 import { request } from 'graphql-request'
 import { GRAPH_HOST } from '../constants'
 import { barHistoriesQuery, barQuery } from '../queries/bar'

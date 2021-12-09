@@ -1,5 +1,5 @@
+import { ChainId, Currency, CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { AddressZero } from '@ethersproject/constants'
-import { ChainId, Currency, CurrencyAmount, Token } from '@sushiswap/sdk'
 import approveAmountCalldata, { toHex } from '../../../src/functions/approveAmountCalldata'
 
 describe('approveAmountCalldata functions', () => {

@@ -1,4 +1,4 @@
-import { Currency } from '@sushiswap/sdk'
+import { Currency } from '@alpaca-swap/sdk'
 import React from 'react'
 import Button from '../../components/Button'
 import CurrencyLogo from '../../components/CurrencyLogo'

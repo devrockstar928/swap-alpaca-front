@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@sushiswap/sdk'
+import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { useCallback } from 'react'
 import { ApprovalState } from '../../../hooks/useApproveCallback'
 import useBentoMasterApproveCallback, { BentoMasterApproveCallback } from '../../../hooks/useBentoMasterApproveCallback'

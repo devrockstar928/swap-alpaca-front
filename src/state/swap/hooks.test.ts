@@ -1,10 +1,10 @@
-import { ChainId, SUSHI_ADDRESS } from '@sushiswap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@alpaca-swap/sdk'
 import { parse } from 'qs'
 import { Field } from './actions'
 import { queryParametersToSwapState } from './hooks'
 
 describe('hooks', () => {
-  const sushiAddress = SUSHI_ADDRESS[ChainId.MAINNET]
+  const sushiAddress = RADIO_ADDRESS[ChainId.MAINNET]
   describe('#queryParametersToSwapState', () => {
     test('ETH to DAI', () => {
       expect(

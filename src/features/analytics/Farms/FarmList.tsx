@@ -1,10 +1,9 @@
-import _ from 'lodash'
-import React, { useMemo } from 'react'
-import { formatNumber, formatNumberScale, formatPercent } from '../../../functions'
-import Table from '../../../components/Table'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
-import { useCurrency } from '../../../hooks/Tokens'
 import Image from 'next/image'
+import React from 'react'
+import DoubleCurrencyLogo from '../../../components/DoubleLogo'
+import Table from '../../../components/Table'
+import { formatNumber, formatPercent } from '../../../functions'
+import { useCurrency } from '../../../hooks/Tokens'
 import ColoredNumber from '../ColoredNumber'
 
 interface FarmListProps {
@@ -25,7 +24,7 @@ type FarmListNameProps = {
       id: string
     }
     name: string
-    type: 'Sushi Farm' | 'Kashi Farm'
+    type: 'Radio Farm' | 'Kashi Farm'
   }
 }
 

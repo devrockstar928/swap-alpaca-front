@@ -1,6 +1,6 @@
+import { KASHI_ADDRESS, USDC_ADDRESS, WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
-import { KASHI_ADDRESS, USDC_ADDRESS, WNATIVE_ADDRESS } from '@sushiswap/sdk'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import ERC20_ABI from '../../constants/abis/erc20.json'
 import { toAmount } from '../../functions/bentobox'

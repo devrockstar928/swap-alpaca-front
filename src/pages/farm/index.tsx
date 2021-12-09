@@ -1,17 +1,17 @@
-import { Chef, PairType } from '../../features/onsen/enum'
-import { useActiveWeb3React } from '../../services/web3'
-import useFuse from '../../hooks/useFuse'
-import Container from '../../components/Container'
-import FarmList from '../../features/onsen/FarmList'
 import Head from 'next/head'
-import Menu from '../../features/onsen/FarmMenu'
+import { useRouter } from 'next/router'
 import React from 'react'
+import Container from '../../components/Container'
 import Search from '../../components/Search'
+import Provider from '../../features/kashi/context'
+import { Chef, PairType } from '../../features/onsen/enum'
+import FarmList from '../../features/onsen/FarmList'
+import Menu from '../../features/onsen/FarmMenu'
+import { usePositions } from '../../features/onsen/hooks'
 import { classNames } from '../../functions'
 import useFarmRewards from '../../hooks/useFarmRewards'
-import { usePositions } from '../../features/onsen/hooks'
-import { useRouter } from 'next/router'
-import Provider from '../../features/kashi/context'
+import useFuse from '../../hooks/useFuse'
+import { useActiveWeb3React } from '../../services/web3'
 
 export default function Farm(): JSX.Element {
   const { chainId } = useActiveWeb3React()
@@ -51,8 +51,8 @@ export default function Farm(): JSX.Element {
   return (
     <Container id="farm-page" className="grid h-full grid-cols-4 py-4 mx-auto md:py-8 lg:py-12 gap-9" maxWidth="7xl">
       <Head>
-        <title>Farm | Sushi</title>
-        <meta key="description" name="description" content="Farm SUSHI" />
+        <title>Farm | Radio</title>
+        <meta key="description" name="description" content="Farm RADIO" />
       </Head>
       <div className={classNames('sticky top-0 hidden lg:block md:col-span-1')} style={{ maxHeight: '40rem' }}>
         <Menu positionsLength={positions.length} />

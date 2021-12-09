@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react'
+import Search from '../../../components/Search'
 import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
+import Background from '../../../features/analytics/Background'
 import DashboardChartCard from '../../../features/analytics/Dashboard/DashboardChartCard'
 import DashboardTabs from '../../../features/analytics/Dashboard/DashboardTabs'
-import PairList from '../../../features/analytics/Pairs/PairList'
 import PoolList from '../../../features/analytics/Farms/FarmList'
-import Search from '../../../components/Search'
+import PairList from '../../../features/analytics/Pairs/PairList'
 import TokenList from '../../../features/analytics/Tokens/TokenList'
 import useFarmRewards from '../../../hooks/useFarmRewards'
-import { useActiveWeb3React } from '../../../services/web3'
-import { useBlock, useNativePrice, useSushiPairs, useTokens } from '../../../services/graph'
 import useFuse from '../../../hooks/useFuse'
-import Background from '../../../features/analytics/Background'
+import { useBlock, useNativePrice, useSushiPairs, useTokens } from '../../../services/graph'
+import { useActiveWeb3React } from '../../../services/web3'
 
 export default function Dashboard(): JSX.Element {
   const [type, setType] = useState<'pools' | 'pairs' | 'tokens'>('pools')
@@ -57,7 +57,7 @@ export default function Dashboard(): JSX.Element {
             token1: farm.pair.token1,
             address: farm.pair.id,
             name: farm.pair.symbol ?? `${farm.pair.token0.symbol}-${farm.pair.token1.symbol}`,
-            type: farm.pair.symbol ? 'Kashi Farm' : 'Sushi Farm',
+            type: farm.pair.symbol ? 'Kashi Farm' : 'Radio Farm',
           },
           rewards: farm.rewards,
           liquidity: farm.tvl,
@@ -153,7 +153,7 @@ export default function Dashboard(): JSX.Element {
       <Background background="dashboard">
         <div className="grid items-center justify-between grid-cols-2">
           <div>
-            <div className="text-3xl font-bold text-high-emphesis">Sushi Analytics</div>
+            <div className="text-3xl font-bold text-high-emphesis">Radio Analytics</div>
             <div className="">
               Dive deeper in the analytics of sushi bar,
               <br /> pools, pairs and tokens.

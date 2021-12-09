@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/sdk'
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -74,7 +74,7 @@ export default function PoolFinder() {
   return (
     <Container id="find-pool-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>{i18n._(t`Find Pool`)} | Sushi</title>
+        <title>{i18n._(t`Find Pool`)} | Radio</title>
         <meta key="description" name="description" content="Find pool" />
       </Head>
       <div className="p-4 mb-3 space-y-3">

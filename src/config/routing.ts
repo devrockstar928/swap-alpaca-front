@@ -1,5 +1,5 @@
 // a list of tokens by chain
-import { ChainId, Token, WNATIVE } from '@sushiswap/sdk'
+import { ChainId, Token, WNATIVE } from '@alpaca-swap/sdk'
 import * as MOONRIVER from './moonriver'
 import * as TELOS from './telos'
 import {
@@ -41,12 +41,12 @@ import {
   PLAY,
   PONT,
   PWING,
+  RADIO,
   RAI,
   RENBTC,
   RUNE,
   SPANK,
   STETH,
-  SUSHI,
   USDC,
   USDP,
   USDT,
@@ -127,7 +127,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     NFTX,
     STETH,
     OHM,
-    SUSHI[ChainId.MAINNET],
+    RADIO[ChainId.MAINNET],
   ],
   [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
   [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
@@ -151,7 +151,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     AVALANCHE.USDT_OLD,
     AVALANCHE.WBTC_OLD,
     AVALANCHE.WETH_OLD,
-    SUSHI[ChainId.AVALANCHE],
+    RADIO[ChainId.AVALANCHE],
   ],
   [ChainId.HARMONY]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.HARMONY],
@@ -243,7 +243,7 @@ export const CUSTOM_BASES: {
     [AMPL.address]: [DAI, WNATIVE[ChainId.MAINNET]],
   },
   [ChainId.MATIC]: {
-    [MATIC.TEL.address]: [MATIC.SUSHI, MATIC.AAVE],
+    [MATIC.TEL.address]: [MATIC.RADIO, MATIC.AAVE],
   },
 }
 
@@ -251,7 +251,7 @@ export const CUSTOM_BASES: {
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainTokenList = {
-  [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC, OHM, SUSHI[ChainId.MAINNET]],
+  [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC, OHM, RADIO[ChainId.MAINNET]],
   [ChainId.MATIC]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.MATIC],
     MATIC.USV,
@@ -260,7 +260,7 @@ export const COMMON_BASES: ChainTokenList = {
     MATIC.DAI,
     MATIC.WETH,
     MATIC.USDT,
-    SUSHI[ChainId.MATIC],
+    RADIO[ChainId.MATIC],
   ],
   [ChainId.FANTOM]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.FANTOM],
@@ -268,7 +268,7 @@ export const COMMON_BASES: ChainTokenList = {
     FANTOM.USDC,
     FANTOM.WBTC,
     FANTOM.WETH,
-    SUSHI[ChainId.FANTOM],
+    RADIO[ChainId.FANTOM],
   ],
   [ChainId.BSC]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.BSC],
@@ -278,14 +278,14 @@ export const COMMON_BASES: ChainTokenList = {
     BSC.USDT,
     BSC.BTCB,
     BSC.WETH,
-    SUSHI[ChainId.BSC],
+    RADIO[ChainId.BSC],
   ],
   [ChainId.ARBITRUM]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.ARBITRUM],
     ARBITRUM.WBTC,
     ARBITRUM.USDC,
     ARBITRUM.USDT,
-    SUSHI[ChainId.ARBITRUM],
+    RADIO[ChainId.ARBITRUM],
     new Token(ChainId.ARBITRUM, '0x3E6648C5a70A150A88bCE65F4aD4d506Fe15d2AF', 18, 'SPELL', 'Spell Token'),
     ARBITRUM.MIM,
   ],
@@ -295,7 +295,7 @@ export const COMMON_BASES: ChainTokenList = {
     XDAI.USDT,
     XDAI.WBTC,
     XDAI.WETH,
-    SUSHI[ChainId.XDAI],
+    RADIO[ChainId.XDAI],
   ],
   [ChainId.AVALANCHE]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE],
@@ -304,7 +304,7 @@ export const COMMON_BASES: ChainTokenList = {
     AVALANCHE.WBTC,
     AVALANCHE.WETH,
     AVALANCHE.USDC,
-    SUSHI[ChainId.AVALANCHE],
+    RADIO[ChainId.AVALANCHE],
   ],
   [ChainId.HARMONY]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.HARMONY],
@@ -313,7 +313,7 @@ export const COMMON_BASES: ChainTokenList = {
     HARMONY.USDT,
     HARMONY.WETH,
     HARMONY.WBTC,
-    SUSHI[ChainId.HARMONY],
+    RADIO[ChainId.HARMONY],
   ],
   [ChainId.HECO]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.HECO],
@@ -322,7 +322,7 @@ export const COMMON_BASES: ChainTokenList = {
     HECO.USDT,
     HECO.WBTC,
     HECO.WETH,
-    SUSHI[ChainId.HECO],
+    RADIO[ChainId.HECO],
   ],
   [ChainId.OKEX]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.OKEX],
@@ -331,7 +331,7 @@ export const COMMON_BASES: ChainTokenList = {
     OKEX.USDT,
     OKEX.WBTC,
     OKEX.WETH,
-    SUSHI[ChainId.OKEX],
+    RADIO[ChainId.OKEX],
   ],
   [ChainId.CELO]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.CELO],
@@ -339,7 +339,7 @@ export const COMMON_BASES: ChainTokenList = {
     CELO.cUSD,
     CELO.cEURO,
     CELO.WBTC,
-    SUSHI[ChainId.CELO],
+    RADIO[ChainId.CELO],
   ],
   [ChainId.MOONRIVER]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.MOONRIVER],
@@ -350,7 +350,7 @@ export const COMMON_BASES: ChainTokenList = {
     MOONRIVER.MIM,
     MOONRIVER.BTC,
     MOONRIVER.aROME,
-    SUSHI[ChainId.MOONRIVER],
+    RADIO[ChainId.MOONRIVER],
   ],
   [ChainId.PALM]: [...WRAPPED_NATIVE_ONLY[ChainId.PALM], PALM.WETH, PALM.DAI],
   [ChainId.FUSE]: [...WRAPPED_NATIVE_ONLY[ChainId.FUSE], FUSE.USDC, FUSE.USDT, FUSE.WBTC, FUSE.WETH, FUSE.DAI],
@@ -360,7 +360,7 @@ export const COMMON_BASES: ChainTokenList = {
     TELOS.USDT,
     TELOS.WETH,
     TELOS.WBTC,
-    SUSHI[ChainId.TELOS],
+    RADIO[ChainId.TELOS],
   ],
 }
 
@@ -391,7 +391,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     AVALANCHE.USDT_OLD,
     AVALANCHE.WBTC_OLD,
     AVALANCHE.WETH_OLD,
-    SUSHI[ChainId.AVALANCHE],
+    RADIO[ChainId.AVALANCHE],
   ],
   [ChainId.HARMONY]: [
     ...WRAPPED_NATIVE_ONLY[ChainId.HARMONY],
@@ -432,7 +432,7 @@ export const PINNED_PAIRS: {
   readonly [chainId in ChainId]?: [Token, Token][]
 } = {
   [ChainId.MAINNET]: [
-    [SUSHI[ChainId.MAINNET], WNATIVE[ChainId.MAINNET]],
+    [RADIO[ChainId.MAINNET], WNATIVE[ChainId.MAINNET]],
     [
       new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
       new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin'),

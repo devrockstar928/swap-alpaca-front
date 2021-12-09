@@ -1,6 +1,6 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/sdk'
 import { useActiveWeb3React } from '../../services/web3'
 import ExternalLink from '../ExternalLink'
 import Polling from '../Polling'

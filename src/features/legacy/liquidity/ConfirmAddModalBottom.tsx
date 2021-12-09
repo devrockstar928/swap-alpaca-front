@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, Fraction, Percent } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Fraction, Percent } from '@sushiswap/sdk'
 import React from 'react'
 import Button from '../../../components/Button'
 import { Field } from '../../../state/mint/actions'

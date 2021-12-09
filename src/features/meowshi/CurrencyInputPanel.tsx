@@ -1,11 +1,11 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/sdk'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import Input from '../../components/Input'
 import Typography from '../../components/Typography'
-import { SUSHI, XSUSHI } from '../../config/tokens'
+import { RADIO, XRADIO } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
@@ -36,13 +36,13 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
             <div className="flex items-center gap-4">
               <Image
                 src={
-                  currency === SUSHI[ChainId.MAINNET]
+                  currency === RADIO[ChainId.MAINNET]
                     ? '/images/tokens/sushi-square.jpg'
-                    : currency === XSUSHI
+                    : currency === XRADIO
                     ? '/images/tokens/xsushi-square.jpg'
                     : '/images/tokens/nyan-square.jpg'
                 }
-                alt="SUSHI"
+                alt="RADIO"
                 width="62px"
                 height="62px"
                 objectFit="contain"
@@ -52,13 +52,13 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
                 <Typography variant="h3" className="leading-6 text-high-emphesis" weight={700}>
                   {currency?.symbol}
                 </Typography>
-                {(currency === SUSHI[ChainId.MAINNET] || currency === XSUSHI) && (
+                {(currency === RADIO[ChainId.MAINNET] || currency === XRADIO) && (
                   <Typography
                     variant="xs"
                     className="underline cursor-pointer text-blue"
-                    onClick={() => setCurrency(currency === XSUSHI ? SUSHI[ChainId.MAINNET] : XSUSHI, field)}
+                    onClick={() => setCurrency(currency === XRADIO ? RADIO[ChainId.MAINNET] : XRADIO, field)}
                   >
-                    {currencies[field] === SUSHI[ChainId.MAINNET] ? i18n._(t`Use xSUSHI`) : i18n._(t`Use SUSHI`)}
+                    {currencies[field] === RADIO[ChainId.MAINNET] ? i18n._(t`Use xRADIO`) : i18n._(t`Use RADIO`)}
                   </Typography>
                 )}
               </div>

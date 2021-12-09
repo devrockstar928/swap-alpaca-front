@@ -1,5 +1,5 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { Contract } from '@ethersproject/contracts'
-import { ChainId } from '@sushiswap/sdk'
 import stringify from 'fast-json-stable-stringify'
 import useSWR from 'swr'
 

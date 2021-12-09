@@ -1,6 +1,6 @@
+import { WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { WNATIVE_ADDRESS } from '@sushiswap/sdk'
 import { useCallback, useEffect, useState } from 'react'
 import ERC20_ABI from '../constants/abis/erc20.json'
 import { isAddress } from '../functions/validate'

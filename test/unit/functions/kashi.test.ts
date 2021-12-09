@@ -1,11 +1,11 @@
-import { BigNumber } from '@ethersproject/bignumber'
 import {
   MAXIMUM_INTEREST_PER_YEAR,
   MAXIMUM_TARGET_UTILIZATION,
   MINIMUM_INTEREST_PER_YEAR,
   MINIMUM_TARGET_UTILIZATION,
   STARTING_INTEREST_PER_YEAR,
-} from '@sushiswap/sdk'
+} from '@alpaca-swap/sdk'
+import { BigNumber } from '@ethersproject/bignumber'
 import '../../../src/bootstrap'
 import { e10, ZERO } from '../../../src/functions'
 import {
@@ -27,7 +27,7 @@ describe('kashi functions', () => {
       isNative: false,
       isToken: true,
       list: {
-        name: 'SushiSwap Menu',
+        name: 'RadioSwap Menu',
         timestamp: '2021-09-08T01:59:50.068Z',
         version: {
           major: 15,

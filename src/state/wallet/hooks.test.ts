@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@sushiswap/sdk'
+import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { serializeBalancesMap } from './hooks'
 
 describe('Wallet Hooks', () => {

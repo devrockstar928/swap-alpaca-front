@@ -1,6 +1,6 @@
+import { USDC } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { USDC } from '@sushiswap/sdk'
 import React, { FC, useCallback } from 'react'
 import Button from '../../../components/Button'
 import CurrencyLogo from '../../../components/CurrencyLogo'

@@ -1,22 +1,22 @@
-import React, { useMemo } from 'react'
-import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
-import { useRouter } from 'next/router'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
-import { useBlock, useNativePrice, useSushiPairs, useTransactions } from '../../../services/graph'
-import { useCurrency } from '../../../hooks/Tokens'
-import { times } from 'lodash'
-import CurrencyLogo from '../../../components/CurrencyLogo'
-import { formatNumber, shortenAddress } from '../../../functions'
-import PairChartCard from '../../../features/analytics/Pairs/Pair/PairChartCard'
-import InfoCard from '../../../features/analytics/InfoCard'
-import { ExternalLink as LinkIcon } from 'react-feather'
-import Link from 'next/link'
-import TransactionList from '../../../features/analytics/Tokens/Token/TransactionList'
-import Background from '../../../features/analytics/Background'
-import useCopyClipboard from '../../../hooks/useCopyClipboard'
 import { DuplicateIcon } from '@heroicons/react/outline'
 import { CheckIcon } from '@heroicons/react/solid'
+import { times } from 'lodash'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useMemo } from 'react'
+import { ExternalLink as LinkIcon } from 'react-feather'
+import CurrencyLogo from '../../../components/CurrencyLogo'
+import DoubleCurrencyLogo from '../../../components/DoubleLogo'
+import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
+import Background from '../../../features/analytics/Background'
+import InfoCard from '../../../features/analytics/InfoCard'
+import PairChartCard from '../../../features/analytics/Pairs/Pair/PairChartCard'
+import TransactionList from '../../../features/analytics/Tokens/Token/TransactionList'
+import { formatNumber, shortenAddress } from '../../../functions'
 import { getExplorerLink } from '../../../functions/explorer'
+import { useCurrency } from '../../../hooks/Tokens'
+import useCopyClipboard from '../../../hooks/useCopyClipboard'
+import { useBlock, useNativePrice, useSushiPairs, useTransactions } from '../../../services/graph'
 import { useActiveWeb3React } from '../../../services/web3'
 
 export default function Pair() {
@@ -128,7 +128,7 @@ export default function Pair() {
               <div className="text-lg font-bold text-high-emphesis">
                 {pair?.token0?.symbol}-{pair?.token1?.symbol}
               </div>
-              <div className="text-xs text-secondary">Sushi Liquidity Pool</div>
+              <div className="text-xs text-secondary">Radio Liquidity Pool</div>
             </div>
             <div className="rounded-3xl text-sm bg-[#414a6c] py-px px-2 flex items-center space-x-1">
               <div>{shortenAddress(id)}</div>

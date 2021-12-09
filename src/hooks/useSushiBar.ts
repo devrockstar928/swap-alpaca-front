@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@sushiswap/sdk'
+import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { useCallback } from 'react'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { useSushiBarContract } from './useContract'
@@ -12,7 +12,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.enter(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Enter SushiBar' })
+          return addTransaction(tx, { summary: 'Enter RadioBar' })
         } catch (e) {
           return e
         }
@@ -26,7 +26,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.leave(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Leave SushiBar' })
+          return addTransaction(tx, { summary: 'Leave RadioBar' })
         } catch (e) {
           return e
         }

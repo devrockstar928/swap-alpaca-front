@@ -1,11 +1,11 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { parseUnits } from '@ethersproject/units'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/sdk'
 import React, { FC, useMemo, useState } from 'react'
 import Button from '../../components/Button'
 import Dots from '../../components/Dots'
-import { SUSHI, XSUSHI } from '../../config/tokens'
+import { RADIO, XRADIO } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { ApprovalState } from '../../hooks/useApproveCallback'
 import useMeowshi from '../../hooks/useMeowshi'
@@ -27,10 +27,10 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
     open: false,
   })
   const { account, chainId } = useActiveWeb3React()
-  const sushiBalance = useTokenBalance(account, SUSHI[ChainId.MAINNET])
-  const xSushiBalance = useTokenBalance(account, XSUSHI)
+  const sushiBalance = useTokenBalance(account, RADIO[ChainId.MAINNET])
+  const xSushiBalance = useTokenBalance(account, XRADIO)
   const { approvalState, approve, meow, unmeow, meowSushi, unmeowSushi } = useMeowshi(
-    currencies[Field.INPUT] === SUSHI[ChainId.MAINNET]
+    currencies[Field.INPUT] === RADIO[ChainId.MAINNET]
   )
   const balance = useTokenBalance(account, currencies[Field.INPUT])
   const parsedInputAmount = tryParseAmount(fields[Field.INPUT], currencies[Field.INPUT])
@@ -52,26 +52,26 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
 
     let tx
     if (doMeow) {
-      if (currencies[Field.INPUT]?.symbol === 'SUSHI') {
+      if (currencies[Field.INPUT]?.symbol === 'RADIO') {
         tx = await meowSushi({
           value: parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: sushiBalance.currency.decimals,
         })
       }
-      if (currencies[Field.INPUT]?.symbol === 'xSUSHI') {
+      if (currencies[Field.INPUT]?.symbol === 'xRADIO') {
         tx = await meow({
           value: parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,
         })
       }
     } else {
-      if (currencies[Field.OUTPUT]?.symbol === 'SUSHI') {
+      if (currencies[Field.OUTPUT]?.symbol === 'RADIO') {
         tx = await unmeowSushi({
           value: parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,
         })
       }
-      if (currencies[Field.OUTPUT]?.symbol === 'xSUSHI') {
+      if (currencies[Field.OUTPUT]?.symbol === 'xRADIO') {
         tx = await unmeow({
           value: parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,

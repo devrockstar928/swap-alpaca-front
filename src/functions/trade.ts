@@ -1,5 +1,5 @@
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, Trade, TradeType } from '@alpaca-swap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, Trade, TradeType } from '@sushiswap/sdk'
 import { ONE_HUNDRED_PERCENT, ZERO_PERCENT } from '../constants'
 
 // returns whether tradeB is better than tradeA by at least a threshold percentage amount

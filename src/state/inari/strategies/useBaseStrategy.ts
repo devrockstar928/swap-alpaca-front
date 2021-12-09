@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@sushiswap/sdk'
+import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { useCallback, useMemo, useState } from 'react'
 import { e10 } from '../../../functions'
 import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
@@ -84,7 +84,7 @@ const useBaseStrategy = ({ id, general, tokenDefinitions }: useBaseStrategyInter
   )
 
   // Default function for calculating the output based on the input
-  // This one is converting Sushi to xSushi and vice-versa.
+  // This one is converting Radio to xSushi and vice-versa.
   // Function can be overridden or enhanced if you need custom input to output calculations
   const calculateOutputFromInput = useCallback(
     (zapIn: boolean, inputValue: string, inputToken: Token, outputToken: Token) => {

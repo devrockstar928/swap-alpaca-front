@@ -1,7 +1,7 @@
+import { Currency, CurrencyAmount, Pair, Percent, Token } from '@alpaca-swap/sdk'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Pair, Percent, Token } from '@sushiswap/sdk'
 import Lottie from 'lottie-react'
 import React, { ReactNode, useCallback, useState } from 'react'
 import selectCoinAnimation from '../../animation/select-coin.json'

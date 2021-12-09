@@ -110,6 +110,32 @@
     "ethers" "~4.0.4"
     "lodash" "^4.17.11"
 
+"@alpaca-swap/sdk@git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk":
+  "resolved" "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk#861ddb197de3e3708d0b0ba6b50493d3a7b54d53"
+  "version" "5.0.0-canary.108"
+  dependencies:
+    "@ethersproject/abi" "^5.4.0"
+    "@ethersproject/abstract-signer" "^5.4.0"
+    "@ethersproject/address" "^5.4.0"
+    "@ethersproject/bignumber" "^5.4.0"
+    "@ethersproject/bytes" "^5.4.0"
+    "@ethersproject/contracts" "^5.4.0"
+    "@ethersproject/experimental" "^5.4.0"
+    "@ethersproject/networks" "^5.4.0"
+    "@ethersproject/providers" "^5.4.0"
+    "@ethersproject/signing-key" "^5.4.0"
+    "@ethersproject/solidity" "^5.4.0"
+    "@ethersproject/transactions" "^5.4.0"
+    "@sushiswap/core" "^2.0.0-canary.1"
+    "big.js" "^6.1.0"
+    "decimal.js-light" "^2.5.0"
+    "eip-712" "^0.4.3"
+    "isomorphic-unfetch" "^3.1.0"
+    "jsbi" "^4.1.0"
+    "tiny-invariant" "^1.1.0"
+    "tiny-warning" "^1.0.3"
+    "toformat" "^2.0.0"
+
 "@apideck/better-ajv-errors@^0.2.7":
   "integrity" "sha512-J2dW+EHYudbwI7MGovcHWLBrxasl21uuroc2zT8bH2RxYuv2g5GqsO5jcKUZz4LaMST45xhKjVuyRYkhcWyMhA=="
   "resolved" "https://registry.npmjs.org/@apideck/better-ajv-errors/-/better-ajv-errors-0.2.7.tgz"
@@ -3063,54 +3089,6 @@
   "resolved" "https://registry.npmjs.org/@sushiswap/core/-/core-2.0.0-canary.1.tgz"
   "version" "2.0.0-canary.1"
 
-"@sushiswap/default-token-list@18.10.0":
-  "integrity" "sha512-C8F9gE6HWhTMbvVLfCVaBLDNqemKXskyuNQQJG5w+DxbBLYaEKB+pZ//qG2qtyejUrB94Dp5TG0+Vgn7t5ekeg=="
-  "resolved" "https://registry.npmjs.org/@sushiswap/default-token-list/-/default-token-list-18.10.0.tgz"
-  "version" "18.10.0"
-
-"@sushiswap/sdk@git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk.git":
-  "resolved" "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk.git#913f1c58a897894f40ceec29eb5ad28cc2b755f4"
-  "version" "5.0.0-canary.108"
-  dependencies:
-    "@ethersproject/abi" "^5.4.0"
-    "@ethersproject/abstract-signer" "^5.4.0"
-    "@ethersproject/address" "^5.4.0"
-    "@ethersproject/bignumber" "^5.4.0"
-    "@ethersproject/bytes" "^5.4.0"
-    "@ethersproject/contracts" "^5.4.0"
-    "@ethersproject/experimental" "^5.4.0"
-    "@ethersproject/networks" "^5.4.0"
-    "@ethersproject/providers" "^5.4.0"
-    "@ethersproject/signing-key" "^5.4.0"
-    "@ethersproject/solidity" "^5.4.0"
-    "@ethersproject/transactions" "^5.4.0"
-    "@sushiswap/core" "^2.0.0-canary.1"
-    "big.js" "^6.1.0"
-    "decimal.js-light" "^2.5.0"
-    "eip-712" "^0.4.3"
-    "isomorphic-unfetch" "^3.1.0"
-    "jsbi" "^4.1.0"
-    "tiny-invariant" "^1.1.0"
-    "tiny-warning" "^1.0.3"
-    "toformat" "^2.0.0"
-
-"@sushiswap/sushi-data@^1.0.24":
-  "integrity" "sha512-zGAL3un1K8J+mc4GyMhjOdJHYsnuwh7WiP4zlgvGyz1FJbFvnkv6NaKqh1bLAVCJDTZRFBZCzty7qp+6kX+nJw=="
-  "resolved" "https://registry.npmjs.org/@sushiswap/sushi-data/-/sushi-data-1.0.26.tgz"
-  "version" "1.0.26"
-  dependencies:
-    "bluebird" "^3.7.2"
-    "commander" "6.1.0"
-    "csv-stringify" "5.3.3"
-    "date-fns" "^2.17.0"
-    "graph-results-pager" "git+https://github.com/LufyCZ/graph-results-pager.git"
-    "graphql" "14.5.8"
-    "graphql-request" "^3.4.0"
-    "isomorphic-ws" "^4.0.1"
-    "node-fetch" "2.6.0"
-    "subscriptions-transport-ws" "0.9.16"
-    "ws" "7.2.0"
-
 "@szmarczak/http-timer@^1.1.2":
   "integrity" "sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA=="
   "resolved" "https://registry.npmjs.org/@szmarczak/http-timer/-/http-timer-1.1.2.tgz"
@@ -4734,7 +4712,7 @@
   dependencies:
     "async" "^2.4.0"
 
-"async-limiter@^1.0.0", "async-limiter@~1.0.0":
+"async-limiter@~1.0.0":
   "integrity" "sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ=="
   "resolved" "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz"
   "version" "1.0.1"
@@ -5495,11 +5473,6 @@
   "resolved" "https://registry.npmjs.org/babylon/-/babylon-6.18.0.tgz"
   "version" "6.18.0"
 
-"backo2@^1.0.2":
-  "integrity" "sha1-MasayLEpNjRj41s+u2n038+6eUc="
-  "resolved" "https://registry.npmjs.org/backo2/-/backo2-1.0.2.tgz"
-  "version" "1.0.2"
-
 "backoff@^2.5.0":
   "integrity" "sha1-9hbtqdPktmuMp/ynn2lXIsX44m8="
   "resolved" "https://registry.npmjs.org/backoff/-/backoff-2.5.0.tgz"
@@ -5687,7 +5660,7 @@
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
   "version" "3.7.2"
 
-"bluebird@^3.7.2", "bluebird@3.7.2":
+"bluebird@3.7.2":
   "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
   "version" "3.7.2"
@@ -6649,11 +6622,6 @@
   "resolved" "https://registry.npmjs.org/commander/-/commander-8.3.0.tgz"
   "version" "8.3.0"
 
-"commander@6.1.0":
-  "integrity" "sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA=="
-  "resolved" "https://registry.npmjs.org/commander/-/commander-6.1.0.tgz"
-  "version" "6.1.0"
-
 "common-tags@^1.8.0":
   "integrity" "sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA=="
   "resolved" "https://registry.npmjs.org/common-tags/-/common-tags-1.8.2.tgz"
@@ -7153,11 +7121,6 @@
   "resolved" "https://registry.npmjs.org/csv-stringify/-/csv-stringify-5.6.5.tgz"
   "version" "5.6.5"
 
-"csv-stringify@5.3.3":
-  "integrity" "sha512-q8Qj+/lN74LRmG7Mg0LauE5WcnJOD5MEGe1gI57IYJCB61KWuEbAFHm1uIPDkI26aqElyBB57SlE2GGwq2EY5A=="
-  "resolved" "https://registry.npmjs.org/csv-stringify/-/csv-stringify-5.3.3.tgz"
-  "version" "5.3.3"
-
 "csv@^5.3.1":
   "integrity" "sha512-QTaY0XjjhTQOdguARF0lGKm5/mEq9PD9/VhZZegHDIBq2tQwgNpHc3dneD4mGo2iJs+fTKv5Bp0fZ+BRuY3Z0g=="
   "resolved" "https://registry.npmjs.org/csv/-/csv-5.5.3.tgz"
@@ -7268,7 +7231,7 @@
     "whatwg-mimetype" "^2.3.0"
     "whatwg-url" "^8.0.0"
 
-"date-fns@^2.16.1", "date-fns@^2.17.0":
+"date-fns@^2.16.1":
   "integrity" "sha512-VQI812dRi3cusdY/fhoBKvc6l2W8BPWU1FNVnFH9Nttjx4AFBRzfSVb/Eyc7jBT6e9sg1XtAGsYpBQ6c/jygbg=="
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.26.0.tgz"
   "version" "2.26.0"
@@ -8994,11 +8957,6 @@
     "stream-combiner" "~0.0.4"
     "through" "~2.3.1"
 
-"eventemitter3@^3.1.0":
-  "integrity" "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q=="
-  "resolved" "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz"
-  "version" "3.1.2"
-
 "eventemitter3@4.0.4":
   "integrity" "sha512-rlaVLnVxtxvoyLsQQFBx53YmXHDxRIzzTLbdfxqi4yocpSjAxXwkU0cScM5JgSKMqEhrZpnvQ2D9gjylR0AimQ=="
   "resolved" "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.4.tgz"
@@ -10010,21 +9968,15 @@
   "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.8.tgz"
   "version" "4.2.8"
 
-"graph-results-pager@git+https://github.com/LufyCZ/graph-results-pager.git":
-  "resolved" "git+ssh://git@github.com/LufyCZ/graph-results-pager.git#9b230f05b8d79aeedc9e167ac5a1fea33e04d51f"
-  "version" "1.0.3"
-  dependencies:
-    "node-fetch" "2.6.1"
-
 "grapheme-splitter@^1.0.4":
   "integrity" "sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ=="
   "resolved" "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
   "version" "1.0.4"
 
-"graphql-request@^3.4.0":
-  "integrity" "sha512-Nm1EasrAQVZllyNTlHDLnLZjlhC6eRWnWP6KH//ytnAL08pjlLkdI2K+s6OV92p45hn5b/kUlLbDwACmRoLwrQ=="
-  "resolved" "https://registry.npmjs.org/graphql-request/-/graphql-request-3.6.1.tgz"
-  "version" "3.6.1"
+"graphql-request@^3.7.0":
+  "integrity" "sha512-dw5PxHCgBneN2DDNqpWu8QkbbJ07oOziy8z+bK/TAXufsOLaETuVO4GkXrbs0WjhdKhBMN3BkpN/RIvUHkmNUQ=="
+  "resolved" "https://registry.npmjs.org/graphql-request/-/graphql-request-3.7.0.tgz"
+  "version" "3.7.0"
   dependencies:
     "cross-fetch" "^3.0.6"
     "extract-files" "^9.0.0"
@@ -10037,7 +9989,7 @@
   dependencies:
     "tslib" "^2.1.0"
 
-"graphql@^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.1 || ^14.0.2", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@14.5.8", "graphql@14.x || 15.x":
+"graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@14 - 16":
   "integrity" "sha512-MMwmi0zlVLQKLdGiMfWkgQD7dY/TUKt4L+zgJ/aR0Howebod3aNgP5JkgvAULiR2HPVZaP2VEElqtdidHweLkg=="
   "resolved" "https://registry.npmjs.org/graphql/-/graphql-14.5.8.tgz"
   "version" "14.5.8"
@@ -11151,11 +11103,6 @@
     "node-fetch" "^2.6.1"
     "unfetch" "^4.2.0"
 
-"isomorphic-ws@^4.0.1":
-  "integrity" "sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w=="
-  "resolved" "https://registry.npmjs.org/isomorphic-ws/-/isomorphic-ws-4.0.1.tgz"
-  "version" "4.0.1"
-
 "isstream@~0.1.2":
   "integrity" "sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo="
   "resolved" "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz"
@@ -11221,7 +11168,7 @@
     "has-to-string-tag-x" "^1.2.0"
     "is-object" "^1.0.1"
 
-"iterall@^1.2.1", "iterall@^1.2.2":
+"iterall@^1.2.2":
   "integrity" "sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg=="
   "resolved" "https://registry.npmjs.org/iterall/-/iterall-1.3.0.tgz"
   "version" "1.3.0"
@@ -13366,11 +13313,6 @@
 
 "node-fetch@2.1.2":
   "version" "2.1.2"
-
-"node-fetch@2.6.0":
-  "integrity" "sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.0.tgz"
-  "version" "2.6.0"
 
 "node-fetch@2.6.1":
   "integrity" "sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw=="
@@ -17158,17 +17100,6 @@
     "commander" "^2.8.1"
     "debug" "^4.1.0"
 
-"subscriptions-transport-ws@0.9.16":
-  "integrity" "sha512-pQdoU7nC+EpStXnCfh/+ho0zE0Z+ma+i7xvj7bkXKb1dvYHSZxgRPaU6spRP+Bjzow67c/rRDoix5RT0uU9omw=="
-  "resolved" "https://registry.npmjs.org/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.16.tgz"
-  "version" "0.9.16"
-  dependencies:
-    "backo2" "^1.0.2"
-    "eventemitter3" "^3.1.0"
-    "iterall" "^1.2.1"
-    "symbol-observable" "^1.0.4"
-    "ws" "^5.2.0"
-
 "superagent@^3.8.3":
   "integrity" "sha512-GLQtLMCoEIK4eDv6OGtkOoSMt3D+oq0y3dsxMuYuDvaNUvuT8eFBuLmfR0iYYzHC1e8hpzC6ZsxbuP6DIalMFA=="
   "resolved" "https://registry.npmjs.org/superagent/-/superagent-3.8.3.tgz"
@@ -17265,11 +17196,6 @@
   "version" "1.0.1"
   dependencies:
     "dequal" "2.0.2"
-
-"symbol-observable@^1.0.4":
-  "integrity" "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="
-  "resolved" "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz"
-  "version" "1.2.0"
 
 "symbol-tree@^3.2.4":
   "integrity" "sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw=="
@@ -19205,11 +19131,6 @@
     "signal-exit" "^3.0.2"
     "typedarray-to-buffer" "^3.1.5"
 
-"ws@*", "ws@^7.3.1", "ws@^7.4.0", "ws@^7.4.6", "ws@7.4.6":
-  "integrity" "sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A=="
-  "resolved" "https://registry.npmjs.org/ws/-/ws-7.4.6.tgz"
-  "version" "7.4.6"
-
 "ws@^3.0.0":
   "integrity" "sha512-nnWLa/NwZSt4KQJu51MYlCcSQ5g7INpOrOMt4XV8j4dqTXdmlUmSHQ8/oLC069ckre0fRsgfvsKwbTdtKLCDkA=="
   "resolved" "https://registry.npmjs.org/ws/-/ws-3.3.3.tgz"
@@ -19226,19 +19147,10 @@
   dependencies:
     "async-limiter" "~1.0.0"
 
-"ws@^5.2.0":
-  "integrity" "sha512-jZArVERrMsKUatIdnLzqvcfydI85dvd/Fp1u/VOpfdDWQ4c9qWXe+VIeAbQ5FrDwciAkr+lzofXLz3Kuf26AOA=="
-  "resolved" "https://registry.npmjs.org/ws/-/ws-5.2.3.tgz"
-  "version" "5.2.3"
-  dependencies:
-    "async-limiter" "~1.0.0"
-
-"ws@7.2.0":
-  "integrity" "sha512-+SqNqFbwTm/0DC18KYzIsMTnEWpLwJsiasW/O17la4iDRRIO9uaHbvKiAS3AHgTiuuWerK/brj4O6MYZkei9xg=="
-  "resolved" "https://registry.npmjs.org/ws/-/ws-7.2.0.tgz"
-  "version" "7.2.0"
-  dependencies:
-    "async-limiter" "^1.0.0"
+"ws@^7.3.1", "ws@^7.4.0", "ws@^7.4.6", "ws@7.4.6":
+  "integrity" "sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A=="
+  "resolved" "https://registry.npmjs.org/ws/-/ws-7.4.6.tgz"
+  "version" "7.4.6"
 
 "ws@7.5.3":
   "integrity" "sha512-kQ/dHIzuLrS6Je9+uv81ueZomEwH0qVYstcAQ4/Z93K8zeko9gtAbttJWzoC5ukqXY1PpoouV3+VSOqEAFt5wg=="

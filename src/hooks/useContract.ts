@@ -1,5 +1,3 @@
-import { AddressZero } from '@ethersproject/constants'
-import { Contract } from '@ethersproject/contracts'
 // import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import {
   BAR_ADDRESS,
@@ -15,11 +13,13 @@ import {
   MERKLE_DISTRIBUTOR_ADDRESS,
   MINICHEF_ADDRESS,
   MULTICALL2_ADDRESS,
+  RADIO_ADDRESS,
   ROUTER_ADDRESS,
-  SUSHI_ADDRESS,
   TIMELOCK_ADDRESS,
   WNATIVE_ADDRESS,
-} from '@sushiswap/sdk'
+} from '@alpaca-swap/sdk'
+import { AddressZero } from '@ethersproject/constants'
+import { Contract } from '@ethersproject/contracts'
 import { useMemo } from 'react'
 import {
   ARGENT_WALLET_DETECTOR_ABI,
@@ -133,7 +133,7 @@ export function useMulticall2Contract() {
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && SUSHI_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
+  return useContract(chainId && RADIO_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {

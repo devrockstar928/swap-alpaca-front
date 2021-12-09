@@ -1,20 +1,18 @@
-import Provider, { useKashiPairs } from '../../../features/kashi/context'
-import { formatNumber, formatPercent } from '../../../functions/format'
-
-import Card from '../../../components/Card'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
-import Head from 'next/head'
-import Image from '../../../components/Image'
-import Layout from '../../../layouts/Kashi'
-import Link from 'next/link'
-import ListHeaderWithSort from '../../../features/kashi/ListHeaderWithSort'
-import MarketHeader from '../../../features/kashi/MarketHeader'
-import QuestionHelper from '../../../components/QuestionHelper'
-import React from 'react'
-import { cloudinaryLoader } from '../../../functions/cloudinary'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import Head from 'next/head'
+import Link from 'next/link'
+import React from 'react'
+import Card from '../../../components/Card'
+import Image from '../../../components/Image'
+import QuestionHelper from '../../../components/QuestionHelper'
+import Provider, { useKashiPairs } from '../../../features/kashi/context'
+import ListHeaderWithSort from '../../../features/kashi/ListHeaderWithSort'
+import MarketHeader from '../../../features/kashi/MarketHeader'
+import { cloudinaryLoader } from '../../../functions/cloudinary'
+import { formatNumber, formatPercent } from '../../../functions/format'
 import useSearchAndSort from '../../../hooks/useSearchAndSort'
+import Layout from '../../../layouts/Kashi'
 
 function Lend() {
   const { i18n } = useLingui()
@@ -33,7 +31,7 @@ function Lend() {
   return fullPairs ? (
     <>
       <Head>
-        <title>Lend | Sushi</title>
+        <title>Lend | Radio</title>
         <meta
           key="description"
           name="description"

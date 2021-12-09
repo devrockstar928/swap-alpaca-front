@@ -1,12 +1,11 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useSushiBarContract, useSushiContract } from './useContract'
-
-import Fraction from '../entities/Fraction'
 import { BigNumber } from '@ethersproject/bignumber'
 import { MaxUint256 } from '@ethersproject/constants'
 import { parseUnits } from '@ethersproject/units'
+import { useCallback, useEffect, useState } from 'react'
+import Fraction from '../entities/Fraction'
 import { useActiveWeb3React } from '../services/web3'
 import { useTransactionAdder } from '../state/transactions/hooks'
+import { useSushiBarContract, useSushiContract } from './useContract'
 
 const useSushiBar = () => {
   const { account } = useActiveWeb3React()
@@ -51,7 +50,7 @@ const useSushiBar = () => {
     async (amount: string) => {
       try {
         const tx = await barContract?.enter(parseUnits(amount))
-        return addTransaction(tx, { summary: 'Enter SushiBar' })
+        return addTransaction(tx, { summary: 'Enter RadioBar' })
       } catch (e) {
         return e
       }
@@ -64,7 +63,7 @@ const useSushiBar = () => {
     async (amount: string) => {
       try {
         const tx = await barContract?.leave(parseUnits(amount))
-        return addTransaction(tx, { summary: 'Leave SushiBar' })
+        return addTransaction(tx, { summary: 'Leave RadioBar' })
       } catch (e) {
         console.error(e)
         return e

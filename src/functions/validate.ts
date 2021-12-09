@@ -1,8 +1,8 @@
 // CONVENTION isFoo -> boolean
 
+import { Token } from '@alpaca-swap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token } from '@sushiswap/sdk'
 import { TokenAddressMap } from '../state/lists/hooks'
 
 /**

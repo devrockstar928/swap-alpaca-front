@@ -1,5 +1,5 @@
+import { Currency, CurrencyAmount, JSBI } from '@alpaca-swap/sdk'
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, JSBI } from '@sushiswap/sdk'
 
 export function parseBalance(value: string, decimals = 18) {
   return parseUnits(value || '0', decimals)

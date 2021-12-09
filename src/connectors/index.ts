@@ -1,6 +1,6 @@
+import { ChainId } from '@alpaca-swap/sdk'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { Web3Provider } from '@ethersproject/providers'
-import { ChainId } from '@sushiswap/sdk'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { PortisConnector } from '@web3-react/portis-connector'
 import { TorusConnector } from '@web3-react/torus-connector'
@@ -113,7 +113,7 @@ export const portis = new PortisConnector({
 // mainnet only
 export const walletlink = new WalletLinkConnector({
   url: RPC[ChainId.MAINNET],
-  appName: 'SushiSwap',
+  appName: 'RadioSwap',
   appLogoUrl: 'https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png',
 })
 

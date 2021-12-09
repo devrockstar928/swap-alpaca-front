@@ -1,7 +1,7 @@
+import { ChainId, NATIVE, RADIO_ADDRESS } from '@alpaca-swap/sdk'
 import { Popover } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, NATIVE, SUSHI_ADDRESS } from '@sushiswap/sdk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -34,7 +34,7 @@ function AppBar(): JSX.Element {
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Image src="/logo.png" alt="Sushi" width="32px" height="32px" />
+                  <Image src="/logo.png" alt="Radio" width="32px" height="32px" />
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
@@ -102,7 +102,7 @@ function AppBar(): JSX.Element {
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                     {chainId && [ChainId.MAINNET].includes(chainId) && library && library.provider.isMetaMask && (
                       <>
-                        <QuestionHelper text={i18n._(t`Add xSUSHI to your MetaMask wallet`)}>
+                        <QuestionHelper text={i18n._(t`Add xRADIO to your MetaMask wallet`)}>
                           <div
                             className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800"
                             onClick={() => {
@@ -111,7 +111,7 @@ function AppBar(): JSX.Element {
                                   type: 'ERC20',
                                   options: {
                                     address: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                    symbol: 'XSUSHI',
+                                    symbol: 'XRADIO',
                                     decimals: 18,
                                     image:
                                       'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272.jpg',
@@ -124,7 +124,7 @@ function AppBar(): JSX.Element {
                                   })
                                   .then((success) => {
                                     if (success) {
-                                      console.log('Successfully added XSUSHI to MetaMask')
+                                      console.log('Successfully added XRADIO to MetaMask')
                                     } else {
                                       throw new Error('Something went wrong.')
                                     }
@@ -135,7 +135,7 @@ function AppBar(): JSX.Element {
                           >
                             <Image
                               src="/images/tokens/xsushi-square.jpg"
-                              alt="xSUSHI"
+                              alt="xRADIO"
                               width="38px"
                               height="38px"
                               objectFit="contain"
@@ -146,17 +146,17 @@ function AppBar(): JSX.Element {
                       </>
                     )}
 
-                    {chainId && chainId in SUSHI_ADDRESS && library && library.provider.isMetaMask && (
+                    {chainId && chainId in RADIO_ADDRESS && library && library.provider.isMetaMask && (
                       <>
-                        <QuestionHelper text={i18n._(t`Add SUSHI to your MetaMask wallet`)}>
+                        <QuestionHelper text={i18n._(t`Add RADIO to your MetaMask wallet`)}>
                           <div
                             className="hidden rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800 p-0.5"
                             onClick={() => {
                               const params: any = {
                                 type: 'ERC20',
                                 options: {
-                                  address: SUSHI_ADDRESS[chainId],
-                                  symbol: 'SUSHI',
+                                  address: RADIO_ADDRESS[chainId],
+                                  symbol: 'RADIO',
                                   decimals: 18,
                                   image:
                                     'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2.jpg',
@@ -170,7 +170,7 @@ function AppBar(): JSX.Element {
                                   })
                                   .then((success) => {
                                     if (success) {
-                                      console.log('Successfully added SUSHI to MetaMask')
+                                      console.log('Successfully added RADIO to MetaMask')
                                     } else {
                                       throw new Error('Something went wrong.')
                                     }
@@ -181,7 +181,7 @@ function AppBar(): JSX.Element {
                           >
                             <Image
                               src="/images/tokens/sushi-square.jpg"
-                              alt="SUSHI"
+                              alt="RADIO"
                               width="38px"
                               height="38px"
                               objectFit="contain"

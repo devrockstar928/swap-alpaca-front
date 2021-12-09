@@ -1,6 +1,6 @@
+import { Currency, Price } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Price } from '@sushiswap/sdk'
 import React, { useCallback } from 'react'
 import Typography from '../../../components/Typography'
 import { classNames } from '../../../functions'

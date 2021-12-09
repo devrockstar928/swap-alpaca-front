@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@sushiswap/sdk'
+import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { useCallback } from 'react'
 import { useInariContract } from '../../../hooks/useContract'
 import { useERC20Permit } from '../../../hooks/useERC20Permit'
@@ -24,7 +24,7 @@ const useHasPermitTokenTrait = (props: BaseStrategyHook): BaseStrategyWithHasPer
   const addTransaction = useTransactionAdder()
   const { signatureData, gatherPermitSignature } = useERC20Permit(inputValue, inariContract?.address, {
     type: 1,
-    name: 'SushiSwap',
+    name: 'RadioSwap',
   })
 
   // Batch execute with permit if one is provided or else execute normally

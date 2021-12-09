@@ -1,9 +1,9 @@
 // CONVENTION formatFoo -> string
 
+import { Currency, CurrencyAmount, Fraction, JSBI, Price } from '@alpaca-swap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { BigNumberish } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, Fraction, JSBI, Price } from '@sushiswap/sdk'
 import Numeral from 'numeral'
 
 export const capitalize = (s) => {

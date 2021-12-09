@@ -1,6 +1,6 @@
+import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount, Token } from '@sushiswap/sdk'
 import React, { FC, useCallback } from 'react'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import Input from '../../components/Input'

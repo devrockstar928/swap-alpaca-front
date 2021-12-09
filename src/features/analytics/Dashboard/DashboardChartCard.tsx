@@ -1,7 +1,7 @@
-import { useBlock, useDayData, useFactory } from '../../../services/graph'
 import { useMemo, useState } from 'react'
-import ChartCard from '../ChartCard'
+import { useBlock, useDayData, useFactory } from '../../../services/graph'
 import { useActiveWeb3React } from '../../../services/web3'
+import ChartCard from '../ChartCard'
 
 interface DashboardChartCardProps {
   type: 'liquidity' | 'volume'
@@ -63,7 +63,7 @@ export default function DashboardChartCard(props: DashboardChartCardProps): JSX.
   return (
     <ChartCard
       header={type.header}
-      subheader={'SUSHI AMM'}
+      subheader={'RADIO AMM'}
       figure={data.figure}
       change={data.change}
       chart={data.chart}

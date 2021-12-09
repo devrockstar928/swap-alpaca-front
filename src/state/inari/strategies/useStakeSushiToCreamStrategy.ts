@@ -1,9 +1,9 @@
+import { ChainId, CurrencyAmount, RADIO_ADDRESS, Token } from '@alpaca-swap/sdk'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, CurrencyAmount, SUSHI_ADDRESS, Token } from '@sushiswap/sdk'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { CRXSUSHI, SUSHI, XSUSHI } from '../../../config/tokens'
+import { CRXSUSHI, RADIO, XRADIO } from '../../../config/tokens'
 import { tryParseAmount } from '../../../functions'
 import { useApproveCallback } from '../../../hooks/useApproveCallback'
 import { useInariContract, useZenkoContract } from '../../../hooks/useContract'
@@ -14,29 +14,29 @@ import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../
 import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
-  name: i18n._(t`SUSHI → Cream`),
-  steps: [i18n._(t`SUSHI`), i18n._(t`xSUSHI`), i18n._(t`Cream`)],
+  name: i18n._(t`RADIO → Cream`),
+  steps: [i18n._(t`RADIO`), i18n._(t`xRADIO`), i18n._(t`Cream`)],
   zapMethod: 'stakeSushiToCream',
   unzapMethod: 'unstakeSushiFromCream',
   description: i18n._(
-    t`Stake SUSHI for xSUSHI and deposit into Cream in one click. xSUSHI in Cream (crXSUSHI) can be lent or used as collateral for borrowing.`
+    t`Stake RADIO for xRADIO and deposit into Cream in one click. xRADIO in Cream (crXSUSHI) can be lent or used as collateral for borrowing.`
   ),
-  inputSymbol: i18n._(t`SUSHI`),
-  outputSymbol: i18n._(t`xSUSHI in Cream`),
+  inputSymbol: i18n._(t`RADIO`),
+  outputSymbol: i18n._(t`xRADIO in Cream`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
     chainId: ChainId.MAINNET,
-    address: SUSHI_ADDRESS[ChainId.MAINNET],
+    address: RADIO_ADDRESS[ChainId.MAINNET],
     decimals: 18,
-    symbol: 'SUSHI',
+    symbol: 'RADIO',
   },
   outputToken: {
     chainId: ChainId.MAINNET,
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
-    symbol: 'XSUSHI',
+    symbol: 'XRADIO',
   },
 }
 
@@ -46,7 +46,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
   const { zapIn, inputValue } = useDerivedInariState()
   const zenkoContract = useZenkoContract()
   const inariContract = useInariContract()
-  const balances = useTokenBalances(account, [SUSHI[ChainId.MAINNET], CRXSUSHI])
+  const balances = useTokenBalances(account, [RADIO[ChainId.MAINNET], CRXSUSHI])
   const cTokenAmountRef = useRef<CurrencyAmount<Token>>(null)
   const approveAmount = useMemo(() => (zapIn ? inputValue : cTokenAmountRef.current), [inputValue, zapIn])
 
@@ -69,7 +69,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
     [zenkoContract]
   )
 
-  // Run before executing transaction creation by transforming from xSUSHI value to crXSUSHI value
+  // Run before executing transaction creation by transforming from xRADIO value to crXSUSHI value
   // As you will be spending crXSUSHI when unzapping from this strategy
   const preExecute = useCallback(
     async (val: CurrencyAmount<Token>) => {
@@ -87,14 +87,14 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
     if (!zenkoContract || !balances) return
 
     const main = async () => {
-      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XSUSHI)
+      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XRADIO)
       const bal = await zenkoContract.fromCtoken(
         CRXSUSHI.address,
         balances[CRXSUSHI.address].toFixed().toBigNumber(CRXSUSHI.decimals).toString()
       )
       setBalances({
-        inputTokenBalance: balances[SUSHI[ChainId.MAINNET].address],
-        outputTokenBalance: CurrencyAmount.fromRawAmount(XSUSHI, bal.toString()),
+        inputTokenBalance: balances[RADIO[ChainId.MAINNET].address],
+        outputTokenBalance: CurrencyAmount.fromRawAmount(XRADIO, bal.toString()),
       })
     }
 

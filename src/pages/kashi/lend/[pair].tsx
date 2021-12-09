@@ -1,18 +1,17 @@
-import { Deposit, Withdraw } from '../../../features/kashi'
-import Provider, { useKashiInfo, useKashiPair } from '../../../features/kashi/context'
-import React from 'react'
-import { formatNumber, formatPercent } from '../../../functions/format'
-import Card from '../../../components/Card'
-import Container from '../../../components/Container'
-import Head from 'next/head'
-import Image from '../../../components/Image'
-import Layout from '../../../layouts/Kashi'
-import QuestionHelper from '../../../components/QuestionHelper'
 import { Tab } from '@headlessui/react'
-import { cloudinaryLoader } from '../../../functions/cloudinary'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+import React from 'react'
+import Card from '../../../components/Card'
+import Image from '../../../components/Image'
+import QuestionHelper from '../../../components/QuestionHelper'
+import { Deposit, Withdraw } from '../../../features/kashi'
+import Provider, { useKashiInfo, useKashiPair } from '../../../features/kashi/context'
+import { cloudinaryLoader } from '../../../functions/cloudinary'
+import { formatNumber, formatPercent } from '../../../functions/format'
+import Layout from '../../../layouts/Kashi'
 
 export default function Pair() {
   const router = useRouter()
@@ -26,7 +25,7 @@ export default function Pair() {
   return (
     <div id={`lend-${router.query.pair}-page`}>
       <Head>
-        <title>Lend {pair.asset.tokenInfo.symbol} | Sushi</title>
+        <title>Lend {pair.asset.tokenInfo.symbol} | Radio</title>
         <meta key="description" name="description" content={`Lend ${pair.asset.tokenInfo.symbol} on Kashi`} />
       </Head>
       <Card

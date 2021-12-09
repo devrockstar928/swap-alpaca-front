@@ -1,6 +1,6 @@
+import { ZERO } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ZERO } from '@sushiswap/sdk'
 import React, { FC, useCallback, useState } from 'react'
 import Button, { ButtonProps } from '../../components/Button'
 import Dots from '../../components/Dots'

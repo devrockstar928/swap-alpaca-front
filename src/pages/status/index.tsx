@@ -1,13 +1,5 @@
-import Container from '../../components/Container'
-import Dots from '../../components/Dots'
 import Head from 'next/head'
-import { Tab } from '@headlessui/react'
-import Typography from '../../components/Typography'
-import capitalize from 'lodash/capitalize'
-import { classNames } from '../../functions'
-import { getChainsStatus } from '../../services/covalent/fetchers'
-import { useChainsStatus } from '../../services/covalent/hooks'
-import { useState } from 'react'
+import Container from '../../components/Container'
 
 export default function Status({ initialData }) {
   //   const res = useChainsStatus({ initialData })
@@ -15,8 +7,8 @@ export default function Status({ initialData }) {
   return (
     <Container id="status-page" className="py-4 md:py-8 lg:py-12" maxWidth="full">
       <Head>
-        <title>Status | Sushi</title>
-        <meta key="description" name="description" content="Sushi Status..." />
+        <title>Status | Radio</title>
+        <meta key="description" name="description" content="Radio Status..." />
       </Head>
       {/* <div className="w-full max-w-6xl mx-auto">
                 <Typography component="h1" variant="h1" className="w-full mb-4">

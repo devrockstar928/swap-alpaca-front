@@ -1,6 +1,6 @@
+import { Token } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Token } from '@sushiswap/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import React, { useState } from 'react'
 import AutoSizer from 'react-virtualized-auto-sizer'

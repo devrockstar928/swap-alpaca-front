@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@alpaca-swap/sdk'
 import stringify from 'fast-json-stable-stringify'
 import { useMemo } from 'react'
 import useSWR, { SWRConfiguration } from 'swr'

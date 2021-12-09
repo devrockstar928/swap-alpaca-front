@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import Lottie from 'lottie-react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -380,11 +380,11 @@ export default function Swap() {
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>{i18n._(t`SushiSwap`)} | Sushi</title>
+        <title>{i18n._(t`RadioSwap`)} | Radio</title>
         <meta
           key="description"
           name="description"
-          content="SushiSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="RadioSwap allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       <TokenWarningModal

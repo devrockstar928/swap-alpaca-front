@@ -1,7 +1,7 @@
+import { CurrencyAmount } from '@alpaca-swap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount } from '@sushiswap/sdk'
 import React, { useState } from 'react'
 import Alert from '../../components/Alert'
 import Button, { ButtonError } from '../../components/Button'

@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
-
 import { BigNumber } from '@ethersproject/bignumber'
-import { XSUSHI } from '../config/tokens'
+import { useEffect, useState } from 'react'
+import { XRADIO } from '../config/tokens'
 import { useBentoBoxContract } from './useContract'
 
 export default function useMeowshiPerXSushi() {
@@ -11,8 +10,8 @@ export default function useMeowshiPerXSushi() {
   useEffect(() => {
     if (!bentoboxContract) return
     ;(async () => {
-      const toShare = await bentoboxContract.toShare(XSUSHI.address, '1'.toBigNumber(XSUSHI.decimals), false)
-      const toAmount = await bentoboxContract.toAmount(XSUSHI.address, '1'.toBigNumber(XSUSHI.decimals), false)
+      const toShare = await bentoboxContract.toShare(XRADIO.address, '1'.toBigNumber(XRADIO.decimals), false)
+      const toAmount = await bentoboxContract.toAmount(XRADIO.address, '1'.toBigNumber(XRADIO.decimals), false)
       setState([toShare, toAmount])
     })()
   }, [bentoboxContract])

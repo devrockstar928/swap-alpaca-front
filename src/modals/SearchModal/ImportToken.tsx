@@ -1,6 +1,6 @@
+import { Currency, Token } from '@alpaca-swap/sdk'
 import { plural, t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Token } from '@sushiswap/sdk'
 import { TokenList } from '@uniswap/token-lists/dist/types'
 import React from 'react'
 import { AlertTriangle } from 'react-feather'

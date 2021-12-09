@@ -1,7 +1,7 @@
-import { ChainId, SUSHI_ADDRESS } from '@sushiswap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@alpaca-swap/sdk'
 import React, { useMemo } from 'react'
 import ScrollableGraph from '../../components/ScrollableGraph'
-import { XSUSHI } from '../../config/tokens'
+import { XRADIO } from '../../config/tokens'
 import AnalyticsContainer from '../../features/analytics/AnalyticsContainer'
 import Background from '../../features/analytics/Background'
 import InfoCard from '../../features/analytics/Bar/InfoCard'
@@ -35,15 +35,15 @@ export default function XSushi() {
 
   const xSushi = useTokens({
     chainId: ChainId.MAINNET,
-    variables: { where: { id: XSUSHI.address.toLowerCase() } },
+    variables: { where: { id: XRADIO.address.toLowerCase() } },
   })?.[0]
 
   const xSushi1d = useTokens({
     chainId: ChainId.MAINNET,
-    variables: { block: block1d, where: { id: XSUSHI.address.toLowerCase() } },
+    variables: { block: block1d, where: { id: XRADIO.address.toLowerCase() } },
   })?.[0]
 
-  const sushiDayData = useTokenDayData({ token: SUSHI_ADDRESS['1'], chainId: ChainId.MAINNET })
+  const sushiDayData = useTokenDayData({ token: RADIO_ADDRESS['1'], chainId: ChainId.MAINNET })
 
   const bar = useBar()
 
@@ -117,7 +117,7 @@ export default function XSushi() {
         ],
       },
       {
-        labels: ['Sushi Staked (USD)', 'Sushi Harvested (USD)'],
+        labels: ['Radio Staked (USD)', 'Radio Harvested (USD)'],
         note: '/ day',
         data: [
           data.map((d) => ({
@@ -175,8 +175,8 @@ export default function XSushi() {
         <div className="flex flex-row space-x-4 overflow-auto">
           <InfoCard text="APY (Last 24 Hours)" number={formatPercent(APY1d)} />
           <InfoCard text="APY (Last 7 Days)" number={formatPercent(APY1w)} />
-          <InfoCard text="xSUSHI Supply" number={formatNumber(bar?.totalSupply)} />
-          <InfoCard text="xSUSHI : SUSHI" number={Number(bar?.ratio ?? 0)?.toFixed(4)} />
+          <InfoCard text="xRADIO Supply" number={formatNumber(bar?.totalSupply)} />
+          <InfoCard text="xRADIO : RADIO" number={Number(bar?.ratio ?? 0)?.toFixed(4)} />
         </div>
         <div className="space-y-4">
           {graphs.map((graph, i) => (

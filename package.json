@@ -31,6 +31,7 @@
     "cli-table": "0.3.6"
   },
   "devDependencies": {
+    "@alpaca-swap/sdk": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk",
     "@binance-chain/bsc-connector": "^1.0.0",
     "@commitlint/cli": "^13.0.0",
     "@commitlint/config-conventional": "^13.0.0",
@@ -65,8 +66,6 @@
     "@ramp-network/ramp-instant-sdk": "^2.4.6",
     "@reduxjs/toolkit": "^1.6.0",
     "@sentry/nextjs": "^6.11.0",
-    "@alpaca-swap/default-token-list": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-default-token-list.git",
-    "@sushiswap/sdk": "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk.git",
     "@tailwindcss/jit": "^0.1.18",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
@@ -177,6 +176,7 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@visx/group": "^2.1.0"
+    "@visx/group": "^2.1.0",
+    "graphql-request": "^3.7.0"
   }
 }

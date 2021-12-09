@@ -1,15 +1,15 @@
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import {
   ChainId,
   Currency,
   CurrencyAmount,
   Percent,
-  SUSHI_ADDRESS,
+  RADIO_ADDRESS,
   Trade as V2Trade,
   TradeType,
   WNATIVE_ADDRESS,
-} from '@sushiswap/sdk'
+} from '@alpaca-swap/sdk'
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { tryParseAmount } from '../../functions/parse'
@@ -243,7 +243,8 @@ export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId 
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
-  const sushi = SUSHI_ADDRESS[chainId]
+  const sushi = RADIO_ADDRESS[chainId]
+  debugger
   if (inputCurrency === '' && outputCurrency === '') {
     inputCurrency = eth
     outputCurrency = sushi

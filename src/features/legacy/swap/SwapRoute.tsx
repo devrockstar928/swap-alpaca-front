@@ -1,5 +1,5 @@
+import { Currency, Trade, TradeType } from '@alpaca-swap/sdk'
 import { ChevronRightIcon } from '@heroicons/react/outline'
-import { Currency, Trade, TradeType } from '@sushiswap/sdk'
 import React, { Fragment, memo } from 'react'
 import { unwrappedToken } from '../../../functions/currency/wrappedCurrency'
 

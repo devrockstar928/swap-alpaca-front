@@ -1,6 +1,6 @@
+import { Currency, Percent, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Percent, Trade as V2Trade, TradeType } from '@sushiswap/sdk'
 import React, { useState } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import CurrencyLogo from '../../../components/CurrencyLogo'

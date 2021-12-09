@@ -1,8 +1,8 @@
+import { ChainId, Token } from '@alpaca-swap/sdk'
 import { ArrowDownIcon } from '@heroicons/react/outline'
 import { ExclamationIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Token } from '@sushiswap/sdk'
 import Lottie from 'lottie-react'
 import Head from 'next/head'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
@@ -211,10 +211,10 @@ function LimitOrder() {
   return (
     <Container id="limit-order-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>{i18n._(t`Limit order`)} | Sushi</title>
+        <title>{i18n._(t`Limit order`)} | Radio</title>
         <meta
           name="description"
-          content="SushiSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="RadioSwap allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       <TokenWarningModal

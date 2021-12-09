@@ -1,6 +1,6 @@
+import { ChainId, Currency, Percent } from '@alpaca-swap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Currency, Percent } from '@sushiswap/sdk'
 import { useRouter } from 'next/router'
 import React, { FC, useState } from 'react'
 import Gas from '../../components/Gas'

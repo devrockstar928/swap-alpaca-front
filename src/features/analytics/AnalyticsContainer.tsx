@@ -1,13 +1,13 @@
-import Container from '../../components/Container'
 import Head from 'next/head'
+import Container from '../../components/Container'
 import Sidebar from '../../components/Sidebar'
 
 export default function AnalyticsContainer({ children }): JSX.Element {
   return (
     <>
       <Head>
-        <title>SushiSwap Liquidity Pair (SLP) Analytics | Sushi</title>
-        <meta name="description" content="SushiSwap Liquidity Pair (SLP) Analytics by Sushi" />
+        <title>RadioSwap Liquidity Pair (SLP) Analytics | Radio</title>
+        <meta name="description" content="RadioSwap Liquidity Pair (SLP) Analytics by Radio" />
       </Head>
 
       <Container id="analytics" maxWidth="full" className="grid h-full grid-flow-col grid-cols-10 px-4 mx-auto gap-9">

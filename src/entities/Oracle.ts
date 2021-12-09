@@ -1,6 +1,6 @@
+import { ChainId, CHAINLINK_ORACLE_ADDRESS, Token } from '@alpaca-swap/sdk'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
-import { ChainId, CHAINLINK_ORACLE_ADDRESS, Token } from '@sushiswap/sdk'
 import { CHAINLINK_PRICE_FEED_MAP } from '../config/oracles/chainlink'
 import { e10 } from '../functions/math'
 
@@ -36,14 +36,14 @@ export abstract class AbstractOracle implements Oracle {
 export class SushiSwapTWAP0Oracle extends AbstractOracle {
   constructor(pair, chainId: ChainId, tokens?: Token[]) {
     super(pair, chainId, tokens)
-    this.name = 'SushiSwap'
+    this.name = 'RadioSwap'
   }
 }
 
 export class SushiSwapTWAP1Oracle extends AbstractOracle {
   constructor(pair, chainId: ChainId, tokens?: Token[]) {
     super(pair, chainId, tokens)
-    this.name = 'SushiSwap'
+    this.name = 'RadioSwap'
   }
 }
 

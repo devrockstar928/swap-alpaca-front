@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/sdk'
+import { ChainId } from '@alpaca-swap/sdk'
 import concat from 'lodash/concat'
 import { useMemo } from 'react'
 import useSWR, { SWRConfiguration } from 'swr'
