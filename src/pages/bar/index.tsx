@@ -135,22 +135,22 @@ export default function Stake() {
     }
   }
 
-  const block1d = useBlock({ daysAgo: 1, chainId: ChainId.MAINNET })
+  const block1d = useBlock({ daysAgo: 1, chainId })
 
-  const exchange = useFactory({ chainId: ChainId.MAINNET })
+  const exchange = useFactory({ chainId })
 
   const exchange1d = useFactory({
-    chainId: ChainId.MAINNET,
+    chainId,
     variables: {
       block: block1d,
     },
     shouldFetch: !!block1d,
   })
 
-  const ethPrice = useNativePrice({ chainId: ChainId.MAINNET })
+  const ethPrice = useNativePrice({ chainId })
 
   const xSushi = useTokens({
-    chainId: ChainId.MAINNET,
+    chainId,
     variables: { where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
@@ -161,6 +161,7 @@ export default function Stake() {
   const APY1d = aprToApy(
     (((exchange?.volumeUSD - exchange1d?.volumeUSD) * 0.0005 * 365.25) / (bar?.totalSupply * xSushiPrice)) * 100 ?? 0
   )
+  debugger
 
   return (
     <Container id="bar-page" className="py-4 md:py-8 lg:py-12" maxWidth="full">
@@ -225,16 +226,17 @@ export default function Stake() {
         </div>
         <div className="flex flex-col justify-center md:flex-row">
           <div className="flex flex-col w-full max-w-xl mx-auto mb-4 md:m-0">
-            <div className="mb-4">
-              <div className="flex items-center justify-between w-full h-24 max-w-xl p-4 rounded md:pl-5 md:pr-7 bg-light-yellow bg-opacity-40">
-                <div className="flex flex-col">
-                  <div className="flex items-center justify-center mb-4 flex-nowrap md:mb-2">
-                    <p className="text-sm font-bold whitespace-nowrap md:text-lg md:leading-5 text-high-emphesis">
-                      {i18n._(t`Staking APR`)}{' '}
-                    </p>
-                    {/* <img className="ml-3 cursor-pointer" src={MoreInfoSymbol} alt={'more info'} /> */}
-                  </div>
-                  <div className="flex">
+            {chainId === ChainId.MAINNET && (
+              <div className="mb-4">
+                <div className="flex items-center justify-between w-full h-24 max-w-xl p-4 rounded md:pl-5 md:pr-7 bg-light-yellow bg-opacity-40">
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-center mb-4 flex-nowrap md:mb-2">
+                      <p className="text-sm font-bold whitespace-nowrap md:text-lg md:leading-5 text-high-emphesis">
+                        {i18n._(t`Staking APR`)}{' '}
+                      </p>
+                      {/* <img className="ml-3 cursor-pointer" src={MoreInfoSymbol} alt={'more info'} /> */}
+                    </div>
+                    {/* <div className="flex">
                     <a
                       href={`https://analytics.sushi.com/bar`}
                       target="_blank"
@@ -246,18 +248,19 @@ export default function Stake() {
                     >
                       {i18n._(t`View Stats`)}
                     </a>
+                  </div> */}
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="mb-1 text-lg font-bold text-right text-high-emphesis md:text-3xl">
+                      {`${APY1d ? APY1d.toFixed(2) + '%' : i18n._(t`Loading...`)}`}
+                    </p>
+                    <p className="w-32 text-sm text-right text-primary md:w-64 md:text-base">
+                      {i18n._(t`Yesterday's APR`)}
+                    </p>
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <p className="mb-1 text-lg font-bold text-right text-high-emphesis md:text-3xl">
-                    {`${APY1d ? APY1d.toFixed(2) + '%' : i18n._(t`Loading...`)}`}
-                  </p>
-                  <p className="w-32 text-sm text-right text-primary md:w-64 md:text-base">
-                    {i18n._(t`Yesterday's APR`)}
-                  </p>
-                </div>
               </div>
-            </div>
+            )}
             <div>
               <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
               <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-dark-900 md:pb-9 md:pt-4 md:px-8">
@@ -442,7 +445,7 @@ export default function Stake() {
                             <p className="ml-5 text-base text-primary md:ml-0">{`${weightedApr}%`}</p>
                         </div>
                     </div> */}
-                  {account && (
+                  {account && false && (
                     <a
                       href={`https://analytics.sushi.com/users/${account}`}
                       target="_blank"
