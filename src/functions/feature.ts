@@ -38,6 +38,7 @@ const features = {
     // Feature.KASHI,
     Feature.MIGRATE,
     // Feature.ANALYTICS,
+    Feature.STAKING,
   ],
   [ChainId.MATIC_TESTNET]: [Feature.AMM],
   [ChainId.HARMONY]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS],
