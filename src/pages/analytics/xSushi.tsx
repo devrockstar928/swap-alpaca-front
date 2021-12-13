@@ -1,4 +1,4 @@
-import { ChainId, RADIO_ADDRESS } from '@alpaca-swap/sdk'
+import { RADIO_ADDRESS } from '@alpaca-swap/sdk'
 import React, { useMemo } from 'react'
 import ScrollableGraph from '../../components/ScrollableGraph'
 import { XRADIO } from '../../config/tokens'
@@ -10,40 +10,41 @@ import { classNames, formatNumber, formatPercent } from '../../functions'
 import { aprToApy } from '../../functions/convert/apyApr'
 import { useBlock, useDayData, useFactory, useNativePrice, useTokenDayData, useTokens } from '../../services/graph'
 import { useBar, useBarHistory } from '../../services/graph/hooks/bar'
+import { useActiveWeb3React } from '../../services/web3'
 
 export default function XSushi() {
-  const block1d = useBlock({ daysAgo: 1, chainId: ChainId.MAINNET })
-
-  const exchange = useFactory({ chainId: ChainId.MAINNET })
+  const { chainId } = useActiveWeb3React()
+  const block1d = useBlock({ daysAgo: 1, chainId })
+  const exchange = useFactory({ chainId })
 
   const exchange1d = useFactory({
-    chainId: ChainId.MAINNET,
+    chainId,
     variables: {
       block: block1d,
     },
   })
 
-  const dayData = useDayData({ chainId: ChainId.MAINNET })
+  const dayData = useDayData({ chainId })
 
-  const ethPrice = useNativePrice({ chainId: ChainId.MAINNET })
+  const ethPrice = useNativePrice({ chainId })
 
   const ethPrice1d = useNativePrice({
-    chainId: ChainId.MAINNET,
+    chainId,
     variables: { block: block1d },
     shouldFetch: !!block1d,
   })
 
   const xSushi = useTokens({
-    chainId: ChainId.MAINNET,
-    variables: { where: { id: XRADIO.address.toLowerCase() } },
+    chainId,
+    variables: { where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
   const xSushi1d = useTokens({
-    chainId: ChainId.MAINNET,
-    variables: { block: block1d, where: { id: XRADIO.address.toLowerCase() } },
+    chainId,
+    variables: { block: block1d, where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
-  const sushiDayData = useTokenDayData({ token: RADIO_ADDRESS['1'], chainId: ChainId.MAINNET })
+  const sushiDayData = useTokenDayData({ token: RADIO_ADDRESS['1'], chainId })
 
   const bar = useBar()
 

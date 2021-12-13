@@ -42,11 +42,11 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
 
 const useStakeSushiToCreamStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
+  const { account, chainId } = useActiveWeb3React()
   const { zapIn, inputValue } = useDerivedInariState()
   const zenkoContract = useZenkoContract()
   const inariContract = useInariContract()
-  const balances = useTokenBalances(account, [RADIO[ChainId.MAINNET], CRXSUSHI])
+  const balances = useTokenBalances(account, [RADIO[chainId], CRXSUSHI])
   const cTokenAmountRef = useRef<CurrencyAmount<Token>>(null)
   const approveAmount = useMemo(() => (zapIn ? inputValue : cTokenAmountRef.current), [inputValue, zapIn])
 
@@ -87,14 +87,14 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
     if (!zenkoContract || !balances) return
 
     const main = async () => {
-      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XRADIO)
+      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XRADIO[chainId])
       const bal = await zenkoContract.fromCtoken(
         CRXSUSHI.address,
         balances[CRXSUSHI.address].toFixed().toBigNumber(CRXSUSHI.decimals).toString()
       )
       setBalances({
-        inputTokenBalance: balances[RADIO[ChainId.MAINNET].address],
-        outputTokenBalance: CurrencyAmount.fromRawAmount(XRADIO, bal.toString()),
+        inputTokenBalance: balances[RADIO[chainId].address],
+        outputTokenBalance: CurrencyAmount.fromRawAmount(XRADIO[chainId], bal.toString()),
       })
     }
 

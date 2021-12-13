@@ -52,9 +52,9 @@ const fetcher = (query) => request('https://api.thegraph.com/subgraphs/name/matt
 
 export default function Stake() {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
-  const sushiBalance = useTokenBalance(account ?? undefined, RADIO[ChainId.MAINNET])
-  const xSushiBalance = useTokenBalance(account ?? undefined, XRADIO)
+  const { account, chainId } = useActiveWeb3React()
+  const sushiBalance = useTokenBalance(account ?? undefined, RADIO[chainId])
+  const xSushiBalance = useTokenBalance(account ?? undefined, XRADIO[chainId])
 
   const { enter, leave } = useSushiBar()
 
@@ -73,7 +73,7 @@ export default function Stake() {
 
   const parsedAmount = usingBalance ? balance : tryParseAmount(input, balance?.currency)
 
-  const [approvalState, approve] = useApproveCallback(parsedAmount, BAR_ADDRESS[ChainId.MAINNET])
+  const [approvalState, approve] = useApproveCallback(parsedAmount, BAR_ADDRESS[chainId])
 
   const handleInput = (v: string) => {
     if (v.length <= INPUT_CHAR_LIMIT) {
@@ -112,12 +112,15 @@ export default function Stake() {
             return
           }
         }
+        console.log('Calling enter()')
         const success = await sendTx(() => enter(parsedAmount))
         if (!success) {
+          console.log(`Failed to enter bar`)
           setPendingTx(false)
           // setModalOpen(true)
           return
         }
+        console.log(`Successfully entered bar`)
       } else if (activeTab === 1) {
         const success = await sendTx(() => leave(parsedAmount))
         if (!success) {
@@ -148,7 +151,7 @@ export default function Stake() {
 
   const xSushi = useTokens({
     chainId: ChainId.MAINNET,
-    variables: { where: { id: XRADIO.address.toLowerCase() } },
+    variables: { where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
   const bar = useBar()

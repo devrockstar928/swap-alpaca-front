@@ -46,8 +46,8 @@ import MEOWSHI_ABI from '../constants/abis/meowshi.json'
 import MERKLE_DISTRIBUTOR_ABI from '../constants/abis/merkle-distributor.json'
 import MINICHEF_ABI from '../constants/abis/minichef-v2.json'
 import MULTICALL2_ABI from '../constants/abis/multicall2.json'
+import RADIO_ABI from '../constants/abis/radio.json'
 import ROUTER_ABI from '../constants/abis/router.json'
-import SUSHI_ABI from '../constants/abis/sushi.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
 import UNI_FACTORY_ABI from '../constants/abis/uniswap-v2-factory.json'
 import IUniswapV2PairABI from '../constants/abis/uniswap-v2-pair.json'
@@ -133,7 +133,7 @@ export function useMulticall2Contract() {
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && RADIO_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
+  return useContract(chainId && RADIO_ADDRESS[chainId], RADIO_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
@@ -162,6 +162,7 @@ export function useRouterContract(): Contract | null {
 
 export function useSushiBarContract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
+  console.log(`BAR_ADDRESS[${chainId}]`, BAR_ADDRESS[chainId])
   return useContract(chainId && BAR_ADDRESS[chainId], BAR_ABI, withSignerIfPossible)
 }
 

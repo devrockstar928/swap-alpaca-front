@@ -1,4 +1,4 @@
-import { ChainId, RADIO_ADDRESS, Token, WETH9 } from '@alpaca-swap/sdk'
+import { BAR_ADDRESS, ChainId, RADIO_ADDRESS, Token, WETH9 } from '@alpaca-swap/sdk'
 
 export const FUSE: { [key: string]: Token } = {
   WETH: new Token(ChainId.FUSE, '0xa722c13135930332Eb3d749B2F0906559D2C5b99', 18, 'WETH', 'Wrapped Ether'),
@@ -222,7 +222,7 @@ export const XSUSHI_CALL = new Token(
 )
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WBTC', 'Wrapped BTC')
 
-export const XRADIO = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xRADIO', 'RadioBar')
+// export const XRADIO = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xRADIO', 'RadioBar')
 
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
@@ -294,6 +294,12 @@ export const RADIO: ChainTokenMap = {
   // [ChainId.CELO]: new Token(ChainId.CELO, RADIO_ADDRESS[ChainId.CELO], 18, 'RADIO', 'RadioToken'),
   // [ChainId.MOONRIVER]: new Token(ChainId.MOONRIVER, RADIO_ADDRESS[ChainId.MOONRIVER], 18, 'RADIO', 'RadioToken'),
   // [ChainId.TELOS]: new Token(ChainId.TELOS, RADIO_ADDRESS[ChainId.TELOS], 18, 'RADIO', 'RadioToken'),
+}
+
+export const XRADIO: ChainTokenMap = {
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, BAR_ADDRESS[ChainId.MAINNET], 18, 'XRADIO', 'The Shark'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, BAR_ADDRESS[ChainId.RINKEBY], 18, 'XRADIO', 'The Shark'),
+  [ChainId.MATIC]: new Token(ChainId.MATIC, BAR_ADDRESS[ChainId.MATIC], 18, 'XRADIO', 'The Shark'),
 }
 
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {

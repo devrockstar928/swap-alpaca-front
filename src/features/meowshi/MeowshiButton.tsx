@@ -27,10 +27,10 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
     open: false,
   })
   const { account, chainId } = useActiveWeb3React()
-  const sushiBalance = useTokenBalance(account, RADIO[ChainId.MAINNET])
-  const xSushiBalance = useTokenBalance(account, XRADIO)
+  const sushiBalance = useTokenBalance(account, RADIO[chainId])
+  const xSushiBalance = useTokenBalance(account, XRADIO[chainId])
   const { approvalState, approve, meow, unmeow, meowSushi, unmeowSushi } = useMeowshi(
-    currencies[Field.INPUT] === RADIO[ChainId.MAINNET]
+    currencies[Field.INPUT] === RADIO[chainId]
   )
   const balance = useTokenBalance(account, currencies[Field.INPUT])
   const parsedInputAmount = tryParseAmount(fields[Field.INPUT], currencies[Field.INPUT])
