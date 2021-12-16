@@ -1,4 +1,4 @@
-import { Token } from '@alpaca-swap/sdk'
+import { Token } from '@radioshackswap/sdk'
 import { TokenInfo } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { isAddress } from './validate'

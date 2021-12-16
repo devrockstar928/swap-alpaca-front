@@ -1,4 +1,4 @@
-import { WNATIVE } from '@alpaca-swap/sdk'
+import { WNATIVE } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import React, { useState } from 'react'

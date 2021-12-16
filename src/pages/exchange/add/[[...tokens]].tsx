@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'

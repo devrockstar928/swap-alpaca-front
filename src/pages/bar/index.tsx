@@ -1,4 +1,4 @@
-import { BAR_ADDRESS, ChainId, ZERO } from '@alpaca-swap/sdk'
+import { BAR_ADDRESS, ChainId, ZERO } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { request } from 'graphql-request'

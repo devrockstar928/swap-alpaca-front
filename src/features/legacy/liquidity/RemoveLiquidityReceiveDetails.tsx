@@ -1,4 +1,4 @@
-import { Currency, currencyEquals, NATIVE, WNATIVE } from '@alpaca-swap/sdk'
+import { Currency, currencyEquals, NATIVE, WNATIVE } from '@radioshackswap/sdk'
 import Link from 'next/link'
 import React from 'react'
 import { AutoColumn } from '../../../components/Column'

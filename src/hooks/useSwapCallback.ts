@@ -1,4 +1,4 @@
-import { ChainId, Currency, Percent, Router, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
+import { ChainId, Currency, Percent, Router, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useMemo } from 'react'

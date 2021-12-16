@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { NetworkConnector } from '../entities/NetworkConnector'

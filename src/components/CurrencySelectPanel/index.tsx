@@ -1,4 +1,4 @@
-import { Currency } from '@alpaca-swap/sdk'
+import { Currency } from '@radioshackswap/sdk'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

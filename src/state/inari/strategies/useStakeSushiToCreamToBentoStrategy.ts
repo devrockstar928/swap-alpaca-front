@@ -1,4 +1,4 @@
-import { ChainId, RADIO_ADDRESS, Token } from '@alpaca-swap/sdk'
+import { ChainId, RADIO_ADDRESS, Token } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'

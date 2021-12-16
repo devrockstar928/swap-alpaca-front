@@ -7,7 +7,7 @@ import {
   Trade as V2Trade,
   TradeType,
   WNATIVE_ADDRESS,
-} from '@alpaca-swap/sdk'
+} from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ParsedQs } from 'qs'

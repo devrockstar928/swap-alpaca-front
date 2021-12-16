@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import stringify from 'fast-json-stable-stringify'
 import { useMemo } from 'react'
 import useSWR, { SWRConfiguration } from 'swr'

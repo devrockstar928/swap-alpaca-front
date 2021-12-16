@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

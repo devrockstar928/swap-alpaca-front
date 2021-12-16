@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import React from 'react'
 import NavLink from '../../components/NavLink'
 import { useActiveWeb3React } from '../../services/web3'

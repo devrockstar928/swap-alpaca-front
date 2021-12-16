@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { Contract } from '@ethersproject/contracts'
 import stringify from 'fast-json-stable-stringify'
 import useSWR from 'swr'

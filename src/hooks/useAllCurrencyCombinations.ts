@@ -1,4 +1,4 @@
-import { Currency, Token } from '@alpaca-swap/sdk'
+import { Currency, Token } from '@radioshackswap/sdk'
 import flatMap from 'lodash/flatMap'
 import { useMemo } from 'react'
 import { ADDITIONAL_BASES, BASES_TO_CHECK_TRADES_AGAINST, CUSTOM_BASES } from '../config/routing'

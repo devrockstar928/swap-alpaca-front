@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, Pair, Trade, TradeType } from '@radioshackswap/sdk'
 import { useMemo } from 'react'
 import { BETTER_TRADE_LESS_HOPS_THRESHOLD } from '../constants'
 import { isTradeBetter } from '../functions/trade'

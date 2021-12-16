@@ -1,4 +1,4 @@
-import { Currency, Token } from '@alpaca-swap/sdk'
+import { Currency, Token } from '@radioshackswap/sdk'
 import { useCallback, useState } from 'react'
 import { useActiveWeb3React } from '../services/web3'
 import { getCurrencyLogoUrls } from './../components/CurrencyLogo'

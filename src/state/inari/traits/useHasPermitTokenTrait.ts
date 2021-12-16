@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { useCallback } from 'react'
 import { useInariContract } from '../../../hooks/useContract'
 import { useERC20Permit } from '../../../hooks/useERC20Permit'

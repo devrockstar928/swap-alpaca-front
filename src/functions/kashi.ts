@@ -10,7 +10,7 @@ import {
   PROTOCOL_FEE,
   PROTOCOL_FEE_DIVISOR,
   STARTING_INTEREST_PER_YEAR,
-} from '@alpaca-swap/sdk'
+} from '@radioshackswap/sdk'
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { Web3Provider } from '@ethersproject/providers'

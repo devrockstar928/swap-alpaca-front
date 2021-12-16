@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price, Token } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { useCallback, useMemo } from 'react'

@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Pair, Percent, Token } from '@alpaca-swap/sdk'
+import { CurrencyAmount, JSBI, Pair, Percent, Token } from '@radioshackswap/sdk'
 import { Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'

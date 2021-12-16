@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent } from '@alpaca-swap/sdk'
+import { ChainId, JSBI, Percent } from '@radioshackswap/sdk'
 
 export const POOL_DENY = ['14', '29', '45', '30']
 

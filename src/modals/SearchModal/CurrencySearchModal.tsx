@@ -1,4 +1,4 @@
-import { Currency, Token } from '@alpaca-swap/sdk'
+import { Currency, Token } from '@radioshackswap/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import React, { useCallback, useEffect, useState } from 'react'
 import Modal from '../../components/Modal'

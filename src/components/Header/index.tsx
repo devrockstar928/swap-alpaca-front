@@ -1,4 +1,4 @@
-import { ChainId, NATIVE, RADIO_ADDRESS } from '@alpaca-swap/sdk'
+import { ChainId, NATIVE, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import { Popover } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

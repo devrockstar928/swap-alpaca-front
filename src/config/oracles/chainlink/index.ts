@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import ARBITRUM from './mappings/arbitrum'
 import AVALANCHE from './mappings/avalanche'
 import BSC from './mappings/bsc'

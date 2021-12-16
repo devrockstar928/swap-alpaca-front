@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { useCallback, useEffect, useMemo } from 'react'
 import { retry, RetryableError, RetryOptions } from '../../functions/retry'
 import { useActiveWeb3React } from '../../services/web3'

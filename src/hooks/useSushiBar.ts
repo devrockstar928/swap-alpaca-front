@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { useCallback } from 'react'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { useSushiBarContract } from './useContract'

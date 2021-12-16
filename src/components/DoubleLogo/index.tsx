@@ -1,4 +1,4 @@
-import { Currency } from '@alpaca-swap/sdk'
+import { Currency } from '@radioshackswap/sdk'
 import React from 'react'
 import { classNames } from '../../functions'
 import CurrencyLogo from '../CurrencyLogo'

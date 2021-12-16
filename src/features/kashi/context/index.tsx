@@ -1,4 +1,4 @@
-import { ChainId, KASHI_ADDRESS, NATIVE, WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
+import { ChainId, KASHI_ADDRESS, NATIVE, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'

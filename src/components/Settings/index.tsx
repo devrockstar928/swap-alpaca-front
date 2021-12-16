@@ -1,4 +1,4 @@
-import { Percent } from '@alpaca-swap/sdk'
+import { Percent } from '@radioshackswap/sdk'
 import { AdjustmentsIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

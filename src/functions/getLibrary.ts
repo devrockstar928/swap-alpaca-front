@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { Web3Provider } from '@ethersproject/providers'
 
 const NETWORK_POLLING_INTERVALS: { [chainId: number]: number } = {

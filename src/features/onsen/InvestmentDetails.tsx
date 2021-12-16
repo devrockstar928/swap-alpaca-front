@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, USD, ZERO } from '@alpaca-swap/sdk'
+import { CurrencyAmount, JSBI, Token, USD, ZERO } from '@radioshackswap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'

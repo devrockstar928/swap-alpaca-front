@@ -1,4 +1,4 @@
-import { BENTOBOX_ADDRESS, WNATIVE_ADDRESS } from '@alpaca-swap/sdk'
+import { BENTOBOX_ADDRESS, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import React from 'react'

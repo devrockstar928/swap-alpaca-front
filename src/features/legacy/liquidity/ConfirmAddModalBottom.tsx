@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import React from 'react'

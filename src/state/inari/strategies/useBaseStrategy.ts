@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { useCallback, useMemo, useState } from 'react'
 import { e10 } from '../../../functions'
 import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'

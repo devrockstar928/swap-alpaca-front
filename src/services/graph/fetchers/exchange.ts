@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { GRAPH_HOST } from '../constants'
 import { pager } from '../functions'
 import {

@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { CurrencyAmount, Token } from '@radioshackswap/sdk'
 
 type TokenAddress = string
 

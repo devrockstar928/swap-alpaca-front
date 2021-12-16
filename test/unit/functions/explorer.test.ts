@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { getExplorerLink } from '../../../src/functions/explorer'
 
 describe('utils', () => {

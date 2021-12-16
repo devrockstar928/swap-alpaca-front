@@ -1,4 +1,4 @@
-import { CurrencyAmount, NATIVE, Pair } from '@alpaca-swap/sdk'
+import { CurrencyAmount, NATIVE, Pair } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Head from 'next/head'

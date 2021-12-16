@@ -1,4 +1,4 @@
-import { ChainId, Currency, Percent } from '@alpaca-swap/sdk'
+import { ChainId, Currency, Percent } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'

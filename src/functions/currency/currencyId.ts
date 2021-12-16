@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@alpaca-swap/sdk'
+import { ChainId, Currency } from '@radioshackswap/sdk'
 
 export function currencyId(currency: Currency): string {
   if ([ChainId.CELO].includes(currency.chainId)) {

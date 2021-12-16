@@ -1,4 +1,4 @@
-import { Currency, Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, Trade, TradeType } from '@radioshackswap/sdk'
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import React, { Fragment, memo } from 'react'
 import { unwrappedToken } from '../../../functions/currency/wrappedCurrency'

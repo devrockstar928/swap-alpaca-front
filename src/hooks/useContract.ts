@@ -17,7 +17,7 @@ import {
   ROUTER_ADDRESS,
   TIMELOCK_ADDRESS,
   WNATIVE_ADDRESS,
-} from '@alpaca-swap/sdk'
+} from '@radioshackswap/sdk'
 import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { useMemo } from 'react'

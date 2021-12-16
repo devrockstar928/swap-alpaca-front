@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@alpaca-swap/sdk'
+import { ChainId, Token } from '@radioshackswap/sdk'
 import { ArrowDownIcon } from '@heroicons/react/outline'
 import { ExclamationIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'

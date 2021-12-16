@@ -1,4 +1,4 @@
-import { Percent } from '@alpaca-swap/sdk'
+import { Percent } from '@radioshackswap/sdk'
 import React from 'react'
 import { warningSeverity } from '../../../functions/prices'
 

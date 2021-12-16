@@ -1,4 +1,4 @@
-import { Fraction as SDKFraction } from '@alpaca-swap/sdk'
+import { Fraction as SDKFraction } from '@radioshackswap/sdk'
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { One, Zero } from '@ethersproject/constants'
 import { formatBalance, parseBalance } from '../functions'

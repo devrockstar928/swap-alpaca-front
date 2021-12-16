@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@alpaca-swap/sdk'
+import { ChainId, Currency, NATIVE, WNATIVE } from '@radioshackswap/sdk'
 import { useMemo } from 'react'
 import { tryParseAmount } from '../functions/parse'
 import { useActiveWeb3React } from '../services/web3'

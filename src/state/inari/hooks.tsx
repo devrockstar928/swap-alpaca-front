@@ -1,4 +1,4 @@
-import { Token } from '@alpaca-swap/sdk'
+import { Token } from '@radioshackswap/sdk'
 import { useMemo } from 'react'
 import { tryParseAmount } from '../../functions'
 import { useAppSelector } from '../hooks'

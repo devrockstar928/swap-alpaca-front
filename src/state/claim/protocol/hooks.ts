@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, RADIO } from '@alpaca-swap/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, RADIO } from '@radioshackswap/sdk'
 import { getAddress, isAddress } from '@ethersproject/address'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useEffect, useState } from 'react'

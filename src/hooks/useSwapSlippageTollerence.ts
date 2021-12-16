@@ -1,4 +1,4 @@
-import { Currency, Percent, Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, Percent, Trade, TradeType } from '@radioshackswap/sdk'
 import { useMemo } from 'react'
 import { useUserSlippageToleranceWithDefault } from '../state/user/hooks'
 

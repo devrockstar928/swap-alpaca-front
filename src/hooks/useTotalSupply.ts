@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useTokenContract } from './useContract'

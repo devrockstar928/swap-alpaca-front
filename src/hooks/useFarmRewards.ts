@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { getAddress } from '@ethersproject/address'
 import toLower from 'lodash/toLower'
 import { useMemo } from 'react'

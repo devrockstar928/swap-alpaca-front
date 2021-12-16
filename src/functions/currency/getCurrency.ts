@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { AddressZero } from '@ethersproject/constants'
 
 type Currency = { address: string; decimals: number }

@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, RADIO_ADDRESS, Token } from '@alpaca-swap/sdk'
+import { ChainId, CurrencyAmount, RADIO_ADDRESS, Token } from '@radioshackswap/sdk'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

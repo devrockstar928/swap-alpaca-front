@@ -1,4 +1,4 @@
-import { JSBI, Percent } from '@alpaca-swap/sdk'
+import { JSBI, Percent } from '@radioshackswap/sdk'
 
 // converts a basis points value to a sdk percent
 export function basisPointsToPercent(num: number): Percent {

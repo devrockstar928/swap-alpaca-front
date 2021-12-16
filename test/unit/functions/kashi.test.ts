@@ -4,7 +4,7 @@ import {
   MINIMUM_INTEREST_PER_YEAR,
   MINIMUM_TARGET_UTILIZATION,
   STARTING_INTEREST_PER_YEAR,
-} from '@alpaca-swap/sdk'
+} from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import '../../../src/bootstrap'
 import { e10, ZERO } from '../../../src/functions'

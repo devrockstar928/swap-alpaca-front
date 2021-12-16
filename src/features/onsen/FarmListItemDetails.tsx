@@ -1,4 +1,4 @@
-import { Token, ZERO } from '@alpaca-swap/sdk'
+import { Token, ZERO } from '@radioshackswap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { Disclosure, Tab, Transition } from '@headlessui/react'
 import { t } from '@lingui/macro'

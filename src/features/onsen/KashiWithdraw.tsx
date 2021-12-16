@@ -1,4 +1,4 @@
-import { CurrencyAmount } from '@alpaca-swap/sdk'
+import { CurrencyAmount } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

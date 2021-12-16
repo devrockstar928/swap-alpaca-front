@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Head from 'next/head'

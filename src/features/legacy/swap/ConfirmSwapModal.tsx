@@ -1,4 +1,4 @@
-import { Currency, Percent, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, Percent, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import React, { useCallback, useMemo } from 'react'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,

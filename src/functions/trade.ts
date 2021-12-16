@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, Trade, TradeType } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { ONE_HUNDRED_PERCENT, ZERO_PERCENT } from '../constants'
 

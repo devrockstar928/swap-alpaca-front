@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@radioshackswap/sdk'
 import { Interface } from '@ethersproject/abi'
 import { useMemo } from 'react'
 import ERC20_ABI from '../../constants/abis/erc20.json'

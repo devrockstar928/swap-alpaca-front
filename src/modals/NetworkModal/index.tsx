@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import cookie from 'cookie-cutter'
 import Image from 'next/image'
 import React from 'react'

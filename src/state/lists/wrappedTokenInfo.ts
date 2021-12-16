@@ -1,4 +1,4 @@
-import { Currency, Token } from '@alpaca-swap/sdk'
+import { Currency, Token } from '@radioshackswap/sdk'
 import { Tags, TokenInfo } from '@uniswap/token-lists'
 import { TokenList } from '@uniswap/token-lists/dist/types'
 import { isAddress } from '../../functions/validate'

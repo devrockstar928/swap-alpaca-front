@@ -8,7 +8,7 @@ import {
   Token,
   USD,
   ZERO,
-} from '@alpaca-swap/sdk'
+} from '@radioshackswap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Switch } from '@headlessui/react'

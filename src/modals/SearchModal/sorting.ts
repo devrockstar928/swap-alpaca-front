@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { useMemo } from 'react'
 import { useAllTokenBalances } from '../../state/wallet/hooks'
 

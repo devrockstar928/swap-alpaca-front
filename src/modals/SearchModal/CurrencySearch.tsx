@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, Token } from '@alpaca-swap/sdk'
+import { ChainId, Currency, NATIVE, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'

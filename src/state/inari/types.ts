@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { ChainId, CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { BaseStrategyHook } from './strategies/useBaseStrategy'
 import { BaseStrategyWithBentoBoxTraitHook } from './traits/useBentoBoxTrait'
 import { BaseStrategyWithHasPermitTokenHook } from './traits/useHasPermitTokenTrait'

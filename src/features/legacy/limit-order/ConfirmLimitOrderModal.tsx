@@ -1,4 +1,4 @@
-import { USDC } from '@alpaca-swap/sdk'
+import { USDC } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import React, { FC, useCallback } from 'react'

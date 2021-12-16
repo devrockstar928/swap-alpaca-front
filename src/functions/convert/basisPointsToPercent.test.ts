@@ -1,4 +1,4 @@
-import { JSBI, Percent } from '@alpaca-swap/sdk'
+import { JSBI, Percent } from '@radioshackswap/sdk'
 import { basisPointsToPercent } from './basisPointsToPercent'
 
 describe('#basisPointsToPercent', () => {

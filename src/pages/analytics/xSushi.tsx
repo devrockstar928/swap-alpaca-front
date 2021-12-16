@@ -1,4 +1,4 @@
-import { RADIO_ADDRESS } from '@alpaca-swap/sdk'
+import { RADIO_ADDRESS } from '@radioshackswap/sdk'
 import React, { useMemo } from 'react'
 import ScrollableGraph from '../../components/ScrollableGraph'
 import { XRADIO } from '../../config/tokens'

@@ -1,4 +1,4 @@
-import { ChainId, RADIO_ADDRESS } from '@alpaca-swap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import { parse } from 'qs'
 import { Field } from './actions'
 import { queryParametersToSwapState } from './hooks'

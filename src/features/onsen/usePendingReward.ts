@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { useEffect, useMemo, useState } from 'react'
 import Fraction from '../../entities/Fraction'

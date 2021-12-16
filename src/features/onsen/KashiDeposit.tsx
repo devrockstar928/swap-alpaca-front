@@ -1,4 +1,4 @@
-import { BENTOBOX_ADDRESS, CurrencyAmount, WNATIVE } from '@alpaca-swap/sdk'
+import { BENTOBOX_ADDRESS, CurrencyAmount, WNATIVE } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

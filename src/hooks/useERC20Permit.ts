@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { splitSignature } from '@ethersproject/bytes'
 import { useMemo, useState } from 'react'
 import { DAI, RADIO, USDC } from '../config/tokens'

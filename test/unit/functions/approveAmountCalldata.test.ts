@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Token } from '@alpaca-swap/sdk'
+import { ChainId, Currency, CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { AddressZero } from '@ethersproject/constants'
 import approveAmountCalldata, { toHex } from '../../../src/functions/approveAmountCalldata'
 

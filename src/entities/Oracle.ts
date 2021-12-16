@@ -1,4 +1,4 @@
-import { ChainId, CHAINLINK_ORACLE_ADDRESS, Token } from '@alpaca-swap/sdk'
+import { ChainId, CHAINLINK_ORACLE_ADDRESS, Token } from '@radioshackswap/sdk'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
 import { CHAINLINK_PRICE_FEED_MAP } from '../config/oracles/chainlink'

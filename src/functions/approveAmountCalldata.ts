@@ -1,4 +1,4 @@
-import { BigintIsh, Currency, CurrencyAmount, JSBI } from '@alpaca-swap/sdk'
+import { BigintIsh, Currency, CurrencyAmount, JSBI } from '@radioshackswap/sdk'
 import { Interface } from '@ethersproject/abi'
 
 export function toHex(bigintIsh: BigintIsh) {

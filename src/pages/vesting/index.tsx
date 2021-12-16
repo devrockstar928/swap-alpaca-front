@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount } from '@alpaca-swap/sdk'
+import { ChainId, Currency, CurrencyAmount } from '@radioshackswap/sdk'
 import { isAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { ArrowRightIcon } from '@heroicons/react/outline'

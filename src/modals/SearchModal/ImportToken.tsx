@@ -1,4 +1,4 @@
-import { Currency, Token } from '@alpaca-swap/sdk'
+import { Currency, Token } from '@radioshackswap/sdk'
 import { plural, t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { TokenList } from '@uniswap/token-lists/dist/types'

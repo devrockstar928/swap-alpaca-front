@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { request } from 'graphql-request'
 import { GRAPH_HOST } from '../constants'
 

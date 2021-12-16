@@ -1,4 +1,4 @@
-import { ChainId, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@alpaca-swap/sdk'
+import { ChainId, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@radioshackswap/sdk'
 import { TransactionResponse } from '@ethersproject/abstract-provider'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'

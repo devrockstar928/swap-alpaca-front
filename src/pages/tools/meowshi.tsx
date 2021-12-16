@@ -1,4 +1,4 @@
-import { ChainId, Currency, Token } from '@alpaca-swap/sdk'
+import { ChainId, Currency, Token } from '@radioshackswap/sdk'
 import { ArrowDownIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'

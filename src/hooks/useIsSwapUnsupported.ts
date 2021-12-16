@@ -1,4 +1,4 @@
-import { Currency, Token } from '@alpaca-swap/sdk'
+import { Currency, Token } from '@radioshackswap/sdk'
 import { useMemo } from 'react'
 import { useUnsupportedTokens } from './Tokens'
 

@@ -1,4 +1,4 @@
-import { Token } from '@alpaca-swap/sdk'
+import { Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { TokenList } from '@uniswap/token-lists'

@@ -1,4 +1,4 @@
-import { BAR_ADDRESS, ChainId, RADIO_ADDRESS, Token, WETH9 } from '@alpaca-swap/sdk'
+import { BAR_ADDRESS, ChainId, RADIO_ADDRESS, Token, WETH9 } from '@radioshackswap/sdk'
 
 export const FUSE: { [key: string]: Token } = {
   WETH: new Token(ChainId.FUSE, '0xa722c13135930332Eb3d749B2F0906559D2C5b99', 18, 'WETH', 'Wrapped Ether'),

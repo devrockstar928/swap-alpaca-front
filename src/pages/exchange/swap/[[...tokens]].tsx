@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Lottie from 'lottie-react'

@@ -1,4 +1,4 @@
-// import { CurrencyAmount, JSBI, Token } from '@alpaca-swap/sdk'
+// import { CurrencyAmount, JSBI, Token } from '@radioshackswap/sdk'
 
 // import { t } from '@lingui/macro'
 // import { tryParseAmount } from '../../functions'

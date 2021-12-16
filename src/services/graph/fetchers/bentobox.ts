@@ -1,4 +1,4 @@
-import { ChainId } from '@alpaca-swap/sdk'
+import { ChainId } from '@radioshackswap/sdk'
 import { getFraction, toAmount } from '../../../functions'
 import { GRAPH_HOST } from '../constants'
 import { pager } from '../functions'

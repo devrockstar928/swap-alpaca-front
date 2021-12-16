@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@alpaca-swap/sdk'
+import { ChainId, Token } from '@radioshackswap/sdk'
 import Vibrant from 'node-vibrant'
 import { shade } from 'polished'
 import { useLayoutEffect, useState } from 'react'

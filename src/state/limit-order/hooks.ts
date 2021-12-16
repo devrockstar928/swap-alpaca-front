@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, NATIVE, Percent, Price, WNATIVE } from '@alpaca-swap/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, NATIVE, Percent, Price, WNATIVE } from '@radioshackswap/sdk'
 import { i18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { ParsedQs } from 'qs'

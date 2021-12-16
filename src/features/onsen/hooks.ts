@@ -6,7 +6,7 @@ import {
   MASTERCHEF_V2_ADDRESS,
   MINICHEF_ADDRESS,
   RADIO,
-} from '@alpaca-swap/sdk'
+} from '@radioshackswap/sdk'
 import { Zero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import concat from 'lodash/concat'

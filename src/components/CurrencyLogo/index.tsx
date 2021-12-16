@@ -1,4 +1,4 @@
-import { ChainId, Currency, WNATIVE } from '@alpaca-swap/sdk'
+import { ChainId, Currency, WNATIVE } from '@radioshackswap/sdk'
 import React, { FunctionComponent, useMemo } from 'react'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'

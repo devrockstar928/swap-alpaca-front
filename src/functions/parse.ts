@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, JSBI } from '@radioshackswap/sdk'
 import { parseUnits } from '@ethersproject/units'
 
 export function parseBalance(value: string, decimals = 18) {

@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, JSBI, Pair, Route, Token, Trade, TradeType } from '@alpaca-swap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Pair, Route, Token, Trade, TradeType } from '@radioshackswap/sdk'
 import { computeRealizedLPFeeAmount } from '../../../src/functions/prices'
 
 describe('prices', () => {

@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@alpaca-swap/sdk'
+import { ChainId, Currency, NATIVE, WNATIVE } from '@radioshackswap/sdk'
 
 export function unwrappedToken(currency: Currency): Currency {
   if (currency.isNative) return currency

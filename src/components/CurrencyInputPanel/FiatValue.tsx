@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Percent } from '@alpaca-swap/sdk'
+import { Currency, CurrencyAmount, Percent } from '@radioshackswap/sdk'
 import React, { useMemo } from 'react'
 import { warningSeverity } from '../../functions/prices'
 

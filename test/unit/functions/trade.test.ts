@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Percent, Token } from '@alpaca-swap/sdk'
+import { ChainId, CurrencyAmount, Percent, Token } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
 import { calculateGasMargin, calculateSlippageAmount } from '../../../src/functions/trade'

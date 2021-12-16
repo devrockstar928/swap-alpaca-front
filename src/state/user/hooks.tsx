@@ -1,4 +1,4 @@
-import { computePairAddress, FACTORY_ADDRESS, JSBI, Pair, Percent, Token } from '@alpaca-swap/sdk'
+import { computePairAddress, FACTORY_ADDRESS, JSBI, Pair, Percent, Token } from '@radioshackswap/sdk'
 import flatMap from 'lodash/flatMap'
 import { useCallback, useMemo } from 'react'
 import ReactGA from 'react-ga'

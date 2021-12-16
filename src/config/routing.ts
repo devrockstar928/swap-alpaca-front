@@ -1,5 +1,5 @@
 // a list of tokens by chain
-import { ChainId, Token, WNATIVE } from '@alpaca-swap/sdk'
+import { ChainId, Token, WNATIVE } from '@radioshackswap/sdk'
 import * as MOONRIVER from './moonriver'
 import * as TELOS from './telos'
 import {

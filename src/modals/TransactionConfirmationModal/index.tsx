@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@alpaca-swap/sdk'
+import { ChainId, Currency } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Lottie from 'lottie-react'

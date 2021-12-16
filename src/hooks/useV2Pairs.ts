@@ -1,4 +1,4 @@
-import { computePairAddress, Currency, CurrencyAmount, FACTORY_ADDRESS, Pair } from '@alpaca-swap/sdk'
+import { computePairAddress, Currency, CurrencyAmount, FACTORY_ADDRESS, Pair } from '@radioshackswap/sdk'
 import { Interface } from '@ethersproject/abi'
 import { useMemo } from 'react'
 import IUniswapV2PairABI from '../abi/IUniswapV2Pair.json'
