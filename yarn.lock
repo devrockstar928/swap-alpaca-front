@@ -111,7 +111,7 @@
     "lodash" "^4.17.11"
 
 "@alpaca-swap/sdk@git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk":
-  "resolved" "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk#41ace9e0290f6d4539eff707a8f0f18f0ac564b8"
+  "resolved" "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk#5a443dc452831d917bd465a1c23345a67649e93e"
   "version" "5.0.0-canary.108"
   dependencies:
     "@ethersproject/abi" "^5.4.0"
