@@ -31,7 +31,7 @@
     "cli-table": "0.3.6"
   },
   "devDependencies": {
-    "@alpaca-swap/sdk": "https://github.com/genesisincubator/swap-alpaca-sdk",
+    "@alpaca-swap/sdk": "git+ssh://git@github.com:genesisincubator/swap-alpaca-sdk",
     "@binance-chain/bsc-connector": "^1.0.0",
     "@commitlint/cli": "^13.0.0",
     "@commitlint/config-conventional": "^13.0.0",
