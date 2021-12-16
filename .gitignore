@@ -26,3 +26,5 @@ public/workbox*.js.map
 lokalise.yaml
 
 coverage
+
+package-lock.json
