@@ -152,7 +152,6 @@
     "sharp": "^0.29.0",
     "start-server-and-test": "1.13.1",
     "styled-components": "^5.3.0",
-    "swap-alpaca-chainlink-whitelist": "git+ssh://git@github.com:genesisincubator/swap-alpaca-chainlink-whitelist",
     "swr": "^1.0.0",
     "tailwindcss": "^2.2.9",
     "tailwindcss-border-gradient-radius": "^2.0.0",

@@ -6,7 +6,7 @@ import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRe
 import ReactGA from 'react-ga'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FixedSizeList } from 'react-window'
-import CHAINLINK_TOKENS from 'swap-alpaca-chainlink-whitelist/chainlink.whitelist.json'
+import CHAINLINK_TOKENS from '../../../chainlink.whitelist.json'
 import Button from '../../components/Button'
 import Column from '../../components/Column'
 import ModalHeader from '../../components/ModalHeader'
