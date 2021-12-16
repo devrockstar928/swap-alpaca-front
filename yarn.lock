@@ -110,8 +110,8 @@
     "ethers" "~4.0.4"
     "lodash" "^4.17.11"
 
-"@alpaca-swap/sdk@git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk":
-  "resolved" "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-sdk#5a443dc452831d917bd465a1c23345a67649e93e"
+"@alpaca-swap/sdk@git+ssh://git@github.com:genesisincubator/swap-alpaca-sdk":
+  "resolved" "git+ssh://git@github.com/genesisincubator/swap-alpaca-sdk.git#5a443dc452831d917bd465a1c23345a67649e93e"
   "version" "5.0.0-canary.108"
   dependencies:
     "@ethersproject/abi" "^5.4.0"
@@ -17168,10 +17168,6 @@
   dependencies:
     "has-flag" "^4.0.0"
     "supports-color" "^7.0.0"
-
-"swap-alpaca-chainlink-whitelist@git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-chainlink-whitelist":
-  "resolved" "git+ssh://git@github.com-max-tang-g:genesisincubator/swap-alpaca-chainlink-whitelist#589898b1a1efc8cce5736f5ea5cb7510e66c6102"
-  "version" "1.0.0"
 
 "swarm-js@^0.1.40":
   "integrity" "sha512-yqiOCEoA4/IShXkY3WKwP5PvZhmoOOD8clsKA7EEcRILMkTEYHCQ21HDCAcVpmIxZq4LyZvWeRJ6quIyHk1caA=="
