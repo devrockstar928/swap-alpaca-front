@@ -23,7 +23,22 @@ if (process.env.NETLIFY === 'true') {
     // this script won't pick up the .npmrc file we just created.
     // The original yarn process will continue after this second yarn process finishes,
     // and when it does it will report "success Already up-to-date."
-    spawnSync('npm', { stdio: 'inherit' })
-    console.log('spawned npm')
+    spawnSync('yarn', { stdio: 'inherit' })
+    console.log('spawned yarn')
+  }
+
+  if (!fs.existsSync('.yarnrc')) {
+    console.log('yarnrc does not exist')
+    // Create .npmrc
+    fs.writeFileSync('.yarnrc', `//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}\nlegacy-peer-deps=true\n`)
+    console.log('created yarnrc')
+    fs.chmodSync('.yarnrc', 0o600)
+    console.log('chmod on yarnrc complete')
+    // Run yarn again, because the yarn process which is executing
+    // this script won't pick up the .npmrc file we just created.
+    // The original yarn process will continue after this second yarn process finishes,
+    // and when it does it will report "success Already up-to-date."
+    spawnSync('yarn', { stdio: 'inherit' })
+    console.log('spawned yarn')
   }
 }
