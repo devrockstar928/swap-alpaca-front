@@ -40,11 +40,11 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // {
-      //   source: '/',
-      //   destination: '/swap',
-      //   permanent: true,
-      // },
+      {
+        source: '/',
+        destination: '/swap',
+        permanent: true,
+      },
 
       {
         source: '/zap',
@@ -130,22 +130,22 @@ const nextConfig = {
         destination: '/exchange/find',
       },
       // Kashi
-      {
-        source: '/borrow',
-        destination: '/kashi/borrow',
-      },
-      {
-        source: '/borrow/:token*',
-        destination: '/kashi/borrow/:token*',
-      },
-      {
-        source: '/lend',
-        destination: '/kashi/lend',
-      },
-      {
-        source: '/lend/:token*',
-        destination: '/kashi/lend/:token*',
-      },
+      // {
+      //   source: '/borrow',
+      //   destination: '/kashi/borrow',
+      // },
+      // {
+      //   source: '/borrow/:token*',
+      //   destination: '/kashi/borrow/:token*',
+      // },
+      // {
+      //   source: '/lend',
+      //   destination: '/kashi/lend',
+      // },
+      // {
+      //   source: '/lend/:token*',
+      //   destination: '/kashi/lend/:token*',
+      // },
       // Onsen
       // {
       //   source: '/farm',

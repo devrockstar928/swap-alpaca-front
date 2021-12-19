@@ -1,7 +1,7 @@
-import { ChainId, NATIVE, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import { Popover } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, NATIVE, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -286,7 +286,7 @@ function AppBar(): JSX.Element {
                   </Link>
                 )}
 
-                {chainId && featureEnabled(Feature.KASHI, chainId) && (
+                {/* {chainId && featureEnabled(Feature.KASHI, chainId) && (
                   <>
                     <Link href={'/lend'}>
                       <a
@@ -306,7 +306,7 @@ function AppBar(): JSX.Element {
                       </a>
                     </Link>
                   </>
-                )}
+                )} */}
 
                 {chainId && featureEnabled(Feature.STAKING, chainId) && (
                   <Link href={'/stake'}>
