@@ -15,6 +15,7 @@ import QuestionHelper from '../QuestionHelper'
 import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
 import More from './More'
+import MarketPlace from '../MarketPlace'
 
 // import { ExternalLink, NavLink } from "./Link";
 // import { ReactComponent as Burger } from "../assets/images/burger.svg";
@@ -161,7 +162,7 @@ function AppBar(): JSX.Element {
                         </QuestionHelper>
                       </>
                     )}
-
+                    <MarketPlace />
                     {library && library.provider.isMetaMask && (
                       <div className="hidden sm:inline-block">
                         <Web3Network />
