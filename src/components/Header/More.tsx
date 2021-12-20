@@ -15,22 +15,10 @@ const items = (i18n: I18n) => [
     external: true,
   },
   {
-    name: i18n._(t`Dev`),
-    description: i18n._(t`Documentation for developers of Radio.`),
-    href: 'https://dev.sushi.com',
-    external: true,
-  },
-  {
     name: i18n._(t`Open Source`),
     description: i18n._(t`Radio is a supporter of Open Source.`),
     href: 'https://github.com/sushiswap',
     external: true,
-  },
-  {
-    name: i18n._(t`Tools`),
-    description: i18n._(t`Tools to optimize your workflow.`),
-    href: '/tools',
-    external: false,
   },
   {
     name: i18n._(t`Discord`),
