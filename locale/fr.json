@@ -122,7 +122,6 @@
   "Expert Mode": "",
   "Expert mode turns off the confirm transaction prompt and allows high slippage trades\nthat often result in bad rates and lost funds.": "",
   "Expiration is the time at which the order will become invalid": "",
-  "Farm": "",
   "Filled": "",
   "Find Pool": "",
   "For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as RADIO\nproportional to your share of the RadioBar. When your RADIO is staked into the RadioBar, you receive\nxRADIO in return for voting rights and a fully composable token that can interact with other protocols.\nYour xRADIO is continuously compounding, when you unstake you will receive all the originally deposited\nRADIO and any additional from fees.": "",
