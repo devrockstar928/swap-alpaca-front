@@ -1,6 +1,6 @@
-import { CurrencyAmount, NATIVE, Pair } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { CurrencyAmount, NATIVE, Pair } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
@@ -135,11 +135,11 @@ export default function Pool() {
               <div className="px-4 py-2">{i18n._(t`No liquidity was found. `)}</div>
             </Empty>
           )}
-          <div className={classNames('grid gap-4', migrationSupported ? 'grid-cols-3' : 'grid-cols-2')}>
+          <div className={classNames('grid gap-4', 'grid-cols-2')}>
             <Button
               id="add-pool-button"
               color="gradient"
-              className="grid items-center justify-center grid-flow-col gap-2 whitespace-nowrap"
+              className="grid items-center justify-center grid-flow-col gap-2 whitespace-nowrap bg-gradient-to-r from-red to-opaque-pink hover:from-red hover:to-pink"
               onClick={() => router.push(`/add/${currencyId(NATIVE[chainId])}`)}
             >
               {i18n._(t`Add`)}
@@ -147,12 +147,6 @@ export default function Pool() {
             <Button id="add-pool-button" color="gray" onClick={() => router.push(`/find`)}>
               {i18n._(t`Import`)}
             </Button>
-
-            {migrationSupported && (
-              <Button id="create-pool-button" color="gray" onClick={() => router.push(`/migrate`)}>
-                {i18n._(t`Migrate`)}
-              </Button>
-            )}
           </div>
         </div>
       </div>
