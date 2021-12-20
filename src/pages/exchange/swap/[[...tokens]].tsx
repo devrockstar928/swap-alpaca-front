@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import Lottie from 'lottie-react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -9,7 +9,6 @@ import ReactGA from 'react-ga'
 import swapArrowsAnimationData from '../../../animation/swap-arrows.json'
 import AddressInputPanel from '../../../components/AddressInputPanel'
 import Alert from '../../../components/Alert'
-import Banner from '../../../components/Banner'
 import Button, { ButtonConfirmed, ButtonError } from '../../../components/Button'
 import Column, { AutoColumn } from '../../../components/Column'
 import Container from '../../../components/Container'
@@ -654,7 +653,6 @@ export default function Swap() {
             <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
           )}
         </div>
-        <Banner />
       </DoubleGlowShadow>
     </Container>
   )
