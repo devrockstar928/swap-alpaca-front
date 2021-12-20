@@ -34,7 +34,7 @@ function AppBar(): JSX.Element {
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Image src="/logo.png" alt="Radio" width="32px" height="32px" />
+                  <Image src="/logo.png" alt="Radio" width="239px" height="32px" />
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
@@ -54,36 +54,7 @@ function AppBar(): JSX.Element {
                           {i18n._(t`Pool`)}
                         </a>
                       </NavLink>
-                      {chainId && featureEnabled(Feature.LIQUIDITY_MINING, chainId) && (
-                        <NavLink href={'/farm'}>
-                          <a
-                            id={`farm-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                          >
-                            {i18n._(t`Farm`)}
-                          </a>
-                        </NavLink>
-                      )}
-                      {chainId && featureEnabled(Feature.KASHI, chainId) && (
-                        <>
-                          <NavLink href={'/lend'}>
-                            <a
-                              id={`lend-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Lend`)}
-                            </a>
-                          </NavLink>
-                          <NavLink href={'/borrow'}>
-                            <a
-                              id={`borrow-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Borrow`)}
-                            </a>
-                          </NavLink>
-                        </>
-                      )}
+
                       {chainId && featureEnabled(Feature.STAKING, chainId) && (
                         <NavLink href={'/stake'}>
                           <a
@@ -274,7 +245,7 @@ function AppBar(): JSX.Element {
                   </a>
                 </Link>
 
-                {chainId && featureEnabled(Feature.LIQUIDITY_MINING, chainId) && (
+                {/* {chainId && featureEnabled(Feature.LIQUIDITY_MINING, chainId) && (
                   <Link href={'/farm'}>
                     <a
                       id={`farm-nav-link`}
@@ -284,7 +255,7 @@ function AppBar(): JSX.Element {
                       {i18n._(t`Farm`)}
                     </a>
                   </Link>
-                )}
+                )} */}
 
                 {/* {chainId && featureEnabled(Feature.KASHI, chainId) && (
                   <>

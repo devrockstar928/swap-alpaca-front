@@ -53,28 +53,33 @@ const nextConfig = {
       },
       {
         source: '/yield',
-        destination: '/farm',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/farm',
+        destination: '/404',
         permanent: true,
       },
       {
         source: '/bento',
-        destination: '/bentobox',
+        destination: '/404',
         permanent: true,
       },
       {
         source: '/bento/kashi',
-        destination: '/lend',
+        destination: '/404',
         permanent: true,
       },
       // Analytics
       {
         source: '/analytics',
-        destination: '/analytics/dashboard',
+        destination: '/404',
         permanent: true,
       },
       {
         source: '/portfolio',
-        destination: '/analytics/portfolio',
+        destination: '/404',
         permanent: true,
       },
     ]
