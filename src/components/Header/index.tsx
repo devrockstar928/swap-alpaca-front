@@ -1,7 +1,7 @@
 import { Popover } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, NATIVE, RADIO_ADDRESS } from '@radioshackswap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,12 +10,12 @@ import { Feature, featureEnabled } from '../../functions/feature'
 import { useActiveWeb3React } from '../../services/web3'
 import { useETHBalances } from '../../state/wallet/hooks'
 import ExternalLink from '../ExternalLink'
+import MarketPlace from '../MarketPlace'
 import NavLink from '../NavLink'
 import QuestionHelper from '../QuestionHelper'
 import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
 import More from './More'
-import MarketPlace from '../MarketPlace'
 
 // import { ExternalLink, NavLink } from "./Link";
 // import { ReactComponent as Burger } from "../assets/images/burger.svg";
@@ -170,13 +170,6 @@ function AppBar(): JSX.Element {
                     )}
 
                     <div className="w-auto flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
-                      {account && chainId && userEthBalance && (
-                        <>
-                          <div className="px-3 py-2 text-primary text-bold">
-                            {userEthBalance?.toSignificant(4)} {NATIVE[chainId].symbol}
-                          </div>
-                        </>
-                      )}
                       <Web3Status />
                     </div>
                     <More />
