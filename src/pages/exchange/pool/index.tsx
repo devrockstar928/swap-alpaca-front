@@ -139,7 +139,7 @@ export default function Pool() {
             <Button
               id="add-pool-button"
               color="gradient"
-              className="grid items-center justify-center grid-flow-col gap-2 whitespace-nowrap bg-gradient-to-r from-red to-opaque-pink hover:from-red hover:to-pink"
+              className="grid items-center justify-center grid-flow-col gap-2 whitespace-nowrap bg-gradient-to-r from-light-red to-dark-red hover:from-light-red-1 hover:to-dark-red-1"
               onClick={() => router.push(`/add/${currencyId(NATIVE[chainId])}`)}
             >
               {i18n._(t`Add`)}
