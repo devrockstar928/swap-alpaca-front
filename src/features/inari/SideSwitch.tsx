@@ -1,12 +1,12 @@
-import React, { FC } from 'react'
 import { Switch } from '@headlessui/react'
-import Typography from '../../components/Typography'
-import { t } from '@lingui/macro'
 import { MinusIcon, PlusIcon } from '@heroicons/react/outline'
+import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { useInariState } from '../../state/inari/hooks'
+import React, { FC } from 'react'
+import Typography from '../../components/Typography'
 import { useAppDispatch } from '../../state/hooks'
 import { setZapIn } from '../../state/inari/actions'
+import { useInariState } from '../../state/inari/hooks'
 
 interface SideSwitchProps {}
 
@@ -24,12 +24,12 @@ const SideSwitch: FC<SideSwitchProps> = () => {
         <Switch
           checked={zapIn}
           onChange={() => dispatch(setZapIn(!zapIn))}
-          className="bg-blue bg-opacity-60 border border-blue border-opacity-80 relative inline-flex items-center h-[32px] rounded-full w-[54px] transition-colors focus:outline-none"
+          className="bg-blue bg-opacity-60 border border-blue border-opacity-80 relative inline-flex items-center h-[32px] full w-[54px] transition-colors focus:outline-none"
         >
           <span
             className={`${
               zapIn ? 'translate-x-[23px]' : 'translate-x-[1px]'
-            } inline-block w-7 h-7 transform bg-white rounded-full transition-transform text-blue`}
+            } inline-block w-7 h-7 transform bg-white full transition-transform text-blue`}
           >
             {zapIn ? <PlusIcon /> : <MinusIcon />}
           </span>

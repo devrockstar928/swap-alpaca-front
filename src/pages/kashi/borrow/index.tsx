@@ -95,14 +95,14 @@ function Borrow() {
                     <div key={pair.address}>
                       <Link href={'/borrow/' + pair.address}>
                         <a className="block text-high-emphesis">
-                          <div className="grid items-center grid-cols-4 gap-4 px-4 py-4 text-sm rounded md:grid-cols-6 lg:grid-cols-7 align-center bg-dark-800 hover:bg-dark-pink">
+                          <div className="grid items-center grid-cols-4 gap-4 px-4 py-4 text-sm  md:grid-cols-6 lg:grid-cols-7 align-center bg-dark-800 hover:bg-dark-pink">
                             <div className="hidden space-x-2 md:flex">
                               <Image
                                 loader={cloudinaryLoader}
                                 height={48}
                                 width={48}
                                 src={pair.asset.tokenInfo.logoURI}
-                                className="w-5 h-5 rounded-lg md:w-10 md:h-10 lg:w-12 lg:h-12"
+                                className="w-5 h-5 lg md:w-10 md:h-10 lg:w-12 lg:h-12"
                                 alt={pair.asset.tokenInfo.symbol}
                               />
 
@@ -111,7 +111,7 @@ function Borrow() {
                                 height={48}
                                 width={48}
                                 src={pair.collateral.tokenInfo.logoURI}
-                                className="w-5 h-5 rounded-lg md:w-10 md:h-10 lg:w-12 lg:h-12"
+                                className="w-5 h-5 lg md:w-10 md:h-10 lg:w-12 lg:h-12"
                                 alt={pair.collateral.tokenInfo.symbol}
                               />
                             </div>
@@ -199,7 +199,7 @@ function Borrow() {
                 <div key={pair.address}>
                   <Link href={'/borrow/' + String(pair.address).toLowerCase()}>
                     <a className="block text-high-emphesis">
-                      <div className="grid items-center grid-cols-4 gap-4 px-4 py-4 text-sm rounded md:grid-cols-6 lg:grid-cols-7 align-center bg-dark-800 hover:bg-dark-pink">
+                      <div className="grid items-center grid-cols-4 gap-4 px-4 py-4 text-sm  md:grid-cols-6 lg:grid-cols-7 align-center bg-dark-800 hover:bg-dark-pink">
                         <div className="flex flex-col items-start sm:flex-row sm:items-center">
                           <div className="hidden space-x-2 md:flex">
                             <Image
@@ -207,7 +207,7 @@ function Borrow() {
                               height={48}
                               width={48}
                               src={pair.asset.tokenInfo.logoURI}
-                              className="w-5 h-5 rounded-lg md:w-10 md:h-10 lg:w-12 lg:h-12"
+                              className="w-5 h-5 lg md:w-10 md:h-10 lg:w-12 lg:h-12"
                               alt={pair.asset.tokenInfo.symbol}
                             />
                             <Image
@@ -215,7 +215,7 @@ function Borrow() {
                               height={48}
                               width={48}
                               src={pair.collateral.tokenInfo.logoURI}
-                              className="w-5 h-5 rounded-lg md:w-10 md:h-10 lg:w-12 lg:h-12"
+                              className="w-5 h-5 lg md:w-10 md:h-10 lg:w-12 lg:h-12"
                               alt={pair.collateral.tokenInfo.symbol}
                             />
                           </div>

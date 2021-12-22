@@ -1,10 +1,10 @@
-import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { ArrowDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -443,7 +443,7 @@ export default function Remove() {
       </div>
 
       <DoubleGlowShadow>
-        <div className="p-4 space-y-4 rounded bg-dark-900" style={{ zIndex: 1 }}>
+        <div className="p-4 space-y-4  bg-dark-900" style={{ zIndex: 1 }}>
           {/* <AddRemoveTabs
           creating={false}
           adding={false}
@@ -478,15 +478,15 @@ export default function Remove() {
 
                 <AutoColumn justify="space-between" className="py-2.5">
                   <AutoRow justify={'flex-start'} style={{ padding: '0 1rem' }}>
-                    <button className="z-10 -mt-6 -mb-6 rounded-full cursor-default bg-dark-900 p-3px">
-                      <div className="p-3 rounded-full bg-dark-800">
+                    <button className="z-10 -mt-6 -mb-6 full cursor-default bg-dark-900 p-3px">
+                      <div className="p-3 full bg-dark-800">
                         <ArrowDownIcon width="32px" height="32px" />
                       </div>
                     </button>
                   </AutoRow>
                 </AutoColumn>
 
-                <div id="remove-liquidity-output" className="p-5 rounded bg-dark-800">
+                <div id="remove-liquidity-output" className="p-5  bg-dark-800">
                   <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
                     <div className="w-full text-white sm:w-2/5" style={{ margin: 'auto 0px' }}>
                       <AutoColumn>
@@ -520,14 +520,14 @@ export default function Remove() {
                     </div>
 
                     <div className="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0">
-                      <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-dark-900">
+                      <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3  bg-dark-900">
                         <CurrencyLogo currency={currencyA} size="46px" />
                         <AutoColumn>
                           <div className="text-white truncate">{formattedAmounts[Field.CURRENCY_A] || '-'}</div>
                           <div className="text-sm">{currencyA?.symbol}</div>
                         </AutoColumn>
                       </div>
-                      <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-dark-900">
+                      <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3  bg-dark-900">
                         <CurrencyLogo currency={currencyB} size="46px" />
                         <AutoColumn>
                           <div className="text-white truncate">{formattedAmounts[Field.CURRENCY_B] || '-'}</div>

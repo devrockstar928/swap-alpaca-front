@@ -30,7 +30,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
 
   return (
     <>
-      <div className="rounded bg-dark-800">
+      <div className=" bg-dark-800">
         <div className="flex flex-col justify-between p-5 space-y-3 sm:space-y-0 sm:flex-row">
           <div className="flex items-center w-full sm:w-2/5">
             <div className="flex items-center gap-4">
@@ -46,7 +46,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
                 width="62px"
                 height="62px"
                 objectFit="contain"
-                className="rounded-full"
+                className="full"
               />
               <div className="flex flex-col items-start">
                 <Typography variant="h3" className="leading-6 text-high-emphesis" weight={700}>
@@ -64,7 +64,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full px-3 py-2 rounded bg-dark-900 sm:w-3/5">
+          <div className="flex items-center justify-between w-full px-3 py-2  bg-dark-900 sm:w-3/5">
             <div className="flex flex-col items-start">
               <div className="w-full">
                 <Input.Numeric
@@ -84,14 +84,14 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
             {showMax && (
               <span
                 onClick={() => handleInput(balance?.toExact(), field)}
-                className="flex items-center justify-center px-2 py-1 text-sm uppercase border border-opacity-50 cursor-pointer border-blue bg-blue text-blue bg-opacity-30 rounded-3xl hover:border-opacity-100"
+                className="flex items-center justify-center px-2 py-1 text-sm uppercase border border-opacity-50 cursor-pointer border-blue bg-blue text-blue bg-opacity-30 3xl hover:border-opacity-100"
               >
                 {i18n._(t`Max`)}
               </span>
             )}
           </div>
         </div>
-        <div className="bg-dark-700 rounded-b flex justify-end px-5 py-1.5 gap-2">
+        <div className="bg-dark-700 b flex justify-end px-5 py-1.5 gap-2">
           <Typography
             variant="xs"
             component="span"

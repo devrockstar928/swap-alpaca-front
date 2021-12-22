@@ -26,12 +26,6 @@ const items = (i18n: I18n) => [
     href: 'https://discord.gg/NVPXN4e',
     external: true,
   },
-  {
-    name: i18n._(t`Vesting`),
-    description: i18n._(t`Weekly unlocks from the vesting period.`),
-    href: '/vesting',
-    external: false,
-  },
 ]
 
 export default function Menu() {
@@ -94,21 +88,21 @@ export default function Menu() {
               static
               className="absolute z-50 w-screen max-w-xs px-2 mt-3 transform -translate-x-full bottom-12 lg:top-12 left-full sm:px-0"
             >
-              <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="overflow-hidden shadow-lg lg ring-1 ring-black ring-opacity-5">
                 <div className="relative grid gap-6 px-5 py-6 bg-dark-900 sm:gap-8 sm:p-8">
                   {solutions.map((item) =>
                     item.external ? (
                       <ExternalLink
                         key={item.name}
                         href={item.href}
-                        className="block p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-dark-800"
+                        className="block p-3 -m-3 transition duration-150 ease-in-out md hover:bg-dark-800"
                       >
                         <p className="text-base font-medium text-high-emphesis">{item.name}</p>
                         <p className="mt-1 text-sm text-secondary">{item.description}</p>
                       </ExternalLink>
                     ) : (
                       <NavLink key={item.name} href={item.href}>
-                        <a className="block p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-dark-800">
+                        <a className="block p-3 -m-3 transition duration-150 ease-in-out md hover:bg-dark-800">
                           <p className="text-base font-medium text-high-emphesis">{item.name}</p>
                           <p className="mt-1 text-sm text-secondary">{item.description}</p>
                         </a>

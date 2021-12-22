@@ -2,9 +2,7 @@ import React from 'react'
 import { classNames } from '../../functions/styling'
 
 function Header({ className, children }) {
-  return (
-    <div className={classNames('flex items-center rounded-t px-4 sm:px-8 py-4 sm:py-6', className)}>{children}</div>
-  )
+  return <div className={classNames('flex items-center t px-4 sm:px-8 py-4 sm:py-6', className)}>{children}</div>
 }
 
 type CardProps = {

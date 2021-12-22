@@ -68,7 +68,7 @@ function Pair() {
                       height={48}
                       width={48}
                       src={pair.asset.tokenInfo.logoURI}
-                      className="block w-10 h-10 rounded-lg sm:w-12 sm:h-12"
+                      className="block w-10 h-10 lg sm:w-12 sm:h-12"
                       alt={pair.asset.tokenInfo.symbol}
                     />
 
@@ -77,7 +77,7 @@ function Pair() {
                       height={48}
                       width={48}
                       src={pair.collateral.tokenInfo.logoURI}
-                      className="block w-10 h-10 rounded-lg sm:w-12 sm:h-12"
+                      className="block w-10 h-10 lg sm:w-12 sm:h-12"
                       alt={pair.collateral.tokenInfo.symbol}
                     />
                   </>
@@ -124,12 +124,12 @@ function Pair() {
           </div>
         </div>
         <Tab.Group>
-          <Tab.List className="flex p-1 rounded bg-dark-800">
+          <Tab.List className="flex p-1  bg-dark-800">
             <Tab
               className={({ selected }) =>
                 `${
                   selected ? 'bg-dark-900 text-high-emphesis' : ''
-                } flex items-center justify-center flex-1 px-3 py-4 text-lg rounded cursor-pointer select-none text-secondary hover:text-primary focus:outline-none`
+                } flex items-center justify-center flex-1 px-3 py-4 text-lg  cursor-pointer select-none text-secondary hover:text-primary focus:outline-none`
               }
             >
               {i18n._(t`Borrow`)}
@@ -138,7 +138,7 @@ function Pair() {
               className={({ selected }) =>
                 `${
                   selected ? 'bg-dark-900 text-high-emphesis' : ''
-                } flex items-center justify-center flex-1 px-3 py-4 text-lg rounded cursor-pointer select-none text-secondary hover:text-primary focus:outline-none`
+                } flex items-center justify-center flex-1 px-3 py-4 text-lg  cursor-pointer select-none text-secondary hover:text-primary focus:outline-none`
               }
             >
               {i18n._(t`Repay`)}

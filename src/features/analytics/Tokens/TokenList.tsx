@@ -1,11 +1,10 @@
-import ColoredNumber from '../ColoredNumber'
+import React from 'react'
 import CurrencyLogo from '../../../components/CurrencyLogo'
 import LineGraph from '../../../components/LineGraph'
-import React from 'react'
 import Table, { Column } from '../../../components/Table'
-import _ from 'lodash'
 import { formatNumber, formatPercent } from '../../../functions'
 import { useCurrency } from '../../../hooks/Tokens'
+import ColoredNumber from '../ColoredNumber'
 
 type TokenListColumnType = 'name' | 'price' | 'liquidity' | 'priceChange' | 'volumeChange' | 'lastWeekGraph'
 
@@ -40,7 +39,7 @@ function TokenListName({ token }: TokenListNameProps): JSX.Element {
   return (
     <>
       <div className="flex items-center">
-        <CurrencyLogo className="rounded-full" currency={currency} size={40} />
+        <CurrencyLogo className="full" currency={currency} size={40} />
         <div className="ml-4 text-lg font-bold text-high-emphesis">{token.symbol}</div>
       </div>
     </>

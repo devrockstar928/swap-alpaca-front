@@ -1,6 +1,6 @@
-import { Currency, Price } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Price } from '@radioshackswap/sdk'
 import React, { useCallback } from 'react'
 import Typography from '../../../components/Typography'
 import { classNames } from '../../../functions'
@@ -36,7 +36,7 @@ export default function TradePrice({ price, showInverted, setShowInverted, class
       onClick={flipPrice}
       title={text}
       className={classNames(
-        'flex justify-between w-full px-5 py-1 cursor-pointer rounded-b-md text-secondary hover:text-primary',
+        'flex justify-between w-full px-5 py-1 cursor-pointer b-md text-secondary hover:text-primary',
         className
       )}
     >

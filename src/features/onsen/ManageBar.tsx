@@ -1,3 +1,9 @@
+import { getAddress } from '@ethersproject/address'
+import { BigNumber } from '@ethersproject/bignumber'
+import { Switch } from '@headlessui/react'
+import { MinusIcon, PlusIcon } from '@heroicons/react/solid'
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
 import {
   ChainId,
   CurrencyAmount,
@@ -9,12 +15,6 @@ import {
   USD,
   ZERO,
 } from '@radioshackswap/sdk'
-import { getAddress } from '@ethersproject/address'
-import { BigNumber } from '@ethersproject/bignumber'
-import { Switch } from '@headlessui/react'
-import { MinusIcon, PlusIcon } from '@heroicons/react/solid'
-import { i18n } from '@lingui/core'
-import { t } from '@lingui/macro'
 import React, { useState } from 'react'
 import Button, { ButtonError } from '../../components/Button'
 import Dots from '../../components/Dots'
@@ -137,12 +137,12 @@ const ManageBar = ({ farm }) => {
               onChange={() => setToggle(!toggle)}
               className={`${
                 toggle ? 'bg-blue border-blue' : 'bg-pink border-pink'
-              } bg-opacity-60 border border-opacity-80 relative inline-flex items-center h-[32px] rounded-full w-[54px] transition-colors focus:outline-none`}
+              } bg-opacity-60 border border-opacity-80 relative inline-flex items-center h-[32px] full w-[54px] transition-colors focus:outline-none`}
             >
               <span
                 className={`${
                   toggle ? 'translate-x-[1px] text-blue' : 'translate-x-[23px] text-pink'
-                } inline-block w-7 h-7 transform bg-white rounded-full transition-transform`}
+                } inline-block w-7 h-7 transform bg-white full transition-transform`}
               >
                 {toggle ? <PlusIcon /> : <MinusIcon />}
               </span>

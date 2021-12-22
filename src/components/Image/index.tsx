@@ -1,5 +1,4 @@
 import NextImage from 'next/image'
-import { cloudinaryLoader } from '../../functions/cloudinary'
 
 // Cloudflare Loader
 const normalize = (src) => {
@@ -42,7 +41,7 @@ const Image = ({
 }) => {
   const useBlur = parseInt(String(height), 10) >= 40 && parseInt(String(width), 10) >= 40
   return (
-    <div style={{ width, height }} className="overflow-hidden rounded">
+    <div style={{ width, height }} className="overflow-hidden">
       {useBlur ? (
         <NextImage
           loader={loader}

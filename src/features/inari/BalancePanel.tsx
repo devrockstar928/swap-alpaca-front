@@ -1,6 +1,6 @@
-import { CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { CurrencyAmount, Token } from '@radioshackswap/sdk'
 import React, { FC, useCallback } from 'react'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import Input from '../../components/Input'
@@ -58,15 +58,15 @@ const BalancePanel: FC<BalancePanelProps> = ({ label, value, token, showMax = fa
           {symbol}
         </Typography>
       </div>
-      <div className="flex flex-row items-center gap-4 p-4 rounded bg-dark-800">
-        <div className="overflow-hidden rounded-full">
+      <div className="flex flex-row items-center gap-4 p-4  bg-dark-800">
+        <div className="overflow-hidden full">
           <CurrencyLogo currency={token} size={40} />
         </div>
         <Input.Numeric value={value} onUserInput={dispatchValue} />
         {showMax && (
           <span
             onClick={onMax}
-            className="cursor-pointer flex items-center rounded-full h-[30px] bg-blue bg-opacity-30 hover:border-opacity-100 border border-blue border-opacity-50 text-xs font-medium text-blue px-3"
+            className="cursor-pointer flex items-center full h-[30px] bg-blue bg-opacity-30 hover:border-opacity-100 border border-blue border-opacity-50 text-xs font-medium text-blue px-3"
           >
             {i18n._(t`Max`)}
           </span>

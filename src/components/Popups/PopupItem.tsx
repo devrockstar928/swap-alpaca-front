@@ -1,9 +1,8 @@
-import { useCallback, useEffect } from 'react'
-
-import { PopupContent } from '../../state/application/actions'
-import TransactionPopup from './TransactionPopup'
 import { XIcon } from '@heroicons/react/outline'
+import { useCallback, useEffect } from 'react'
+import { PopupContent } from '../../state/application/actions'
 import { useRemovePopup } from '../../state/application/hooks'
+import TransactionPopup from './TransactionPopup'
 
 const AnimatedFader = ({ duration }) => (
   <div className="h-[3px] bg-dark-800 w-full">
@@ -61,7 +60,7 @@ export default function PopupItem({
 
   return (
     <div className="mb-4">
-      <div className="relative w-full overflow-hidden rounded bg-dark-700">
+      <div className="relative w-full overflow-hidden  bg-dark-700">
         <div className="flex flex-row p-4">
           {popupContent}
           <div className="cursor-pointer hover:text-white">

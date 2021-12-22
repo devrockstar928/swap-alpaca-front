@@ -41,7 +41,7 @@ const CompletedOrders: FC = () => {
               {completed.data.map((order, index) => (
                 <div
                   key={index}
-                  className="block overflow-hidden rounded text-high-emphesis bg-dark-800"
+                  className="block overflow-hidden  text-high-emphesis bg-dark-800"
                   style={{
                     background:
                       order.status === 'Failed' // OrderStatus.FILLED

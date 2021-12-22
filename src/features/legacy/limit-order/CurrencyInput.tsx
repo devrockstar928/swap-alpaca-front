@@ -1,10 +1,9 @@
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import React, { FC, ReactNode } from 'react'
-
 import Button from '../../../components/Button'
 import Input from '../../../components/Input'
 import { classNames } from '../../../functions'
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 
 interface CurrencyInputProps {
   id: string
@@ -31,7 +30,7 @@ const CurrencyInput: FC<CurrencyInputProps> = ({
     <div
       className={classNames(
         error ? 'border-red border-opacity-40 hover:border-opacity-100' : 'border-transparent',
-        'border flex items-center w-full space-x-3 rounded bg-dark-900 focus:bg-dark-700 p-3 sm:w-3/5'
+        'border flex items-center w-full space-x-3  bg-dark-900 focus:bg-dark-700 p-3 sm:w-3/5'
       )}
     >
       <>
@@ -39,7 +38,7 @@ const CurrencyInput: FC<CurrencyInputProps> = ({
           <Button
             onClick={onMax}
             size="xs"
-            className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
+            className="text-xs font-medium bg-transparent border full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
           >
             {i18n._(t`Max`)}
           </Button>

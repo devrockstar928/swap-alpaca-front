@@ -1,9 +1,8 @@
-import { ArrowDownRight, ArrowUpRight } from 'react-feather'
-
 import { BigNumber } from '@ethersproject/bignumber'
+import React from 'react'
+import { ArrowDownRight, ArrowUpRight } from 'react-feather'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-import React from 'react'
 import { formatNumber } from '../../functions/format'
 
 type SmartNumberInputProps = {
@@ -80,7 +79,7 @@ export default function SmartNumberInput({
       <div className="relative flex items-center w-full mb-4">
         <Input.Numeric
           className={
-            'w-full p-3 bg-dark-700 rounded disabled:cursor-not-allowed disabled:bg-dark-1000 disabled:ring disabled:ring-dark-800 focus:ring focus:ring-' +
+            'w-full p-3 bg-dark-700  disabled:cursor-not-allowed disabled:bg-dark-1000 disabled:ring disabled:ring-dark-800 focus:ring focus:ring-' +
             color
           }
           value={value}

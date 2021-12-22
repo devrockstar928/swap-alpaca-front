@@ -1,6 +1,5 @@
-import { classNames, escapeRegExp } from '../../../functions'
-
 import React from 'react'
+import { classNames, escapeRegExp } from '../../../functions'
 import useENS from '../../../hooks/useENS'
 
 const inputRegex = RegExp(`^\\d*$`) // match escaped "." characters via in a non-capturing group
@@ -10,7 +9,7 @@ export const AddressInput = React.memo(
     value,
     onUserInput,
     placeholder,
-    className = 'flex w-full h-full p-3 font-bold rounded overflow-ellipsis recipient-address-input bg-dark-900 placeholder-low-emphesis',
+    className = 'flex w-full h-full p-3 font-bold  overflow-ellipsis recipient-address-input bg-dark-900 placeholder-low-emphesis',
     align,
     fontSize = '24px',
     ...rest

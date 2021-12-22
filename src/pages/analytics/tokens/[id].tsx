@@ -1,23 +1,23 @@
+import { CheckIcon, DuplicateIcon } from '@heroicons/react/outline'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useMemo, useState } from 'react'
+import { ExternalLink as LinkIcon } from 'react-feather'
 import CurrencyLogo from '../../../components/CurrencyLogo'
 import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
+import Background from '../../../features/analytics/Background'
 import ColoredNumber from '../../../features/analytics/ColoredNumber'
-import PairList from '../../../features/analytics/Pairs/PairList'
 import InfoCard from '../../../features/analytics/InfoCard'
+import PairList from '../../../features/analytics/Pairs/PairList'
 import TokenChartCard from '../../../features/analytics/Tokens/Token/TokenChartCard'
 import TransactionList from '../../../features/analytics/Tokens/Token/TransactionList'
 import { formatNumber, shortenAddress } from '../../../functions'
-import { useCurrency } from '../../../hooks/Tokens'
-import { useBlock, useNativePrice, useTokenPairs, useTokens, useTransactions } from '../../../services/graph'
-import { ExternalLink as LinkIcon } from 'react-feather'
-import Background from '../../../features/analytics/Background'
-import Link from 'next/link'
-import { CheckIcon, DuplicateIcon } from '@heroicons/react/outline'
-import useCopyClipboard from '../../../hooks/useCopyClipboard'
-import { useActiveWeb3React } from '../../../services/web3'
-import { useTokenContract } from '../../../hooks/useContract'
 import { getExplorerLink } from '../../../functions/explorer'
+import { useCurrency } from '../../../hooks/Tokens'
+import { useTokenContract } from '../../../hooks/useContract'
+import useCopyClipboard from '../../../hooks/useCopyClipboard'
+import { useBlock, useNativePrice, useTokenPairs, useTokens, useTransactions } from '../../../services/graph'
+import { useActiveWeb3React } from '../../../services/web3'
 
 export default function Token() {
   const router = useRouter()
@@ -179,12 +179,12 @@ export default function Token() {
               {'<'} Go Back
             </button>
             <div className="flex items-center space-x-4">
-              <CurrencyLogo className="rounded-full" currency={currency} size={60} />
+              <CurrencyLogo className="full" currency={currency} size={60} />
               <div>
                 <div className="text-sm font-medium text-secondary">{token?.symbol}</div>
                 <div className="text-lg font-bold text-high-emphesis">{token?.name}</div>
               </div>
-              <div className="rounded-3xl text-sm bg-[#414a6c] py-px px-2 flex items-center space-x-1">
+              <div className="3xl text-sm bg-[#414a6c] py-px px-2 flex items-center space-x-1">
                 <div>{shortenAddress(id)}</div>
                 <div className="cursor-pointer" onClick={() => setCopied(id)}>
                   {isCopied ? <CheckIcon height={16} /> : <DuplicateIcon height={16} className="scale-x-[-1]" />}

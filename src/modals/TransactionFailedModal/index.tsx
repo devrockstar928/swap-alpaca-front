@@ -1,9 +1,9 @@
-import CloseIcon from '../../components/CloseIcon'
-import Image from 'next/image'
-import Modal from '../../components/Modal'
-import React from 'react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import Image from 'next/image'
+import React from 'react'
+import CloseIcon from '../../components/CloseIcon'
+import Modal from '../../components/Modal'
 
 interface TransactionFailedModalProps {
   isOpen: boolean
@@ -29,7 +29,7 @@ export default function TransactionFailedModal({ isOpen, onDismiss }: Transactio
         <div className="flex justify-center mt-5">
           <button
             onClick={onDismiss}
-            className="flex items-center justify-center w-full h-12 text-lg font-medium rounded bg-pink hover:bg-opacity-90 text-high-emphesis"
+            className="flex items-center justify-center w-full h-12 text-lg font-medium  bg-pink hover:bg-opacity-90 text-high-emphesis"
           >
             {i18n._(t`Dismiss`)}
           </button>

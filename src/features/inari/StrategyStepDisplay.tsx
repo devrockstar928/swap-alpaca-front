@@ -1,6 +1,6 @@
+import { ArrowRightIcon } from '@heroicons/react/solid'
 import React, { FC } from 'react'
 import Typography from '../../components/Typography'
-import { ArrowRightIcon } from '@heroicons/react/solid'
 import { useDerivedInariState } from '../../state/inari/hooks'
 
 interface StrategyStepDisplayProps {}
@@ -23,7 +23,7 @@ const StrategyStepDisplay: FC<StrategyStepDisplayProps> = () => {
             ) : (
               <>
                 {acc}{' '}
-                <div className="rounded-full p-1 bg-dark-800 border-[3px] border-dark-900 relative z-10">
+                <div className="full p-1 bg-dark-800 border-[3px] border-dark-900 relative z-10">
                   <ArrowRightIcon width={16} height={16} />
                 </div>{' '}
                 {x}

@@ -1,6 +1,6 @@
-import { Currency, Percent, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Percent, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import React, { useState } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import CurrencyLogo from '../../../components/CurrencyLogo'
@@ -71,7 +71,7 @@ export default function SwapModalHeader({
       <AdvancedSwapDetails trade={trade} allowedSlippage={allowedSlippage} />
 
       {showAcceptChanges ? (
-        <div className="flex items-center justify-between p-2 px-3 border border-gray-800 rounded">
+        <div className="flex items-center justify-between p-2 px-3 border border-gray-800 ">
           <div className="flex items-center justify-start text-sm font-bold uppercase text-high-emphesis">
             <div className="mr-3 min-w-[24px]">
               <AlertTriangle size={24} />
