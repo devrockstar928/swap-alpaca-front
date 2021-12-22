@@ -155,7 +155,7 @@ function AppBar(): JSX.Element {
                             }}
                           >
                             <Image
-                              src="/images/tokens/sushi-square.jpg"
+                              src="/images/tokens/radio-square.jpg"
                               alt="RADIO"
                               width="38px"
                               height="38px"

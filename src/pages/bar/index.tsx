@@ -420,7 +420,7 @@ export default function Stake() {
                   <div className="flex items-center ml-8 space-x-4 md:ml-0">
                     <Image
                       className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 "
-                      src="/images/tokens/sushi-square.jpg"
+                      src="/images/tokens/radio-square.jpg"
                       alt="RADIO"
                       width={64}
                       height={64}
