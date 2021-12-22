@@ -34,7 +34,11 @@ function AppBar(): JSX.Element {
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Image src="/logo.png" alt="Radio" width="239px" height="32px" />
+                  <NavLink href="/">
+                    <a>
+                      <Image src="/logo.png" alt="Radio" width="239px" height="32px" />
+                    </a>
+                  </NavLink>
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
