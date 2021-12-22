@@ -1,13 +1,12 @@
-import React, { FC, useState } from 'react'
-
-import { AppDispatch } from '../../../state'
 import { Switch } from '@headlessui/react'
-import Typography from '../../../components/Typography'
-import { setFromBentoBalance } from '../../../state/limit-order/actions'
 import { t } from '@lingui/macro'
-import { useDispatch } from 'react-redux'
-import { useLimitOrderState } from '../../../state/limit-order/hooks'
 import { useLingui } from '@lingui/react'
+import React, { FC } from 'react'
+import { useDispatch } from 'react-redux'
+import Typography from '../../../components/Typography'
+import { AppDispatch } from '../../../state'
+import { setFromBentoBalance } from '../../../state/limit-order/actions'
+import { useLimitOrderState } from '../../../state/limit-order/hooks'
 
 const PayFromToggle: FC = () => {
   const { i18n } = useLingui()
@@ -33,12 +32,12 @@ const PayFromToggle: FC = () => {
           <Switch
             checked={!fromBentoBalance}
             onChange={handleChange}
-            className="bg-gray-600 relative inline-flex items-center h-3 rounded-full w-9 transition-colors"
+            className="bg-gray-600 relative inline-flex items-center h-3 full w-9 transition-colors"
           >
             <span
               className={`${
                 !fromBentoBalance ? 'translate-x-5' : ''
-              } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
+              } inline-block w-4 h-4 transform bg-white full transition-transform`}
             />
           </Switch>
           <Switch.Label className="ml-2">

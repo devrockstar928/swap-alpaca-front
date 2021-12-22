@@ -1,6 +1,6 @@
-import { Currency, Percent, Price } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Percent, Price } from '@radioshackswap/sdk'
 import React from 'react'
 import Typography from '../../../components/Typography'
 import { ONE_BIPS } from '../../../constants'
@@ -22,7 +22,7 @@ export default function LiquidityPrice({
 }): JSX.Element {
   const { i18n } = useLingui()
   return (
-    <div className={classNames('flex justify-between items-center rounded py-2 px-4 bg-dark-900', className)}>
+    <div className={classNames('flex justify-between items-center  py-2 px-4 bg-dark-900', className)}>
       <div className="flex flex-col w-full text-secondary">
         <Typography variant="sm" className="select-none">
           {i18n._(

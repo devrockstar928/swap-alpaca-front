@@ -13,15 +13,11 @@ const HeaderToggle: FC<HeaderToggleProps> = ({ meowshiState }) => {
 
   return (
     <div className="flex justify-between">
-      <RadioGroup
-        value={meow}
-        onChange={switchCurrencies}
-        className="flex flex-row bg-dark-800 rounded p-3px cursor-pointer"
-      >
+      <RadioGroup value={meow} onChange={switchCurrencies} className="flex flex-row bg-dark-800  p-3px cursor-pointer">
         <RadioGroup.Option
           value={true}
           className={({ checked }) =>
-            classNames('px-8 py-2 rounded', `${checked ? 'bg-gradient-to-r from-blue to-pink' : ''}`)
+            classNames('px-8 py-2 ', `${checked ? 'bg-gradient-to-r from-blue to-pink' : ''}`)
           }
         >
           {({ checked }) => (
@@ -33,7 +29,7 @@ const HeaderToggle: FC<HeaderToggleProps> = ({ meowshiState }) => {
         <RadioGroup.Option
           value={false}
           className={({ checked }) =>
-            classNames('px-8 py-2 rounded', `${checked ? 'bg-gradient-to-r from-blue to-pink' : ''}`)
+            classNames('px-8 py-2 ', `${checked ? 'bg-gradient-to-r from-blue to-pink' : ''}`)
           }
         >
           {({ checked }) => (
@@ -43,7 +39,7 @@ const HeaderToggle: FC<HeaderToggleProps> = ({ meowshiState }) => {
           )}
         </RadioGroup.Option>
       </RadioGroup>
-      <div className="my-1.5 items-center flex border-gradient-r-blue-pink-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-base md:font-normal">
+      <div className="my-1.5 items-center flex border-gradient-r-blue-pink-dark-pink-red border-transparent border-solid border 3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-base md:font-normal">
         1 xRADIO ≈ 100k MEOW
       </div>
     </div>

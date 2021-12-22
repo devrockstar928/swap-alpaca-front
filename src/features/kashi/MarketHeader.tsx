@@ -26,7 +26,7 @@ function MarketHeader({ type = 'Borrow', lists }: any) {
         <div className="flex justify-end w-full py-4 md:py-0">
           <div className="relative w-full max-w-md">
             <input
-              className={`py-3 pl-4 pr-14 rounded w-full focus:outline-none focus:ring ${
+              className={`py-3 pl-4 pr-14  w-full focus:outline-none focus:ring ${
                 type === 'Borrow' ? 'focus:ring-pink' : 'focus:ring-blue'
               }`}
               onChange={(e) => onSearch(e.target.value)}

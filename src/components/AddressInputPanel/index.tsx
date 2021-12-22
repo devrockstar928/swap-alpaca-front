@@ -1,9 +1,8 @@
-import React, { FC, useCallback } from 'react'
-
-import Input from '../Input'
 import { t } from '@lingui/macro'
-import useENS from '../../hooks/useENS'
 import { useLingui } from '@lingui/react'
+import React, { FC, useCallback } from 'react'
+import useENS from '../../hooks/useENS'
+import Input from '../Input'
 
 interface AddressInputPanelProps {
   id?: string
@@ -28,7 +27,7 @@ const AddressInputPanel: FC<AddressInputPanelProps> = ({ id, value, onChange }) 
 
   return (
     <div
-      className={`flex flex-row bg-dark-800 rounded items-center h-[68px] ${
+      className={`flex flex-row bg-dark-800  items-center h-[68px] ${
         error ? 'border border-red border-opacity-50' : ''
       }`}
       id={id}
@@ -39,7 +38,7 @@ const AddressInputPanel: FC<AddressInputPanelProps> = ({ id, value, onChange }) 
           {i18n._(t`Remove`)}
         </span>
       </div>
-      <div className="flex w-full h-full border-2 rounded-r sm:w-3/5 border-dark-800">
+      <div className="flex w-full h-full border-2 r sm:w-3/5 border-dark-800">
         <Input.Address onUserInput={handleInput} value={value} />
       </div>
     </div>

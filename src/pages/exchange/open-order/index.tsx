@@ -1,7 +1,7 @@
-import { ChainId } from '@radioshackswap/sdk'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import React from 'react'
 import Alert from '../../../components/Alert'
@@ -46,7 +46,7 @@ function OpenOrdersPage() {
           </div>
         )}
         <DoubleGlowShadow>
-          <div id="limit-order-page" className="flex flex-col w-full gap-4 p-3 rounded md:p-5 bg-dark-900">
+          <div id="limit-order-page" className="flex flex-col w-full gap-4 p-3  md:p-5 bg-dark-900">
             <OpenOrders />
             <CompletedOrders />
           </div>

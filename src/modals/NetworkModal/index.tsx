@@ -229,12 +229,12 @@ export default function NetworkModal(): JSX.Element | null {
         ].map((key: ChainId, i: number) => {
           if (chainId === key) {
             return (
-              <button key={i} className="w-full col-span-1 p-px rounded bg-gradient-to-r from-blue to-pink">
-                <div className="flex items-center w-full h-full p-3 space-x-3 rounded bg-dark-1000">
+              <button key={i} className="w-full col-span-1 p-px  bg-gradient-to-r from-blue to-pink">
+                <div className="flex items-center w-full h-full p-3 space-x-3  bg-dark-1000">
                   <Image
                     src={NETWORK_ICON[key]}
                     alt={`Switch to ${NETWORK_LABEL[key]} Network`}
-                    className="rounded-md"
+                    className="md"
                     width="32px"
                     height="32px"
                   />
@@ -256,9 +256,9 @@ export default function NetworkModal(): JSX.Element | null {
                   library?.send('wallet_addEthereumChain', [params, account])
                 }
               }}
-              className="flex items-center w-full col-span-1 p-3 space-x-3 rounded cursor-pointer bg-dark-800 hover:bg-dark-700"
+              className="flex items-center w-full col-span-1 p-3 space-x-3  cursor-pointer bg-dark-800 hover:bg-dark-700"
             >
-              <Image src={NETWORK_ICON[key]} alt="Switch Network" className="rounded-md" width="32px" height="32px" />
+              <Image src={NETWORK_ICON[key]} alt="Switch Network" className="md" width="32px" height="32px" />
               <div className="font-bold text-primary">{NETWORK_LABEL[key]}</div>
             </button>
           )
@@ -266,12 +266,12 @@ export default function NetworkModal(): JSX.Element | null {
         {/* {['Clover', 'Telos', 'Optimism'].map((network, i) => (
           <button
             key={i}
-            className="flex items-center w-full col-span-1 p-3 space-x-3 rounded cursor-pointer bg-dark-800 hover:bg-dark-700"
+            className="flex items-center w-full col-span-1 p-3 space-x-3  cursor-pointer bg-dark-800 hover:bg-dark-700"
           >
             <Image
               src="/images/tokens/unknown.png"
               alt="Switch Network"
-              className="rounded-md"
+              className="md"
               width="32px"
               height="32px"
             />

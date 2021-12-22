@@ -38,7 +38,7 @@ export default function Tools() {
       </Typography>
       <ul className="space-y-4 divide-y-0">
         {tools.map((tool) => (
-          <li key={tool.id} className="relative w-full p-4 rounded bg-dark-900 hover:bg-dark-800">
+          <li key={tool.id} className="relative w-full p-4  bg-dark-900 hover:bg-dark-800">
             <div className="flex justify-between space-x-4">
               <div className="flex-1 min-w-0">
                 <Link href={tool.href}>

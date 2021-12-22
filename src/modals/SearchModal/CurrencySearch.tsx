@@ -1,6 +1,6 @@
-import { ChainId, Currency, NATIVE, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, NATIVE, Token } from '@radioshackswap/sdk'
 import { useRouter } from 'next/router'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'
@@ -189,7 +189,7 @@ export function CurrencySearch({
             ref={inputRef as RefObject<HTMLInputElement>}
             onChange={handleInput}
             onKeyDown={handleEnter}
-            className="w-full bg-transparent border border-dark-700 focus:border-transparent focus:border-gradient-r-blue-pink-dark-900 rounded placeholder-secondary focus:placeholder-primary font-bold text-base px-6 py-3.5"
+            className="w-full bg-transparent border border-dark-700 focus:border-transparent focus:border-gradient-r-blue-pink-dark-900  placeholder-secondary focus:placeholder-primary font-bold text-base px-6 py-3.5"
           />
         </div>
       )}

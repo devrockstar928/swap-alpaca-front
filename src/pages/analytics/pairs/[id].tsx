@@ -119,7 +119,7 @@ export default function Pair() {
           <div className="flex items-center space-x-4">
             <DoubleCurrencyLogo
               className="-space-x-3"
-              logoClassName="rounded-full"
+              logoClassName="full"
               currency0={currency0}
               currency1={currency1}
               size={54}
@@ -130,7 +130,7 @@ export default function Pair() {
               </div>
               <div className="text-xs text-secondary">Radio Liquidity Pool</div>
             </div>
-            <div className="rounded-3xl text-sm bg-[#414a6c] py-px px-2 flex items-center space-x-1">
+            <div className="3xl text-sm bg-[#414a6c] py-px px-2 flex items-center space-x-1">
               <div>{shortenAddress(id)}</div>
               <div className="cursor-pointer" onClick={() => setCopied(id)}>
                 {isCopied ? <CheckIcon height={16} /> : <DuplicateIcon height={16} className="scale-x-[-1]" />}
@@ -153,7 +153,7 @@ export default function Pair() {
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {times(2).map((i) => (
-            <div key={i} className="w-full p-6 space-y-2 border rounded bg-dark-900 border-dark-700">
+            <div key={i} className="w-full p-6 space-y-2 border  bg-dark-900 border-dark-700">
               <div className="flex flex-row items-center space-x-2">
                 <CurrencyLogo size={32} currency={[currency0, currency1][i]} />
                 <div className="text-2xl font-bold">{formatNumber([pair?.reserve0, pair?.reserve1][i])}</div>

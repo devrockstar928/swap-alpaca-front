@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Paper({ children, className, ...rest }): JSX.Element {
   return (
-    <div className={`rounded ${className}`} {...rest}>
+    <div className={` ${className}`} {...rest}>
       {children}
     </div>
   )

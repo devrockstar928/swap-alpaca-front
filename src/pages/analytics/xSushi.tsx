@@ -182,10 +182,7 @@ export default function XSushi() {
         <div className="space-y-4">
           {graphs.map((graph, i) => (
             <div
-              className={classNames(
-                graph.data[0].length === 0 && 'hidden',
-                'p-1 rounded bg-dark-900 border border-dark-700'
-              )}
+              className={classNames(graph.data[0].length === 0 && 'hidden', 'p-1  bg-dark-900 border border-dark-700')}
               key={i}
             >
               <div className="w-full h-96">

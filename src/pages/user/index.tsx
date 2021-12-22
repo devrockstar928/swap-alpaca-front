@@ -73,10 +73,10 @@ export default function Me() {
         </Typography>
       </div>
 
-      <div className="w-full max-w-2xl p-4 mb-3 rounded bg-dark-900">
+      <div className="w-full max-w-2xl p-4 mb-3  bg-dark-900">
         <div className="flex justify-between">
           <div className="flex">
-            <div className="p-1.5 bg-dark-800 rounded">
+            <div className="p-1.5 bg-dark-800 ">
               <User strokeWidth={1} size={34} className="text-white" />
             </div>
             <div className="ml-3">
@@ -117,7 +117,7 @@ export default function Me() {
           {i18n._(t`Balance`)}
         </Typography> */}
 
-      <div className="w-full max-w-2xl p-4 rounded bg-dark-900">
+      <div className="w-full max-w-2xl p-4  bg-dark-900">
         <div className="flex flex-col items-center justify-between mb-3 sm:flex-row">
           <Typography component="h2" variant="lg" className="font-medium text-high-emphesis">
             {i18n._(t`Transaction History ${chainId && NETWORK_LABEL[chainId]}`)}

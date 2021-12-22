@@ -6,9 +6,7 @@ interface ItemProps {
 }
 
 export function Item({ item, className }: ItemProps) {
-  return (
-    <li className={classNames('px-4 py-4 overflow-hidden bg-white shadow sm:px-6 sm:rounded-md', className)}>{item}</li>
-  )
+  return <li className={classNames('px-4 py-4 overflow-hidden bg-white shadow sm:px-6 sm:md', className)}>{item}</li>
 }
 
 interface ListProps {

@@ -1,11 +1,10 @@
-import _ from 'lodash'
 import React from 'react'
-import { formatNumber, formatNumberScale, formatPercent } from '../../../functions'
+import DoubleCurrencyLogo from '../../../components/DoubleLogo'
 import Table from '../../../components/Table'
 import ColoredNumber from '../../../features/analytics/ColoredNumber'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
-import { useCurrency } from '../../../hooks/Tokens'
+import { formatNumber, formatNumberScale, formatPercent } from '../../../functions'
 import { aprToApy } from '../../../functions/convert/apyApr'
+import { useCurrency } from '../../../hooks/Tokens'
 
 interface PairListProps {
   pairs: {
@@ -49,7 +48,7 @@ function PairListName({ pair }: PairListNameProps): JSX.Element {
       <div className="flex items-center">
         <DoubleCurrencyLogo
           className="-space-x-3"
-          logoClassName="rounded-full"
+          logoClassName="full"
           currency0={token0}
           currency1={token1}
           size={40}

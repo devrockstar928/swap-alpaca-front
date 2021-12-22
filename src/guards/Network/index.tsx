@@ -1,6 +1,6 @@
-import { ChainId } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { Trans, useLingui } from '@lingui/react'
+import { ChainId } from '@radioshackswap/sdk'
 import cookie from 'cookie-cutter'
 import Image from 'next/image'
 import React, { FC, Fragment } from 'react'
@@ -66,7 +66,7 @@ const Component: FC<NetworkGuardProps> = ({ children, networks = [] }) => {
                   <Image
                     src={NETWORK_ICON[key]}
                     alt="Switch Network"
-                    className="rounded-md filter drop-shadow-currencyLogo"
+                    className="md filter drop-shadow-currencyLogo"
                     width="40px"
                     height="40px"
                   />

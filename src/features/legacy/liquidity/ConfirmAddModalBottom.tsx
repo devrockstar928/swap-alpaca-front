@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@radioshackswap/sdk'
 import React from 'react'
 import Button from '../../../components/Button'
 import { Field } from '../../../state/mint/actions'
@@ -22,7 +22,7 @@ export function ConfirmAddModalBottom({
 }) {
   const { i18n } = useLingui()
   return (
-    <div className="p-6 mt-0 -m-6 rounded bg-dark-800">
+    <div className="p-6 mt-0 -m-6  bg-dark-800">
       <div className="grid gap-1">
         <div className="flex items-center justify-between">
           <div className="text-sm text-high-emphesis">{i18n._(t`Rates`)}</div>

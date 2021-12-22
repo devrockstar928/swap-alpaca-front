@@ -1,9 +1,9 @@
-import { ChainId, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@radioshackswap/sdk'
 import { TransactionResponse } from '@ethersproject/abstract-provider'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@radioshackswap/sdk'
 import React, { useCallback, useMemo, useState } from 'react'
 import { Plus } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -409,7 +409,7 @@ const PoolWithdraw = ({ currencyA, currencyB }) => {
       />
       <div className="flex flex-col space-y-4">
         <div className="flex flex-col space-y-2">
-          <div id="liquidity-percent" className="p-5 rounded bg-dark-900">
+          <div id="liquidity-percent" className="p-5  bg-dark-900">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-between w-full">
                 <div className="whitespace-nowrap">{i18n._(t`Amount to Remove`)}</div>
@@ -459,7 +459,7 @@ const PoolWithdraw = ({ currencyA, currencyB }) => {
             )}
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center justify-between p-4 rounded bg-dark-900">
+            <div className="flex items-center justify-between p-4  bg-dark-900">
               <div>
                 <div className="text-secondary">
                   {formattedAmounts[Field.CURRENCY_A] || '-'} {currencyA?.symbol}
@@ -468,7 +468,7 @@ const PoolWithdraw = ({ currencyA, currencyB }) => {
               </div>
               <CurrencyLogo currency={currencyA} size="46px" />
             </div>
-            <div className="flex items-center justify-between p-4 rounded bg-dark-900">
+            <div className="flex items-center justify-between p-4  bg-dark-900">
               <div className="text-secondary">
                 {formattedAmounts[Field.CURRENCY_B] || '-'} {currencyB?.symbol}
                 <FiatValue fiatValue={currencyBFiatValue} />

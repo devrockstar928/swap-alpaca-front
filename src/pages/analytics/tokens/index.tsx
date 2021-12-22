@@ -1,11 +1,10 @@
-import { useBlock, useNativePrice, useTokens } from '../../../services/graph'
-
-import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
 import Search from '../../../components/Search'
-import TokenList from '../../../features/analytics/Tokens/TokenList'
-import { useActiveWeb3React } from '../../../services/web3'
-import useFuse from '../../../hooks/useFuse'
+import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
 import Background from '../../../features/analytics/Background'
+import TokenList from '../../../features/analytics/Tokens/TokenList'
+import useFuse from '../../../hooks/useFuse'
+import { useBlock, useNativePrice, useTokens } from '../../../services/graph'
+import { useActiveWeb3React } from '../../../services/web3'
 
 export default function Tokens() {
   const { chainId } = useActiveWeb3React()
@@ -76,7 +75,7 @@ export default function Tokens() {
           <Search
             term={term}
             search={search}
-            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14 rounded bg-dark-900' }}
+            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14  bg-dark-900' }}
             className="border shadow-2xl border-dark-800"
           />
         </div>

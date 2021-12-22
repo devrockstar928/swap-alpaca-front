@@ -1,7 +1,7 @@
-import { Currency } from '@radioshackswap/sdk'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency } from '@radioshackswap/sdk'
 import Lottie from 'lottie-react'
 import React, { useCallback, useState } from 'react'
 import selectCoinAnimation from '../../animation/select-coin.json'
@@ -38,7 +38,7 @@ export default function CurrencySelectPanel({
   }, [setModalOpen])
 
   return (
-    <div id={id} className="p-5 rounded bg-dark-800">
+    <div id={id} className="p-5  bg-dark-800">
       <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className="w-full" onClick={onClick}>
           <div
@@ -53,7 +53,7 @@ export default function CurrencySelectPanel({
               {currency ? (
                 <CurrencyLogo currency={currency} size={'54px'} />
               ) : (
-                <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
+                <div className=" bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
                   <div style={{ width: 54, height: 54 }}>
                     <Lottie animationData={selectCoinAnimation} autoplay loop />
                   </div>
@@ -68,7 +68,7 @@ export default function CurrencySelectPanel({
                         '...' +
                         currency.symbol.slice(currency.symbol.length - 5, currency.symbol.length)
                       : currency?.symbol) || (
-                      <div className="px-2 py-1 mt-1 text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap">
+                      <div className="px-2 py-1 mt-1 text-xs font-medium bg-transparent border full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap">
                         {i18n._(t`Select a token`)}
                       </div>
                     )}

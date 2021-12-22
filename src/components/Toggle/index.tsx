@@ -1,5 +1,5 @@
-import React from 'react'
 import { Switch } from '@headlessui/react'
+import React from 'react'
 import { classNames } from '../../functions'
 
 export interface ToggleProps {
@@ -15,14 +15,14 @@ export default function Toggle({ id, isActive, toggle }: ToggleProps) {
       onChange={toggle}
       className={classNames(
         isActive ? 'bg-blue' : 'bg-dark-800',
-        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
+        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
       )}
     >
       <span className="sr-only">Use setting</span>
       <span
         className={classNames(
           isActive ? 'translate-x-5' : 'translate-x-0',
-          'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-dark-900 shadow transform ring-0 transition ease-in-out duration-200'
+          'pointer-events-none relative inline-block h-5 w-5 full bg-dark-900 shadow transform ring-0 transition ease-in-out duration-200'
         )}
       >
         <span

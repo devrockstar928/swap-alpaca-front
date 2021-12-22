@@ -1,7 +1,7 @@
-import { ChainId } from '@radioshackswap/sdk'
 import { ArrowRightIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
@@ -69,7 +69,7 @@ const Inari = () => {
               <SideSwitch />
             </div>
             <DoubleGlowShadow className="max-w-[100%]">
-              <div className="grid gap-8 p-5 border-2 rounded bg-dark-900 border-dark-700">
+              <div className="grid gap-8 p-5 border-2  bg-dark-900 border-dark-700">
                 <div className="flex flex-col items-start md:flex-row">
                   <div className="w-full mr-2 md:w-3/5">
                     <BalancePanel
@@ -83,7 +83,7 @@ const Inari = () => {
                     />
                   </div>
                   <div className="flex items-center md:w-[60px] z-1 relative md:ml-[-16px] md:mr-[-16px] md:mt-[34px] justify-center w-full">
-                    <div className="w-[60px] h-[60px] rounded-full md:bg-dark-800 border-2 border-dark-900 p-2 flex items-center justify-center transform rotate-90 md:rotate-0">
+                    <div className="w-[60px] h-[60px] full md:bg-dark-800 border-2 border-dark-900 p-2 flex items-center justify-center transform rotate-90 md:rotate-0">
                       <ArrowRightIcon width={24} height={24} className="text-high-emphesis" />
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const Inari = () => {
                 <InariButton color="gradient" className="font-bold">
                   Execute
                 </InariButton>
-                <div className="relative mt-0 -m-5 rounded-b p-7 bg-dark-700">
+                <div className="relative mt-0 -m-5 b p-7 bg-dark-700">
                   <InariDescription />
                 </div>
               </div>

@@ -1,9 +1,9 @@
-import { ChainId, Currency, CurrencyAmount } from '@radioshackswap/sdk'
 import { isAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { ArrowRightIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, CurrencyAmount } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -57,7 +57,7 @@ const Strategies = () => {
               <StrategySelector />
               <Link href={'/tools/meowshi'}>
                 <div
-                  className={`bg-dark-900 cursor-pointer border border-transparent pl-5 py-2 rounded whitespace-nowrap w-full font-bold h-[48px] flex items-center text-sm`}
+                  className={`bg-dark-900 cursor-pointer border border-transparent pl-5 py-2  whitespace-nowrap w-full font-bold h-[48px] flex items-center text-sm`}
                 >
                   {'RADIO → MEOW'}
                 </div>
@@ -70,7 +70,7 @@ const Strategies = () => {
               <SideSwitch />
             </div>
             <DoubleGlowShadow className="max-w-[100%]">
-              <div className="grid gap-8 p-5 border-2 rounded bg-dark-900 border-dark-700">
+              <div className="grid gap-8 p-5 border-2  bg-dark-900 border-dark-700">
                 <div className="flex flex-col items-start md:flex-row">
                   <div className="w-full mr-2 md:w-3/5">
                     <BalancePanel
@@ -84,7 +84,7 @@ const Strategies = () => {
                     />
                   </div>
                   <div className="flex items-center md:w-[60px] z-1 relative md:ml-[-16px] md:mr-[-16px] md:mt-[34px] justify-center w-full">
-                    <div className="w-[60px] h-[60px] rounded-full md:bg-dark-800 border-2 border-dark-900 p-2 flex items-center justify-center transform rotate-90 md:rotate-0">
+                    <div className="w-[60px] h-[60px] full md:bg-dark-800 border-2 border-dark-900 p-2 flex items-center justify-center transform rotate-90 md:rotate-0">
                       <ArrowRightIcon width={24} height={24} className="text-high-emphesis" />
                     </div>
                   </div>
@@ -102,7 +102,7 @@ const Strategies = () => {
                 <InariButton color="gradient" className="font-bold">
                   Execute
                 </InariButton>
-                <div className="relative mt-0 -m-5 rounded-b p-7 bg-dark-700">
+                <div className="relative mt-0 -m-5 b p-7 bg-dark-700">
                   <InariDescription />
                 </div>
               </div>
@@ -120,7 +120,7 @@ const VestingLayout = () => {
   return (
     <div className="flex flex-col w-full space-y-4 md:flex-row md:space-x-8 md:space-y-0">
       <div className="hidden space-y-10 md:block">
-        <div className="relative w-full p-4 overflow-hidden rounded bg-dark-900">
+        <div className="relative w-full p-4 overflow-hidden  bg-dark-900">
           <div className="font-bold text-white">{i18n._(t`Community Approval`)}</div>
           <div
             className="pt-2 text-sm font-bold text-gray-400"
@@ -218,7 +218,7 @@ const ProtocolVesting = () => {
 
   return (
     <div className="flex flex-col gap-3 md:max-w-[400px]">
-      <div className="relative w-full h-full overflow-hidden rounded bg-dark-900">
+      <div className="relative w-full h-full overflow-hidden  bg-dark-900">
         <div className="flex flex-col gap-3 p-4">
           <div className="flex flex-row justify-between">
             <div className="font-bold text-white">{i18n._(t`Claimable RADIO from Protocols`)}</div>
@@ -353,7 +353,7 @@ const WeeklyVesting = () => {
 
   return (
     <div className="flex flex-col gap-3 md:max-w-[400px]">
-      <div className="relative w-full h-full overflow-hidden rounded bg-dark-900">
+      <div className="relative w-full h-full overflow-hidden  bg-dark-900">
         <div className="flex flex-col gap-3 p-4">
           <div className="flex flex-row justify-between">
             <div className="font-bold text-white">{i18n._(t`Your Claimable RADIO this Week`)}</div>
