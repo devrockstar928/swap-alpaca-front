@@ -61,7 +61,7 @@ function TradeReview({
             <div className="text-lg text-secondary">
               Liquidity Provider Fee
               <QuestionHelper
-                text={i18n._(t`A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive.`)}
+                text={i18n._(t`A portion of each trade (0.083%) goes to liquidity providers as a protocol incentive.`)}
               />
             </div>
             <div className="text-lg">
