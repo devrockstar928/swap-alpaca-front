@@ -2815,10 +2815,10 @@
     "penpal" "3.0.7"
     "pocket-js-core" "0.0.3"
 
-"@radioshackswap/sdk@^5.0.5":
-  "integrity" "sha512-m7CmPxSUe5WNjqoyPJxbaKupRVU2P3bTr+4tkAMyPWDSx1f1OHJekUYZ0bfAGQt4Q4WDAUBgk/Z5/wSWKPTnMg=="
-  "resolved" "https://registry.npmjs.org/@radioshackswap/sdk/-/sdk-5.0.5.tgz"
-  "version" "5.0.5"
+"@radioshackswap/sdk@^5.0.6":
+  "integrity" "sha512-CB7pF+McRsQDmEvAkCRffD2A5fiWgMbHmALYyKgtVvR3gfUEOJhWolO902gPkA2LlSx3zha+uhelzktjPR6yDw=="
+  "resolved" "https://registry.npmjs.org/@radioshackswap/sdk/-/sdk-5.0.6.tgz"
+  "version" "5.0.6"
   dependencies:
     "@ethersproject/abi" "^5.4.0"
     "@ethersproject/abstract-signer" "^5.4.0"

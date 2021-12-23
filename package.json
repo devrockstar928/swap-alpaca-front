@@ -61,7 +61,7 @@
     "@metamask/jazzicon": "^2.0.0",
     "@next/bundle-analyzer": "^11.1.0",
     "@popperjs/core": "^2.9.2",
-    "@radioshackswap/sdk": "^5.0.5",
+    "@radioshackswap/sdk": "^5.0.6",
     "@ramp-network/ramp-instant-sdk": "^2.4.6",
     "@reduxjs/toolkit": "^1.6.0",
     "@sentry/nextjs": "^6.11.0",
