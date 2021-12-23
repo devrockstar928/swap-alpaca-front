@@ -39,7 +39,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
                   currency === RADIO[chainId]
                     ? '/images/tokens/radio-square.jpg'
                     : currency === xRADIO
-                    ? '/images/tokens/xsushi-square.jpg'
+                    ? '/images/tokens/s-radio-square.jpg'
                     : '/images/tokens/nyan-square.jpg'
                 }
                 alt="RADIO"
