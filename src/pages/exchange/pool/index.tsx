@@ -105,7 +105,7 @@ export default function Pool() {
         type="information"
       />
 
-      <div className="p-4 space-y-4  bg-dark-900">
+      <div className="p-4 space-y-4 bg-dark-900">
         <div className="grid grid-flow-row gap-3">
           {!account ? (
             <Web3Connect size="lg" color="blue" className="w-full" />
