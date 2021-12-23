@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { splitSignature } from '@ethersproject/bytes'
+import { Currency, CurrencyAmount, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { useMemo, useState } from 'react'
 import { DAI, RADIO, USDC } from '../config/tokens'
 import { useActiveWeb3React } from '../services/web3'
@@ -261,7 +261,7 @@ export function useERC20Permit(
 
 const REMOVE_V2_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'RadioSwap LP Token',
+  name: 'RadioShack Swap LP Token',
   type: PermitType.AMOUNT,
 }
 
