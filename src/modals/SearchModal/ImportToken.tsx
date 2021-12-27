@@ -1,6 +1,6 @@
+import { Currency, Token } from '@radioshackswap/sdk'
 import { plural, t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Token } from '@radioshackswap/sdk'
 import { TokenList } from '@uniswap/token-lists/dist/types'
 import React from 'react'
 import { AlertTriangle } from 'react-feather'
@@ -44,7 +44,7 @@ export function ImportToken({ tokens, list, onBack, onDismiss, handleCurrencySel
       </Typography>
       {tokens.map((token) => {
         return (
-          <div key={'import' + token.address} className=".token-warning-container  p-5">
+          <div key={'import' + token.address} className=".token-warning-container rounded p-5">
             <AutoColumn gap="10px" justify="center">
               <CurrencyLogo currency={token} size={'32px'} />
               <AutoColumn gap="4px" justify="center">

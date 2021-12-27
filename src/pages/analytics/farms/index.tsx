@@ -60,7 +60,7 @@ export default function Farms(): JSX.Element {
           <Search
             term={term}
             search={search}
-            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14  bg-dark-900' }}
+            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14 rounded bg-dark-900' }}
             className="border shadow-2xl border-dark-800"
           />
         </div>

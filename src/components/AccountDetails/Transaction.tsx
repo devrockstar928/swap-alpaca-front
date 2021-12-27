@@ -1,11 +1,11 @@
 import { CheckCircleIcon, ExclamationIcon, XCircleIcon } from '@heroicons/react/outline'
-import React, { FC } from 'react'
-import { classNames, getExplorerLink } from '../../functions'
-import { useActiveWeb3React } from '../../services/web3'
-import { useAllTransactions } from '../../state/transactions/hooks'
 import ExternalLink from '../ExternalLink'
 import Loader from '../Loader'
 import Typography from '../Typography'
+import { classNames, getExplorerLink } from '../../functions'
+import React, { FC } from 'react'
+import { useActiveWeb3React } from '../../services/web3'
+import { useAllTransactions } from '../../state/transactions/hooks'
 
 const Transaction: FC<{ hash: string }> = ({ hash }) => {
   const { chainId } = useActiveWeb3React()
@@ -20,7 +20,7 @@ const Transaction: FC<{ hash: string }> = ({ hash }) => {
   if (!chainId) return null
 
   return (
-    <div className="flex flex-col w-full gap-2 px-3 py-1  bg-dark-800">
+    <div className="flex flex-col w-full gap-2 px-3 py-1 rounded bg-dark-800">
       <ExternalLink href={getExplorerLink(chainId, hash, 'transaction')} className="flex items-center gap-2">
         <Typography variant="sm" className="flex items-center hover:underline py-0.5">
           {summary ?? hash} ↗

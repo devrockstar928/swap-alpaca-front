@@ -1,6 +1,6 @@
+import { Percent } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@radioshackswap/sdk'
 import React, { useRef, useState } from 'react'
 import { DEFAULT_DEADLINE_FROM_NOW } from '../../constants'
 import { classNames } from '../../functions'
@@ -109,7 +109,7 @@ export default function TransactionSettings({ placeholderSlippage }: Transaction
                 : userSlippageTolerance !== 'auto'
                 ? 'border-blue'
                 : 'border-transparent',
-              'border p-2  bg-dark-800'
+              'border p-2 rounded bg-dark-800'
             )}
             tabIndex={-1}
           >
@@ -179,7 +179,7 @@ export default function TransactionSettings({ placeholderSlippage }: Transaction
         </div>
         <div className="flex items-center">
           <div
-            className="p-2  bg-dark-800 min-w-[82px] max-w-[102px]"
+            className="p-2 rounded bg-dark-800 min-w-[82px] max-w-[102px]"
             style={{ maxWidth: '40px', marginRight: '8px' }}
             tabIndex={-1}
           >

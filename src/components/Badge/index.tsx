@@ -11,10 +11,10 @@ export interface BadgeProps {
 
 export const COLOR = {
   default: '',
-  blue: 'bg-blue bg-opacity-20 outline-blue  text-xs text-blue px-2 py-1',
-  pink: 'bg-pink bg-opacity-20 outline-pink  text-xs text-pink px-2 py-1',
+  blue: 'bg-blue bg-opacity-20 outline-blue rounded text-xs text-blue px-2 py-1',
+  pink: 'bg-pink bg-opacity-20 outline-pink rounded text-xs text-pink px-2 py-1',
   gradient:
-    'bg-gradient-to-r from-blue to-pink opacity-80 hover:opacity-100 bg-pink bg-opacity-20 outline-pink  text-base text-white px-2 py-1',
+    'bg-gradient-to-r from-blue to-pink opacity-80 hover:opacity-100 bg-pink bg-opacity-20 outline-pink rounded text-base text-white px-2 py-1',
 }
 
 export const SIZE = {

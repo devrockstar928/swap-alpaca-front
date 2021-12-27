@@ -1,6 +1,6 @@
+import { Currency, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import React, { ReactNode } from 'react'
 import { ButtonError } from '../../../components/Button'
 import { SwapCallbackError } from './styleds'
@@ -18,7 +18,7 @@ export default function SwapModalFooter({
 }) {
   const { i18n } = useLingui()
   return (
-    <div className="p-6 mt-0 -m-6  bg-dark-800">
+    <div className="p-6 mt-0 -m-6 rounded bg-dark-800">
       {/* <div className="grid gap-1 pb-6">
         <div className="flex items-center justify-between">
           <div className="text-sm text-secondary">{i18n._(t`Price`)}</div>

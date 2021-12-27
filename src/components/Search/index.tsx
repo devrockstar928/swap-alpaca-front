@@ -8,7 +8,7 @@ export default function Search({
   className = 'bg-dark-900',
   inputProps = {
     className:
-      'text-baseline bg-transparent w-full py-3 pl-4 pr-14  w-full bg-transparent focus:outline-none bg-dark-700  focus:ring focus:ring-blue',
+      'text-baseline bg-transparent w-full py-3 pl-4 pr-14 rounded w-full bg-transparent focus:outline-none bg-dark-700 rounded focus:ring focus:ring-blue',
   },
   ...rest
 }: {
@@ -18,10 +18,10 @@ export default function Search({
   className?: string
 }) {
   return (
-    <div className={classNames('relative w-full ', className)} {...rest}>
+    <div className={classNames('relative w-full rounded', className)} {...rest}>
       <input
         className={classNames(
-          inputProps.className || 'text-baseline py-3 pl-4 pr-14  w-full bg-transparent focus:outline-none'
+          inputProps.className || 'text-baseline py-3 pl-4 pr-14 rounded w-full bg-transparent focus:outline-none'
         )}
         onChange={(e) => search(e.target.value)}
         value={term}

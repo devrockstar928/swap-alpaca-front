@@ -1,6 +1,6 @@
+import { Currency, CurrencyAmount, Percent, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Percent, Token } from '@radioshackswap/sdk'
 import Lottie from 'lottie-react'
 import React, { ReactNode } from 'react'
 import selectCoinAnimation from '../../animation/select-coin.json'
@@ -44,7 +44,7 @@ export default function CurrencyInputPanel({
   const { i18n } = useLingui()
 
   return (
-    <div id={id} className={classNames(hideInput ? 'p-2' : 'p-3', ' bg-dark-900')}>
+    <div id={id} className={classNames(hideInput ? 'p-2' : 'p-3', 'rounded bg-dark-900')}>
       <div className="flex space-x-3">
         {!hideIcon && (
           <div className="flex">
@@ -53,7 +53,7 @@ export default function CurrencyInputPanel({
                 <CurrencyLogo currency={currency} size={'54px'} />
               </div>
             ) : (
-              <div className=" bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
+              <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
                 <div style={{ width: 54, height: 54 }}>
                   <Lottie animationData={selectCoinAnimation} autoplay loop />
                 </div>
@@ -62,13 +62,13 @@ export default function CurrencyInputPanel({
           </div>
         )}
         {!hideInput && (
-          <div className={'flex flex-grow items-center w-full space-x-3  focus:bg-dark-700 p-3 sm:w-3/5'}>
+          <div className={'flex flex-grow items-center w-full space-x-3 rounded focus:bg-dark-700 p-3 sm:w-3/5'}>
             <>
               {showMaxButton && currencyBalance && (
                 <Button
                   onClick={onMax}
                   size="xs"
-                  className="text-xs font-medium bg-transparent border full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
+                  className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
                 >
                   {i18n._(t`Max`)}
                 </Button>

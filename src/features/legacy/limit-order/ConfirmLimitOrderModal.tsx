@@ -1,6 +1,6 @@
+import { USDC } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { USDC } from '@radioshackswap/sdk'
 import React, { FC, useCallback } from 'react'
 import Button from '../../../components/Button'
 import CurrencyLogo from '../../../components/CurrencyLogo'
@@ -63,7 +63,7 @@ const ConfirmLimitOrderTopContent = () => {
             <div className="text-sm text-low-emphesis">≈ {inputValueUSDC} USDC</div>
           </div>
         </div>
-        <div className="flex justify-between px-5 py-3  bg-dark-800">
+        <div className="flex justify-between px-5 py-3 rounded bg-dark-800">
           <span className="font-bold text-secondary">{i18n._(t`Rate`)}</span>
           <span className="text-primary">
             {limitPrice} {currencies[Field.OUTPUT]?.symbol} per {currencies[Field.INPUT]?.symbol}

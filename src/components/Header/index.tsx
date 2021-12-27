@@ -79,7 +79,7 @@ function AppBar(): JSX.Element {
                       <>
                         <QuestionHelper text={i18n._(t`Add xRADIO to your MetaMask wallet`)}>
                           <div
-                            className="hidden p-0.5 md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800"
+                            className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800"
                             onClick={() => {
                               if (library && library.provider.isMetaMask && library.provider.request) {
                                 const params: any = {
@@ -114,7 +114,7 @@ function AppBar(): JSX.Element {
                               width="38px"
                               height="38px"
                               objectFit="contain"
-                              className="md"
+                              className="rounded-md"
                             />
                           </div>
                         </QuestionHelper>
@@ -125,7 +125,7 @@ function AppBar(): JSX.Element {
                       <>
                         <QuestionHelper text={i18n._(t`Add RADIO to your MetaMask wallet`)}>
                           <div
-                            className="hidden md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800 p-0.5"
+                            className="hidden rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800 p-0.5"
                             onClick={() => {
                               const params: any = {
                                 type: 'ERC20',
@@ -160,7 +160,7 @@ function AppBar(): JSX.Element {
                               width="38px"
                               height="38px"
                               objectFit="contain"
-                              className="md"
+                              className="rounded-md"
                             />
                           </div>
                         </QuestionHelper>
@@ -173,7 +173,7 @@ function AppBar(): JSX.Element {
                       </div>
                     )}
 
-                    <div className="w-auto flex items-center bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
+                    <div className="w-auto flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
                       <Web3Status />
                     </div>
                     <More />

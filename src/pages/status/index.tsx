@@ -43,7 +43,7 @@ export default function Status({ initialData }) {
               {data.items.map((item) => {
                 const words = item.name.split('-')
                 return (
-                  <div className="p-4  bg-dark-900 text-primary">
+                  <div className="p-4 rounded bg-dark-900 text-primary">
                     <Typography variant="h3">{words.map((word) => `${capitalize(word)} `)}</Typography>
                     <Typography variant="sm" className="text-secondary">
                       Chain Id: {item['chain_id']}

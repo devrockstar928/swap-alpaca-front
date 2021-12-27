@@ -1,20 +1,21 @@
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
-import { AbstractConnector } from '@web3-react/abstract-connector'
-import { useWeb3React } from '@web3-react/core'
-import Image from 'next/image'
 import React, { useMemo } from 'react'
-import styled from 'styled-components'
-import { injected } from '../../config/wallets'
-import { NetworkContextName } from '../../constants'
-import { shortenAddress } from '../../functions/format'
-import useENSName from '../../hooks/useENSName'
-import WalletModal from '../../modals/WalletModal'
-import { useWalletModalToggle } from '../../state/application/hooks'
+import { SUPPORTED_WALLETS, injected } from '../../config/wallets'
 import { isTransactionRecent, useAllTransactions } from '../../state/transactions/hooks'
-import { TransactionDetails } from '../../state/transactions/reducer'
+
+import { AbstractConnector } from '@web3-react/abstract-connector'
+import Image from 'next/image'
 import Loader from '../Loader'
+import { NetworkContextName } from '../../constants'
+import { TransactionDetails } from '../../state/transactions/reducer'
+import WalletModal from '../../modals/WalletModal'
 import Web3Connect from '../Web3Connect'
+import { shortenAddress } from '../../functions/format'
+import styled from 'styled-components'
+import { t } from '@lingui/macro'
+import useENSName from '../../hooks/useENSName'
+import { useLingui } from '@lingui/react'
+import { useWalletModalToggle } from '../../state/application/hooks'
+import { useWeb3React } from '@web3-react/core'
 
 const IconWrapper = styled.div<{ size?: number }>`
   display: flex;
@@ -116,7 +117,7 @@ function Web3StatusInner() {
     return (
       <div
         id="web3-status-connected"
-        className="flex items-center px-3 py-2 text-sm lg bg-dark-1000 text-secondary"
+        className="flex items-center px-3 py-2 text-sm rounded-lg bg-dark-1000 text-secondary"
         onClick={toggleWalletModal}
       >
         {hasPendingTransactions ? (
@@ -129,6 +130,7 @@ function Web3StatusInner() {
         ) : (
           <div className="mr-2">{ENSName || shortenAddress(account)}</div>
         )}
+        {!hasPendingTransactions && connector && <StatusIcon connector={connector} />}
       </div>
     )
   } else {

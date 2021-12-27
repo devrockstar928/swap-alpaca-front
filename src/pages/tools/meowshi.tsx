@@ -1,7 +1,7 @@
+import { ChainId, Currency, Token } from '@radioshackswap/sdk'
 import { ArrowDownIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Currency, Token } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
@@ -141,7 +141,7 @@ export default function Meowshi() {
           <Image src="/neon-cat.png" alt="neon-cat" width="168px" height="168px" />
         </div>
 
-        <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2  flex flex-row items-center gap-4 mb-[54px]">
+        <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2 rounded flex flex-row items-center gap-4 mb-[54px]">
           <InformationCircleIcon width={48} height={48} color="pink" />
           <Typography variant="xs" weight={700}>
             {i18n._(t`MEOW tokens wrap xRADIO into BentoBox for double yields and can be
@@ -149,12 +149,12 @@ export default function Meowshi() {
           </Typography>
         </div>
       </div>
-      <div className="relative grid gap-4 p-4 border-2  z-1 bg-dark-900 shadow-swap border-dark-800">
+      <div className="relative grid gap-4 p-4 border-2 rounded z-1 bg-dark-900 shadow-swap border-dark-800">
         <HeaderToggle meowshiState={meowshiState} />
         <CurrencyInputPanel field={Field.INPUT} showMax={true} meowshiState={meowshiState} />
         <div className="relative mt-[-24px] mb-[-24px] ml-[28px] flex items-center">
           <div
-            className="inline-flex p-2 border-2 full cursor-pointer border-dark-900 bg-dark-800"
+            className="inline-flex p-2 border-2 rounded-full cursor-pointer border-dark-900 bg-dark-800"
             onClick={switchCurrencies}
           >
             <ArrowDownIcon width={24} height={24} />

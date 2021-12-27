@@ -18,8 +18,8 @@ const FarmListItem = ({ farm, ...rest }) => {
         <div>
           <Disclosure.Button
             className={classNames(
-              open && 'b-none',
-              'w-full px-4 py-6 text-left  cursor-pointer select-none bg-dark-900 text-primary text-sm md:text-lg'
+              open && 'rounded-b-none',
+              'w-full px-4 py-6 text-left rounded cursor-pointer select-none bg-dark-900 text-primary text-sm md:text-lg'
             )}
           >
             <div className="grid grid-cols-4">
@@ -49,7 +49,7 @@ const FarmListItem = ({ farm, ...rest }) => {
                         src={reward.icon}
                         width="30px"
                         height="30px"
-                        className="md"
+                        className="rounded-md"
                         layout="fixed"
                         alt={reward.token}
                       />

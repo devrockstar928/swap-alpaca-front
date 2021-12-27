@@ -1,6 +1,6 @@
+import { BAR_ADDRESS, ChainId, ZERO } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { BAR_ADDRESS, ChainId, ZERO } from '@radioshackswap/sdk'
 import { request } from 'graphql-request'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -37,12 +37,12 @@ const sendTx = async (txFunc: () => Promise<any>): Promise<boolean> => {
   return success
 }
 
-const tabStyle = 'flex justify-center items-center h-full w-full lg cursor-pointer text-sm md:text-base'
+const tabStyle = 'flex justify-center items-center h-full w-full rounded-lg cursor-pointer text-sm md:text-base'
 const activeTabStyle = `${tabStyle} text-high-emphesis font-bold bg-dark-900`
 const inactiveTabStyle = `${tabStyle} text-secondary`
 
 const buttonStyle =
-  'flex justify-center items-center w-full h-14  font-bold md:font-medium md:text-lg mt-5 text-sm focus:outline-none focus:ring'
+  'flex justify-center items-center w-full h-14 rounded font-bold md:font-medium md:text-lg mt-5 text-sm focus:outline-none focus:ring'
 const buttonStyleEnabled = `${buttonStyle} text-high-emphesis bg-gradient-to-r from-pink-red to-light-brown hover:opacity-90`
 const buttonStyleInsufficientFunds = `${buttonStyleEnabled} opacity-60`
 const buttonStyleDisabled = `${buttonStyle} text-secondary bg-dark-700`
@@ -227,7 +227,7 @@ export default function Stake() {
           <div className="flex flex-col w-full max-w-xl mx-auto mb-4 md:m-0">
             {chainId === ChainId.MAINNET && (
               <div className="mb-4">
-                <div className="flex items-center justify-between w-full h-24 max-w-xl p-4  md:pl-5 md:pr-7 bg-light-yellow bg-opacity-40">
+                <div className="flex items-center justify-between w-full h-24 max-w-xl p-4 rounded md:pl-5 md:pr-7 bg-light-yellow bg-opacity-40">
                   <div className="flex flex-col">
                     <div className="flex items-center justify-center mb-4 flex-nowrap md:mb-2">
                       <p className="text-sm font-bold whitespace-nowrap md:text-lg md:leading-5 text-high-emphesis">
@@ -241,7 +241,7 @@ export default function Stake() {
                       target="_blank"
                       rel="noreferrer noopener"
                       className={`
-                        py-1 px-4 md:py-1.5 md:px-7 
+                        py-1 px-4 md:py-1.5 md:px-7 rounded
                         text-xs md:text-sm font-medium md:font-bold text-dark-900
                         bg-light-yellow hover:bg-opacity-90`}
                     >
@@ -262,8 +262,8 @@ export default function Stake() {
             )}
             <div>
               <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
-              <div className="w-full max-w-xl px-3 pt-2 pb-6  bg-dark-900 md:pb-9 md:pt-4 md:px-8">
-                <div className="flex w-full  h-14 bg-dark-800">
+              <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-dark-900 md:pb-9 md:pt-4 md:px-8">
+                <div className="flex w-full rounded h-14 bg-dark-800">
                   <div
                     className="h-full w-6/12 p-0.5"
                     onClick={() => {
@@ -291,7 +291,7 @@ export default function Stake() {
                   <p className="font-bold text-large md:text-2xl text-high-emphesis">
                     {activeTab === 0 ? i18n._(t`Stake RADIO`) : i18n._(t`Unstake`)}
                   </p>
-                  <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border 3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-base md:font-normal">
+                  <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-base md:font-normal">
                     {`1 xRADIO = ${Number(bar?.ratio ?? 0)?.toFixed(4)} RADIO`}
                   </div>
                 </div>
@@ -300,7 +300,7 @@ export default function Stake() {
                   value={input}
                   onUserInput={handleInput}
                   className={classNames(
-                    'w-full h-14 px-3 md:px-5 mt-5  bg-dark-800 text-sm md:text-lg font-bold text-dark-800 whitespace-nowrap caret-high-emphesis',
+                    'w-full h-14 px-3 md:px-5 mt-5 rounded bg-dark-800 text-sm md:text-lg font-bold text-dark-800 whitespace-nowrap caret-high-emphesis',
                     inputError ? ' pl-9 md:pl-12' : ''
                   )}
                   placeholder=" "
@@ -309,7 +309,7 @@ export default function Stake() {
                 {/* input overlay: */}
                 <div className="relative w-full h-0 pointer-events-none bottom-14">
                   <div
-                    className={`flex justify-between items-center h-14  px-3 md:px-5 ${
+                    className={`flex justify-between items-center h-14 rounded px-3 md:px-5 ${
                       inputError ? ' border border-red' : ''
                     }`}
                   >
@@ -337,7 +337,7 @@ export default function Stake() {
                         <p className="text-base font-bold">{formattedBalance}</p>
                       </div>
                       <button
-                        className="px-2 py-1 ml-3 text-xs font-bold border pointer-events-auto focus:outline-none focus:ring hover:bg-opacity-40 md:bg-cyan-blue md:bg-opacity-30 border-secondary md:border-cyan-blue 2xl md:py-1 md:px-3 md:ml-4 md:text-sm md:font-normal md:text-cyan-blue"
+                        className="px-2 py-1 ml-3 text-xs font-bold border pointer-events-auto focus:outline-none focus:ring hover:bg-opacity-40 md:bg-cyan-blue md:bg-opacity-30 border-secondary md:border-cyan-blue rounded-2xl md:py-1 md:px-3 md:ml-4 md:text-sm md:font-normal md:text-cyan-blue"
                         onClick={handleClickMax}
                       >
                         {i18n._(t`MAX`)}
@@ -387,7 +387,7 @@ export default function Stake() {
             </div>
           </div>
           <div className="w-full max-w-xl mx-auto md:mx-0 md:ml-6 md:block md:w-72">
-            <div className="flex flex-col w-full px-4 pt-6 pb-5  bg-dark-900 md:px-8 md:pt-7 md:pb-9">
+            <div className="flex flex-col w-full px-4 pt-6 pb-5 rounded bg-dark-900 md:px-8 md:pt-7 md:pb-9">
               <div className="flex flex-wrap">
                 <div className="flex flex-col flex-grow md:mb-14">
                   <p className="mb-3 text-lg font-bold md:text-2xl md:font-medium text-high-emphesis">
@@ -395,7 +395,7 @@ export default function Stake() {
                   </p>
                   <div className="flex items-center space-x-4">
                     <Image
-                      className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 "
+                      className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 rounded"
                       src="/images/tokens/xsushi-square.jpg"
                       alt="xRADIO"
                       width={64}
@@ -419,7 +419,7 @@ export default function Stake() {
                   </div>
                   <div className="flex items-center ml-8 space-x-4 md:ml-0">
                     <Image
-                      className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 "
+                      className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 rounded"
                       src="/images/tokens/sushi-square.jpg"
                       alt="RADIO"
                       width={64}
@@ -451,7 +451,7 @@ export default function Stake() {
                       rel="noreferrer noopener"
                       className={`
                                 flex flex-grow justify-center items-center
-                                h-14 mt-6 
+                                h-14 mt-6 rounded
                                 bg-dark-700 text-high-emphesis
                                 focus:outline-none focus:ring hover:bg-opacity-80
                                 text-sm font-bold cursor-pointer

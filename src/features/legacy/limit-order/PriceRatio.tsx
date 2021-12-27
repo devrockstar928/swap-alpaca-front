@@ -17,7 +17,7 @@ const PriceRatio: FC = () => {
 
   return (
     <div className="flex flex-row font-bold text-sm ">
-      <div className="flex divide-x divide-dark-800 hover:divide-dark-700 cursor-pointer  border border-dark-800 hover:border-dark-700">
+      <div className="flex divide-x divide-dark-800 hover:divide-dark-700 cursor-pointer rounded border border-dark-800 hover:border-dark-700">
         <div className="py-2 px-4">
           <span className="whitespace-nowrap">
             1 {inverted ? currencies.OUTPUT?.symbol : currencies.INPUT?.symbol} ={' '}

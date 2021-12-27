@@ -1,8 +1,8 @@
+import { ChainId, Token } from '@radioshackswap/sdk'
 import { ArrowDownIcon } from '@heroicons/react/outline'
 import { ExclamationIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Token } from '@radioshackswap/sdk'
 import Lottie from 'lottie-react'
 import Head from 'next/head'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
@@ -230,11 +230,11 @@ function LimitOrder() {
         }}
       >
         <DoubleGlowShadow>
-          <div id="limit-order-page" className="flex flex-col gap-4 p-4  bg-dark-900">
+          <div id="limit-order-page" className="flex flex-col gap-4 p-4 rounded bg-dark-900">
             <ExchangeHeader input={currencies[Field.INPUT]} output={currencies[Field.OUTPUT]} />
             <div className="flex flex-col gap-4">
               <CurrencyInputPanel
-                className="t"
+                className="rounded-t"
                 id="swap-currency-input"
                 topAdornment={<PayFromToggle />}
                 bottomAdornment={<BalancePanel />}
@@ -263,13 +263,13 @@ function LimitOrder() {
                 <div className="relative flex items-center">
                   <div className="z-0 absolute w-[2px] bg-dark-800 h-[calc(100%+32px)] top-[-16px] left-[calc(50%-1px)]" />
                   <button
-                    className="z-10 full bg-dark-900 p-3px"
+                    className="z-10 rounded-full bg-dark-900 p-3px"
                     onClick={() => {
                       onSwitchTokens()
                     }}
                   >
                     <div
-                      className="p-2 full bg-dark-800 hover:bg-dark-700"
+                      className="p-2 rounded-full bg-dark-800 hover:bg-dark-700"
                       onMouseEnter={() => setAnimateSwapArrows(true)}
                       onMouseLeave={() => setAnimateSwapArrows(false)}
                     >
@@ -285,7 +285,7 @@ function LimitOrder() {
                 <LimitPriceInputPanel onBlur={(val) => checkLimitPrice(val)} />
               </div>
               <CurrencyInputPanel
-                className="relative  z-1"
+                className="relative rounded z-1"
                 id="swap-currency-input"
                 selectComponent={
                   <CurrencySelect
@@ -317,7 +317,7 @@ function LimitOrder() {
                 }
                 bottomAdornment={
                   currencyInputPanelError ? (
-                    <div className="z-0 flex items-center justify-center py-2 -mt-2 b bg-red bg-opacity-20">
+                    <div className="z-0 flex items-center justify-center py-2 -mt-2 rounded-b bg-red bg-opacity-20">
                       <div className="flex items-center gap-2 pt-2">
                         <ExclamationIcon className="text-red" width={24} height={24} />
                         <Typography variant="xs" weight={700}>

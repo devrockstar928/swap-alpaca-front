@@ -43,7 +43,7 @@ function FarmListName({ pair }: FarmListNameProps): JSX.Element {
       <div className="flex items-center">
         <DoubleCurrencyLogo
           className="-space-x-3"
-          logoClassName="full"
+          logoClassName="rounded-full"
           currency0={token0}
           currency1={token1}
           size={40}
@@ -64,7 +64,14 @@ function Rewards({ rewards }: { rewards: Reward[] }): JSX.Element {
         <div className="flex flex-col items-center space-y-2">
           {rewards?.map((reward, i) => (
             <div key={i} className="flex items-center">
-              <Image src={reward.icon} width="30px" height="30px" className="full" layout="fixed" alt={reward.token} />
+              <Image
+                src={reward.icon}
+                width="30px"
+                height="30px"
+                className="rounded-full"
+                layout="fixed"
+                alt={reward.token}
+              />
             </div>
           ))}
         </div>
