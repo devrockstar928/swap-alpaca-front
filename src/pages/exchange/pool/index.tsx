@@ -29,6 +29,7 @@ export default function Pool() {
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
+  //console.log('trackedTokenPairs=', trackedTokenPairs.filter(t => (t[0] as any)?.tokenInfo?.symbol == 'RADIO' || (t[1] as any)?.tokenInfo?.symbol == 'RADIO'));
   const tokenPairsWithLiquidityTokens = useMemo(
     () =>
       trackedTokenPairs.map((tokens) => ({
@@ -41,6 +42,9 @@ export default function Pool() {
     () => tokenPairsWithLiquidityTokens.map((tpwlt) => tpwlt.liquidityToken),
     [tokenPairsWithLiquidityTokens]
   )
+  //console.log('liquidityTokens=', liquidityTokens);
+  //console.log('liquidityTokens(0x003e4D8A7cE0ae7C82eF47333826c0c4a555d534)=', liquidityTokens.filter(t => t.address == '0x003e4D8A7cE0ae7C82eF47333826c0c4a555d534'));
+  //console.log('liquidityTokens(0xcd578f016888b57f1b1e3f887f392f0159e26747)=', liquidityTokens.filter(t => t.address == '0xcd578f016888b57f1b1e3f887f392f0159e26747'));
   const [v2PairsBalances, fetchingV2PairBalances] = useTokenBalancesWithLoadingIndicator(
     account ?? undefined,
     liquidityTokens

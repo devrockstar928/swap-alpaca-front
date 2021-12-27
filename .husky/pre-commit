@@ -3,6 +3,6 @@
 . "$(dirname "$0")/common.sh"
 
 yarn lint
-yarn lint-staged
+#yarn lint-staged
 yarn lingui
 # yarn test

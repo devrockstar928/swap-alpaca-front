@@ -75,6 +75,7 @@ function AppBar(): JSX.Element {
 
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
+
                     {chainId && [ChainId.MAINNET].includes(chainId) && library && library.provider.isMetaMask && (
                       <>
                         <QuestionHelper text={i18n._(t`Add xRADIO to your MetaMask wallet`)}>
@@ -121,6 +122,7 @@ function AppBar(): JSX.Element {
                       </>
                     )}
 
+
                     {chainId && chainId in RADIO_ADDRESS && library && library.provider.isMetaMask && (
                       <>
                         <QuestionHelper text={i18n._(t`Add RADIO to your MetaMask wallet`)}>
@@ -155,7 +157,7 @@ function AppBar(): JSX.Element {
                             }}
                           >
                             <Image
-                              src="/images/tokens/sushi-square.jpg"
+                              src="/images/tokens/radio-square.jpg"
                               alt="RADIO"
                               width="38px"
                               height="38px"

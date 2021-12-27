@@ -14,10 +14,10 @@ import { AutoColumn } from '../../../components/Column'
 import Container from '../../../components/Container'
 import CurrencyInputPanel from '../../../components/CurrencyInputPanel'
 import Dots from '../../../components/Dots'
-import DoubleGlowShadow from '../../../components/DoubleGlowShadow'
 import DoubleCurrencyLogo from '../../../components/DoubleLogo'
 import NavLink from '../../../components/NavLink'
 import { MinimalPositionCard } from '../../../components/PositionCard'
+import RadioWithShadow from '../../../components/RadioWithShadow'
 import { AutoRow, RowBetween } from '../../../components/Row'
 import Web3Connect from '../../../components/Web3Connect'
 import { ZERO_PERCENT } from '../../../constants'
@@ -321,55 +321,7 @@ export default function Add() {
       </Head>
 
       <Container id="add-liquidity-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
-        <div className="flex items-center justify-between px-4 mb-5">
-          <NavLink href="/pool">
-            <a className="flex items-center space-x-2 text-base font-medium text-center cursor-pointer text-secondary hover:text-high-emphesis">
-              <span>{i18n._(t`View Liquidity Positions`)}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </NavLink>
-          {/* <button
-            style={{
-              backgroundColor: 'rgba(167, 85, 221, 0.25)',
-              border: '1px solid #A755DD',
-              borderRadius: 20,
-              padding: '5px 40px',
-              fontSize: 14,
-            }}
-          >
-            FARM THE {currencies[Field.CURRENCY_A]?.symbol}-{currencies[Field.CURRENCY_B]?.symbol} POOL
-          </button> */}
-        </div>
-
-        <Alert
-          message={
-            noLiquidity ? (
-              i18n._(
-                t`When creating a pair you are the first liquidity provider. The ratio of tokens you add will set the price of this pool. Once you are happy with the rate, click supply to review`
-              )
-            ) : (
-              <>
-                <b>{i18n._(t`Tip:`)}</b>{' '}
-                {i18n._(
-                  t`By adding liquidity you'll earn 0.25% of all trades on this pair
-                proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be
-                claimed by withdrawing your liquidity.`
-                )}
-              </>
-            )
-          }
-          type="information"
-        />
-
-        <DoubleGlowShadow>
+        <RadioWithShadow className="min-h-[46.25rem]">
           <div className="p-4 space-y-4 rounded bg-dark-900" style={{ zIndex: 1 }}>
             {/* <AddRemoveTabs creating={isCreate} adding={true} defaultSlippage={DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE} /> */}
 
@@ -530,7 +482,54 @@ export default function Add() {
               />
             )}
           </div>
-        </DoubleGlowShadow>
+        </RadioWithShadow>
+        <div className="flex items-center justify-between px-4 pt-8 mb-5">
+          <NavLink href="/pool">
+            <a className="flex items-center space-x-2 text-base font-medium text-center cursor-pointer text-secondary hover:text-high-emphesis">
+              <span>{i18n._(t`View Liquidity Positions`)}</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </NavLink>
+          {/* <button
+            style={{
+              backgroundColor: 'rgba(167, 85, 221, 0.25)',
+              border: '1px solid #A755DD',
+              borderRadius: 20,
+              padding: '5px 40px',
+              fontSize: 14,
+            }}
+          >
+            FARM THE {currencies[Field.CURRENCY_A]?.symbol}-{currencies[Field.CURRENCY_B]?.symbol} POOL
+          </button> */}
+        </div>
+
+        <Alert
+          message={
+            noLiquidity ? (
+              i18n._(
+                t`When creating a pair you are the first liquidity provider. The ratio of tokens you add will set the price of this pool. Once you are happy with the rate, click supply to review`
+              )
+            ) : (
+              <>
+                <b>{i18n._(t`Tip:`)}</b>{' '}
+                {i18n._(
+                  t`By adding liquidity you'll earn 0.25% of all trades on this pair
+                proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be
+                claimed by withdrawing your liquidity.`
+                )}
+              </>
+            )
+          }
+          type="information"
+        />
       </Container>
     </>
   )

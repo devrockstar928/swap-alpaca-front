@@ -70,7 +70,7 @@ export function AdvancedSwapDetails({ trade, allowedSlippage }: AdvancedSwapDeta
         <RowFixed>
           <div className="text-sm text-secondary">{i18n._(t`Liquidity Provider Fee`)}</div>
           <QuestionHelper
-            text={i18n._(t`A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive.`)}
+            text={i18n._(t`A portion of each trade (~0.083%) goes to liquidity providers as a protocol incentive.`)}
           />
         </RowFixed>
         <div className="text-sm font-bold text-high-emphesis">
@@ -84,7 +84,7 @@ export function AdvancedSwapDetails({ trade, allowedSlippage }: AdvancedSwapDeta
         <RowFixed>
           <div className="text-sm text-secondary">{i18n._(t`xRADIO Fee`)}</div>
           <QuestionHelper
-            text={i18n._(t`A portion of each trade (0.05%) goes to xRADIO holders as a protocol incentive.`)}
+            text={i18n._(t`A portion of each trade (~0.017%) goes to xRADIO holders as a protocol incentive.`)}
           />
         </RowFixed>
         <div className="text-sm font-bold text-high-emphesis">
