@@ -9,9 +9,9 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
   }
 
   return (
-    <div className={classNames(className, 'relative w-full h-[32rem] max-w-2xl')}>
+    <div className={classNames(className, 'relative w-full h-auto block max-w-2xl')}>
       <div
-        className="absolute top-10 -left-20 -right-20 bg-brown rounded-[80px] -bottom-4 w-[837px] h-[560px]"
+        className="absolute top-10 -left-20 -right-20 bg-brown rounded-[80px] -bottom-4 w-[837px] h-auto inline-block z-0"
         style={{ boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.5), 0px 20px 50px rgba(0, 0, 0, 0.2)' }}
       >
         <div

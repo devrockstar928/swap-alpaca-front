@@ -391,7 +391,7 @@ export default function Swap() {
         tokens={importTokensNotInDefault}
         onConfirm={handleConfirmTokenWarning}
       />
-      <RadioWithShadow>
+      <RadioWithShadow className="min-h-[36rem]">
         <div className="p-4 space-y-4 bg-dark-900 z-1">
           <SwapHeader
             input={currencies[Field.INPUT]}

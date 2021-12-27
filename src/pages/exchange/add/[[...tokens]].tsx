@@ -321,7 +321,7 @@ export default function Add() {
       </Head>
 
       <Container id="add-liquidity-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
-        <RadioWithShadow>
+        <RadioWithShadow className="min-h-[40rem]">
           <div className="p-4 space-y-4 bg-dark-900" style={{ zIndex: 1 }}>
             {/* <AddRemoveTabs creating={isCreate} adding={true} defaultSlippage={DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE} /> */}
 
