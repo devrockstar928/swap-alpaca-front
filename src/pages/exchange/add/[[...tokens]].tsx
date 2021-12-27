@@ -483,7 +483,7 @@ export default function Add() {
             )}
           </div>
         </RadioWithShadow>
-        <div className="flex items-center justify-between px-4 pt-24 mb-5">
+        <div className="flex items-center justify-between px-4 pt-8 mb-5">
           <NavLink href="/pool">
             <a className="flex items-center space-x-2 text-base font-medium text-center cursor-pointer text-secondary hover:text-high-emphesis">
               <span>{i18n._(t`View Liquidity Positions`)}</span>
