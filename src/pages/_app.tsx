@@ -110,7 +110,7 @@ function MyApp({
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <title key="title">RADIO</title>
+        <title key="title">SHACK</title>
 
         <meta
           key="description"
@@ -118,10 +118,10 @@ function MyApp({
           content="Be a DeFi Chef with Radio. Swap, earn, stack yields, lend, borrow, leverage all on one decentralized, community driven platform. Welcome home to DeFi"
         />
 
-        <meta name="application-name" content="RADIO App" />
+        <meta name="application-name" content="SHACK App" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="RADIO App" />
+        <meta name="apple-mobile-web-app-title" content="SHACK App" />
 
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -130,7 +130,7 @@ function MyApp({
         <meta name="theme-color" content="#F338C3" />
 
         <meta key="twitter:card" name="twitter:card" content="app" />
-        <meta key="twitter:title" name="twitter:title" content="RADIO App" />
+        <meta key="twitter:title" name="twitter:title" content="SHACK App" />
         <meta key="twitter:url" name="twitter:url" content="https://app.sushi.com" />
         <meta
           key="twitter:description"
@@ -140,7 +140,7 @@ function MyApp({
         <meta key="twitter:image" name="twitter:image" content="https://app.sushi.com/icons/icon-192x192.png" />
         <meta key="twitter:creator" name="twitter:creator" content="@RadioSwap" />
         <meta key="og:type" property="og:type" content="website" />
-        <meta key="og:site_name" property="og:site_name" content="RADIO App" />
+        <meta key="og:site_name" property="og:site_name" content="SHACK App" />
         <meta key="og:url" property="og:url" content="https://app.sushi.com" />
         <meta key="og:image" property="og:image" content="https://app.sushi.com/apple-touch-icon.png" />
         <meta

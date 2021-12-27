@@ -1,6 +1,6 @@
-import { ChainId } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId } from '@radioshackswap/sdk'
 import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk'
 import { useCallback } from 'react'
 import { useActiveWeb3React } from '../../../services/web3'
@@ -27,7 +27,7 @@ export default function Buy() {
 
     const widget = new RampInstantSDK({
       userAddress: account,
-      hostAppName: 'RADIO',
+      hostAppName: 'SHACK',
       hostLogoUrl: 'http://sushiswap-interface-canary.vercel.app/_next/image?url=%2Flogo.png&w=32&q=75',
       defaultAsset: DEFAULT_CRYPTO_CURRENCY[chainId],
     })

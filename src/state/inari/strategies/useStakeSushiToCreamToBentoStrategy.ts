@@ -1,10 +1,10 @@
-import { ChainId, RADIO_ADDRESS, Token } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, SHACK_ADDRESS, Token } from '@radioshackswap/sdk'
 import { useCallback, useEffect, useMemo } from 'react'
-import { CRXSUSHI, RADIO } from '../../../config/tokens'
+import { CRXSUSHI, SHACK } from '../../../config/tokens'
 import { e10, tryParseAmount } from '../../../functions'
 import { useZenkoContract } from '../../../hooks/useContract'
 import useSushiPerXSushi from '../../../hooks/useXSushiPerSushi'
@@ -17,20 +17,20 @@ import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   name: i18n._(t`Cream → Bento`),
-  steps: [i18n._(t`RADIO`), i18n._(t`crXSUSHI`), i18n._(t`BentoBox`)],
+  steps: [i18n._(t`SHACK`), i18n._(t`crXSUSHI`), i18n._(t`BentoBox`)],
   zapMethod: 'stakeSushiToCreamToBento',
   unzapMethod: 'unstakeSushiFromCreamFromBento',
-  description: i18n._(t`Stake RADIO for xRADIO into Cream and deposit crXSUSHI into BentoBox in one click.`),
-  inputSymbol: i18n._(t`RADIO`),
+  description: i18n._(t`Stake SHACK for xSHACK into Cream and deposit crXSUSHI into BentoBox in one click.`),
+  inputSymbol: i18n._(t`SHACK`),
   outputSymbol: i18n._(t`crXSUSHI in BentoBox`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
     chainId: ChainId.MAINNET,
-    address: RADIO_ADDRESS[ChainId.MAINNET],
+    address: SHACK_ADDRESS[ChainId.MAINNET],
     decimals: 18,
-    symbol: 'RADIO',
+    symbol: 'SHACK',
   },
   outputToken: {
     chainId: ChainId.MAINNET,
@@ -44,7 +44,7 @@ const useStakeSushiToCreamToBentoStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
   const { account } = useActiveWeb3React()
   const zenkoContract = useZenkoContract()
-  const balances = useTokenBalances(account, [RADIO[ChainId.MAINNET]])
+  const balances = useTokenBalances(account, [SHACK[ChainId.MAINNET]])
   const sushiPerXSushi = useSushiPerXSushi(true)
   const crxSushiBentoBalance = useBentoBalance(CRXSUSHI.address)
 
@@ -63,7 +63,7 @@ const useStakeSushiToCreamToBentoStrategy = (): StrategyHook => {
     if (!balances) return
 
     setBalances({
-      inputTokenBalance: balances[RADIO[ChainId.MAINNET].address],
+      inputTokenBalance: balances[SHACK[ChainId.MAINNET].address],
       outputTokenBalance: tryParseAmount(crxSushiBentoBalance?.value?.toFixed(8) || '0', CRXSUSHI),
     })
   }, [balances, setBalances, crxSushiBentoBalance?.value])

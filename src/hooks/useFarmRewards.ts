@@ -1,5 +1,5 @@
-import { ChainId } from '@radioshackswap/sdk'
 import { getAddress } from '@ethersproject/address'
+import { ChainId } from '@radioshackswap/sdk'
 import toLower from 'lodash/toLower'
 import { useMemo } from 'react'
 import { Chef, PairType } from '../features/onsen/enum'
@@ -105,7 +105,7 @@ export default function useFarmRewards() {
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
-        token: 'RADIO',
+        token: 'SHACK',
         icon: 'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2.jpg',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,

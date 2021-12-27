@@ -1,15 +1,15 @@
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import {
   ChainId,
   Currency,
   CurrencyAmount,
   Percent,
-  RADIO_ADDRESS,
+  SHACK_ADDRESS,
   Trade as V2Trade,
   TradeType,
   WNATIVE_ADDRESS,
 } from '@radioshackswap/sdk'
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { tryParseAmount } from '../../functions/parse'
@@ -243,7 +243,7 @@ export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId 
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
-  const sushi = RADIO_ADDRESS[chainId]
+  const sushi = SHACK_ADDRESS[chainId]
 
   if (inputCurrency === '' && outputCurrency === '') {
     inputCurrency = eth

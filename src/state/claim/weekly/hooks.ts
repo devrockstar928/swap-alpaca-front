@@ -1,6 +1,6 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, RADIO } from '@radioshackswap/sdk'
 import { getAddress, isAddress } from '@ethersproject/address'
 import { TransactionResponse } from '@ethersproject/providers'
+import { ChainId, Currency, CurrencyAmount, JSBI, SHACK } from '@radioshackswap/sdk'
 import { useEffect, useState } from 'react'
 import { calculateGasMargin } from '../../../functions/trade'
 import { useMerkleDistributorContract } from '../../../hooks/useContract'
@@ -85,7 +85,7 @@ export function useUserUnclaimedAmount(account: string | null | undefined): Curr
   const userClaimData = useUserClaimData(account)
   const canClaim = useUserHasAvailableClaim(account)
 
-  const sushi = chainId ? RADIO[chainId] : undefined
+  const sushi = chainId ? SHACK[chainId] : undefined
 
   // console.log('claimStats:', {
   //   canClaim: canClaim,
@@ -125,7 +125,7 @@ export function useClaimCallback(account: string | null | undefined): {
         })
         .then((response: TransactionResponse) => {
           addTransaction(response, {
-            summary: `Claimed ${unClaimedAmount?.toSignificant(4)} RADIO`,
+            summary: `Claimed ${unClaimedAmount?.toSignificant(4)} SHACK`,
             claim: { recipient: account },
           })
           return response.hash

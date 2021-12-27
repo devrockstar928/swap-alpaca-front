@@ -1,13 +1,13 @@
-import { ChainId, Currency, Token } from '@radioshackswap/sdk'
 import { ArrowDownIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, Token } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import Container from '../../components/Container'
 import Typography from '../../components/Typography'
-import { MEOW, RADIO, XRADIO } from '../../config/tokens'
+import { MEOW, SHACK, XSHACK } from '../../config/tokens'
 import CurrencyInputPanel from '../../features/meowshi/CurrencyInputPanel'
 import HeaderToggle from '../../features/meowshi/HeaderToggle'
 import MeowshiButton from '../../features/meowshi/MeowshiButton'
@@ -49,7 +49,7 @@ export default function Meowshi() {
   })
 
   const [currencies, setCurrencies] = useState({
-    [Field.INPUT]: RADIO[ChainId.MAINNET],
+    [Field.INPUT]: SHACK[ChainId.MAINNET],
     [Field.OUTPUT]: MEOW,
   })
 
@@ -57,11 +57,11 @@ export default function Meowshi() {
     async (val, field) => {
       setFields((prevState) => {
         const inputRate =
-          currencies[Field.INPUT] === XRADIO
+          currencies[Field.INPUT] === XSHACK
             ? meowshiPerXSushi.mul(e10(5))
             : meowshiPerXSushi.mul(e10(5)).mulDiv(e10(18), sushiPerXSushi.toString().toBigNumber(18))
         const outputRate =
-          currencies[Field.OUTPUT] === XRADIO
+          currencies[Field.OUTPUT] === XSHACK
             ? xSushiPerMeowshi.div(e10(5))
             : xSushiPerMeowshi.mulDiv(sushiPerXSushi.toString().toBigNumber(18), e10(18)).div(e10(5))
 
@@ -144,7 +144,7 @@ export default function Meowshi() {
         <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2 rounded flex flex-row items-center gap-4 mb-[54px]">
           <InformationCircleIcon width={48} height={48} color="pink" />
           <Typography variant="xs" weight={700}>
-            {i18n._(t`MEOW tokens wrap xRADIO into BentoBox for double yields and can be
+            {i18n._(t`MEOW tokens wrap xSHACK into BentoBox for double yields and can be
               used to vote in special MEOW governor contracts.`)}
           </Typography>
         </div>
@@ -161,9 +161,9 @@ export default function Meowshi() {
           </div>
           <Typography variant="sm" className="text-secondary ml-[26px]">
             {currencies[Field.INPUT]?.symbol} →{' '}
-            {(currencies[Field.INPUT] === RADIO[ChainId.MAINNET] ||
-              currencies[Field.OUTPUT] === RADIO[ChainId.MAINNET]) &&
-              ' xRADIO → '}
+            {(currencies[Field.INPUT] === SHACK[ChainId.MAINNET] ||
+              currencies[Field.OUTPUT] === SHACK[ChainId.MAINNET]) &&
+              ' xSHACK → '}
             {currencies[Field.OUTPUT]?.symbol}
           </Typography>
         </div>

@@ -1,4 +1,6 @@
 // import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
+import { AddressZero } from '@ethersproject/constants'
+import { Contract } from '@ethersproject/contracts'
 import {
   BAR_ADDRESS,
   BENTOBOX_ADDRESS,
@@ -13,13 +15,11 @@ import {
   MERKLE_DISTRIBUTOR_ADDRESS,
   MINICHEF_ADDRESS,
   MULTICALL2_ADDRESS,
-  RADIO_ADDRESS,
   ROUTER_ADDRESS,
+  SHACK_ADDRESS,
   TIMELOCK_ADDRESS,
   WNATIVE_ADDRESS,
 } from '@radioshackswap/sdk'
-import { AddressZero } from '@ethersproject/constants'
-import { Contract } from '@ethersproject/contracts'
 import { useMemo } from 'react'
 import {
   ARGENT_WALLET_DETECTOR_ABI,
@@ -46,7 +46,7 @@ import MEOWSHI_ABI from '../constants/abis/meowshi.json'
 import MERKLE_DISTRIBUTOR_ABI from '../constants/abis/merkle-distributor.json'
 import MINICHEF_ABI from '../constants/abis/minichef-v2.json'
 import MULTICALL2_ABI from '../constants/abis/multicall2.json'
-import RADIO_ABI from '../constants/abis/radio.json'
+import SHACK_ABI from '../constants/abis/radio.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import TIMELOCK_ABI from '../constants/abis/timelock.json'
 import UNI_FACTORY_ABI from '../constants/abis/uniswap-v2-factory.json'
@@ -133,7 +133,7 @@ export function useMulticall2Contract() {
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && RADIO_ADDRESS[chainId], RADIO_ABI, withSignerIfPossible)
+  return useContract(chainId && SHACK_ADDRESS[chainId], SHACK_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
