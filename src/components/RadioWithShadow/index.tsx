@@ -8,11 +8,6 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
     return <div className="shadow-swap">{children}</div>
   }
 
-  const topHightlightStyle = {
-    background:
-      'linear-gradient(89.93deg, rgba(255, 255, 255, 0.23) 5.39%, rgba(255, 251, 242, 0.28) 49.47%, rgba(255, 255, 235, 0.25) 96.41%);',
-  }
-
   return (
     <div className={classNames(className, 'relative w-full h-[32rem] max-w-2xl')}>
       <div
