@@ -63,6 +63,24 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
             style={{ backgroundColor: 'rgba(255, 255, 255, 0.29)', filter: 'blur(18px)' }}
           ></div>
           <div className="absolute left-[38px] right-[39px] top-[34px] bottom-[36px]">{children}</div>
+
+          <div
+            className="absolute left-[38px] right-[39px] bottom-[36px] h-[100px]"
+            style={{
+              background: 'rgba(163, 121, 83, 0.92)',
+              border: '3px solid #202230',
+              boxSizing: 'border-box',
+              boxShadow: 'inset 4px 0px 4px rgba(0, 0, 0, 0.25), inset -6px -5px 4px rgba(0, 0, 0, 0.25)',
+              borderRadius: '25px',
+            }}
+          >
+            <div className="absolute left-[44px] w-[78px] h-[76px] bottom-[8px]">
+              <Image src="/images/swap/radio-button.png" alt="button1" layout="fill" />
+            </div>
+            <div className="absolute right-[65px] w-[78px] h-[76px] bottom-[8px]">
+              <Image src="/images/swap/radio-button.png" alt="button1" layout="fill" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
