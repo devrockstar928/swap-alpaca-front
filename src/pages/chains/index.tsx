@@ -21,8 +21,8 @@ export default function Status({ fallbackData }) {
         <div className="grid items-start justify-start grid-cols-2 gap-3 mx-auto ">
           {data.map((chain, key) => {
             return (
-              <div key={key} className="h-full p-1  bg-dark-900 text-primary">
-                <pre className="h-full p-4  bg-dark-1000">
+              <div key={key} className="h-full p-1 rounded bg-dark-900 text-primary">
+                <pre className="h-full p-4 rounded bg-dark-1000">
                   <code>{JSON.stringify(chain, null, 2)}</code>
                 </pre>
               </div>

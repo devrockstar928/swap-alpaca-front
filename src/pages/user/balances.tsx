@@ -1,7 +1,7 @@
+import { BENTOBOX_ADDRESS, CurrencyAmount, Token, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import { Transition } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { BENTOBOX_ADDRESS, CurrencyAmount, Token, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Button from '../../components/Button'
@@ -101,7 +101,7 @@ const TokenBalance = ({ token }: { token: BentoBalance & WrappedTokenInfo }) => 
   return (
     <Paper className="space-y-4">
       <div
-        className="grid grid-cols-3 px-4 py-4 text-sm  cursor-pointer select-none bg-dark-800"
+        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none bg-dark-800"
         onClick={() => setExpand(!expand)}
       >
         <div className="flex items-center space-x-3">
@@ -110,7 +110,7 @@ const TokenBalance = ({ token }: { token: BentoBalance & WrappedTokenInfo }) => 
             height={56}
             width={56}
             src={token?.tokenInfo ? token.tokenInfo.logoURI : '/images/tokens/unknown.png'}
-            className="w-10 mr-4 lg sm:w-14"
+            className="w-10 mr-4 rounded-lg sm:w-14"
             alt={token?.tokenInfo ? token.tokenInfo.symbol : token?.symbol}
           />
           <div>{token && token?.tokenInfo ? token.tokenInfo.symbol : token?.symbol}</div>
@@ -138,10 +138,10 @@ const TokenBalance = ({ token }: { token: BentoBalance & WrappedTokenInfo }) => 
         leaveTo="opacity-0"
       >
         <div className="grid grid-cols-2 gap-4 ">
-          <div className="col-span-2 p-4 text-center  md:col-span-1 bg-dark-800">
+          <div className="col-span-2 p-4 text-center rounded md:col-span-1 bg-dark-800">
             <Deposit token={token} />
           </div>
-          <div className="col-span-2 p-4 text-center  md:col-span-1 bg-dark-800">
+          <div className="col-span-2 p-4 text-center rounded md:col-span-1 bg-dark-800">
             <Withdraw token={token} />
           </div>
         </div>
@@ -189,7 +189,7 @@ export function Deposit({ token }: { token: BentoBalance & WrappedTokenInfo }): 
       )}
       <div className="relative flex items-center w-full mb-4">
         <Input.Numeric
-          className="w-full p-3  bg-dark-700 focus:ring focus:ring-blue"
+          className="w-full p-3 rounded bg-dark-700 focus:ring focus:ring-blue"
           value={value}
           onUserInput={(value) => {
             setValue(value)
@@ -260,7 +260,7 @@ function Withdraw({ token }: { token: BentoBalance & WrappedTokenInfo }): JSX.El
       )}
       <div className="relative flex items-center w-full mb-4">
         <Input.Numeric
-          className="w-full p-3  bg-dark-700 focus:ring focus:ring-pink"
+          className="w-full p-3 rounded bg-dark-700 focus:ring focus:ring-pink"
           value={value}
           onUserInput={(value) => {
             setValue(value)

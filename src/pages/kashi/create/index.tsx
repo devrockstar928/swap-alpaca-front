@@ -1,8 +1,8 @@
+import { CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from '@radioshackswap/sdk'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
@@ -217,7 +217,7 @@ function Create() {
 
           <Button
             color="gradient"
-            className="w-full px-4 py-3 text-base  text-high-emphesis"
+            className="w-full px-4 py-3 text-base rounded text-high-emphesis"
             onClick={() => handleCreate()}
             disabled={!both}
           >

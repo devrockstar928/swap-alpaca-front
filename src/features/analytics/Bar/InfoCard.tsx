@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatNumber } from '../../../functions'
 
 interface InfoCardProps {
   text: string
@@ -7,7 +8,7 @@ interface InfoCardProps {
 
 export default function InfoCard({ text, number }: InfoCardProps) {
   return (
-    <div className="w-full py-3 border  px-9 bg-dark-900 border-dark-700">
+    <div className="w-full py-3 border rounded px-9 bg-dark-900 border-dark-700">
       <div className="whitespace-nowrap">{text}</div>
       <div className="text-2xl font-bold">{number}</div>
     </div>

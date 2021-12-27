@@ -1,6 +1,6 @@
+import { ChainId } from '@radioshackswap/sdk'
 import { Transition } from '@headlessui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
-import { ChainId } from '@radioshackswap/sdk'
 import React, { FC, useCallback, useState } from 'react'
 import { classNames } from '../../functions'
 import { useActiveWeb3React } from '../../services/web3'
@@ -50,7 +50,7 @@ const Banner: FC = () => {
             rel="noreferrer"
             href={url}
             target="_blank"
-            className="hidden w-full py-12  cursor-pointer sm:block"
+            className="hidden w-full py-12 rounded cursor-pointer sm:block"
             style={{
               backgroundImage: image,
               backgroundPosition: 'center',

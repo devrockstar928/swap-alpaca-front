@@ -1,8 +1,8 @@
+import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useState } from 'react'
@@ -322,7 +322,7 @@ export default function Add() {
 
       <Container id="add-liquidity-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
         <RadioWithShadow className="min-h-[46.25rem]">
-          <div className="p-4 space-y-4 bg-dark-900" style={{ zIndex: 1 }}>
+          <div className="p-4 space-y-4 rounded bg-dark-900" style={{ zIndex: 1 }}>
             {/* <AddRemoveTabs creating={isCreate} adding={true} defaultSlippage={DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE} /> */}
 
             <ExchangeHeader
@@ -367,8 +367,8 @@ export default function Add() {
 
                 <AutoColumn justify="space-between" className="py-2.5">
                   <AutoRow justify={isExpertMode ? 'space-between' : 'flex-start'} style={{ padding: '0 1rem' }}>
-                    <button className="z-10 -mt-6 -mb-6 cursor-default full bg-dark-900 p-3px">
-                      <div className="p-3 full bg-dark-800">
+                    <button className="z-10 -mt-6 -mb-6 rounded-full cursor-default bg-dark-900 p-3px">
+                      <div className="p-3 rounded-full bg-dark-800">
                         <Plus size="32" />
                       </div>
                     </button>
@@ -390,7 +390,7 @@ export default function Add() {
               </div>
 
               {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
-                <div className="p-1 bg-dark-800">
+                <div className="p-1 rounded bg-dark-800">
                   <LiquidityPrice
                     currencies={currencies}
                     price={price}

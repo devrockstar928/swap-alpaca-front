@@ -1,7 +1,7 @@
+import { Currency, CurrencyAmount, Pair, Percent, Token } from '@radioshackswap/sdk'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Pair, Percent, Token } from '@radioshackswap/sdk'
 import Lottie from 'lottie-react'
 import React, { ReactNode, useCallback, useState } from 'react'
 import selectCoinAnimation from '../../animation/select-coin.json'
@@ -72,7 +72,7 @@ export default function CurrencyInputPanel({
   }, [setModalOpen])
 
   return (
-    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-5', ' bg-dark-800')}>
+    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-5', 'rounded bg-dark-800')}>
       <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className={classNames('w-full sm:w-2/5')}>
           <button
@@ -95,7 +95,7 @@ export default function CurrencyInputPanel({
                   <CurrencyLogo currency={currency} size={'54px'} />
                 </div>
               ) : (
-                <div className=" bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
+                <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
                   <div style={{ width: 54, height: 54 }}>
                     <Lottie animationData={selectCoinAnimation} autoplay loop />
                   </div>
@@ -120,7 +120,7 @@ export default function CurrencyInputPanel({
                           '...' +
                           currency.symbol.slice(currency.symbol.length - 5, currency.symbol.length)
                         : currency?.symbol) || (
-                        <div className="px-2 py-1 mt-1 text-xs font-medium bg-transparent border full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap ">
+                        <div className="px-2 py-1 mt-1 text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap ">
                           {i18n._(t`Select a token`)}
                         </div>
                       )}
@@ -138,7 +138,7 @@ export default function CurrencyInputPanel({
         {!hideInput && (
           <div
             className={classNames(
-              'flex items-center w-full space-x-3  bg-dark-900 focus:bg-dark-700 p-3 sm:w-3/5'
+              'flex items-center w-full space-x-3 rounded bg-dark-900 focus:bg-dark-700 p-3 sm:w-3/5'
               // showMaxButton && selectedCurrencyBalance && 'px-3'
             )}
           >
@@ -147,7 +147,7 @@ export default function CurrencyInputPanel({
                 <Button
                   onClick={onMax}
                   size="xs"
-                  className="text-xs font-medium bg-transparent border full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
+                  className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
                 >
                   {i18n._(t`Max`)}
                 </Button>

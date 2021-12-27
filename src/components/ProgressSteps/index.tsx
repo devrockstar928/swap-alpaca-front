@@ -27,7 +27,7 @@ export default function ProgressCircles({ steps, disabled = false, ...rest }: Pr
                 className={classNames(
                   step ? 'bg-green' : 'bg-pink',
                   (disabled || (!steps[i - 1] && i !== 0)) && 'bg-dark-800',
-                  'min-w-5 min-h-5 full flex justify-center items-center text-xs'
+                  'min-w-5 min-h-5 rounded-full flex justify-center items-center text-xs'
                 )}
               >
                 {step ? '✓' : i + 1}
@@ -47,7 +47,7 @@ export default function ProgressCircles({ steps, disabled = false, ...rest }: Pr
         <div
           className={classNames(
             (disabled || !steps[steps.length - 1]) && 'bg-dark-800',
-            'min-w-5 min-h-5 full flex justify-center items-center text-xs'
+            'min-w-5 min-h-5 rounded-full flex justify-center items-center text-xs'
           )}
         >
           {steps.length + 1}

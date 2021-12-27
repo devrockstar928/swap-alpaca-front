@@ -1,8 +1,8 @@
+import { CurrencyAmount, JSBI, Token, USD, ZERO } from '@radioshackswap/sdk'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount, JSBI, Token, USD, ZERO } from '@radioshackswap/sdk'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import Button from '../../components/Button'
@@ -99,7 +99,7 @@ const InvestmentDetails = ({ farm }) => {
             {liquidityToken.symbol}
           </Typography>
         </div>
-        <div className="w-full h-0 font-bold bg-transparent border border-b-0 border-transparent  text-high-emphesis border-gradient-r-blue-pink-dark-800 opacity-20" />
+        <div className="w-full h-0 font-bold bg-transparent border border-b-0 border-transparent rounded text-high-emphesis border-gradient-r-blue-pink-dark-800 opacity-20" />
         <div className="flex justify-between">
           <div className="flex flex-col justify-center space-y-2">
             <div className="flex items-center space-x-2">
@@ -134,7 +134,7 @@ const InvestmentDetails = ({ farm }) => {
           <div className="text-lg font-bold cursor-pointer">{i18n._(t`Your Rewards`)}:</div>
           {((pendingSushi && pendingSushi.greaterThan(ZERO)) || (pendingReward && Number(pendingReward) > 0)) && (
             <button
-              className="py-0.5 px-4 font-bold bg-transparent border border-transparent  cursor-pointer border-gradient-r-blue-pink-dark-800 whitespace-nowrap text-md"
+              className="py-0.5 px-4 font-bold bg-transparent border border-transparent rounded cursor-pointer border-gradient-r-blue-pink-dark-800 whitespace-nowrap text-md"
               disabled={pendingTx}
               onClick={onHarvest}
             >
@@ -142,12 +142,19 @@ const InvestmentDetails = ({ farm }) => {
             </button>
           )}
         </div>
-        <div className="w-full bg-transparent border border-b-0 border-transparent  h-0font-bold text-high-emphesis border-gradient-r-blue-pink-dark-800 opacity-20" />
+        <div className="w-full bg-transparent border border-b-0 border-transparent rounded h-0font-bold text-high-emphesis border-gradient-r-blue-pink-dark-800 opacity-20" />
         <div className="flex justify-between">
           <div className="flex flex-col space-y-2">
             {farm?.rewards?.map((reward, i) => (
               <div key={i} className="flex items-center space-x-2">
-                <Image src={reward.icon} width="30px" height="30px" className="md" layout="fixed" alt={reward.token} />
+                <Image
+                  src={reward.icon}
+                  width="30px"
+                  height="30px"
+                  className="rounded-md"
+                  layout="fixed"
+                  alt={reward.token}
+                />
                 {i === 0 && <Typography>{formatNumber(pendingSushi?.toSignificant(6) ?? 0)}</Typography>}
                 {i === 1 && <Typography>{formatNumber(pendingReward)}</Typography>}
                 <Typography>{reward.token}</Typography>
@@ -160,7 +167,7 @@ const InvestmentDetails = ({ farm }) => {
       {farm.pair.type === PairType.KASHI && (
         <Button
           size="sm"
-          className="font-bold bg-transparent border border-transparent  cursor-pointer border-gradient-r-blue-pink-dark-800 whitespace-nowrap text-md"
+          className="font-bold bg-transparent border border-transparent rounded cursor-pointer border-gradient-r-blue-pink-dark-800 whitespace-nowrap text-md"
           onClick={() => router.push(`/lend/${farm.pair.id}`)}
         >
           {i18n._(t`View Details on Kashi`)}

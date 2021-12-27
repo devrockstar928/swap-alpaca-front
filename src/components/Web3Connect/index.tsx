@@ -1,10 +1,11 @@
+import Button, { ButtonProps } from '../Button'
+import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
+
+import { Activity } from 'react-feather'
+import React from 'react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
-import React from 'react'
-import { Activity } from 'react-feather'
 import { useWalletModalToggle } from '../../state/application/hooks'
-import Button, { ButtonProps } from '../Button'
 
 export default function Web3Connect({ color = 'gray', size = 'sm', className = '', ...rest }: ButtonProps) {
   const { i18n } = useLingui()
@@ -12,7 +13,7 @@ export default function Web3Connect({ color = 'gray', size = 'sm', className = '
   const { error } = useWeb3React()
   return error ? (
     <div
-      className="flex items-center justify-center px-4 py-2 font-semibold text-white border  bg-opacity-80 border-red bg-red hover:bg-opacity-100"
+      className="flex items-center justify-center px-4 py-2 font-semibold text-white border rounded bg-opacity-80 border-red bg-red hover:bg-opacity-100"
       onClick={toggleWalletModal}
     >
       <div className="mr-1">

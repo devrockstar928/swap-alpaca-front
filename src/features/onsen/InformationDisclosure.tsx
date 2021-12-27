@@ -1,12 +1,12 @@
+import React, { Fragment } from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid'
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
-import React, { Fragment } from 'react'
 import { XCircle } from 'react-feather'
-import NavLink from '../../components/NavLink'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 import Typography from '../../components/Typography'
 import { PairType } from './enum'
+import NavLink from '../../components/NavLink'
 
 const InformationDisclosure = ({ farm }) => {
   const { i18n } = useLingui()
@@ -16,7 +16,7 @@ const InformationDisclosure = ({ farm }) => {
       {({ open }) => (
         <>
           {!open && (
-            <Disclosure.Button className="self-start p-2 mt-5 r-lg sm:mt-3 sm:p-4 sm:pl-6 bg-dark-700">
+            <Disclosure.Button className="self-start p-2 mt-5 rounded-r-lg sm:mt-3 sm:p-4 sm:pl-6 bg-dark-700">
               <QuestionMarkCircleIcon width={20} height={20} />
             </Disclosure.Button>
           )}
@@ -29,7 +29,7 @@ const InformationDisclosure = ({ farm }) => {
           >
             <Disclosure.Panel
               static
-              className="flex flex-col w-1/2 min-w-full p-6 space-y-8  t-none r-none sm:min-w-min bg-dark-700"
+              className="flex flex-col w-1/2 min-w-full p-6 space-y-8 rounded rounded-t-none rounded-r-none sm:min-w-min bg-dark-700"
             >
               <div className="flex items-center justify-between">
                 <Typography className="text-xl cursor-pointer">{i18n._(t`How to Participate`)}</Typography>
@@ -37,7 +37,7 @@ const InformationDisclosure = ({ farm }) => {
                   <XCircle width={20} height={30} />
                 </Disclosure.Button>
               </div>
-              <div className="w-full h-0 font-bold bg-transparent border border-b-0 border-transparent  text-high-emphesis border-gradient-r-blue-pink-dark-900 opacity-20" />
+              <div className="w-full h-0 font-bold bg-transparent border border-b-0 border-transparent rounded text-high-emphesis border-gradient-r-blue-pink-dark-900 opacity-20" />
               <div className="flex flex-col space-y-2 md:pr-6">
                 <Typography variant="sm" weight={700}>
                   {i18n._(t`Step One`)}

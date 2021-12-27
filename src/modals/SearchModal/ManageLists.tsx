@@ -1,27 +1,28 @@
-import { Popover } from '@headlessui/react'
-import { TokenList } from '@uniswap/token-lists'
-import React, { memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { CheckCircle, Settings } from 'react-feather'
-import ReactGA from 'react-ga'
-import { usePopper } from 'react-popper'
-import { useDispatch, useSelector } from 'react-redux'
-import Button from '../../components/Button'
-import { AutoColumn } from '../../components/Column'
-import ExternalLink from '../../components/ExternalLink'
-import ListLogo from '../../components/ListLogo'
-import { RowBetween, RowFixed } from '../../components/Row'
-import ListToggle from '../../components/Toggle/ListToggle'
-import { UNSUPPORTED_LIST_URLS } from '../../config/token-lists'
-import { classNames } from '../../functions'
-import { uriToHttp } from '../../functions/convert'
-import { parseENSAddress } from '../../functions/ens'
-import { listVersionLabel } from '../../functions/list'
-import { useListColor } from '../../hooks/useColor'
-import { useFetchListCallback } from '../../hooks/useFetchListCallback'
 import { AppDispatch, AppState } from '../../state'
+import { CheckCircle, Settings } from 'react-feather'
+import { AutoColumn } from '../../components/Column'
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import Row, { RowBetween, RowFixed } from '../../components/Row'
 import { acceptListUpdate, disableList, enableList, removeList } from '../../state/lists/actions'
 import { useActiveListUrls, useAllLists, useIsListActive } from '../../state/lists/hooks'
+import { useDispatch, useSelector } from 'react-redux'
+
+import Button from '../../components/Button'
 import CurrencyModalView from './CurrencyModalView'
+import ExternalLink from '../../components/ExternalLink'
+import ListLogo from '../../components/ListLogo'
+import ListToggle from '../../components/Toggle/ListToggle'
+import ReactGA from 'react-ga'
+import { TokenList } from '@uniswap/token-lists'
+import { UNSUPPORTED_LIST_URLS } from '../../config/token-lists'
+import { listVersionLabel } from '../../functions/list'
+import { parseENSAddress } from '../../functions/ens'
+import { uriToHttp } from '../../functions/convert'
+import { useFetchListCallback } from '../../hooks/useFetchListCallback'
+import { useListColor } from '../../hooks/useColor'
+import { usePopper } from 'react-popper'
+import { classNames } from '../../functions'
+import { Popover } from '@headlessui/react'
 
 function listUrlRowHTMLId(listUrl: string) {
   return `list-row-${listUrl.replace(/\./g, '-')}`
@@ -92,7 +93,7 @@ const ListRow = memo(({ listUrl }: { listUrl: string }) => {
     <div
       id={listUrlRowHTMLId(listUrl)}
       style={isActive ? { backgroundColor: listColor } : {}}
-      className={classNames(isActive ? 'text-high-emphesis' : 'text-primary bg-dark-700', ' flex flex-row p-4')}
+      className={classNames(isActive ? 'text-high-emphesis' : 'text-primary bg-dark-700', 'rounded flex flex-row p-4')}
       key={listUrl}
     >
       {list.logoURI ? (
@@ -113,7 +114,7 @@ const ListRow = memo(({ listUrl }: { listUrl: string }) => {
               <Settings size={12} className="ml-1 stroke-current" />
             </Popover.Button>
             <Popover.Panel
-              className="z-20 flex flex-col p-4 space-y-2 bg-black border border-white  bg-opacity-80 backdrop-blur whitespace-nowrap"
+              className="z-20 flex flex-col p-4 space-y-2 bg-black border border-white rounded bg-opacity-80 backdrop-blur whitespace-nowrap"
               ref={setPopperElement as any}
               style={styles.popper}
               {...attributes.popper}
@@ -255,7 +256,7 @@ function ManageLists({
         id="list-add-input"
         type="text"
         placeholder="https:// or ipfs:// or ENS name"
-        className="mt-4 w-full bg-dark-900 border border-dark-800 focus:border-transparent focus:border-gradient-r-blue-pink-dark-900  placeholder-secondary focus:placeholder-primary font-bold text-base px-6 py-3.5 appearance-none"
+        className="mt-4 w-full bg-dark-900 border border-dark-800 focus:border-transparent focus:border-gradient-r-blue-pink-dark-900 rounded placeholder-secondary focus:placeholder-primary font-bold text-base px-6 py-3.5 appearance-none"
         value={listUrlInput}
         onChange={handleInput}
         title="List URI"

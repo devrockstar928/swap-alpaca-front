@@ -1,14 +1,15 @@
 import { useMemo } from 'react'
-import Search from '../../../components/Search'
+
 import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
 import Background from '../../../features/analytics/Background'
 import InfoCard from '../../../features/analytics/Bar/InfoCard'
+import Search from '../../../components/Search'
 import TokenList from '../../../features/analytics/Tokens/TokenList'
 import { formatNumber } from '../../../functions'
+import { useActiveWeb3React } from '../../../services/web3'
+import { useBentoBox, useBlock, useNativePrice, useTokens } from '../../../services/graph'
 import { Feature, featureEnabled } from '../../../functions/feature'
 import useFuse from '../../../hooks/useFuse'
-import { useBentoBox, useBlock, useNativePrice, useTokens } from '../../../services/graph'
-import { useActiveWeb3React } from '../../../services/web3'
 
 export default function BentoBox(): JSX.Element {
   const { chainId } = useActiveWeb3React()
@@ -102,7 +103,7 @@ export default function BentoBox(): JSX.Element {
           <Search
             term={term}
             search={search}
-            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14  bg-dark-900' }}
+            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14 rounded bg-dark-900' }}
             className="border shadow-2xl border-dark-800"
           />
         </div>

@@ -1,12 +1,13 @@
+import { useBlock, useSushiPairs } from '../../../services/graph'
 import { useMemo, useState } from 'react'
-import Search from '../../../components/Search'
+
 import AnalyticsContainer from '../../../features/analytics/AnalyticsContainer'
-import Background from '../../../features/analytics/Background'
 import PairList from '../../../features/analytics/Pairs/PairList'
 import PairTabs from '../../../features/analytics/Pairs/PairTabs'
-import useFuse from '../../../hooks/useFuse'
-import { useBlock, useSushiPairs } from '../../../services/graph'
+import Search from '../../../components/Search'
 import { useActiveWeb3React } from '../../../services/web3'
+import useFuse from '../../../hooks/useFuse'
+import Background from '../../../features/analytics/Background'
 
 export default function Pairs() {
   const [type, setType] = useState<'all' | 'gainers' | 'losers'>('all')
@@ -100,7 +101,7 @@ export default function Pairs() {
           <Search
             term={term}
             search={search}
-            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14  bg-dark-900' }}
+            inputProps={{ className: 'placeholder-primary bg-opacity-50 w-full py-3 pl-4 pr-14 rounded bg-dark-900' }}
             className="border shadow-2xl border-dark-800"
           />
         </div>

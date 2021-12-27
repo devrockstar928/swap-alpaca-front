@@ -1,6 +1,6 @@
-import LineGraph from '../../components/LineGraph'
 import { classNames, formatNumber } from '../../functions'
 import ColoredNumber from './ColoredNumber'
+import LineGraph from '../../components/LineGraph'
 
 interface ChartCardProps {
   header: string
@@ -24,7 +24,7 @@ export default function ChartCard({
   setTimespan,
 }: ChartCardProps): JSX.Element {
   return (
-    <div className="w-full p-5 space-y-4 font-bold border  bg-dark-900 border-dark-700">
+    <div className="w-full p-5 space-y-4 font-bold border rounded bg-dark-900 border-dark-700">
       <div className="flex justify-between">
         <div>
           <div className="text-xs text-secondary">{subheader}</div>
@@ -47,7 +47,7 @@ export default function ChartCard({
             key={i}
             className={classNames(
               timespan === currentTimespan
-                ? 'text-blue bg-blue bg-opacity-30 xl font-bold border border-blue border-opacity-50'
+                ? 'text-blue bg-blue bg-opacity-30 rounded-xl font-bold border border-blue border-opacity-50'
                 : 'text-secondary',
               'text-sm px-3 py-0.5'
             )}

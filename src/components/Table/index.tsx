@@ -1,8 +1,8 @@
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/outline'
-import { useRouter } from 'next/router'
 import React, { ReactNode, useState } from 'react'
-import { usePagination, useSortBy, useTable } from 'react-table'
+import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/outline'
 import { classNames } from '../../functions'
+import { useRouter } from 'next/router'
+import { useTable, usePagination, useSortBy } from 'react-table'
 
 export interface Column {
   Cell?: (props: any) => ReactNode
@@ -184,8 +184,8 @@ export default function Table<T>({
                         >
                           <div
                             className={classNames(
-                              cI === 0 && 'l pl-4',
-                              cI === row.cells.length - 1 && 'r pr-4',
+                              cI === 0 && 'rounded-l pl-4',
+                              cI === row.cells.length - 1 && 'rounded-r pr-4',
                               link && 'cursor-pointer',
                               'h-20 text-primary bg-dark-900 flex items-center'
                             )}
