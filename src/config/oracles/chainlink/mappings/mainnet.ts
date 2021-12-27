@@ -959,7 +959,7 @@ const MAINNET_CHAINLINK_MAPPING = {
     fromDecimals: 18,
     toDecimals: 18,
   },
-  // RADIO / ETH
+  // SHACK / ETH
   '0xe572CeF69f43c2E488b33924AF04BDacE19079cf': {
     from: '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2',
     to: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
@@ -1239,7 +1239,7 @@ const MAINNET_CHAINLINK_MAPPING = {
     fromDecimals: 18,
     toDecimals: 8,
   },
-  // XRADIO / ETH (Not Chainlink)
+  // XSHACK / ETH (Not Chainlink)
   '0xAE51d1f913eDB0f80562F270017806f3e9566029': {
     from: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     to: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',

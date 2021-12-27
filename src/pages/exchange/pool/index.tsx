@@ -29,7 +29,7 @@ export default function Pool() {
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
-  //console.log('trackedTokenPairs=', trackedTokenPairs.filter(t => (t[0] as any)?.tokenInfo?.symbol == 'RADIO' || (t[1] as any)?.tokenInfo?.symbol == 'RADIO'));
+  //console.log('trackedTokenPairs=', trackedTokenPairs.filter(t => (t[0] as any)?.tokenInfo?.symbol == 'SHACK' || (t[1] as any)?.tokenInfo?.symbol == 'SHACK'));
   const tokenPairsWithLiquidityTokens = useMemo(
     () =>
       trackedTokenPairs.map((tokens) => ({

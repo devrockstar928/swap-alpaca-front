@@ -1,4 +1,4 @@
-import { BAR_ADDRESS, ChainId, RADIO_ADDRESS, Token, WETH9 } from '@radioshackswap/sdk'
+import { BAR_ADDRESS, ChainId, SHACK_ADDRESS, Token, WETH9 } from '@radioshackswap/sdk'
 
 export const FUSE: { [key: string]: Token } = {
   WETH: new Token(ChainId.FUSE, '0xa722c13135930332Eb3d749B2F0906559D2C5b99', 18, 'WETH', 'Wrapped Ether'),
@@ -55,7 +55,7 @@ export const MATIC: { [key: string]: Token } = {
   WETH: new Token(ChainId.MATIC, '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619', 18, 'WETH', 'Wrapped Ether'),
   USDT: new Token(ChainId.MATIC, '0xc2132D05D31c914a87C6611C10748AEb04B58e8F', 6, 'USDT', 'Tether USD'),
   TEL: new Token(ChainId.MATIC, '0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32', 2, 'TEL', 'Telcoin'),
-  RADIO: new Token(ChainId.MATIC, '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', 18, 'RADIO', 'RadioToken'),
+  SHACK: new Token(ChainId.MATIC, '0x8178e967C6bB63aee95B030Bef27C283e235487D', 18, 'SHACK', 'RadioShackToken'),
   AAVE: new Token(ChainId.MATIC, '0xD6DF932A45C0f255f85145f286eA0b292B21C90B', 18, 'AAVE', 'Aave'),
   FRAX: new Token(ChainId.MATIC, '0x104592a158490a9228070E0A8e5343B499e125D0', 18, 'FRAX', 'Frax'),
   FXS: new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Share'),
@@ -218,11 +218,11 @@ export const XSUSHI_CALL = new Token(
   '0xada279f9301C01A4eF914127a6C2a493Ad733924',
   18,
   'XSUc25-0531',
-  'XRADIO 25 Call [31 May 2021]'
+  'XSHACK 25 Call [31 May 2021]'
 )
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WBTC', 'Wrapped BTC')
 
-// export const XRADIO = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xRADIO', 'RadioBar')
+// export const XSHACK = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSHACK', 'RadioBar')
 
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
@@ -247,7 +247,7 @@ export const AXSUSHI = new Token(
   '0xF256CC7847E919FAc9B808cC216cAc87CCF2f47a',
   18,
   'aXSUSHI',
-  'Aave interest bearing XRADIO'
+  'Aave interest bearing XSHACK'
 )
 
 export const DPI = new Token(ChainId.MAINNET, '0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b', 18, 'DefiPulse', 'DPI')
@@ -275,31 +275,31 @@ type ChainTokenMap = {
   readonly [chainId in ChainId]?: Token
 }
 
-// RADIO
-export const RADIO: ChainTokenMap = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, RADIO_ADDRESS[ChainId.MAINNET], 18, 'RADIO', 'RadioToken'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, RADIO_ADDRESS[ChainId.ROPSTEN], 18, 'RADIO', 'RadioToken'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, RADIO_ADDRESS[ChainId.RINKEBY], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, RADIO_ADDRESS[ChainId.GÖRLI], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.KOVAN]: new Token(ChainId.KOVAN, RADIO_ADDRESS[ChainId.KOVAN], 18, 'RADIO', 'RadioToken'),
-  [ChainId.MATIC]: new Token(ChainId.MATIC, RADIO_ADDRESS[ChainId.MATIC], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.FANTOM]: new Token(ChainId.FANTOM, RADIO_ADDRESS[ChainId.FANTOM], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.XDAI]: new Token(ChainId.XDAI, RADIO_ADDRESS[ChainId.XDAI], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.BSC]: new Token(ChainId.BSC, RADIO_ADDRESS[ChainId.BSC], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, RADIO_ADDRESS[ChainId.ARBITRUM], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, RADIO_ADDRESS[ChainId.AVALANCHE], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.OKEX]: new Token(ChainId.OKEX, RADIO_ADDRESS[ChainId.OKEX], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.HARMONY]: new Token(ChainId.HARMONY, RADIO_ADDRESS[ChainId.HARMONY], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.HECO]: new Token(ChainId.HECO, RADIO_ADDRESS[ChainId.HECO], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.CELO]: new Token(ChainId.CELO, RADIO_ADDRESS[ChainId.CELO], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.MOONRIVER]: new Token(ChainId.MOONRIVER, RADIO_ADDRESS[ChainId.MOONRIVER], 18, 'RADIO', 'RadioToken'),
-  // [ChainId.TELOS]: new Token(ChainId.TELOS, RADIO_ADDRESS[ChainId.TELOS], 18, 'RADIO', 'RadioToken'),
+// SHACK
+export const SHACK: ChainTokenMap = {
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, SHACK_ADDRESS[ChainId.MAINNET], 18, 'SHACK', 'RadioToken'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, SHACK_ADDRESS[ChainId.ROPSTEN], 18, 'SHACK', 'RadioToken'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, SHACK_ADDRESS[ChainId.RINKEBY], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, SHACK_ADDRESS[ChainId.GÖRLI], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.KOVAN]: new Token(ChainId.KOVAN, SHACK_ADDRESS[ChainId.KOVAN], 18, 'SHACK', 'RadioToken'),
+  [ChainId.MATIC]: new Token(ChainId.MATIC, SHACK_ADDRESS[ChainId.MATIC], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.FANTOM]: new Token(ChainId.FANTOM, SHACK_ADDRESS[ChainId.FANTOM], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.XDAI]: new Token(ChainId.XDAI, SHACK_ADDRESS[ChainId.XDAI], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.BSC]: new Token(ChainId.BSC, SHACK_ADDRESS[ChainId.BSC], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, SHACK_ADDRESS[ChainId.ARBITRUM], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, SHACK_ADDRESS[ChainId.AVALANCHE], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.OKEX]: new Token(ChainId.OKEX, SHACK_ADDRESS[ChainId.OKEX], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.HARMONY]: new Token(ChainId.HARMONY, SHACK_ADDRESS[ChainId.HARMONY], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.HECO]: new Token(ChainId.HECO, SHACK_ADDRESS[ChainId.HECO], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.CELO]: new Token(ChainId.CELO, SHACK_ADDRESS[ChainId.CELO], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.MOONRIVER]: new Token(ChainId.MOONRIVER, SHACK_ADDRESS[ChainId.MOONRIVER], 18, 'SHACK', 'RadioToken'),
+  // [ChainId.TELOS]: new Token(ChainId.TELOS, SHACK_ADDRESS[ChainId.TELOS], 18, 'SHACK', 'RadioToken'),
 }
 
-export const XRADIO: ChainTokenMap = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, BAR_ADDRESS[ChainId.MAINNET], 18, 'XRADIO', 'The Shark'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, BAR_ADDRESS[ChainId.RINKEBY], 18, 'XRADIO', 'The Shark'),
-  [ChainId.MATIC]: new Token(ChainId.MATIC, BAR_ADDRESS[ChainId.MATIC], 18, 'XRADIO', 'The Shark'),
+export const XSHACK: ChainTokenMap = {
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, BAR_ADDRESS[ChainId.MAINNET], 18, 'XSHACK', 'The Shark'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, BAR_ADDRESS[ChainId.RINKEBY], 18, 'XSHACK', 'The Shark'),
+  [ChainId.MATIC]: new Token(ChainId.MATIC, BAR_ADDRESS[ChainId.MATIC], 18, 'XSHACK', 'The Shark'),
 }
 
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {

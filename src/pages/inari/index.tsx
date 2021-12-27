@@ -1,7 +1,7 @@
-import { ChainId } from '@radioshackswap/sdk'
 import { ArrowRightIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
@@ -52,7 +52,7 @@ const Inari = () => {
               {i18n._(t`One-Click Strategies`)}
             </Typography>
             <Typography>
-              {i18n._(t`Take your RADIO and invest in various strategies with one click! Earn extra yields with BentoBox, use as
+              {i18n._(t`Take your SHACK and invest in various strategies with one click! Earn extra yields with BentoBox, use as
               collateral on other platforms, and more!`)}
             </Typography>
           </div>

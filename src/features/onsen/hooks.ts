@@ -1,3 +1,5 @@
+import { Zero } from '@ethersproject/constants'
+import { Contract } from '@ethersproject/contracts'
 import {
   ChainId,
   CurrencyAmount,
@@ -5,10 +7,8 @@ import {
   MASTERCHEF_ADDRESS,
   MASTERCHEF_V2_ADDRESS,
   MINICHEF_ADDRESS,
-  RADIO,
+  SHACK,
 } from '@radioshackswap/sdk'
-import { Zero } from '@ethersproject/constants'
-import { Contract } from '@ethersproject/contracts'
 import concat from 'lodash/concat'
 import zip from 'lodash/zip'
 import { Dispatch, useCallback, useEffect, useMemo, useState } from 'react'
@@ -93,7 +93,7 @@ export function usePendingSushi(farm) {
 
   const amount = value ? JSBI.BigInt(value.toString()) : undefined
 
-  return amount ? CurrencyAmount.fromRawAmount(RADIO[chainId], amount) : undefined
+  return amount ? CurrencyAmount.fromRawAmount(SHACK[chainId], amount) : undefined
 }
 
 export function usePendingToken(farm, contract) {
