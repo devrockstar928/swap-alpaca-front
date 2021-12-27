@@ -47,6 +47,7 @@ module.exports = {
         'dark-red': '#ad0000',
         'dark-red-1': '#ae1919',
         'dark-green': '006400',
+        brown: '#A1563B',
 
         'opaque-blue': '#0993ec80',
         'opaque-pink': '#f338c380',

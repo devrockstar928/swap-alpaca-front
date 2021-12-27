@@ -13,9 +13,9 @@ import Button, { ButtonConfirmed, ButtonError } from '../../../components/Button
 import Column, { AutoColumn } from '../../../components/Column'
 import Container from '../../../components/Container'
 import CurrencyInputPanel from '../../../components/CurrencyInputPanel'
-import DoubleGlowShadow from '../../../components/DoubleGlowShadow'
 import Loader from '../../../components/Loader'
 import ProgressSteps from '../../../components/ProgressSteps'
+import RadioWithShadow from '../../../components/RadioWithShadow'
 import Web3Connect from '../../../components/Web3Connect'
 import confirmPriceImpactWithoutFee from '../../../features/legacy/swap/confirmPriceImpactWithoutFee'
 import ConfirmSwapModal from '../../../features/legacy/swap/ConfirmSwapModal'
@@ -391,8 +391,8 @@ export default function Swap() {
         tokens={importTokensNotInDefault}
         onConfirm={handleConfirmTokenWarning}
       />
-      <DoubleGlowShadow>
-        <div className="p-4 space-y-4  bg-dark-900 z-1">
+      <RadioWithShadow>
+        <div className="p-4 space-y-4 bg-dark-900 z-1">
           <SwapHeader
             input={currencies[Field.INPUT]}
             output={currencies[Field.OUTPUT]}
@@ -518,22 +518,6 @@ export default function Swap() {
             </>
           )}
 
-          {/* {showWrap ? null : (
-            <div
-              style={{
-                padding: showWrap ? '.25rem 1rem 0 1rem' : '0px',
-              }}
-            >
-              <div className="px-5 mt-1">{doArcher && userHasSpecifiedInputOutput && <MinerTip />}</div>
-            </div>
-          )} */}
-          {/*
-          {trade && (
-            <div className="p-5  bg-dark-800">
-              <AdvancedSwapDetails trade={trade} allowedSlippage={allowedSlippage} />
-            </div>
-          )} */}
-
           <BottomGrouping>
             {swapIsUnsupported ? (
               <Button color="red" size="lg" disabled>
@@ -640,20 +624,21 @@ export default function Swap() {
             )}
             {isExpertMode && swapErrorMessage ? <SwapCallbackError error={swapErrorMessage} /> : null}
           </BottomGrouping>
-          {/* {!swapIsUnsupported ? (
-        <AdvancedSwapDetailsDropdown trade={trade} />
-      ) : (
-        <UnsupportedCurrencyFooter
-          show={swapIsUnsupported}
-          currencies={[currencies.INPUT, currencies.OUTPUT]}
-        />
-      )} */}
 
           {!swapIsUnsupported ? null : (
             <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
           )}
         </div>
-      </DoubleGlowShadow>
+      </RadioWithShadow>
     </Container>
   )
 }
+
+// position: absolute;
+// width: 629.07px;
+// height: 629.07px;
+// left: 210px;
+// top: 69px;
+
+// background: rgba(218, 41, 28, 0.14);
+// filter: blur(300px);
