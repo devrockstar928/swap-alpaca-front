@@ -6,7 +6,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
-import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
 import swapArrowsAnimationData from '../../../animation/swap-arrows.json'
 import AddressInputPanel from '../../../components/AddressInputPanel'
 import Alert from '../../../components/Alert'
@@ -20,7 +19,7 @@ import RadioWithShadow from '../../../components/RadioWithShadow'
 import Web3Connect from '../../../components/Web3Connect'
 import confirmPriceImpactWithoutFee from '../../../features/legacy/swap/confirmPriceImpactWithoutFee'
 import ConfirmSwapModal from '../../../features/legacy/swap/ConfirmSwapModal'
-import { SwapCallbackError } from '../../../features/legacy/swap/styleds'
+import { BottomGrouping, SwapCallbackError } from '../../../features/legacy/swap/styleds'
 import TradePrice from '../../../features/legacy/swap/TradePrice'
 import UnsupportedCurrencyFooter from '../../../features/legacy/swap/UnsupportedCurrencyFooter'
 import SwapHeader from '../../../features/trade/Header'
@@ -392,7 +391,7 @@ export default function Swap() {
         tokens={importTokensNotInDefault}
         onConfirm={handleConfirmTokenWarning}
       />
-      <RadioWithShadow className="min-h-[38rem]">
+      <RadioWithShadow className="min-h-[42.25rem]">
         <div className="p-4 space-y-4 rounded bg-dark-900 z-1">
           <SwapHeader
             input={currencies[Field.INPUT]}
@@ -534,13 +533,14 @@ export default function Swap() {
             </div>
           )} */}
 
-          <RadioButtonGrouping>
+
+          <BottomGrouping>
             {swapIsUnsupported ? (
               <Button color="red" size="lg" disabled>
                 {i18n._(t`Unsupported Asset`)}
               </Button>
             ) : !account ? (
-              <Web3Connect size="lg" className="absolute w-1/3 left-[208px]" />
+              <Web3Connect size="lg" color="blue" className="w-full" />
             ) : showWrap ? (
               <Button color="gradient" size="lg" disabled={Boolean(wrapInputError)} onClick={onWrap}>
                 {wrapInputError ??
@@ -639,7 +639,8 @@ export default function Swap() {
               </Column>
             )}
             {isExpertMode && swapErrorMessage ? <SwapCallbackError error={swapErrorMessage} /> : null}
-          </RadioButtonGrouping>
+          </BottomGrouping>
+
           {!swapIsUnsupported ? null : (
             <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
           )}
