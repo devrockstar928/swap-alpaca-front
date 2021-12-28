@@ -10,16 +10,8 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
 
   return (
     <div className={classNames(className, 'relative w-full h-auto block max-w-2xl')}>
-      <div className="absolute top-10 -left-20 -right-20 bg-brown rounded-[80px] -bottom-4 w-[837px] h-auto inline-block z-0 shadow-lg">
-        <div
-          style={{
-            position: 'relative',
-            left: '59px',
-            top: '-19px',
-            height: '20px',
-            width: '720px',
-          }}
-        >
+      <div className="relative bg-brown top-8 rounded-[80px] p-[28px] shadow-lg">
+        <div className="absolute top-[-19px] left-[59px] right-[59px] h-[20px]">
           <Image src="/images/swap/radio-top.png" alt="top" layout="fill" />
         </div>
         <div
@@ -35,11 +27,11 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
           <Image src="/images/swap/radio-foot.png" alt="bottom" layout="fill" />
         </div>
 
-        <div className="absolute left-[685px] w-[51px] bottom-[-7px] h-[12px]">
+        <div className="absolute right-[85px] w-[51px] bottom-[-7px] h-[12px]">
           <Image src="/images/swap/radio-foot-right.png" alt="bottom" layout="fill" />
         </div>
 
-        <div className="absolute left-[27px] right-[27px] top-[30px] bottom-[28px] bg-[#2F2528] rounded-[55px]">
+        <div className="relative p-[36px] bg-[#2F2528] rounded-[55px]">
           <div
             className="absolute left-[14px] w-[21px] top-[73px] h-[400px]"
             style={{ backgroundColor: 'rgba(255, 255, 255, 0.12)', filter: 'blur(18px)' }}
@@ -59,7 +51,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
             className="absolute left-[47px] right-[45px] bottom-[21px] h-[15px]"
             style={{ backgroundColor: 'rgba(255, 255, 255, 0.29)', filter: 'blur(18px)' }}
           ></div>
-          <div className="absolute left-[38px] right-[39px] top-[34px] bottom-[36px]">{children}</div>
+          <div className=" left-[38px] right-[39px] top-[34px] bottom-[36px]">{children}</div>
         </div>
       </div>
     </div>
