@@ -1,13 +1,14 @@
-import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useState } from 'react'
 import { Plus } from 'react-feather'
 import ReactGA from 'react-ga'
+import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
 import Alert from '../../../components/Alert'
 import Button, { ButtonError } from '../../../components/Button'
 import { AutoColumn } from '../../../components/Column'
@@ -321,7 +322,7 @@ export default function Add() {
       </Head>
 
       <Container id="add-liquidity-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
-        <RadioWithShadow className="min-h-[46.25rem]">
+        <RadioWithShadow className="min-h-[42.25rem]">
           <div className="p-4 space-y-4 rounded bg-dark-900" style={{ zIndex: 1 }}>
             {/* <AddRemoveTabs creating={isCreate} adding={true} defaultSlippage={DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE} /> */}
 
@@ -401,74 +402,76 @@ export default function Add() {
                 </div>
               )}
 
-              {addIsUnsupported ? (
-                <Button color="gradient" size="lg" disabled>
-                  {i18n._(t`Unsupported Asset`)}
-                </Button>
-              ) : !account ? (
-                <Web3Connect size="lg" color="blue" className="w-full" />
-              ) : (
-                (approvalA === ApprovalState.NOT_APPROVED ||
-                  approvalA === ApprovalState.PENDING ||
-                  approvalB === ApprovalState.NOT_APPROVED ||
-                  approvalB === ApprovalState.PENDING ||
-                  isValid) && (
-                  <AutoColumn gap={'md'}>
-                    {
-                      <RowBetween>
-                        {approvalA !== ApprovalState.APPROVED && (
-                          <Button
-                            color="gradient"
-                            size="lg"
-                            onClick={approveACallback}
-                            disabled={approvalA === ApprovalState.PENDING}
-                            style={{
-                              width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%',
-                            }}
-                          >
-                            {approvalA === ApprovalState.PENDING ? (
-                              <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_A]?.symbol}`)}</Dots>
-                            ) : (
-                              i18n._(t`Approve ${currencies[Field.CURRENCY_A]?.symbol}`)
-                            )}
-                          </Button>
-                        )}
-                        {approvalB !== ApprovalState.APPROVED && (
-                          <Button
-                            color="gradient"
-                            size="lg"
-                            onClick={approveBCallback}
-                            disabled={approvalB === ApprovalState.PENDING}
-                            style={{
-                              width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%',
-                            }}
-                          >
-                            {approvalB === ApprovalState.PENDING ? (
-                              <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_B]?.symbol}`)}</Dots>
-                            ) : (
-                              i18n._(t`Approve ${currencies[Field.CURRENCY_B]?.symbol}`)
-                            )}
-                          </Button>
-                        )}
-                      </RowBetween>
-                    }
+              <RadioButtonGrouping>
+                {addIsUnsupported ? (
+                  <Button color="gradient" size="lg" disabled>
+                    {i18n._(t`Unsupported Asset`)}
+                  </Button>
+                ) : !account ? (
+                  <Web3Connect size="lg" color="blue" className="w-full" />
+                ) : (
+                  (approvalA === ApprovalState.NOT_APPROVED ||
+                    approvalA === ApprovalState.PENDING ||
+                    approvalB === ApprovalState.NOT_APPROVED ||
+                    approvalB === ApprovalState.PENDING ||
+                    isValid) && (
+                    <AutoColumn gap={'md'}>
+                      {
+                        <RowBetween>
+                          {approvalA !== ApprovalState.APPROVED && (
+                            <Button
+                              color="gradient"
+                              size="lg"
+                              onClick={approveACallback}
+                              disabled={approvalA === ApprovalState.PENDING}
+                              style={{
+                                width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%',
+                              }}
+                            >
+                              {approvalA === ApprovalState.PENDING ? (
+                                <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_A]?.symbol}`)}</Dots>
+                              ) : (
+                                i18n._(t`Approve ${currencies[Field.CURRENCY_A]?.symbol}`)
+                              )}
+                            </Button>
+                          )}
+                          {approvalB !== ApprovalState.APPROVED && (
+                            <Button
+                              color="gradient"
+                              size="lg"
+                              onClick={approveBCallback}
+                              disabled={approvalB === ApprovalState.PENDING}
+                              style={{
+                                width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%',
+                              }}
+                            >
+                              {approvalB === ApprovalState.PENDING ? (
+                                <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_B]?.symbol}`)}</Dots>
+                              ) : (
+                                i18n._(t`Approve ${currencies[Field.CURRENCY_B]?.symbol}`)
+                              )}
+                            </Button>
+                          )}
+                        </RowBetween>
+                      }
 
-                    {approvalA === ApprovalState.APPROVED && approvalB === ApprovalState.APPROVED && (
-                      <ButtonError
-                        onClick={() => {
-                          isExpertMode ? onAdd() : setShowConfirm(true)
-                        }}
-                        disabled={
-                          !isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED
-                        }
-                        error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
-                      >
-                        {error ?? i18n._(t`Confirm Adding Liquidity`)}
-                      </ButtonError>
-                    )}
-                  </AutoColumn>
-                )
-              )}
+                      {approvalA === ApprovalState.APPROVED && approvalB === ApprovalState.APPROVED && (
+                        <ButtonError
+                          onClick={() => {
+                            isExpertMode ? onAdd() : setShowConfirm(true)
+                          }}
+                          disabled={
+                            !isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED
+                          }
+                          error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
+                        >
+                          {error ?? i18n._(t`Confirm Adding Liquidity`)}
+                        </ButtonError>
+                      )}
+                    </AutoColumn>
+                  )
+                )}
+              </RadioButtonGrouping>
             </div>
 
             {!addIsUnsupported ? (

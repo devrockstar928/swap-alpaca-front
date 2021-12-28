@@ -10,10 +10,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
 
   return (
     <div className={classNames(className, 'relative w-full h-auto block max-w-2xl')}>
-      <div
-        className="absolute top-10 -left-20 -right-20 bg-brown rounded-[80px] -bottom-4 w-[837px] h-auto inline-block z-0"
-        style={{ boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.5), 0px 20px 50px rgba(0, 0, 0, 0.2)' }}
-      >
+      <div className="absolute top-10 -left-20 -right-20 bg-brown rounded-[80px] -bottom-4 w-[837px] h-auto inline-block z-0 shadow-lg">
         <div
           style={{
             position: 'relative',
@@ -26,7 +23,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
           <Image src="/images/swap/radio-top.png" alt="top" layout="fill" />
         </div>
         <div
-          className="absolute left-[29px] right-[28px] -top-1 h-[56px] rounded-[55px]"
+          className="absolute left-[18px] right-[18px] top-1 h-[56px] rounded-[55px]"
           style={{
             filter: 'blur(5px)',
           }}
