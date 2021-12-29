@@ -415,7 +415,7 @@ export default function Add() {
                     approvalB === ApprovalState.NOT_APPROVED ||
                     approvalB === ApprovalState.PENDING ||
                     isValid) && (
-                    <AutoColumn gap={'md'}>
+                    <AutoColumn gap={'0px'}>
                       {
                         <RowBetween>
                           {approvalA !== ApprovalState.APPROVED && (

@@ -9,7 +9,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
   }
 
   return (
-    <div className={classNames(className, 'relative w-full h-auto block max-w-2xl')}>
+    <div className={classNames(className, 'relative h-auto block max-w-2xl')}>
       <div className="relative bg-brown top-8 rounded-[80px] p-[28px] shadow-lg">
         <div className="absolute top-[-19px] left-[59px] right-[59px] h-[20px]">
           <Image src="/images/swap/radio-top.png" alt="top" layout="fill" />
