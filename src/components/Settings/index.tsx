@@ -1,7 +1,7 @@
-import { Percent } from '@radioshackswap/sdk'
-import { AdjustmentsIcon } from '@heroicons/react/outline'
+import { CogIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Percent } from '@radioshackswap/sdk'
 import React, { useRef, useState } from 'react'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'
@@ -38,7 +38,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
         onClick={toggle}
         id="open-settings-dialog-button"
       >
-        <AdjustmentsIcon className="w-[26px] h-[26px] transform rotate-90" />
+        <CogIcon className="w-[26px] h-[26px] transform rotate-90" />
       </div>
       {open && (
         <div className="absolute top-14 right-0 z-50 -mr-2.5 min-w-20 md:m-w-22 md:-mr-5 bg-dark-900 border-2 border-dark-800 rounded w-80 shadow-lg">
