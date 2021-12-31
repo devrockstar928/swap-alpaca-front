@@ -34,25 +34,25 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
 
   return (
     <div className="flex items-center justify-between mb-4 space-x-3">
-      <div className="grid grid-cols-2 rounded p-3px bg-dark-800 h-[46px]">
+      <div className="grid grid-cols-2 rounded p-3px text-black bg-white h-[46px]">
         <NavLink
-          activeClassName="font-bold border rounded text-high-emphesis border-dark-800 bg-dark-red hover:bg-light-red"
+          activeClassName="font-bold text-[#ED1C24]"
           href={{
             pathname: '/swap',
             query: getQuery(input, output),
           }}
         >
-          <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md text-secondary hover:text-high-emphesis ">
+          <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md hover:text-yellow">
             {i18n._(t`Swap`)}
           </a>
         </NavLink>
         <NavLink
-          activeClassName="font-bold border rounded text-high-emphesis border-dark-800 bg-dark-red hover:bg-light-red"
+          activeClassName="font-bold bg-white text-[#ED1C24]"
           href={`/${!isRemove ? 'add' : 'remove'}${input ? `/${currencyId(input)}` : ''}${
             output ? `/${currencyId(output)}` : ''
           }`}
         >
-          <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md text-secondary hover:text-high-emphesis">
+          <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md hover:text-yellow">
             {i18n._(t`Liquidity`)}
           </a>
         </NavLink>
