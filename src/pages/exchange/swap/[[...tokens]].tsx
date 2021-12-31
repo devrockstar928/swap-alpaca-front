@@ -1,13 +1,12 @@
+import { ArrowDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
-import Lottie from 'lottie-react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
 import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
-import swapArrowsAnimationData from '../../../animation/swap-arrows.json'
 import AddressInputPanel from '../../../components/AddressInputPanel'
 import Alert from '../../../components/Alert'
 import Button, { ButtonConfirmed, ButtonError } from '../../../components/Button'
@@ -431,10 +430,8 @@ export default function Swap() {
                 showCommonBases={true}
                 id="swap-currency-input"
               />
-              <AutoColumn justify="space-between" className="py-3">
-                <div
-                  className={classNames(isExpertMode ? 'justify-between' : 'flex-start', 'px-4 flex-wrap w-full flex')}
-                >
+              <AutoColumn justify="center" className="py-3">
+                <div className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}>
                   <button
                     className="z-10 -mt-6 -mb-6 rounded-full"
                     onClick={() => {
@@ -442,18 +439,19 @@ export default function Swap() {
                       onSwitchTokens()
                     }}
                   >
-                    <div className="rounded-full bg-dark-900 p-3px">
+                    <div className="rounded-full bg-[#F7F8FA] p-3px">
                       <div
-                        className="p-3 rounded-full bg-dark-800 hover:bg-dark-700"
-                        onMouseEnter={() => setAnimateSwapArrows(true)}
+                        className="p-3 rounded-full"
+                        // onMouseEnter={() => setAnimateSwapArrows(true)}
                         onMouseLeave={() => setAnimateSwapArrows(false)}
                       >
-                        <Lottie
+                        <ArrowDownIcon style={{ width: 24, height: 24 }} />
+                        {/* <Lottie
                           animationData={swapArrowsAnimationData}
                           autoplay={animateSwapArrows}
                           loop={false}
-                          style={{ width: 32, height: 32 }}
-                        />
+                          style={{ width: 24, height: 24 }}
+                        /> */}
                       </div>
                     </div>
                   </button>
