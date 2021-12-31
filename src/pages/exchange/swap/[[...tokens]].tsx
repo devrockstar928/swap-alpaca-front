@@ -439,9 +439,9 @@ export default function Swap() {
                       onSwitchTokens()
                     }}
                   >
-                    <div className="rounded-full bg-[#F7F8FA] p-3px">
+                    <div className="rounded-md border-2 border-white bg-[#F7F8FA]">
                       <div
-                        className="p-3 rounded-full"
+                        className="p-1 rounded-full"
                         // onMouseEnter={() => setAnimateSwapArrows(true)}
                         onMouseLeave={() => setAnimateSwapArrows(false)}
                       >
