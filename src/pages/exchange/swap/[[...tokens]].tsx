@@ -394,7 +394,7 @@ export default function Swap() {
       <RadioWithShadow className="min-h-[38rem]">
         <div className="relative min-w-[640px] p-6 mb-3 bg-[#F7F8FA] rounded-t-[25px]">
           <div className="flex items-stretch justify-center p-4 space-y-4 bg-white rounded-[32px] z-1">
-            <div className="flex-5 min-w-[400px] border-r border-gray-200">
+            <div className="border-r min-w-[450px] border-gray-200 flex-2">
               <div className="ml-3 mr-3">
                 <SwapHeader
                   input={currencies[Field.INPUT]}
@@ -537,7 +537,7 @@ export default function Swap() {
                 />
               )}
             </div>
-            <div className="flex-3 p-4 h-full min-w-[320px]">
+            <div className="flex-1 p-4 h-full min-w-[300px]">
               <div className="text-[#C2C4C8]">
                 Name: <span className="text-black">Universal Value of Store</span>
               </div>
