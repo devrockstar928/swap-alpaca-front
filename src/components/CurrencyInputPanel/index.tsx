@@ -1,7 +1,7 @@
-import { Currency, CurrencyAmount, Pair, Percent, Token } from '@radioshackswap/sdk'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, Pair, Percent, Token } from '@radioshackswap/sdk'
 import Lottie from 'lottie-react'
 import React, { ReactNode, useCallback, useState } from 'react'
 import selectCoinAnimation from '../../animation/select-coin.json'
@@ -72,14 +72,14 @@ export default function CurrencyInputPanel({
   }, [setModalOpen])
 
   return (
-    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-5', 'rounded bg-dark-800')}>
+    <div id={id} className={classNames(hideInput ? 'p-2' : 'p-2', 'rounded bg-[#F7F8FA]')}>
       <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className={classNames('w-full sm:w-2/5')}>
           <button
             type="button"
             className={classNames(
-              !!currency ? 'text-primary' : 'text-high-emphesis',
-              'open-currency-select-button h-full outline-none select-none cursor-pointer border-none text-xl font-medium items-center'
+              !!currency ? 'text-black' : 'text-high-emphesis',
+              'open-currency-select-button h-[38px] bg-white p-1 outline-none rounded-lg select-none cursor-pointer font-normal border-none text-base items-center'
             )}
             onClick={() => {
               if (onCurrencySelect) {
@@ -92,7 +92,7 @@ export default function CurrencyInputPanel({
                 <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={54} margin={true} />
               ) : currency ? (
                 <div className="flex items-center">
-                  <CurrencyLogo currency={currency} size={'54px'} />
+                  <CurrencyLogo currency={currency} size={'24px'} />
                 </div>
               ) : (
                 <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
@@ -105,16 +105,16 @@ export default function CurrencyInputPanel({
                 <span
                   className={classNames(
                     'pair-name-container',
-                    Boolean(currency && currency.symbol) ? 'text-2xl' : 'text-xs'
+                    Boolean(currency && currency.symbol) ? 'text-base' : 'text-xs'
                   )}
                 >
                   {pair?.token0.symbol}:{pair?.token1.symbol}
                 </span>
               ) : (
                 <div className="flex flex-1 flex-col items-start justify-center mx-3.5">
-                  {label && <div className="text-xs font-medium text-secondary whitespace-nowrap">{label}</div>}
+                  {/* {label && <div className="text-xs font-medium text-secondary whitespace-nowrap">{label}</div>} */}
                   <div className="flex items-center">
-                    <div className="text-lg font-bold token-symbol-container md:text-2xl">
+                    <div className="text-base font-normal token-symbol-container">
                       {(currency && currency.symbol && currency.symbol.length > 20
                         ? currency.symbol.slice(0, 4) +
                           '...' +
@@ -138,7 +138,7 @@ export default function CurrencyInputPanel({
         {!hideInput && (
           <div
             className={classNames(
-              'flex items-center w-full space-x-3 rounded bg-dark-900 focus:bg-dark-700 p-3 sm:w-3/5'
+              'flex items-center w-full space-x-3 rounded focus:bg-dark-700 p-3 sm:w-3/5'
               // showMaxButton && selectedCurrencyBalance && 'px-3'
             )}
           >
