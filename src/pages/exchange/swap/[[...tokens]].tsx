@@ -377,7 +377,7 @@ export default function Swap() {
   const [animateSwapArrows, setAnimateSwapArrows] = useState<boolean>(false)
 
   return (
-    <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
+    <Container id="swap-page" maxWidth="4xl" className="py-4 md:py-8 lg:py-12">
       <Head>
         <title>{i18n._(t`RadioSwap`)} | Radio</title>
         <meta
@@ -392,142 +392,166 @@ export default function Swap() {
         onConfirm={handleConfirmTokenWarning}
       />
       <RadioWithShadow className="min-h-[38rem]">
-        <div className="relative p-6 mb-3 bg-[#F7F8FA] rounded-t-[25px]">
-          <div className="p-4 space-y-4 bg-white rounded-[32px] z-1">
-            <SwapHeader
-              input={currencies[Field.INPUT]}
-              output={currencies[Field.OUTPUT]}
-              allowedSlippage={allowedSlippage}
-            />
-
-            <ConfirmSwapModal
-              isOpen={showConfirm}
-              trade={trade}
-              originalTrade={tradeToConfirm}
-              onAcceptChanges={handleAcceptChanges}
-              attemptingTxn={attemptingTxn}
-              txHash={txHash}
-              recipient={recipient}
-              allowedSlippage={allowedSlippage}
-              onConfirm={handleSwap}
-              swapErrorMessage={swapErrorMessage}
-              onDismiss={handleConfirmDismiss}
-            />
-            <div>
-              <CurrencyInputPanel
-                // priceImpact={priceImpact}
-                label={
-                  independentField === Field.OUTPUT && !showWrap ? i18n._(t`Swap From (est.):`) : i18n._(t`Swap From:`)
-                }
-                value={formattedAmounts[Field.INPUT]}
-                showMaxButton={showMaxButton}
-                currency={currencies[Field.INPUT]}
-                onUserInput={handleTypeInput}
-                onMax={handleMaxInput}
-                fiatValue={fiatValueInput ?? undefined}
-                onCurrencySelect={handleInputSelect}
-                otherCurrency={currencies[Field.OUTPUT]}
-                showCommonBases={true}
-                id="swap-currency-input"
+        <div className="relative min-w-[640px] p-6 mb-3 bg-[#F7F8FA] rounded-t-[25px]">
+          <div className="flex items-stretch justify-center p-4 space-y-4 bg-white rounded-[32px] z-1">
+            <div className="flex-1 min-w-[400px]">
+              <SwapHeader
+                input={currencies[Field.INPUT]}
+                output={currencies[Field.OUTPUT]}
+                allowedSlippage={allowedSlippage}
               />
-              <AutoColumn justify="center" className="py-3">
-                <div className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}>
-                  <button
-                    className="z-10 -mt-6 -mb-6 rounded-full"
-                    onClick={() => {
-                      setApprovalSubmitted(false) // reset 2 step UI for approvals
-                      onSwitchTokens()
-                    }}
-                  >
-                    <div className="rounded-md border-2 border-white bg-[#F7F8FA]">
-                      <div
-                        className="p-1 rounded-full"
-                        // onMouseEnter={() => setAnimateSwapArrows(true)}
-                        onMouseLeave={() => setAnimateSwapArrows(false)}
-                      >
-                        <ArrowDownIcon style={{ width: 24, height: 24 }} />
-                        {/* <Lottie
+
+              <ConfirmSwapModal
+                isOpen={showConfirm}
+                trade={trade}
+                originalTrade={tradeToConfirm}
+                onAcceptChanges={handleAcceptChanges}
+                attemptingTxn={attemptingTxn}
+                txHash={txHash}
+                recipient={recipient}
+                allowedSlippage={allowedSlippage}
+                onConfirm={handleSwap}
+                swapErrorMessage={swapErrorMessage}
+                onDismiss={handleConfirmDismiss}
+              />
+              <div>
+                <CurrencyInputPanel
+                  // priceImpact={priceImpact}
+                  label={
+                    independentField === Field.OUTPUT && !showWrap
+                      ? i18n._(t`Swap From (est.):`)
+                      : i18n._(t`Swap From:`)
+                  }
+                  value={formattedAmounts[Field.INPUT]}
+                  showMaxButton={showMaxButton}
+                  currency={currencies[Field.INPUT]}
+                  onUserInput={handleTypeInput}
+                  onMax={handleMaxInput}
+                  fiatValue={fiatValueInput ?? undefined}
+                  onCurrencySelect={handleInputSelect}
+                  otherCurrency={currencies[Field.OUTPUT]}
+                  showCommonBases={true}
+                  id="swap-currency-input"
+                />
+                <AutoColumn justify="center" className="py-3">
+                  <div className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}>
+                    <button
+                      className="z-10 -mt-6 -mb-6 rounded-full"
+                      onClick={() => {
+                        setApprovalSubmitted(false) // reset 2 step UI for approvals
+                        onSwitchTokens()
+                      }}
+                    >
+                      <div className="rounded-md border-2 border-white bg-[#F7F8FA]">
+                        <div
+                          className="p-1 rounded-full"
+                          // onMouseEnter={() => setAnimateSwapArrows(true)}
+                          onMouseLeave={() => setAnimateSwapArrows(false)}
+                        >
+                          <ArrowDownIcon style={{ width: 24, height: 24 }} />
+                          {/* <Lottie
                           animationData={swapArrowsAnimationData}
                           autoplay={animateSwapArrows}
                           loop={false}
                           style={{ width: 24, height: 24 }}
                         /> */}
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                  {isExpertMode ? (
-                    recipient === null && !showWrap ? (
-                      <Button
-                        variant="link"
-                        size="none"
-                        id="add-recipient-button"
-                        onClick={() => onChangeRecipient('')}
-                      >
-                        + Add recipient (optional)
-                      </Button>
-                    ) : (
-                      <Button
-                        variant="link"
-                        size="none"
-                        id="remove-recipient-button"
-                        onClick={() => onChangeRecipient(null)}
-                      >
-                        - {i18n._(t`Remove recipient`)}
-                      </Button>
-                    )
-                  ) : null}
-                </div>
-              </AutoColumn>
-
-              <div>
-                <CurrencyInputPanel
-                  value={formattedAmounts[Field.OUTPUT]}
-                  onUserInput={handleTypeOutput}
-                  label={
-                    independentField === Field.INPUT && !showWrap ? i18n._(t`Swap To (est.):`) : i18n._(t`Swap To:`)
-                  }
-                  showMaxButton={false}
-                  hideBalance={false}
-                  fiatValue={fiatValueOutput ?? undefined}
-                  priceImpact={priceImpact}
-                  currency={currencies[Field.OUTPUT]}
-                  onCurrencySelect={handleOutputSelect}
-                  otherCurrency={currencies[Field.INPUT]}
-                  showCommonBases={true}
-                  id="swap-currency-output"
-                />
-                {Boolean(trade) && (
-                  <div className="p-1 -mt-2 cursor-pointer rounded-b-md bg-dark-800">
-                    <TradePrice
-                      price={trade?.executionPrice}
-                      showInverted={showInverted}
-                      setShowInverted={setShowInverted}
-                      className="bg-dark-900"
-                    />
+                    </button>
+                    {isExpertMode ? (
+                      recipient === null && !showWrap ? (
+                        <Button
+                          variant="link"
+                          size="none"
+                          id="add-recipient-button"
+                          onClick={() => onChangeRecipient('')}
+                        >
+                          + Add recipient (optional)
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="link"
+                          size="none"
+                          id="remove-recipient-button"
+                          onClick={() => onChangeRecipient(null)}
+                        >
+                          - {i18n._(t`Remove recipient`)}
+                        </Button>
+                      )
+                    ) : null}
                   </div>
-                )}
+                </AutoColumn>
+
+                <div>
+                  <CurrencyInputPanel
+                    value={formattedAmounts[Field.OUTPUT]}
+                    onUserInput={handleTypeOutput}
+                    label={
+                      independentField === Field.INPUT && !showWrap ? i18n._(t`Swap To (est.):`) : i18n._(t`Swap To:`)
+                    }
+                    showMaxButton={false}
+                    hideBalance={false}
+                    fiatValue={fiatValueOutput ?? undefined}
+                    priceImpact={priceImpact}
+                    currency={currencies[Field.OUTPUT]}
+                    onCurrencySelect={handleOutputSelect}
+                    otherCurrency={currencies[Field.INPUT]}
+                    showCommonBases={true}
+                    id="swap-currency-output"
+                  />
+                  {Boolean(trade) && (
+                    <div className="p-1 -mt-2 cursor-pointer rounded-b-md bg-dark-800">
+                      <TradePrice
+                        price={trade?.executionPrice}
+                        showInverted={showInverted}
+                        setShowInverted={setShowInverted}
+                        className="bg-dark-900"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {recipient !== null && !showWrap && (
+                <>
+                  <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
+                  {recipient !== account && (
+                    <Alert
+                      type="warning"
+                      dismissable={false}
+                      showIcon
+                      message={i18n._(
+                        t`Please note that the recipient address is different from the connected wallet address.`
+                      )}
+                    />
+                  )}
+                </>
+              )}
+
+              {!swapIsUnsupported ? null : (
+                <UnsupportedCurrencyFooter
+                  show={swapIsUnsupported}
+                  currencies={[currencies.INPUT, currencies.OUTPUT]}
+                />
+              )}
+            </div>
+            <div className="flex-1 ml-4 border-l border-[#E8E8E8] p-4 h-full min-w-[320px]">
+              <div className="text-[#C2C4C8]">
+                Name: <span className="text-black">Universal Value of Store</span>
+              </div>
+              <div className="text-[#C2C4C8]">
+                Token Symbol: <span className="text-black">USV</span>
+              </div>
+              <div className="text-[#C2C4C8]">
+                Total Supply: <span className="text-black">3,230,000,000</span>
+              </div>
+              <div className="text-[#C2C4C8]">
+                Blurb: <span className="text-black">xyz</span>
+              </div>
+              <div className="text-[#C2C4C8]">
+                Website: <span className="text-black">https://atlasusv.com</span>
               </div>
             </div>
-
-            {recipient !== null && !showWrap && (
-              <>
-                <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
-                {recipient !== account && (
-                  <Alert
-                    type="warning"
-                    dismissable={false}
-                    showIcon
-                    message={i18n._(
-                      t`Please note that the recipient address is different from the connected wallet address.`
-                    )}
-                  />
-                )}
-              </>
-            )}
-
-            {!swapIsUnsupported ? null : (
-              <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
-            )}
           </div>
         </div>
         <RadioButtonGrouping>

@@ -9,7 +9,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
   }
 
   return (
-    <div className={classNames(className, 'relative h-auto block max-w-2xl')}>
+    <div className={classNames(className, 'relative h-auto block')}>
       <div className="relative bg-brown top-8 rounded-[80px] p-[28px] shadow-lg">
         <div className="absolute top-[-19px] left-[59px] right-[59px] h-[20px]">
           <Image src="/images/swap/radio-top.png" alt="top" layout="fill" />
@@ -33,7 +33,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
             <Image src="/images/swap/radio-corner.png" alt="left" layout="fill" />
           </div>
           <div className="absolute left-[47px] right-[45px] bottom-[21px] h-[15px] blur-lg bg-white bg-opacity-[0.29]"></div>
-          <div className=" left-[38px] right-[39px] top-[34px] bottom-[36px]">{children}</div>
+          <div className="relative w-auto">{children}</div>
         </div>
       </div>
     </div>
