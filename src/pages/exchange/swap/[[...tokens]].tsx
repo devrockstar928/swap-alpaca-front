@@ -416,7 +416,7 @@ export default function Swap() {
                 swapErrorMessage={swapErrorMessage}
                 onDismiss={handleConfirmDismiss}
               />
-              <div className="p-6">
+              <div className="px-6">
                 <CurrencyInputPanel
                   // priceImpact={priceImpact}
                   label={
