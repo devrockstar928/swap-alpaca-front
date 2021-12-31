@@ -72,7 +72,7 @@ export default function CurrencyInputPanel({
   }, [setModalOpen])
 
   return (
-    <div id={id} className={classNames(hideInput ? 'p-2' : 'p-2', 'rounded bg-[#F7F8FA]')}>
+    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-4', 'rounded bg-[#F7F8FA]')}>
       <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className={classNames('w-full sm:w-2/5')}>
           <button
