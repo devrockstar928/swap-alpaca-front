@@ -10,7 +10,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
 
   return (
     <div className={classNames(className, 'relative h-auto block')}>
-      <div className="relative bg-brown top-8 rounded-[80px] p-[28px] shadow-lg">
+      <div className="relative inline-block bg-brown top-8 rounded-[80px] p-[28px] shadow-lg">
         <div className="absolute top-[-19px] left-[59px] right-[59px] h-[20px]">
           <Image src="/images/swap/radio-top.png" alt="top" layout="fill" />
         </div>
@@ -26,14 +26,14 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
           <Image src="/images/swap/radio-foot-right.png" alt="bottom" layout="fill" />
         </div>
 
-        <div className="relative p-[36px] bg-[#2F2528] rounded-[55px]">
+        <div className="relative inline-block p-[36px] bg-[#2F2528] rounded-[55px]">
           <div className="absolute left-[14px] w-[21px] top-[73px] bottom-[36px] blur-lg bg-white bg-opacity-[0.12]" />
           <div className="absolute right-[14px] w-[21px] top-[73px] bottom-[36px] blur-lg bg-white bg-opacity-[0.16]" />
           <div className="absolute left-[14px] w-[32.5px] bottom-[12.5px] h-[31px]" style={{ filter: 'blur(4px)' }}>
             <Image src="/images/swap/radio-corner.png" alt="left" layout="fill" />
           </div>
           <div className="absolute left-[47px] right-[45px] bottom-[21px] h-[15px] blur-lg bg-white bg-opacity-[0.29]"></div>
-          <div className="relative w-auto">{children}</div>
+          <div className="relative inline-block w-auto">{children}</div>
         </div>
       </div>
     </div>

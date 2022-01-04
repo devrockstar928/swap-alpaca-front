@@ -73,7 +73,7 @@ export default function CurrencyInputPanel({
 
   return (
     <div id={id} className={classNames(hideInput ? 'p-4' : 'p-4', 'rounded bg-[#F7F8FA]')}>
-      <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
+      <div className="flex flex-col items-center justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className={classNames('w-full sm:w-2/5')}>
           <button
             type="button"
@@ -143,15 +143,6 @@ export default function CurrencyInputPanel({
             )}
           >
             <>
-              {showMaxButton && selectedCurrencyBalance && (
-                <Button
-                  onClick={onMax}
-                  size="xs"
-                  className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
-                >
-                  {i18n._(t`Max`)}
-                </Button>
-              )}
               <Input.Numeric
                 id="token-amount-input"
                 value={value}
@@ -173,6 +164,15 @@ export default function CurrencyInputPanel({
                   <FiatValue fiatValue={fiatValue} priceImpact={priceImpact} />
                 </div>
               ) : null}
+              {showMaxButton && selectedCurrencyBalance && (
+                <Button
+                  onClick={onMax}
+                  size="xs"
+                  className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
+                >
+                  {i18n._(t`Max`)}
+                </Button>
+              )}
             </>
           </div>
         )}
