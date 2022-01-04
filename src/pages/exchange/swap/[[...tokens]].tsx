@@ -24,12 +24,13 @@ import { SwapCallbackError } from '../../../features/legacy/swap/styleds'
 import TradePrice from '../../../features/legacy/swap/TradePrice'
 import UnsupportedCurrencyFooter from '../../../features/legacy/swap/UnsupportedCurrencyFooter'
 import SwapHeader from '../../../features/trade/Header'
-import { classNames } from '../../../functions'
+import { classNames, formatNumber } from '../../../functions'
 import { maxAmountSpend } from '../../../functions/currency'
 import { warningSeverity } from '../../../functions/prices'
 import { computeFiatValuePriceImpact } from '../../../functions/trade'
 import { useAllTokens, useCurrency } from '../../../hooks/Tokens'
 import { ApprovalState, useApproveCallbackFromTrade } from '../../../hooks/useApproveCallback'
+import { useTokenContract } from '../../../hooks/useContract'
 import useENSAddress from '../../../hooks/useENSAddress'
 import useIsArgentWallet from '../../../hooks/useIsArgentWallet'
 import { useIsSwapUnsupported } from '../../../hooks/useIsSwapUnsupported'
@@ -377,6 +378,19 @@ export default function Swap() {
 
   const [animateSwapArrows, setAnimateSwapArrows] = useState<boolean>(false)
 
+  const [totalSupply, setTotalSupply] = useState(0)
+  const tokenContract = useTokenContract(currencies?.OUTPUT?.wrapped.address)
+
+  useEffect(() => {
+    const fetch = async () => {
+      if (tokenContract) {
+        const supply = (await tokenContract.totalSupply()) / 10 ** currencies?.OUTPUT?.wrapped.decimals
+        setTotalSupply(supply)
+      }
+    }
+    fetch()
+  }, [tokenContract, currencies])
+
   return (
     <Container id="swap-page" maxWidth="4xl" className="py-4 md:py-8 lg:py-12">
       <Head>
@@ -538,24 +552,31 @@ export default function Swap() {
                 />
               )}
             </div>
-            <div className="flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]">
-              <div className="text-[#C2C4C8]">
-                Name: <span className="text-black">Universal Value of Store</span>
-              </div>
-              <div className="text-[#C2C4C8]">
-                Token Symbol: <span className="text-black">USV</span>
-              </div>
-              <div className="text-[#C2C4C8]">
-                Total Supply: <span className="text-black">3,230,000,000</span>
-              </div>
-              <div className="text-[#C2C4C8]">
+            {currencies.OUTPUT && (
+              <div className="flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]">
+                <div className="text-[#C2C4C8]">
+                  Name: <span className="text-black">{currencies.OUTPUT.name}</span>
+                </div>
+                <div className="text-[#C2C4C8]">
+                  Token Symbol: <span className="text-black">{currencies.OUTPUT.symbol}</span>
+                </div>
+
+                <div className="text-[#C2C4C8]">
+                  Total Supply: <span className="text-black">{formatNumber(totalSupply)}</span>
+                </div>
+
+                <div className="text-[#C2C4C8]">
+                  Decimals: <span className="text-black">{currencies.OUTPUT.decimals}</span>
+                </div>
+                {/* <div className="text-[#C2C4C8]">
                 Blurb: <span className="text-black">xyz</span>
               </div>
               <div className="text-[#C2C4C8]">
                 Website: <span className="text-black">https://atlasusv.com</span>
+              </div> */}
+                <AddToMetaMask />
               </div>
-              <AddToMetaMask />
-            </div>
+            )}
           </div>
         </div>
         <RadioButtonGrouping>
