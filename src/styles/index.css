@@ -61,6 +61,22 @@ input:focus {
   background: repeating-linear-gradient(45deg, #161522, #161522 10px, #0d0415 10px, #0d0415 20px);
 }
 
+.radio-left-shadow {
+  left: -100px;
+  float: left;
+  top: -4rem;
+  background: rgba(218, 41, 28, 0.14);
+  filter: blur(100px);
+}
+
+.radio-right-bottom-shadow{
+  left: 60%;
+  bottom: -10%;
+  width: 55%;
+  height: 80%;
+  background: rgba(218, 41, 28, 0.2);
+  filter: blur(150px);
+}
 /* *::-webkit-scrollbar {
   width: var(--scrollbar-width);
 }
