@@ -4,6 +4,7 @@ import { Currency } from '@radioshackswap/sdk'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { useActiveWeb3React } from '../../services/web3'
+import { getCurrencyLogoUrls } from '../CurrencyLogo'
 
 interface AddToMetaMaskProps {
   currency?: Currency
@@ -15,13 +16,14 @@ const AddToMetaMask: FC<AddToMetaMaskProps> = ({ currency }) => {
 
   const openMetamaskModel = () => {
     if (currency && currency.wrapped.address && library && library.provider.isMetaMask && library.provider.request) {
+      const images = getCurrencyLogoUrls(currency)
       const params: any = {
         type: 'ERC20',
         options: {
           address: currency.wrapped.address,
           symbol: currency.symbol,
           decimals: currency.decimals,
-          // image: currency.wrapped.image,
+          image: images.length > 1 && images[1],
         },
       }
       library.provider
