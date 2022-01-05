@@ -53,7 +53,6 @@ const fetcher = (query) => request('https://api.thegraph.com/subgraphs/name/matt
 export default function Stake() {
   const { i18n } = useLingui()
   const { account, chainId } = useActiveWeb3React()
-  debugger
   const sushiBalance = useTokenBalance(account ?? undefined, SHACK[chainId])
   const xSushiBalance = useTokenBalance(account ?? undefined, XSHACK[chainId])
 

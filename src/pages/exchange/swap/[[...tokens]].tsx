@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
+import AddToMetaMask from 'src/components/AddToMetaMask'
 import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
 import AddressInputPanel from '../../../components/AddressInputPanel'
 import Alert from '../../../components/Alert'
@@ -391,10 +392,10 @@ export default function Swap() {
         tokens={importTokensNotInDefault}
         onConfirm={handleConfirmTokenWarning}
       />
-      <RadioWithShadow className="min-h-[38rem]">
-        <div className="relative min-w-[640px] p-6 mb-3 bg-[#F7F8FA] rounded-t-[25px]">
-          <div className="flex items-stretch justify-center p-4 space-y-4 bg-white rounded-[32px] z-1">
-            <div className="border-r min-w-[450px] border-gray-200 flex-2">
+      <RadioWithShadow>
+        <div className="relative inline-block p-6 mb-3 bg-[#F7F8FA] rounded-t-[25px] w-auto">
+          <div className="flex items-stretch min-w-[752px] justify-center p-4 space-y-4 bg-white rounded-[32px] z-1">
+            <div className="border-r min-w-[500px] border-gray-200 flex-2">
               <div className="ml-3 mr-3">
                 <SwapHeader
                   input={currencies[Field.INPUT]}
@@ -537,7 +538,7 @@ export default function Swap() {
                 />
               )}
             </div>
-            <div className="flex-1 p-4 h-full min-w-[300px]">
+            <div className="flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]">
               <div className="text-[#C2C4C8]">
                 Name: <span className="text-black">Universal Value of Store</span>
               </div>
@@ -553,6 +554,7 @@ export default function Swap() {
               <div className="text-[#C2C4C8]">
                 Website: <span className="text-black">https://atlasusv.com</span>
               </div>
+              <AddToMetaMask />
             </div>
           </div>
         </div>
@@ -666,12 +668,3 @@ export default function Swap() {
     </Container>
   )
 }
-
-// position: absolute;
-// width: 629.07px;
-// height: 629.07px;
-// left: 210px;
-// top: 69px;
-
-// background: rgba(218, 41, 28, 0.14);
-// filter: blur(300px);
