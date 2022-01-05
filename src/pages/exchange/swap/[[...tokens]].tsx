@@ -1,7 +1,7 @@
 import { ArrowDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, Token, Trade as V2Trade, TradeType } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
@@ -16,6 +16,7 @@ import Container from '../../../components/Container'
 import CurrencyInputPanel from '../../../components/CurrencyInputPanel'
 import Loader from '../../../components/Loader'
 import ProgressSteps from '../../../components/ProgressSteps'
+import QuestionHelper from '../../../components/QuestionHelper'
 import RadioWithShadow from '../../../components/RadioWithShadow'
 import Web3Connect from '../../../components/Web3Connect'
 import confirmPriceImpactWithoutFee from '../../../features/legacy/swap/confirmPriceImpactWithoutFee'
@@ -77,7 +78,7 @@ export default function Swap() {
       return !Boolean(token.address in defaultTokens)
     })
 
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId, library } = useActiveWeb3React()
 
   const toggleNetworkModal = useNetworkModalToggle()
 
@@ -574,7 +575,14 @@ export default function Swap() {
               <div className="text-[#C2C4C8]">
                 Website: <span className="text-black">https://atlasusv.com</span>
               </div> */}
-                <AddToMetaMask />
+                {chainId &&
+                  [ChainId.MAINNET, ChainId.MATIC].includes(chainId) &&
+                  library &&
+                  library.provider.isMetaMask && (
+                    <QuestionHelper text={i18n._(t`Add ${currencies.OUTPUT.symbol} to your MetaMask wallet`)}>
+                      <AddToMetaMask currency={currencies.OUTPUT} />
+                    </QuestionHelper>
+                  )}
               </div>
             )}
           </div>
