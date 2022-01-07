@@ -52,7 +52,7 @@ const ExternalLink: FC<ExternalLinkProps> = ({
       className={classNames(
         'text-baseline whitespace-nowrap',
         COLOR[color],
-        (startIcon || endIcon) && 'space-x-1 flex items-center justify-center',
+        (startIcon || endIcon) && 'space-x-1 flex items-center justify-between',
         className
       )}
       {...rest}
