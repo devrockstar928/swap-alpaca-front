@@ -220,7 +220,7 @@ export default function Stake() {
                         </div> */}
           </div>
           <div className="hidden px-8 ml-6 md:block w-72">
-            <Image src="/xsushi-sign.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
+            <Image src="/images/bar/rocket.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
           </div>
         </div>
         <div className="flex flex-col justify-center md:flex-row">
