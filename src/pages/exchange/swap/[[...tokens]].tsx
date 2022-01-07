@@ -460,7 +460,7 @@ export default function Swap() {
                         onSwitchTokens()
                       }}
                     >
-                      <div className="rounded-md border-2 border-white bg-[#F7F8FA]">
+                      <div className="rounded-md border-2 border-white bg-[#F7F8FA] text-gray text-opacity-80 hover:text-opacity-100 md:flex hover:bg-dark-800">
                         <div
                           className="p-1 rounded-full"
                           // onMouseEnter={() => setAnimateSwapArrows(true)}
@@ -518,12 +518,12 @@ export default function Swap() {
                     id="swap-currency-output"
                   />
                   {Boolean(trade) && (
-                    <div className="p-1 -mt-2 cursor-pointer rounded-b-md bg-dark-800">
+                    <div className="p-1 -mt-2 cursor-pointer rounded-b-md">
                       <TradePrice
                         price={trade?.executionPrice}
                         showInverted={showInverted}
                         setShowInverted={setShowInverted}
-                        className="bg-dark-900"
+                        className=""
                       />
                     </div>
                   )}

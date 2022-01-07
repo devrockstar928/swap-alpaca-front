@@ -102,8 +102,8 @@ input:focus {
   filter: blur(25px);
   transform: rotate(178deg);
 }
-.shadow-lg{
-  z-index: 3;
+.text-mh3{
+  line-height: 3rem;
 }
 
 /* *::-webkit-scrollbar {
