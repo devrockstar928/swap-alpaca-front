@@ -35,10 +35,10 @@ const Footer = () => {
         {chainId && chainId === ChainId.MATIC && (
           <ExternalLink
             id={`polygon-bridge-link`}
-            href="https://wallet.matic.network/bridge/"
+            href="https://wallet.polygon.technology/bridge"
             className="text-low-emphesis"
           >
-            {i18n._(t`Matic Bridge`)}
+            {i18n._(t`Polygon Bridge`)}
           </ExternalLink>
         )}
         {chainId && chainId === ChainId.CELO && (
