@@ -6,32 +6,49 @@ import React, { Fragment } from 'react'
 import { classNames } from '../../functions/styling'
 import ExternalLink from '../ExternalLink'
 import NavLink from '../NavLink'
+import { CodeIcon, ChatAlt2Icon, SpeakerphoneIcon, DocumentTextIcon  } from '@heroicons/react/outline'
 
 const items = (i18n: I18n) => [
   {
     name: i18n._(t`Docs`),
-    description: i18n._(t`Documentation for users of Radio.`),
-    href: 'https://docs.sushi.com',
+    description: i18n._(t``),
+    href: 'https://docs.radioshack.com',
     external: true,
+    icon: <DocumentTextIcon
+      className="w-5 h-5 mr-2"
+      aria-hidden="true"
+    />
   },
   {
-    name: i18n._(t`Open Source`),
-    description: i18n._(t`Radio is a supporter of Open Source.`),
-    href: 'https://github.com/sushiswap',
+    name: i18n._(t`Github`),
+    description: i18n._(t``),
+    href: 'https://github.com/radioshackdefi',
     external: true,
+    icon: <CodeIcon
+      className="w-5 h-5 mr-2"
+      aria-hidden="true"
+    />
+  },
+  {
+    name: i18n._(t`Twitter`),
+    description: i18n._(t``),
+    href: 'https://twitter.com/radioshack',
+    external: true,
+    icon: <SpeakerphoneIcon
+      className="w-5 h-5 mr-2"
+      aria-hidden="true"
+    />
   },
   {
     name: i18n._(t`Discord`),
-    description: i18n._(t`Join the community on Discord.`),
-    href: 'https://discord.gg/NVPXN4e',
+    description: i18n._(t``),
+    href: 'https://discord.gg/radioshack',
     external: true,
-  },
-  {
-    name: i18n._(t`Vesting`),
-    description: i18n._(t`Weekly unlocks from the vesting period.`),
-    href: '/vesting',
-    external: false,
-  },
+    icon: <ChatAlt2Icon
+      className="w-5 h-5 mr-2"
+      aria-hidden="true"
+    />
+  }
 ]
 
 export default function Menu() {
@@ -92,7 +109,7 @@ export default function Menu() {
           >
             <Popover.Panel
               static
-              className="absolute z-50 w-screen max-w-xs px-2 mt-3 transform -translate-x-full bottom-12 lg:top-12 left-full sm:px-0"
+              className="absolute z-50 max-w-xs px-2 mt-3 transform -translate-x-full bottom-12 lg:top-12 left-full sm:px-0"
             >
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="relative grid gap-6 px-5 py-6 bg-dark-900 sm:gap-8 sm:p-8">
@@ -102,6 +119,7 @@ export default function Menu() {
                         key={item.name}
                         href={item.href}
                         className="block p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-dark-800"
+                        startIcon={item.icon}
                       >
                         <p className="text-base font-medium text-high-emphesis">{item.name}</p>
                         <p className="mt-1 text-sm text-secondary">{item.description}</p>

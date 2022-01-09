@@ -220,7 +220,7 @@ export default function Stake() {
                         </div> */}
           </div>
           <div className="hidden px-8 ml-6 md:block w-72">
-            <Image src="/xsushi-sign.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
+            <Image src="/images/bar/rocket.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
           </div>
         </div>
         <div className="flex flex-col justify-center md:flex-row">
@@ -396,7 +396,7 @@ export default function Stake() {
                   <div className="flex items-center space-x-4">
                     <Image
                       className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 rounded"
-                      src="/images/tokens/xsushi-square.jpg"
+                      src="/images/tokens/s-radio-square.jpg"
                       alt="xSHACK"
                       width={64}
                       height={64}
@@ -420,7 +420,7 @@ export default function Stake() {
                   <div className="flex items-center ml-8 space-x-4 md:ml-0">
                     <Image
                       className="max-w-10 md:max-w-16 -ml-1 mr-1 md:mr-2 -mb-1.5 rounded"
-                      src="/images/tokens/sushi-square.jpg"
+                      src="/images/tokens/radio-square.jpg"
                       alt="SHACK"
                       width={64}
                       height={64}
