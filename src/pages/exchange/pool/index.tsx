@@ -93,20 +93,12 @@ export default function Pool() {
         />
       </Head>
 
-      <div className="p-4 mb-3 space-y-3">
-        <Back />
-
-        <Typography component="h1" variant="h2">
-          {i18n._(t`My Liquidity Positions`)}
-        </Typography>
-      </div>
-
       <Alert
         title={i18n._(t`Liquidity Provider Rewards`)}
-        message={i18n._(t`Liquidity providers earn a 0.25% fee on all trades proportional to their share of
-                        the pool. Fees are added to the pool, accrue in real time and can be claimed by
-                        withdrawing your liquidity`)}
-        type="information"
+        message={i18n._(
+          t`Liquidity providers earn a 0.25% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity`
+        )}
+        type="error"
       />
 
       <div className="p-4 space-y-4 rounded bg-dark-900">
@@ -139,7 +131,7 @@ export default function Pool() {
               <div className="px-4 py-2">{i18n._(t`No liquidity was found. `)}</div>
             </Empty>
           )}
-          <div className={classNames('grid gap-4', 'grid-cols-2')}>
+          <div className={classNames('grid gap-4', 'grid-cols-3')}>
             <Button
               id="add-pool-button"
               color="gradient"
@@ -148,8 +140,21 @@ export default function Pool() {
             >
               {i18n._(t`Add`)}
             </Button>
-            <Button id="add-pool-button" color="gray" onClick={() => router.push(`/find`)}>
+            <Button
+              id="add-pool-button"
+              color="gray"
+              className="w-full text-black bg-white bg-opacity-100 border-dark-800 hover:bg-opacity-80"
+              onClick={() => router.push(`/find`)}
+            >
               {i18n._(t`Import`)}
+            </Button>
+            <Button
+              id="add-pool-button"
+              color="gray"
+              className="w-full text-black bg-white bg-opacity-100 border-dark-800 hover:bg-opacity-80"
+              onClick={() => router.push(`/migrate`)}
+            >
+              {i18n._(t`Migrate`)}
             </Button>
           </div>
         </div>
