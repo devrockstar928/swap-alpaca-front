@@ -207,18 +207,6 @@ export default function Stake() {
                                 Your xSHACK is continuously compounding, when you unstake you will receive all the originally deposited
                                 SHACK and any additional from fees.`)}
             </div>
-            {/* <div className="flex">
-                            <div className="mr-14 md:mr-9">
-                                <StyledLink className="text-sm text-lg whitespace-nowrap md:text-lg md:leading-5">
-                                    Enter the Kitchen
-                                </StyledLink>
-                            </div>
-                            <div>
-                                <StyledLink className="text-sm text-lg whitespace-nowrap md:text-lg md:leading-5">
-                                    Tips for using xSHACK
-                                </StyledLink>
-                            </div>
-                        </div> */}
           </div>
           <div className="hidden px-8 ml-6 md:block w-72">
             <Image src="/images/bar/rocket.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
@@ -279,7 +267,7 @@ export default function Stake() {
                   <p className="font-bold text-large md:text-2xl text-high-emphesis">
                     {activeTab === 0 ? i18n._(t`Stake SHACK`) : i18n._(t`Unstake`)}
                   </p>
-                  <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-base md:font-normal">
+                  <div className="border-[#6EDABC] border-solid border rounded-[10px] px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-base md:font-normal">
                     {`1 xSHACK = ${Number(bar?.ratio ?? 0)?.toFixed(4)} SHACK`}
                   </div>
                 </div>
@@ -325,7 +313,7 @@ export default function Stake() {
                         <p className="text-base font-bold">{formattedBalance}</p>
                       </div>
                       <button
-                        className="px-2 py-1 ml-3 text-xs font-bold border pointer-events-auto focus:outline-none focus:ring hover:bg-opacity-40 md:bg-cyan-blue md:bg-opacity-30 border-secondary md:border-cyan-blue rounded-2xl md:py-1 md:px-3 md:ml-4 md:text-sm md:font-normal md:text-cyan-blue"
+                        className="px-2 py-1 ml-3 text-xs text-[#6EDABC] font-bold border border-[#6EDABC] pointer-events-auto focus:outline-none focus:ring hover:text-yellow rounded-2xl"
                         onClick={handleClickMax}
                       >
                         {i18n._(t`MAX`)}
