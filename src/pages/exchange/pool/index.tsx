@@ -140,10 +140,20 @@ export default function Pool() {
             >
               {i18n._(t`Add`)}
             </Button>
-            <Button id="add-pool-button" color="gray" onClick={() => router.push(`/find`)}>
+            <Button
+              id="add-pool-button"
+              color="gray"
+              className="w-full text-black bg-white bg-opacity-100 border-dark-800 hover:bg-opacity-80"
+              onClick={() => router.push(`/find`)}
+            >
               {i18n._(t`Import`)}
             </Button>
-            <Button id="add-pool-button" color="gray" onClick={() => router.push(`/migrate`)}>
+            <Button
+              id="add-pool-button"
+              color="gray"
+              className="w-full text-black bg-white bg-opacity-100 border-dark-800 hover:bg-opacity-80"
+              onClick={() => router.push(`/migrate`)}
+            >
               {i18n._(t`Migrate`)}
             </Button>
           </div>
