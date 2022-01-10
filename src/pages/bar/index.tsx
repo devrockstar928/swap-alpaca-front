@@ -5,6 +5,7 @@ import { request } from 'graphql-request'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import StakeTab from 'src/components/StakeTab'
 import Button from '../../components/Button'
 import Container from '../../components/Container'
 import Dots from '../../components/Dots'
@@ -263,30 +264,17 @@ export default function Stake() {
             <div>
               <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
               <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-dark-900 md:pb-9 md:pt-4 md:px-8">
-                <div className="flex w-full rounded h-14 bg-dark-800">
-                  <div
-                    className="h-full w-6/12 p-0.5"
-                    onClick={() => {
-                      setActiveTab(0)
-                      handleInput('')
-                    }}
-                  >
-                    <div className={activeTab === 0 ? activeTabStyle : inactiveTabStyle}>
-                      <p>{i18n._(t`Stake SHACK`)}</p>
-                    </div>
-                  </div>
-                  <div
-                    className="h-full w-6/12 p-0.5"
-                    onClick={() => {
-                      setActiveTab(1)
-                      handleInput('')
-                    }}
-                  >
-                    <div className={activeTab === 1 ? activeTabStyle : inactiveTabStyle}>
-                      <p>{i18n._(t`Unstake`)}</p>
-                    </div>
-                  </div>
-                </div>
+                <StakeTab
+                  staking={activeTab == 0}
+                  swithToStake={() => {
+                    setActiveTab(0)
+                    handleInput('')
+                  }}
+                  switchToUnstake={() => {
+                    setActiveTab(1)
+                    handleInput('')
+                  }}
+                />
                 <div className="flex items-center justify-between w-full mt-6">
                   <p className="font-bold text-large md:text-2xl text-high-emphesis">
                     {activeTab === 0 ? i18n._(t`Stake SHACK`) : i18n._(t`Unstake`)}
