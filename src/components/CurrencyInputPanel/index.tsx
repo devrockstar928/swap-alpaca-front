@@ -72,7 +72,7 @@ export default function CurrencyInputPanel({
   }, [setModalOpen])
 
   return (
-    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-4', 'rounded bg-[#F7F8FA]')}>
+    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-3', 'rounded bg-[#F7F8FA]')}>
       <div className="flex flex-col items-center justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className={classNames('w-full sm:w-2/5')}>
           <button
@@ -138,7 +138,7 @@ export default function CurrencyInputPanel({
         {!hideInput && (
           <div
             className={classNames(
-              'flex items-center w-full space-x-3 rounded focus:bg-dark-700 p-3 sm:w-3/5'
+              'flex items-center w-full space-x-3 rounded focus:bg-dark-700 p-2 sm:w-3/5'
               // showMaxButton && selectedCurrencyBalance && 'px-3'
             )}
           >
