@@ -191,25 +191,27 @@ export default function Stake() {
       </Head>
       <div className="flex flex-col w-full min-h-full">
         <div className="flex justify-center mb-6">
-          <div className="flex flex-col w-full max-w-xl mt-auto mb-2">
-            <div className="flex max-w-lg">
-              <div className="self-end mb-3 text-lg font-bold md:text-2xl text-high-emphesis md:mb-7">
-                {i18n._(t`Maximize yield by staking SHACK for xSHACK`)}
-              </div>
-              {/* <div className="self-start pl-6 pr-3 mb-1 min-w-max md:hidden">
+          <div className="flex px-8 pt-6 bg-gradient-to-br from-[#26313F] to-[#0E0D14] rounded-[32px]">
+            <div className="flex flex-col w-full max-w-xl mt-auto mb-2">
+              <div className="flex max-w-lg">
+                <div className="self-end mb-3 text-lg font-bold md:text-2xl text-high-emphesis md:mb-7">
+                  {i18n._(t`Maximize yield by staking SHACK for xSHACK`)}
+                </div>
+                {/* <div className="self-start pl-6 pr-3 mb-1 min-w-max md:hidden">
                                 <img src={XSushiSignSmall} alt="xsushi sign" />
                             </div> */}
-            </div>
-            <div className="max-w-lg pr-3 mb-2 text-sm leading-5 text-gray-500 md:text-base md:mb-4 md:pr-0">
-              {i18n._(t`For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SHACK
+              </div>
+              <div className="max-w-lg pr-3 mb-2 text-sm leading-5 text-gray-500 md:text-base md:mb-4 md:pr-0">
+                {i18n._(t`For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SHACK
                                 proportional to your share of the RadioBar. When your SHACK is staked into the RadioBar, you receive
                                 xSHACK in return for voting rights and a fully composable token that can interact with other protocols.
                                 Your xSHACK is continuously compounding, when you unstake you will receive all the originally deposited
                                 SHACK and any additional from fees.`)}
+              </div>
             </div>
-          </div>
-          <div className="hidden px-8 ml-6 md:block w-72">
-            <Image src="/images/bar/rocket.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
+            <div className="hidden px-8 ml-6 md:block w-72">
+              <Image src="/images/bar/rocket.png" alt="xSHACK sign" width="100%" height="100%" layout="responsive" />
+            </div>
           </div>
         </div>
         <div className="flex flex-col justify-center md:flex-row">
@@ -251,7 +253,7 @@ export default function Stake() {
             )}
             <div>
               <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
-              <div className="bg-gradient-to-b from-[#26313F] to-[#0E0D14] w-full max-w-xl px-3 pt-2 pb-6 rounded-[32px] md:pb-9 md:pt-4 md:px-8">
+              <div className="bg-gradient-to-br from-[#26313F] to-[#0E0D14] w-full max-w-xl px-3 pt-2 pb-6 rounded-[32px] md:pb-9 md:pt-4 md:px-8">
                 <StakeTab
                   staking={activeTab == 0}
                   swithToStake={() => {
@@ -363,7 +365,7 @@ export default function Stake() {
             </div>
           </div>
           <div className="w-full max-w-xl mx-auto md:mx-0 md:ml-6 md:block md:w-72">
-            <div className="flex flex-col w-full px-4 pt-6 pb-5 rounded bg-dark-900 md:px-8 md:pt-7 md:pb-9">
+            <div className="flex flex-col w-full px-4 pt-6 pb-5 rounded bg-gradient-to-br from-[#26313F] to-[#0E0D14] md:px-8 md:pt-7 md:pb-9">
               <div className="flex flex-wrap">
                 <div className="flex flex-col flex-grow md:mb-14">
                   <p className="mb-3 text-lg font-bold md:text-2xl md:font-medium text-high-emphesis">
