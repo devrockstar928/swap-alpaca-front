@@ -9,7 +9,7 @@ export interface StakeTabProps {
 
 const StakeTab = ({ staking, swithToStake, switchToUnstake }: StakeTabProps) => {
   return (
-    <div className="flex rounded-lg bg-[#13141D] h-[82px]">
+    <div className="flex rounded-[20px] bg-[#13141D] h-[82px]">
       <div className="flex-1 h-full">
         <button className="w-full h-full" onClick={swithToStake}>
           <div className={staking ? 'text-white' : 'text-[#3B4553]'}>Stake SHACK</div>

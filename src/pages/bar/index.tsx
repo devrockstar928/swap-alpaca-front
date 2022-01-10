@@ -263,7 +263,7 @@ export default function Stake() {
             )}
             <div>
               <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
-              <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-dark-900 md:pb-9 md:pt-4 md:px-8">
+              <div className="bg-gradient-to-b from-[#26313F] to-[#0E0D14] w-full max-w-xl px-3 pt-2 pb-6 rounded-[32px] md:pb-9 md:pt-4 md:px-8">
                 <StakeTab
                   staking={activeTab == 0}
                   swithToStake={() => {
