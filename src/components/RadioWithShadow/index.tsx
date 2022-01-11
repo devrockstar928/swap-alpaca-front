@@ -14,7 +14,7 @@ const RadioWithShadow: FC<{ className?: string }> = ({ children, className }) =>
       <div className="absolute radio-left-bottom-shadow"></div>
       <div className="absolute radio-right-bottom-shadow"></div>
       <div className="absolute radio-right-rotate-shadow"></div>
-      <div className="relative inline-block bg-brown top-8 rounded-[80px] p-[28px] shadow-lg z-50">
+      <div className="relative inline-block bg-brown top-8 rounded-[80px] p-[28px] shadow-lg z-10">
         <div className="absolute top-[-19px] left-[59px] right-[59px] h-[20px]">
           <Image src="/images/swap/radio-top.png" alt="top" layout="fill" />
         </div>
