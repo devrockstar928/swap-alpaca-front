@@ -4,7 +4,7 @@ import { useLingui } from '@lingui/react'
 import { useCallback } from 'react'
 import { tryParseAmount } from '../../functions/parse'
 import { useTotalSupply } from '../../hooks/useTotalSupply'
-import { useV2Pair } from '../../hooks/useV2Pairs'
+import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
 import { useActiveWeb3React } from '../../services/web3'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { AppState } from '../index'
@@ -20,6 +20,7 @@ export function useDerivedBurnInfo(
   currencyB: Currency | undefined
 ): {
   pair?: Pair | null
+  pairState: PairState,
   parsedAmounts: {
     [Field.LIQUIDITY_PERCENT]: Percent
     [Field.LIQUIDITY]?: CurrencyAmount<Token>
@@ -36,7 +37,7 @@ export function useDerivedBurnInfo(
   const { independentField, typedValue } = useBurnState()
 
   // pair + totalsupply
-  const [, pair] = useV2Pair(currencyA, currencyB)
+  const [pairState, pair] = useV2Pair(currencyA, currencyB)
 
   // balances
   const relevantTokenBalances = useTokenBalances(account ?? undefined, [pair?.liquidityToken])
@@ -142,7 +143,7 @@ export function useDerivedBurnInfo(
     error = error ?? i18n._(t`Insufficient SLP balance`)
   }
 
-  return { pair, parsedAmounts, error, userLiquidity }
+  return { pair, pairState, parsedAmounts, error, userLiquidity }
 }
 
 export function useBurnActionHandlers(): {

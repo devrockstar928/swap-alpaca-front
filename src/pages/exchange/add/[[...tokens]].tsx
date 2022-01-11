@@ -311,7 +311,7 @@ export default function Add() {
   //   approvalA === ApprovalState.APPROVED && approvalB === ApprovalState.APPROVED
   // )
   return (
-    <Container id="swap-page" maxWidth="4xl" className="py-4 md:py-8 lg:py-12">
+    <Container id="remove-liquidity-page" maxWidth="4xl" className="py-4 md:py-8 lg:py-12">
       <Head>
         <title>Add Liquidity | Radio</title>
         <meta
