@@ -9,7 +9,7 @@ import Button from '../Button'
 const images = [
   {
     image: `url('/images/miso/banner-gene.png')`,
-    url: 'https://miso.sushi.com/auctions/0xA017E4Cf380c5FDc372463f3330853500b4B3Cb9',
+    url: 'https://miso.radioshack.com/auctions/0xA017E4Cf380c5FDc372463f3330853500b4B3Cb9',
   },
 ]
 

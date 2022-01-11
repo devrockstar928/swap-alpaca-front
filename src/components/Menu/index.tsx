@@ -11,12 +11,12 @@ const items = (i18n: I18n) => [
   {
     name: i18n._(t`Docs`),
     description: i18n._(t`Documentation for users of Radio.`),
-    href: 'https://docs.sushi.com',
+    href: 'https://docs.radioshack.com',
   },
   {
     name: i18n._(t`Dev`),
     description: i18n._(t`Documentation for developers of Radio.`),
-    href: 'https://dev.sushi.com',
+    href: 'https://dev.radioshack.com',
   },
   {
     name: i18n._(t`Open Source`),

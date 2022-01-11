@@ -50,7 +50,7 @@ const useSushiBar = () => {
     async (amount: string) => {
       try {
         const tx = await barContract?.enter(parseUnits(amount))
-        return addTransaction(tx, { summary: 'Enter RadioBar' })
+        return addTransaction(tx, { summary: 'Enter Shack Staking' })
       } catch (e) {
         return e
       }
@@ -63,7 +63,7 @@ const useSushiBar = () => {
     async (amount: string) => {
       try {
         const tx = await barContract?.leave(parseUnits(amount))
-        return addTransaction(tx, { summary: 'Leave RadioBar' })
+        return addTransaction(tx, { summary: 'Leave Shack Staking' })
       } catch (e) {
         console.error(e)
         return e

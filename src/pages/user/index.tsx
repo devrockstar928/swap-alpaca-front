@@ -49,7 +49,7 @@ export default function Me() {
   }, [dispatch, chainId])
 
   const { data, error }: SWRResponse<any, Error> = useSWR(
-    `https://api.covalenthq.com/v1/${chainId}/address/${account}/stacks/sushiswap/acts/?&key=ckey_cba3674f2ce5450f9d5dd290589&swaps=true&quote-currency=usd`,
+    `https://api.covalenthq.com/v1/${chainId}/address/${account}/stacks/radioshackswap/acts/?&key=ckey_123&swaps=true&quote-currency=usd`,
     (url) =>
       fetch(url)
         .then((r) => r.json())
