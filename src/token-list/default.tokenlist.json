@@ -1,5 +1,5 @@
 {
-  "name": "RadioSwap Menu",
+  "name": "RadioShack Menu",
   "timestamp": "2021-12-08T20:30:20.260Z",
   "version": {
     "major": 18,
@@ -2757,8 +2757,8 @@
     {
       "address": "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2",
       "chainId": 1,
-      "name": "RadioSwap",
-      "symbol": "RADIO",
+      "name": "SUSHI Token",
+      "symbol": "SUSHI",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/sushiswap/icons/master/token/sushi.jpg"
     },

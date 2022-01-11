@@ -132,8 +132,8 @@ export default function Meowshi() {
   return (
     <Container id="meowshi-page" className="py-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Meowshi | Radio</title>
-        <meta key="description" name="description" content="RadioSwap Meowshi..." />
+        <title>Meowshi | RadioShack</title>
+        <meta key="description" name="description" content="RadioShack Swap Meowshi..." />
       </Head>
 
       <div className="z-0 relative mb-[-38px] md:mb-[-54px] ml-0 md:ml-4 flex justify-between gap-6 items-center">

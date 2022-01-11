@@ -379,11 +379,11 @@ export default function Swap() {
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>{i18n._(t`RadioSwap`)} | Radio</title>
+        <title>{i18n._(t`RadioShack`)} | Swap</title>
         <meta
           key="description"
           name="description"
-          content="RadioSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="RadioShack Swap allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       <TokenWarningModal

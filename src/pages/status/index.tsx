@@ -7,7 +7,7 @@ export default function Status({ initialData }) {
   return (
     <Container id="status-page" className="py-4 md:py-8 lg:py-12" maxWidth="full">
       <Head>
-        <title>Status | Radio</title>
+        <title>Status | RadioShack</title>
         <meta key="description" name="description" content="Radio Status..." />
       </Head>
       {/* <div className="w-full max-w-6xl mx-auto">

@@ -39,7 +39,7 @@ const Inari = () => {
   return (
     <>
       <Head>
-        <title>Inari | Radio</title>
+        <title>Inari | RadioShack</title>
         <meta name="description" content="Inari..." />
       </Head>
       <Container maxWidth="5xl" className="flex flex-col gap-8 px-4 py-8">

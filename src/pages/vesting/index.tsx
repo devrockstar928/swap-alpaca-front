@@ -44,7 +44,7 @@ const Strategies = () => {
   return (
     <>
       <Head>
-        <title>Vesting | Radio</title>
+        <title>Vesting | RadioShack</title>
         <meta name="description" content="Vesting..." />
       </Head>
       <Container maxWidth="5xl" className="flex flex-col gap-8 px-4 py-8">

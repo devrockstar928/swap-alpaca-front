@@ -25,7 +25,7 @@ export default function Pair() {
   return (
     <div id={`lend-${router.query.pair}-page`}>
       <Head>
-        <title>Lend {pair.asset.tokenInfo.symbol} | Radio</title>
+        <title>Lend {pair.asset.tokenInfo.symbol} | RadioShack</title>
         <meta key="description" name="description" content={`Lend ${pair.asset.tokenInfo.symbol} on Kashi`} />
       </Head>
       <Card

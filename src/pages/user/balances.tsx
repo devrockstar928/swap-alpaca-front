@@ -39,7 +39,7 @@ function Balances() {
   return (
     <>
       <Head>
-        <title>Balances | Radio</title>
+        <title>Balances | RadioShack</title>
         <meta key="description" name="description" content="" />
       </Head>
       <Card

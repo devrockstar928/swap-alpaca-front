@@ -311,11 +311,11 @@ export default function Add() {
   return (
     <Container id="swap-page" maxWidth="4xl" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>Add Liquidity | Radio</title>
+        <title>Add Liquidity | RadioShack</title>
         <meta
           key="description"
           name="description"
-          content="Add liquidity to the RadioSwap AMM to enable gas optimised and low slippage trades across countless networks"
+          content="Add liquidity to the RadioShack AMM to enable gas optimised and low slippage trades across countless networks"
         />
       </Head>
 

@@ -6,7 +6,7 @@ export default function Analytics() {
   return (
     <Container maxWidth="full" className="grid h-full grid-cols-4 mx-auto gap-9">
       <Head>
-        <title>Analytics Dashboard | Radio</title>
+        <title>Analytics Dashboard | RadioShack</title>
         <meta name="description" content="SHACK Analytics Dashboard by Radio..." />
       </Head>
 

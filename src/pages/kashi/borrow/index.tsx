@@ -33,7 +33,7 @@ function Borrow() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`Borrow`)} | Radio</title>
+        <title>{i18n._(t`Borrow`)} | RadioShack</title>
         <meta
           key="description"
           name="description"

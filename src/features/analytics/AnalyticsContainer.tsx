@@ -6,8 +6,8 @@ export default function AnalyticsContainer({ children }): JSX.Element {
   return (
     <>
       <Head>
-        <title>RadioSwap Liquidity Pair (SLP) Analytics | Radio</title>
-        <meta name="description" content="RadioSwap Liquidity Pair (SLP) Analytics by Radio" />
+        <title>RadioShack Swap Liquidity Pair (SLP) Analytics | Radio</title>
+        <meta name="description" content="RadioShack Swap Liquidity Pair (SLP) Analytics by Radio" />
       </Head>
 
       <Container id="analytics" maxWidth="full" className="grid h-full grid-flow-col grid-cols-10 px-4 mx-auto gap-9">

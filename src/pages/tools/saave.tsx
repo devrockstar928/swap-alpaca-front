@@ -6,8 +6,8 @@ export default function Saave() {
   return (
     <Container id="saave-page" className="py-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Saave | Radio</title>
-        <meta key="description" name="description" content="RadioSwap Saave..." />
+        <title>Saave | RadioShack</title>
+        <meta key="description" name="description" content="RadioShack Swap Saave..." />
       </Head>
 
       <Container className="text-center">

@@ -1,8 +1,8 @@
 {
-  "name": "RadioSwap",
-  "short_name": "RadioSwap",
+  "name": "RadioShack",
+  "short_name": "RadioShack",
   "lang": "en",
-  "description": "Swap, yield, lend, borrow, leverage, limit, launch all on one community driven ecosystem",
+  "description": "Bringing cryptocurrency to the mainstream via a 100 year old brand embedded into the global consciousness",
   "background_color": "#0D0415",
   "theme_color": "#F338C3",
   "dir": "ltr",

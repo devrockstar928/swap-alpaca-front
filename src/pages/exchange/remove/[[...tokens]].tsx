@@ -422,8 +422,8 @@ export default function Remove() {
   return (
     <Container id="remove-liquidity-page" className="py-4 space-y-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Remove Liquidity | Radio</title>
-        <meta key="description" name="description" content="Remove liquidity from the RadioSwap AMM" />
+        <title>Remove Liquidity | RadioShack</title>
+        <meta key="description" name="description" content="Remove liquidity from the RadioShack AMM" />
       </Head>
       <div className="px-4 mb-5">
         <NavLink href="/pool">

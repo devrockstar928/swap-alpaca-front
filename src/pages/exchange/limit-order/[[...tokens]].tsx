@@ -211,10 +211,10 @@ function LimitOrder() {
   return (
     <Container id="limit-order-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>{i18n._(t`Limit order`)} | Radio</title>
+        <title>{i18n._(t`Limit order`)} | RadioShack</title>
         <meta
           name="description"
-          content="RadioSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+          content="RadioShack Swap allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
       <TokenWarningModal

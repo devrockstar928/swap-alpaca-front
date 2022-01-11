@@ -2,7 +2,7 @@
 
 ## Linking the SDK
 
-The RadioSwap SDK is used heavily throughout the Radio Interface. You might like to clone this library and link it for various reasons, such as debugging, extracting, or even further developing the SDK.
+The RadioShack Swap SDK is used heavily throughout the Radio Interface. You might like to clone this library and link it for various reasons, such as debugging, extracting, or even further developing the SDK.
 
 ```sh
 git clone https://github.com/radioshackswap/sdk.git && cd sdk && git checkout canary && yarn link

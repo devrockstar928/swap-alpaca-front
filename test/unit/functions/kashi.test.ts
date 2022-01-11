@@ -27,7 +27,7 @@ describe('kashi functions', () => {
       isNative: false,
       isToken: true,
       list: {
-        name: 'RadioSwap Menu',
+        name: 'RadioShack Menu',
         timestamp: '2021-09-08T01:59:50.068Z',
         version: {
           major: 15,

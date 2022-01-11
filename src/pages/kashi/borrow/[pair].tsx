@@ -48,7 +48,7 @@ function Pair() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)} | Radio</title>
+        <title>{i18n._(t`Borrow ${pair?.asset?.symbol}-${pair?.collateral?.symbol}`)} | RadioShack</title>
         <meta
           key="description"
           name="description"
@@ -265,7 +265,7 @@ const PairLayout = ({ children }) => {
                 </div>
               </>
             )}
-            {pair && pair.oracle.name === 'RadioSwap' && (
+            {pair && pair.oracle.name === 'RadioShack' && (
               <>
                 <div className="flex justify-between pt-3">
                   <div className="text-xl text-high-emphesis">{i18n._(t`SLP`)}</div>

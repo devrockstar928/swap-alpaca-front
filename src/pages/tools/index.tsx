@@ -30,8 +30,8 @@ export default function Tools() {
   return (
     <Container id="tools-page" className="py-4 space-y-4 md:py-8 lg:py-12" maxWidth="xl">
       <Head>
-        <title>Tools | Radio</title>
-        <meta key="description" name="description" content="RadioSwap tools..." />
+        <title>Tools | RadioShack</title>
+        <meta key="description" name="description" content="RadioShack Swap tools..." />
       </Head>
       <Typography variant="h1" component="h1">
         Tools

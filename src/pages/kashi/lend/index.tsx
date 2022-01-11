@@ -31,7 +31,7 @@ function Lend() {
   return fullPairs ? (
     <>
       <Head>
-        <title>Lend | Radio</title>
+        <title>Lend | RadioShack</title>
         <meta
           key="description"
           name="description"

@@ -36,7 +36,7 @@ const PERMITTABLE_TOKENS: {
       name: 'Dai Stablecoin',
       version: '1',
     },
-    [SHACK[1].address]: { type: PermitType.AMOUNT, name: 'RadioSwap' },
+    [SHACK[1].address]: { type: PermitType.AMOUNT, name: 'RadioShack' },
   },
   [4]: {
     ['0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735']: {
@@ -44,10 +44,10 @@ const PERMITTABLE_TOKENS: {
       name: 'Dai Stablecoin',
       version: '1',
     },
-    [SHACK[4].address]: { type: PermitType.AMOUNT, name: 'RadioSwap' },
+    [SHACK[4].address]: { type: PermitType.AMOUNT, name: 'RadioShack' },
   },
   [3]: {
-    [SHACK[3].address]: { type: PermitType.AMOUNT, name: 'RadioSwap' },
+    [SHACK[3].address]: { type: PermitType.AMOUNT, name: 'RadioShack' },
     ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: {
       type: PermitType.AMOUNT,
       name: 'USD Coin',
