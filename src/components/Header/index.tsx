@@ -92,7 +92,7 @@ function AppBar(): JSX.Element {
                                       symbol: 'XSHACK',
                                       decimals: 18,
                                       image:
-                                        'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272.jpg',
+                                        'https://user-images.githubusercontent.com/89943761/149034857-5ebd3f05-ddc9-4a35-9085-11d38bada2a1.png',
                                     },
                                   }
                                   library.provider
@@ -137,7 +137,7 @@ function AppBar(): JSX.Element {
                                   symbol: 'SHACK',
                                   decimals: 18,
                                   image:
-                                    'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2.jpg',
+                                    'https://user-images.githubusercontent.com/89943761/149034841-2e2a3e0c-cc39-4e4e-8004-7f020d4d8199.png',
                                 },
                               }
                               if (library && library.provider.isMetaMask && library.provider.request) {

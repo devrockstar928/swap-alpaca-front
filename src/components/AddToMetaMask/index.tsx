@@ -17,6 +17,7 @@ const AddToMetaMask: FC<AddToMetaMaskProps> = ({ currency }) => {
   const openMetamaskModel = () => {
     if (currency && currency.wrapped.address && library && library.provider.isMetaMask && library.provider.request) {
       const images = getCurrencyLogoUrls(currency)
+      debugger
       const params: any = {
         type: 'ERC20',
         options: {
