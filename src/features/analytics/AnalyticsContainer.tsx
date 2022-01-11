@@ -6,7 +6,7 @@ export default function AnalyticsContainer({ children }): JSX.Element {
   return (
     <>
       <Head>
-        <title>RadioShack Swap Liquidity Pair (SLP) Analytics | Radio</title>
+        <title>RadioShack Swap Liquidity Pair (SLP) Analytics | RadioShack</title>
         <meta name="description" content="RadioShack Swap Liquidity Pair (SLP) Analytics by Radio" />
       </Head>
 
