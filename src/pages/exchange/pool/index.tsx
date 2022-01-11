@@ -113,7 +113,7 @@ export default function Pool() {
             <>
               {/* <div className="flex items-center justify-center">
                   <ExternalLink
-                    href={"https://analytics.sushi.com/user/" + account}
+                    href={"https://analytics.radioshack.com/user/" + account}
                   >
                     Account analytics and accrued fees <span> ↗</span>
                   </ExternalLink>

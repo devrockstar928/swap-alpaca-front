@@ -15,7 +15,7 @@ const Footer = () => {
         {/* {chainId && chainId in ANALYTICS_URL && (
           <ExternalLink
             id={`analytics-nav-link`}
-            href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
+            href={ANALYTICS_URL[chainId] || 'https://analytics.radioshack.com'}
             className="text-low-emphesis"
           >
             <div className="flex items-center space-x-2">

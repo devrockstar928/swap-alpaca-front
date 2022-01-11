@@ -12,7 +12,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.enter(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Enter RadioBar' })
+          return addTransaction(tx, { summary: 'Enter Shack Staking' })
         } catch (e) {
           return e
         }
@@ -26,7 +26,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.leave(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Leave RadioBar' })
+          return addTransaction(tx, { summary: 'Leave Shack Staking' })
         } catch (e) {
           return e
         }

@@ -1,6 +1,6 @@
 # Oracles
 
-Currently there is two types of oracles which the sushi interface supports, Chainlink & RadioSwap TWAP.
+Currently there is two types of oracles which the interface supports, Chainlink & RadioSwap TWAP.
 
 ## Chainlink
 
@@ -29,7 +29,7 @@ Chainlink tokens can be found in src/constants/chainlink/mappings, they are sepe
 
 Any token which is not currently in the Chainlink tokens needs to be added, with the exception of USD, and non-crypto, these should not be added to the Chainlink tokens.
 
-If a newly added token is not in the @sushiswap/default-token-list, it should be added.
+If a newly added token is not in the @radioshackswap/default-token-list, it should be added.
 
 Chainlink mappings can be found in src/constants/chainlink/mappings, they are seperated by network.
 

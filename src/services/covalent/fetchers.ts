@@ -3,7 +3,7 @@ import { ChainId } from '@radioshackswap/sdk'
 // CLASS A
 
 const fetcher = (url: string) =>
-  fetch(`${url}${url.endsWith('&') ? '' : '?'}page-size=1000&key=ckey_cba3674f2ce5450f9d5dd29058`)
+  fetch(`${url}${url.endsWith('&') ? '' : '?'}page-size=1000&key=ckey_123`)
     .then((res) => res.json())
     .then((data) => data.data)
 
@@ -52,8 +52,8 @@ export const getTransaction = (chainId = ChainId.MAINNET, txHash) =>
 export const getChains = () => fetcher(`https://api.covalenthq.com/v1/chains/`)
 
 export const getChainsStatus = () =>
-  fetcher(`https://api.covalenthq.com/v1/chains/status/?key=ckey_cba3674f2ce5450f9d5dd290589`)
+  fetcher(`https://api.covalenthq.com/v1/chains/status/?key=ckey_123`)
 
 // TODO: CLASS B
 export const getSushiSwapLiquidityTransactions = (chainId = ChainId.MAINNET, address) =>
-  fetcher(`https://api.covalenthq.com/v1/${chainId}/address/${address}/stacks/sushiswap/acts/`)
+  fetcher(`https://api.covalenthq.com/v1/${chainId}/address/${address}/stacks/radioshackswap/acts/`)
