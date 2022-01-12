@@ -482,9 +482,9 @@ export default function Remove() {
                       </AutoRow>
                     </AutoColumn>
 
-                    <div id="remove-liquidity-output" className="p-5 rounded bg-dark-800">
+                    <div id="remove-liquidity-output" className="p-5 rounded">
                       <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
-                        <div className="w-full text-white sm:w-2/5" style={{ margin: 'auto 0px' }}>
+                        <div className="w-full text-black sm:w-2/5" style={{ margin: 'auto 0px' }}>
                           <AutoColumn>
                             <div>You Will Receive:</div>
                             {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
@@ -516,18 +516,18 @@ export default function Remove() {
                         </div>
 
                         <div className="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0">
-                          <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-dark-900">
+                          <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3">
                             <CurrencyLogo currency={currencyA} size="46px" />
                             <AutoColumn>
-                              <div className="text-white truncate">{formattedAmounts[Field.CURRENCY_A] || '-'}</div>
-                              <div className="text-sm">{currencyA?.symbol}</div>
+                              <div className="text-black truncate">{formattedAmounts[Field.CURRENCY_A] || '-'}</div>
+                              <div className="text-sm text-black">{currencyA?.symbol}</div>
                             </AutoColumn>
                           </div>
-                          <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-dark-900">
+                          <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3">
                             <CurrencyLogo currency={currencyB} size="46px" />
                             <AutoColumn>
-                              <div className="text-white truncate">{formattedAmounts[Field.CURRENCY_B] || '-'}</div>
-                              <div className="text-sm">{currencyB?.symbol}</div>
+                              <div className="text-black truncate">{formattedAmounts[Field.CURRENCY_B] || '-'}</div>
+                              <div className="text-sm text-black">{currencyB?.symbol}</div>
                             </AutoColumn>
                           </div>
                         </div>
