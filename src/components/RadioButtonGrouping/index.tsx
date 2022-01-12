@@ -19,7 +19,7 @@ const RadioButtonGrouping: FC<{ className?: string }> = ({ children }) => {
       <div className="absolute flex-none right-[32px] w-[78px] h-[76px] bottom-[8px]">
         <Image src="/images/swap/radio-button.png" alt="button1" layout="fill" />
       </div>
-      <div className="absolute flex-1 w-[256px] m-auto">{children}</div>
+      <div className="absolute flex-1 w-[512px] m-auto">{children}</div>
     </div>
   )
 }
