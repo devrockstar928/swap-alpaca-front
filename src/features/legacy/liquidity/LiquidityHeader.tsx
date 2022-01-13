@@ -6,7 +6,7 @@ import { useActiveWeb3React } from '../../../services/web3'
 export default function LiquidityHeader({ input = undefined, output = undefined }: any): JSX.Element {
   const { chainId } = useActiveWeb3React()
   return (
-    <div className="grid grid-cols-2 rounded-md p-3px bg-dark-800">
+    <div className="grid grid-cols-2 rounded-md p-3px bg-dark-800 ml-3 mr-3">
       <NavLink
         activeClassName="font-bold text-high-emphesis bg-dark-900"
         href={`/add/${currencyId(input)}/${currencyId(output)}`}

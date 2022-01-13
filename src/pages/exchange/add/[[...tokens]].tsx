@@ -40,6 +40,7 @@ import { Field } from '../../../state/mint/actions'
 import { useDerivedMintInfo, useMintActionHandlers, useMintState } from '../../../state/mint/hooks'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useExpertModeManager, useUserSlippageToleranceWithDefault } from '../../../state/user/hooks'
+import { classNames } from '../../../functions'
 
 const DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 
@@ -365,11 +366,13 @@ export default function Add() {
                     showCommonBases
                   />
 
-                  <AutoColumn justify="space-between" className="py-2.5">
-                    <AutoRow justify={isExpertMode ? 'space-between' : 'flex-start'} style={{ padding: '0 1rem' }}>
-                      <button className="z-10 -mt-6 -mb-6 rounded-full cursor-default bg-dark-900 p-3px">
-                        <div className="p-3 rounded-full bg-dark-800">
-                          <Plus size="32" />
+                  <AutoColumn justify="center" className="py-2.5">
+                    <AutoRow className={classNames('justify-center', 'px-4 flex-wrap w-full flex')} style={{ padding: '0 1rem' }}>
+                      <button className="z-10 -mt-6 -mb-6 rounded-full">
+                        <div className="rounded-md border-2 border-white bg-[#F7F8FA] text-gray text-opacity-80 hover:text-opacity-100 md:flex hover:bg-dark-800">
+                          <div className="p-1 rounded-full">
+                            <Plus size="24" />
+                          </div>
                         </div>
                       </button>
                     </AutoRow>

@@ -43,6 +43,7 @@ import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useUserSlippageToleranceWithDefault } from '../../../state/user/hooks'
 import { PairState } from '../../../hooks/useV2Pairs'
 import { useDerivedMintInfo, useMintActionHandlers, useMintState } from '../../../state/mint/hooks'
+import { classNames } from '../../../functions'
 
 const DEFAULT_REMOVE_LIQUIDITY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 
@@ -472,11 +473,13 @@ export default function Remove() {
                       id="liquidity-percent"
                     />
 
-                    <AutoColumn justify="space-between" className="py-2.5">
-                      <AutoRow justify={'flex-start'} style={{ padding: '0 1rem' }}>
-                        <button className="z-10 -mt-6 -mb-6 rounded-full cursor-default bg-dark-900 p-3px">
-                          <div className="p-3 rounded-full bg-dark-800">
-                            <ArrowDownIcon width="32px" height="32px" />
+                    <AutoColumn justify="center" className="py-2.5">
+                      <AutoRow className={classNames('justify-center', 'px-4 flex-wrap w-full flex')} style={{ padding: '0 1rem' }}>
+                        <button className="z-10 -mt-6 -mb-6 rounded-full">
+                          <div className="rounded-md border-2 border-white bg-[#F7F8FA] text-gray text-opacity-80 hover:text-opacity-100 md:flex hover:bg-dark-800">
+                            <div className="p-1 rounded-full">
+                              <ArrowDownIcon width="24px" height="24px" />
+                            </div>
                           </div>
                         </button>
                       </AutoRow>
