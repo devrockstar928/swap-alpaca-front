@@ -1,5 +1,4 @@
 import { ChevronLeftIcon, XIcon } from '@heroicons/react/outline'
-
 import React, { FC } from 'react'
 import Typography from '../Typography'
 
@@ -20,7 +19,7 @@ const ModalHeader: FC<ModalHeaderProps> = ({
     <div className={`flex items-center justify-between mb-4 ${className}`}>
       {onBack && <ChevronLeftIcon onClick={onBack} width={24} height={24} className="cursor-pointer" />}
       {title && (
-        <Typography component="h2" variant="h3" className="font-bold">
+        <Typography component="h2" variant="h3" className="w-full font-bold">
           {title}
         </Typography>
       )}

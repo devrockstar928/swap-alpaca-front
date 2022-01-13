@@ -1,4 +1,5 @@
 import { Popover, Transition } from '@headlessui/react'
+import { ChatAlt2Icon, CodeIcon, DocumentTextIcon, SpeakerphoneIcon } from '@heroicons/react/outline'
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -6,49 +7,36 @@ import React, { Fragment } from 'react'
 import { classNames } from '../../functions/styling'
 import ExternalLink from '../ExternalLink'
 import NavLink from '../NavLink'
-import { CodeIcon, ChatAlt2Icon, SpeakerphoneIcon, DocumentTextIcon  } from '@heroicons/react/outline'
 
 const items = (i18n: I18n) => [
   {
     name: i18n._(t`Docs`),
-    description: i18n._(t``),
+    description: '',
     href: 'https://docs.radioshack.com',
     external: true,
-    icon: <DocumentTextIcon
-      className="w-5 h-5 mr-2"
-      aria-hidden="true"
-    />
+    icon: <DocumentTextIcon className="w-5 h-5 mr-2" aria-hidden="true" />,
   },
   {
     name: i18n._(t`Github`),
-    description: i18n._(t``),
+    description: '',
     href: 'https://github.com/radioshackdefi',
     external: true,
-    icon: <CodeIcon
-      className="w-5 h-5 mr-2"
-      aria-hidden="true"
-    />
+    icon: <CodeIcon className="w-5 h-5 mr-2" aria-hidden="true" />,
   },
   {
     name: i18n._(t`Twitter`),
-    description: i18n._(t``),
+    description: '',
     href: 'https://twitter.com/radioshack',
     external: true,
-    icon: <SpeakerphoneIcon
-      className="w-5 h-5 mr-2"
-      aria-hidden="true"
-    />
+    icon: <SpeakerphoneIcon className="w-5 h-5 mr-2" aria-hidden="true" />,
   },
   {
     name: i18n._(t`Discord`),
-    description: i18n._(t``),
+    description: '',
     href: 'https://discord.gg/radioshack',
     external: true,
-    icon: <ChatAlt2Icon
-      className="w-5 h-5 mr-2"
-      aria-hidden="true"
-    />
-  }
+    icon: <ChatAlt2Icon className="w-5 h-5 mr-2" aria-hidden="true" />,
+  },
 ]
 
 export default function Menu() {

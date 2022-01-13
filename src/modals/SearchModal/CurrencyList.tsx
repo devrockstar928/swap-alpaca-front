@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, Token } from '@radioshackswap/sdk'
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { FixedSizeList } from 'react-window'
 import styled from 'styled-components'
@@ -128,9 +128,6 @@ function CurrencyRow({
         <div>
           <div title={currency.name} className="text-sm font-medium">
             {currency.symbol}
-          </div>
-          <div className="text-sm font-thin truncate">
-            {currency.name} {!isOnSelectedList && customAdded && '• Added by user'}
           </div>
         </div>
       </div>

@@ -60,7 +60,7 @@ export default function CurrencyInputPanel({
   locked = false,
   customBalanceText,
   allowManageTokenList = true,
-  showSearch = true,
+  showSearch = false,
 }: CurrencyInputPanelProps) {
   const { i18n } = useLingui()
   const [modalOpen, setModalOpen] = useState(false)

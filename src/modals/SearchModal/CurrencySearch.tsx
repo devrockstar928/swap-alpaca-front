@@ -1,15 +1,15 @@
-import { ChainId, Currency, NATIVE, Token } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, NATIVE, Token } from '@radioshackswap/sdk'
 import { useRouter } from 'next/router'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FixedSizeList } from 'react-window'
 import CHAINLINK_TOKENS from '../../../chainlink.whitelist.json'
-import Button from '../../components/Button'
 import Column from '../../components/Column'
 import ModalHeader from '../../components/ModalHeader'
+import { COMMON_BASES } from '../../config/routing'
 import { filterTokens, useSortedTokensByQuery } from '../../functions/filtering'
 import { isAddress } from '../../functions/validate'
 import { useAllTokens, useIsUserAddedToken, useSearchInactiveTokenLists, useToken } from '../../hooks/Tokens'
@@ -17,7 +17,6 @@ import useDebounce from '../../hooks/useDebounce'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import useToggle from '../../hooks/useToggle'
 import { useActiveWeb3React } from '../../services/web3'
-import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import ImportRow from './ImportRow'
 import { useTokenComparator } from './sorting'
@@ -175,9 +174,11 @@ export function CurrencySearch({
     filteredTokens.length === 0 || (debouncedQuery.length > 2 && !isAddressSearch) ? debouncedQuery : undefined
   )
 
+  const bases = typeof chainId !== 'undefined' ? COMMON_BASES[chainId] ?? [] : []
+
   return (
     <div className="flex flex-col max-h-[inherit]">
-      <ModalHeader className="h-full" onClose={onDismiss} title="Select a token" />
+      <ModalHeader className="h-full text-center" onClose={onDismiss} title="Select a token" />
       {!currencyList && showSearch && (
         <div className="mt-0 mb-3 sm:mt-3 sm:mb-8">
           <input
@@ -193,11 +194,11 @@ export function CurrencySearch({
           />
         </div>
       )}
-      {showCommonBases && (
+      {/* {showCommonBases && (
         <div className="mb-4">
           <CommonBases chainId={chainId} onSelect={handleCurrencySelect} selectedCurrency={selectedCurrency} />
         </div>
-      )}
+      )} */}
 
       {searchToken && !searchTokenIsAdded ? (
         <Column style={{ padding: '20px 0', height: '100%' }}>
@@ -209,7 +210,7 @@ export function CurrencySearch({
             {({ height }) => (
               <CurrencyList
                 height={height}
-                currencies={includeNativeCurrency ? filteredSortedTokensWithETH : filteredSortedTokens}
+                currencies={bases}
                 otherListTokens={filteredInactiveTokens}
                 onCurrencySelect={handleCurrencySelect}
                 otherCurrency={otherSelectedCurrency}
@@ -226,13 +227,6 @@ export function CurrencySearch({
         <Column style={{ padding: '20px', height: '100%' }}>
           <div className="mb-8 text-center">{i18n._(t`No results found`)}</div>
         </Column>
-      )}
-      {allowManageTokenList && (
-        <div className="mt-3">
-          <Button id="list-token-manage-button" onClick={showManageView} color="gray">
-            {i18n._(t`Manage Token Lists`)}
-          </Button>
-        </div>
       )}
     </div>
   )
