@@ -5,7 +5,7 @@ import { ChainId } from '@radioshackswap/sdk'
 import React, { FC, useMemo, useState } from 'react'
 import Button from '../../components/Button'
 import Dots from '../../components/Dots'
-import { RADIO, XSHACK } from '../../config/tokens'
+import { RADIO, XRADIO } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { ApprovalState } from '../../hooks/useApproveCallback'
 import useMeowshi from '../../hooks/useMeowshi'
@@ -28,7 +28,7 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
   })
   const { account, chainId } = useActiveWeb3React()
   const sushiBalance = useTokenBalance(account, RADIO[chainId])
-  const xSushiBalance = useTokenBalance(account, XSHACK[chainId])
+  const xSushiBalance = useTokenBalance(account, XRADIO[chainId])
   const { approvalState, approve, meow, unmeow, meowSushi, unmeowSushi } = useMeowshi(
     currencies[Field.INPUT] === RADIO[chainId]
   )

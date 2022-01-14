@@ -3,7 +3,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ChainId, CurrencyAmount, RADIO_ADDRESS, Token } from '@radioshackswap/sdk'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { CRXSUSHI, RADIO, XSHACK } from '../../../config/tokens'
+import { CRXSUSHI, RADIO, XRADIO } from '../../../config/tokens'
 import { tryParseAmount } from '../../../functions'
 import { useApproveCallback } from '../../../hooks/useApproveCallback'
 import { useInariContract, useZenkoContract } from '../../../hooks/useContract'
@@ -36,7 +36,7 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
     chainId: ChainId.MAINNET,
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
-    symbol: 'XSHACK',
+    symbol: 'XRADIO',
   },
 }
 
@@ -87,14 +87,14 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
     if (!zenkoContract || !balances) return
 
     const main = async () => {
-      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XSHACK[chainId])
+      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XRADIO[chainId])
       const bal = await zenkoContract.fromCtoken(
         CRXSUSHI.address,
         balances[CRXSUSHI.address].toFixed().toBigNumber(CRXSUSHI.decimals).toString()
       )
       setBalances({
         inputTokenBalance: balances[RADIO[chainId].address],
-        outputTokenBalance: CurrencyAmount.fromRawAmount(XSHACK[chainId], bal.toString()),
+        outputTokenBalance: CurrencyAmount.fromRawAmount(XRADIO[chainId], bal.toString()),
       })
     }
 

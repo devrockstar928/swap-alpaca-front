@@ -3,7 +3,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import { useEffect, useMemo } from 'react'
-import { RADIO, XSHACK } from '../../../config/tokens'
+import { RADIO, XRADIO } from '../../../config/tokens'
 import { tryParseAmount } from '../../../functions'
 import { useActiveWeb3React } from '../../../services/web3'
 import { useBentoBalance } from '../../bentobox/hooks'
@@ -35,15 +35,15 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
     chainId: ChainId.MAINNET,
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
-    symbol: 'XSHACK',
+    symbol: 'XRADIO',
   },
 }
 
 const useStakeSushiToBentoStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
   const { account, chainId } = useActiveWeb3React()
-  const balances = useTokenBalances(account, [RADIO[chainId], XSHACK[chainId]])
-  const xSushiBentoBalance = useBentoBalance(XSHACK[chainId].address)
+  const balances = useTokenBalances(account, [RADIO[chainId], XRADIO[chainId]])
+  const xSushiBentoBalance = useBentoBalance(XRADIO[chainId].address)
 
   // Strategy ends in BentoBox so use BaseBentoBox strategy
   const general = useMemo(() => GENERAL(i18n), [i18n])
@@ -61,7 +61,7 @@ const useStakeSushiToBentoStrategy = (): StrategyHook => {
 
     setBalances({
       inputTokenBalance: balances[RADIO_ADDRESS[chainId]],
-      outputTokenBalance: tryParseAmount(xSushiBentoBalance?.value?.toFixed(18) || '0', XSHACK[chainId]),
+      outputTokenBalance: tryParseAmount(xSushiBentoBalance?.value?.toFixed(18) || '0', XRADIO[chainId]),
     })
   }, [balances, setBalances, xSushiBentoBalance?.value])
 

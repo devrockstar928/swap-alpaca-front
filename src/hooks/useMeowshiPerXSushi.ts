@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { useEffect, useState } from 'react'
-import { XSHACK } from '../config/tokens'
+import { XRADIO } from '../config/tokens'
 import { useActiveWeb3React } from '../services/web3'
 import { useBentoBoxContract } from './useContract'
 
@@ -8,7 +8,7 @@ export default function useMeowshiPerXSushi() {
   const bentoboxContract = useBentoBoxContract()
   const [state, setState] = useState<[BigNumber, BigNumber]>([BigNumber.from('0'), BigNumber.from('0')])
   const { chainId } = useActiveWeb3React()
-  const xSHACK = XSHACK[chainId]
+  const xSHACK = XRADIO[chainId]
 
   useEffect(() => {
     if (!bentoboxContract) return

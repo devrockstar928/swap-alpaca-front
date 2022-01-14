@@ -89,7 +89,7 @@ function AppBar(): JSX.Element {
                                     type: 'ERC20',
                                     options: {
                                       address: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                      symbol: 'XSHACK',
+                                      symbol: 'XRADIO',
                                       decimals: 18,
                                       image:
                                         'https://user-images.githubusercontent.com/89943761/149034857-5ebd3f05-ddc9-4a35-9085-11d38bada2a1.png',
@@ -102,7 +102,7 @@ function AppBar(): JSX.Element {
                                     })
                                     .then((success) => {
                                       if (success) {
-                                        console.log('Successfully added XSHACK to MetaMask')
+                                        console.log('Successfully added XRADIO to MetaMask')
                                       } else {
                                         throw new Error('Something went wrong.')
                                       }

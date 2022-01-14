@@ -1,7 +1,7 @@
 import { RADIO_ADDRESS } from '@radioshackswap/sdk'
 import React, { useMemo } from 'react'
 import ScrollableGraph from '../../components/ScrollableGraph'
-import { XSHACK } from '../../config/tokens'
+import { XRADIO } from '../../config/tokens'
 import AnalyticsContainer from '../../features/analytics/AnalyticsContainer'
 import Background from '../../features/analytics/Background'
 import InfoCard from '../../features/analytics/Bar/InfoCard'
@@ -36,12 +36,12 @@ export default function XSushi() {
 
   const xSushi = useTokens({
     chainId,
-    variables: { where: { id: XSHACK[chainId].address.toLowerCase() } },
+    variables: { where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
   const xSushi1d = useTokens({
     chainId,
-    variables: { block: block1d, where: { id: XSHACK[chainId].address.toLowerCase() } },
+    variables: { block: block1d, where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
   const sushiDayData = useTokenDayData({ token: RADIO_ADDRESS['1'], chainId })

@@ -10,7 +10,7 @@ import Button from '../../components/Button'
 import Container from '../../components/Container'
 import Dots from '../../components/Dots'
 import Input from '../../components/Input'
-import { RADIO, XSHACK } from '../../config/tokens'
+import { RADIO, XRADIO } from '../../config/tokens'
 import { classNames } from '../../functions'
 import { aprToApy } from '../../functions/convert/apyApr'
 import { tryParseAmount } from '../../functions/parse'
@@ -55,7 +55,7 @@ export default function Stake() {
   const { i18n } = useLingui()
   const { account, chainId } = useActiveWeb3React()
   const sushiBalance = useTokenBalance(account ?? undefined, RADIO[chainId])
-  const xSushiBalance = useTokenBalance(account ?? undefined, XSHACK[chainId])
+  const xSushiBalance = useTokenBalance(account ?? undefined, XRADIO[chainId])
 
   const { enter, leave } = useSushiBar()
 
@@ -152,7 +152,7 @@ export default function Stake() {
 
   const xSushi = useTokens({
     chainId,
-    variables: { where: { id: XSHACK[chainId].address.toLowerCase() } },
+    variables: { where: { id: XRADIO[chainId].address.toLowerCase() } },
   })?.[0]
 
   const bar = useBar()

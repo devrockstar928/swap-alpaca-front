@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import Input from '../../components/Input'
 import Typography from '../../components/Typography'
-import { RADIO, XSHACK } from '../../config/tokens'
+import { RADIO, XRADIO } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
@@ -26,7 +26,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
   const balance = useTokenBalance(account, currency)
   const inputUSDCValue = useUSDCValue(tryParseAmount(fields[field], currencies[field]))
   const balanceUSDCValue = useUSDCValue(balance)
-  const xRADIO = XSHACK[chainId]
+  const xRADIO = XRADIO[chainId]
 
   return (
     <>

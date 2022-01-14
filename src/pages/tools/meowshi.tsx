@@ -7,7 +7,7 @@ import Image from 'next/image'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import Container from '../../components/Container'
 import Typography from '../../components/Typography'
-import { MEOW, RADIO, XSHACK } from '../../config/tokens'
+import { MEOW, RADIO, XRADIO } from '../../config/tokens'
 import CurrencyInputPanel from '../../features/meowshi/CurrencyInputPanel'
 import HeaderToggle from '../../features/meowshi/HeaderToggle'
 import MeowshiButton from '../../features/meowshi/MeowshiButton'
@@ -57,11 +57,11 @@ export default function Meowshi() {
     async (val, field) => {
       setFields((prevState) => {
         const inputRate =
-          currencies[Field.INPUT] === XSHACK
+          currencies[Field.INPUT] === XRADIO
             ? meowshiPerXSushi.mul(e10(5))
             : meowshiPerXSushi.mul(e10(5)).mulDiv(e10(18), sushiPerXSushi.toString().toBigNumber(18))
         const outputRate =
-          currencies[Field.OUTPUT] === XSHACK
+          currencies[Field.OUTPUT] === XRADIO
             ? xSushiPerMeowshi.div(e10(5))
             : xSushiPerMeowshi.mulDiv(sushiPerXSushi.toString().toBigNumber(18), e10(18)).div(e10(5))
 
