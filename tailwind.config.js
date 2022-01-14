@@ -157,11 +157,11 @@ module.exports = {
     require('tailwindcss-border-gradient-radius'),
     plugin(function ({ addUtilities }) {
       addUtilities({
-        '.header-border-b': {
-          background:
-            'linear-gradient(to right, rgba(39, 176, 230, 0.2) 0%, rgba(250, 82, 160, 0.2) 100%) left bottom no-repeat',
-          backgroundSize: '100% 1px',
-        },
+        // '.header-border-b': {
+        //   background:
+        //     'linear-gradient(to right, rgba(39, 176, 230, 0.2) 0%, rgba(250, 82, 160, 0.2) 100%) left bottom no-repeat',
+        //   backgroundSize: '100% 1px',
+        // },
       })
     }),
   ],
