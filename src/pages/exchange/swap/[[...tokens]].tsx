@@ -593,7 +593,7 @@ export default function Swap() {
               {i18n._(t`Unsupported Asset`)}
             </Button>
           ) : !account ? (
-            <Web3Connect size="lg" className="absolute w-1/3 left-[208px]" />
+            <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
           ) : showWrap ? (
             <Button color="gradient" size="lg" disabled={Boolean(wrapInputError)} onClick={onWrap}>
               {wrapInputError ??

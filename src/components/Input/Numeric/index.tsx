@@ -4,7 +4,7 @@ import React from 'react'
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
-const defaultClassName = 'w-0 p-0 text-2xl bg-transparent text-mh3'
+const defaultClassName = 'w-0 p-0 text-1xl bg-transparent text-mh3'
 
 export const Input = React.memo(
   ({
