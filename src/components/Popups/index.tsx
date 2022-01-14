@@ -12,9 +12,10 @@ const Popups: FC = () => {
   return (
     <>
       <div
-        className={`hidden md:block fixed right-[36px] max-w-[355px] w-full z-3 flex flex-col ${
+        className={`hidden md:block fixed right-[36px] max-w-[355px] w-full flex flex-col ${
           urlWarningActive ? 'top-[108px]' : 'top-[88px]'
         }`}
+        style={{ zIndex: 1000 }}
       >
         {activePopups.map((item) => (
           <PopupItem key={item.key} content={item.content} popKey={item.key} removeAfterMs={item.removeAfterMs} />
