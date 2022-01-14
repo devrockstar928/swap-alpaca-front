@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import Input from '../../components/Input'
 import Typography from '../../components/Typography'
-import { RADIO } from '../../config/tokens'
+import { RADIO, sRADIO } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
@@ -26,7 +26,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
   const balance = useTokenBalance(account, currency)
   const inputUSDCValue = useUSDCValue(tryParseAmount(fields[field], currencies[field]))
   const balanceUSDCValue = useUSDCValue(balance)
-  const sRADIO = sRADIO[chainId]
+  const sRadio = sRADIO[chainId]
 
   return (
     <>
@@ -38,7 +38,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
                 src={
                   currency === RADIO[chainId]
                     ? '/images/tokens/radio-square.jpg'
-                    : currency === sRADIO
+                    : currency === sRadio
                     ? '/images/tokens/s-radio-square.jpg'
                     : '/images/tokens/nyan-square.jpg'
                 }
@@ -52,11 +52,11 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
                 <Typography variant="h3" className="leading-6 text-high-emphesis" weight={700}>
                   {currency?.symbol}
                 </Typography>
-                {(currency === RADIO[chainId] || currency === sRADIO) && (
+                {(currency === RADIO[chainId] || currency === sRadio) && (
                   <Typography
                     variant="xs"
                     className="underline cursor-pointer text-blue"
-                    onClick={() => setCurrency(currency === sRADIO ? RADIO[chainId] : sRADIO, field)}
+                    onClick={() => setCurrency(currency === sRadio ? RADIO[chainId] : sRadio, field)}
                   >
                     {currencies[field] === RADIO[chainId] ? i18n._(t`Use sRADIO`) : i18n._(t`Use RADIO`)}
                   </Typography>
