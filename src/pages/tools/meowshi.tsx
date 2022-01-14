@@ -7,7 +7,7 @@ import Image from 'next/image'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import Container from '../../components/Container'
 import Typography from '../../components/Typography'
-import { MEOW, RADIO, XRADIO } from '../../config/tokens'
+import { MEOW, RADIO, sRADIO } from '../../config/tokens'
 import CurrencyInputPanel from '../../features/meowshi/CurrencyInputPanel'
 import HeaderToggle from '../../features/meowshi/HeaderToggle'
 import MeowshiButton from '../../features/meowshi/MeowshiButton'
@@ -57,11 +57,11 @@ export default function Meowshi() {
     async (val, field) => {
       setFields((prevState) => {
         const inputRate =
-          currencies[Field.INPUT] === XRADIO
+          currencies[Field.INPUT] === sRADIO
             ? meowshiPerXSushi.mul(e10(5))
             : meowshiPerXSushi.mul(e10(5)).mulDiv(e10(18), sushiPerXSushi.toString().toBigNumber(18))
         const outputRate =
-          currencies[Field.OUTPUT] === XRADIO
+          currencies[Field.OUTPUT] === sRADIO
             ? xSushiPerMeowshi.div(e10(5))
             : xSushiPerMeowshi.mulDiv(sushiPerXSushi.toString().toBigNumber(18), e10(18)).div(e10(5))
 
@@ -144,7 +144,7 @@ export default function Meowshi() {
         <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2 rounded flex flex-row items-center gap-4 mb-[54px]">
           <InformationCircleIcon width={48} height={48} color="pink" />
           <Typography variant="xs" weight={700}>
-            {i18n._(t`MEOW tokens wrap xRADIO into BentoBox for double yields and can be
+            {i18n._(t`MEOW tokens wrap sRADIO into BentoBox for double yields and can be
               used to vote in special MEOW governor contracts.`)}
           </Typography>
         </div>
@@ -163,7 +163,7 @@ export default function Meowshi() {
             {currencies[Field.INPUT]?.symbol} →{' '}
             {(currencies[Field.INPUT] === RADIO[ChainId.MAINNET] ||
               currencies[Field.OUTPUT] === RADIO[ChainId.MAINNET]) &&
-              ' xRADIO → '}
+              ' sRADIO → '}
             {currencies[Field.OUTPUT]?.symbol}
           </Typography>
         </div>

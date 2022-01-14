@@ -3,7 +3,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ChainId, CurrencyAmount, RADIO_ADDRESS, Token } from '@radioshackswap/sdk'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { CRXSUSHI, RADIO, XRADIO } from '../../../config/tokens'
+import { CRXSUSHI, RADIO, sRADIO } from '../../../config/tokens'
 import { tryParseAmount } from '../../../functions'
 import { useApproveCallback } from '../../../hooks/useApproveCallback'
 import { useInariContract, useZenkoContract } from '../../../hooks/useContract'
@@ -15,14 +15,14 @@ import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   name: i18n._(t`RADIO → Cream`),
-  steps: [i18n._(t`RADIO`), i18n._(t`xSHACK`), i18n._(t`Cream`)],
+  steps: [i18n._(t`RADIO`), i18n._(t`sRADIO`), i18n._(t`Cream`)],
   zapMethod: 'stakeSushiToCream',
   unzapMethod: 'unstakeSushiFromCream',
   description: i18n._(
-    t`Stake RADIO for xSHACK and deposit into Cream in one click. xSHACK in Cream (crXSUSHI) can be lent or used as collateral for borrowing.`
+    t`Stake RADIO for sRADIO and deposit into Cream in one click. sRADIO in Cream (crXSUSHI) can be lent or used as collateral for borrowing.`
   ),
   inputSymbol: i18n._(t`RADIO`),
-  outputSymbol: i18n._(t`xSHACK in Cream`),
+  outputSymbol: i18n._(t`sRADIO in Cream`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
@@ -36,7 +36,7 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
     chainId: ChainId.MAINNET,
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
-    symbol: 'XRADIO',
+    symbol: 'sRADIO',
   },
 }
 
@@ -69,7 +69,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
     [zenkoContract]
   )
 
-  // Run before executing transaction creation by transforming from xSHACK value to crXSUSHI value
+  // Run before executing transaction creation by transforming from sRADIO value to crXSUSHI value
   // As you will be spending crXSUSHI when unzapping from this strategy
   const preExecute = useCallback(
     async (val: CurrencyAmount<Token>) => {
@@ -87,14 +87,14 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
     if (!zenkoContract || !balances) return
 
     const main = async () => {
-      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', XRADIO[chainId])
+      if (!balances[CRXSUSHI.address]) return tryParseAmount('0', sRADIO[chainId])
       const bal = await zenkoContract.fromCtoken(
         CRXSUSHI.address,
         balances[CRXSUSHI.address].toFixed().toBigNumber(CRXSUSHI.decimals).toString()
       )
       setBalances({
         inputTokenBalance: balances[RADIO[chainId].address],
-        outputTokenBalance: CurrencyAmount.fromRawAmount(XRADIO[chainId], bal.toString()),
+        outputTokenBalance: CurrencyAmount.fromRawAmount(sRADIO[chainId], bal.toString()),
       })
     }
 
