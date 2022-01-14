@@ -12,7 +12,7 @@ const TOOLS = (i18n: I18n) => [
   {
     id: 1,
     name: 'MEOWSHI',
-    description: i18n._(t`Redenominate xRADIO into MEOWSHI`),
+    description: i18n._(t`Redenominate sRADIO into MEOWSHI`),
     href: '/tools/meowshi',
   },
   {

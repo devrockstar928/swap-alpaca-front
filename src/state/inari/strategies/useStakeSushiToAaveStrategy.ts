@@ -11,14 +11,14 @@ import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   name: i18n._(t`RADIO → Aave`),
-  steps: [i18n._(t`RADIO`), i18n._(t`xSHACK`), i18n._(t`Aave`)],
+  steps: [i18n._(t`RADIO`), i18n._(t`sRADIO`), i18n._(t`Aave`)],
   zapMethod: 'stakeSushiToAave',
   unzapMethod: 'unstakeSushiFromAave',
   description: i18n._(
-    t`Stake RADIO for xSHACK and deposit into Aave in one click. xSHACK in Aave (aXSUSHI) can be lent or used as collateral for borrowing.`
+    t`Stake RADIO for sRADIO and deposit into Aave in one click. sRADIO in Aave (aXSUSHI) can be lent or used as collateral for borrowing.`
   ),
   inputSymbol: i18n._(t`RADIO`),
-  outputSymbol: i18n._(t`xSHACK in Aave`),
+  outputSymbol: i18n._(t`sRADIO in Aave`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {

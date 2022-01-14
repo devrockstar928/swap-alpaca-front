@@ -1239,7 +1239,7 @@ const MAINNET_CHAINLINK_MAPPING = {
     fromDecimals: 18,
     toDecimals: 8,
   },
-  // XRADIO / ETH (Not Chainlink)
+  // sRADIO / ETH (Not Chainlink)
   '0xAE51d1f913eDB0f80562F270017806f3e9566029': {
     from: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     to: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',

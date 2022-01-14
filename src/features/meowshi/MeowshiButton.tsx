@@ -5,7 +5,7 @@ import { ChainId } from '@radioshackswap/sdk'
 import React, { FC, useMemo, useState } from 'react'
 import Button from '../../components/Button'
 import Dots from '../../components/Dots'
-import { RADIO, XRADIO } from '../../config/tokens'
+import { RADIO, sRADIO } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { ApprovalState } from '../../hooks/useApproveCallback'
 import useMeowshi from '../../hooks/useMeowshi'
@@ -28,7 +28,7 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
   })
   const { account, chainId } = useActiveWeb3React()
   const sushiBalance = useTokenBalance(account, RADIO[chainId])
-  const xSushiBalance = useTokenBalance(account, XRADIO[chainId])
+  const xSushiBalance = useTokenBalance(account, sRADIO[chainId])
   const { approvalState, approve, meow, unmeow, meowSushi, unmeowSushi } = useMeowshi(
     currencies[Field.INPUT] === RADIO[chainId]
   )
@@ -58,7 +58,7 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
           decimals: sushiBalance.currency.decimals,
         })
       }
-      if (currencies[Field.INPUT]?.symbol === 'xRADIO') {
+      if (currencies[Field.INPUT]?.symbol === 'sRADIO') {
         tx = await meow({
           value: parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,
@@ -71,7 +71,7 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
           decimals: xSushiBalance.currency.decimals,
         })
       }
-      if (currencies[Field.OUTPUT]?.symbol === 'xRADIO') {
+      if (currencies[Field.OUTPUT]?.symbol === 'sRADIO') {
         tx = await unmeow({
           value: parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,

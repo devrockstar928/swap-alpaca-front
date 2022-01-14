@@ -1,7 +1,7 @@
 import { Popover } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
+import { BAR_ADDRESS, ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -80,7 +80,7 @@ function AppBar(): JSX.Element {
                       library &&
                       library.provider.isMetaMask && (
                         <>
-                          <QuestionHelper text={i18n._(t`Add xRADIO to your MetaMask wallet`)}>
+                          <QuestionHelper text={i18n._(t`Add sRADIO to your MetaMask wallet`)}>
                             <div
                               className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800"
                               onClick={() => {
@@ -88,8 +88,8 @@ function AppBar(): JSX.Element {
                                   const params: any = {
                                     type: 'ERC20',
                                     options: {
-                                      address: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                      symbol: 'XRADIO',
+                                      address: BAR_ADDRESS[chainId],
+                                      symbol: 'sRADIO',
                                       decimals: 18,
                                       image:
                                         'https://user-images.githubusercontent.com/89943761/149034857-5ebd3f05-ddc9-4a35-9085-11d38bada2a1.png',
@@ -102,7 +102,7 @@ function AppBar(): JSX.Element {
                                     })
                                     .then((success) => {
                                       if (success) {
-                                        console.log('Successfully added XRADIO to MetaMask')
+                                        console.log('Successfully added sRADIO to MetaMask')
                                       } else {
                                         throw new Error('Something went wrong.')
                                       }
@@ -113,7 +113,7 @@ function AppBar(): JSX.Element {
                             >
                               <Image
                                 src="/images/tokens/s-radio-square.jpg"
-                                alt="xRADIO"
+                                alt="sRADIO"
                                 width="38px"
                                 height="38px"
                                 objectFit="contain"

@@ -20,7 +20,7 @@ export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
   steps: [i18n._(t`RADIO`), i18n._(t`crXSUSHI`), i18n._(t`BentoBox`)],
   zapMethod: 'stakeSushiToCreamToBento',
   unzapMethod: 'unstakeSushiFromCreamFromBento',
-  description: i18n._(t`Stake RADIO for xSHACK into Cream and deposit crXSUSHI into BentoBox in one click.`),
+  description: i18n._(t`Stake RADIO for sRADIO into Cream and deposit crXSUSHI into BentoBox in one click.`),
   inputSymbol: i18n._(t`RADIO`),
   outputSymbol: i18n._(t`crXSUSHI in BentoBox`),
 })

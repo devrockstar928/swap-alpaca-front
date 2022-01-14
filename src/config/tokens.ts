@@ -218,11 +218,11 @@ export const XSUSHI_CALL = new Token(
   '0xada279f9301C01A4eF914127a6C2a493Ad733924',
   18,
   'XSUc25-0531',
-  'XRADIO 25 Call [31 May 2021]'
+  'sRADIO 25 Call [31 May 2021]'
 )
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WBTC', 'Wrapped BTC')
 
-// export const XRADIO = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSHACK', 'RadioBar')
+// export const sRADIO = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'sRADIO', 'RadioBar')
 
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
@@ -247,7 +247,7 @@ export const AXSUSHI = new Token(
   '0xF256CC7847E919FAc9B808cC216cAc87CCF2f47a',
   18,
   'aXSUSHI',
-  'Aave interest bearing XRADIO'
+  'Aave interest bearing sRADIO'
 )
 
 export const DPI = new Token(ChainId.MAINNET, '0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b', 18, 'DefiPulse', 'DPI')
@@ -296,10 +296,10 @@ export const RADIO: ChainTokenMap = {
   // [ChainId.TELOS]: new Token(ChainId.TELOS, RADIO_ADDRESS[ChainId.TELOS], 18, 'RADIO', 'RadioToken'),
 }
 
-export const XRADIO: ChainTokenMap = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, BAR_ADDRESS[ChainId.MAINNET], 18, 'XRADIO', 'The Shark'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, BAR_ADDRESS[ChainId.RINKEBY], 18, 'XRADIO', 'The Shark'),
-  [ChainId.MATIC]: new Token(ChainId.MATIC, BAR_ADDRESS[ChainId.MATIC], 18, 'XRADIO', 'The Shark'),
+export const sRADIO: ChainTokenMap = {
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, BAR_ADDRESS[ChainId.MAINNET], 18, 'sRADIO', 'Staking RADIO'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, BAR_ADDRESS[ChainId.RINKEBY], 18, 'sRADIO', 'Staking RADIO'),
+  [ChainId.MATIC]: new Token(ChainId.MATIC, BAR_ADDRESS[ChainId.MATIC], 18, 'sRADIO', 'Staking RADIO'),
 }
 
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {
