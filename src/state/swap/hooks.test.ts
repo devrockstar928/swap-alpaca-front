@@ -1,10 +1,10 @@
-import { ChainId, SHACK_ADDRESS } from '@radioshackswap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import { parse } from 'qs'
 import { Field } from './actions'
 import { queryParametersToSwapState } from './hooks'
 
 describe('hooks', () => {
-  const sushiAddress = SHACK_ADDRESS[ChainId.MAINNET]
+  const sushiAddress = RADIO_ADDRESS[ChainId.MAINNET]
   describe('#queryParametersToSwapState', () => {
     test('ETH to DAI', () => {
       expect(

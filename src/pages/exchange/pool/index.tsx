@@ -5,13 +5,11 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 import Alert from '../../../components/Alert'
-import Back from '../../../components/Back'
 import Button from '../../../components/Button'
 import Container from '../../../components/Container'
 import Dots from '../../../components/Dots'
 import Empty from '../../../components/Empty'
 import FullPositionCard from '../../../components/PositionCard'
-import Typography from '../../../components/Typography'
 import Web3Connect from '../../../components/Web3Connect'
 import { MigrationSupported } from '../../../features/migration'
 import { classNames, currencyId } from '../../../functions'
@@ -29,7 +27,7 @@ export default function Pool() {
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
-  //console.log('trackedTokenPairs=', trackedTokenPairs.filter(t => (t[0] as any)?.tokenInfo?.symbol == 'SHACK' || (t[1] as any)?.tokenInfo?.symbol == 'SHACK'));
+  //console.log('trackedTokenPairs=', trackedTokenPairs.filter(t => (t[0] as any)?.tokenInfo?.symbol == 'RADIO' || (t[1] as any)?.tokenInfo?.symbol == 'RADIO'));
   const tokenPairsWithLiquidityTokens = useMemo(
     () =>
       trackedTokenPairs.map((tokens) => ({

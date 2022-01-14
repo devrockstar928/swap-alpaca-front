@@ -7,7 +7,7 @@ import Image from 'next/image'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import Container from '../../components/Container'
 import Typography from '../../components/Typography'
-import { MEOW, SHACK, XSHACK } from '../../config/tokens'
+import { MEOW, RADIO, XSHACK } from '../../config/tokens'
 import CurrencyInputPanel from '../../features/meowshi/CurrencyInputPanel'
 import HeaderToggle from '../../features/meowshi/HeaderToggle'
 import MeowshiButton from '../../features/meowshi/MeowshiButton'
@@ -49,7 +49,7 @@ export default function Meowshi() {
   })
 
   const [currencies, setCurrencies] = useState({
-    [Field.INPUT]: SHACK[ChainId.MAINNET],
+    [Field.INPUT]: RADIO[ChainId.MAINNET],
     [Field.OUTPUT]: MEOW,
   })
 
@@ -144,7 +144,7 @@ export default function Meowshi() {
         <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2 rounded flex flex-row items-center gap-4 mb-[54px]">
           <InformationCircleIcon width={48} height={48} color="pink" />
           <Typography variant="xs" weight={700}>
-            {i18n._(t`MEOW tokens wrap xSHACK into BentoBox for double yields and can be
+            {i18n._(t`MEOW tokens wrap xRADIO into BentoBox for double yields and can be
               used to vote in special MEOW governor contracts.`)}
           </Typography>
         </div>
@@ -161,9 +161,9 @@ export default function Meowshi() {
           </div>
           <Typography variant="sm" className="text-secondary ml-[26px]">
             {currencies[Field.INPUT]?.symbol} →{' '}
-            {(currencies[Field.INPUT] === SHACK[ChainId.MAINNET] ||
-              currencies[Field.OUTPUT] === SHACK[ChainId.MAINNET]) &&
-              ' xSHACK → '}
+            {(currencies[Field.INPUT] === RADIO[ChainId.MAINNET] ||
+              currencies[Field.OUTPUT] === RADIO[ChainId.MAINNET]) &&
+              ' xRADIO → '}
             {currencies[Field.OUTPUT]?.symbol}
           </Typography>
         </div>

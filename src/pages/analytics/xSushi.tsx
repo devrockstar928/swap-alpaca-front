@@ -1,4 +1,4 @@
-import { SHACK_ADDRESS } from '@radioshackswap/sdk'
+import { RADIO_ADDRESS } from '@radioshackswap/sdk'
 import React, { useMemo } from 'react'
 import ScrollableGraph from '../../components/ScrollableGraph'
 import { XSHACK } from '../../config/tokens'
@@ -44,7 +44,7 @@ export default function XSushi() {
     variables: { block: block1d, where: { id: XSHACK[chainId].address.toLowerCase() } },
   })?.[0]
 
-  const sushiDayData = useTokenDayData({ token: SHACK_ADDRESS['1'], chainId })
+  const sushiDayData = useTokenDayData({ token: RADIO_ADDRESS['1'], chainId })
 
   const bar = useBar()
 
@@ -176,8 +176,8 @@ export default function XSushi() {
         <div className="flex flex-row space-x-4 overflow-auto">
           <InfoCard text="APY (Last 24 Hours)" number={formatPercent(APY1d)} />
           <InfoCard text="APY (Last 7 Days)" number={formatPercent(APY1w)} />
-          <InfoCard text="xSHACK Supply" number={formatNumber(bar?.totalSupply)} />
-          <InfoCard text="xSHACK : SHACK" number={Number(bar?.ratio ?? 0)?.toFixed(4)} />
+          <InfoCard text="xRADIO Supply" number={formatNumber(bar?.totalSupply)} />
+          <InfoCard text="xRADIO : RADIO" number={Number(bar?.ratio ?? 0)?.toFixed(4)} />
         </div>
         <div className="space-y-4">
           {graphs.map((graph, i) => (

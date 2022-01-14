@@ -1,9 +1,9 @@
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, CurrencyAmount, SHACK_ADDRESS, Token } from '@radioshackswap/sdk'
+import { ChainId, CurrencyAmount, RADIO_ADDRESS, Token } from '@radioshackswap/sdk'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { CRXSUSHI, SHACK, XSHACK } from '../../../config/tokens'
+import { CRXSUSHI, RADIO, XSHACK } from '../../../config/tokens'
 import { tryParseAmount } from '../../../functions'
 import { useApproveCallback } from '../../../hooks/useApproveCallback'
 import { useInariContract, useZenkoContract } from '../../../hooks/useContract'
@@ -14,23 +14,23 @@ import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../
 import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
-  name: i18n._(t`SHACK → Cream`),
-  steps: [i18n._(t`SHACK`), i18n._(t`xSHACK`), i18n._(t`Cream`)],
+  name: i18n._(t`RADIO → Cream`),
+  steps: [i18n._(t`RADIO`), i18n._(t`xSHACK`), i18n._(t`Cream`)],
   zapMethod: 'stakeSushiToCream',
   unzapMethod: 'unstakeSushiFromCream',
   description: i18n._(
-    t`Stake SHACK for xSHACK and deposit into Cream in one click. xSHACK in Cream (crXSUSHI) can be lent or used as collateral for borrowing.`
+    t`Stake RADIO for xSHACK and deposit into Cream in one click. xSHACK in Cream (crXSUSHI) can be lent or used as collateral for borrowing.`
   ),
-  inputSymbol: i18n._(t`SHACK`),
+  inputSymbol: i18n._(t`RADIO`),
   outputSymbol: i18n._(t`xSHACK in Cream`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
     chainId: ChainId.MAINNET,
-    address: SHACK_ADDRESS[ChainId.MAINNET],
+    address: RADIO_ADDRESS[ChainId.MAINNET],
     decimals: 18,
-    symbol: 'SHACK',
+    symbol: 'RADIO',
   },
   outputToken: {
     chainId: ChainId.MAINNET,
@@ -46,7 +46,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
   const { zapIn, inputValue } = useDerivedInariState()
   const zenkoContract = useZenkoContract()
   const inariContract = useInariContract()
-  const balances = useTokenBalances(account, [SHACK[chainId], CRXSUSHI])
+  const balances = useTokenBalances(account, [RADIO[chainId], CRXSUSHI])
   const cTokenAmountRef = useRef<CurrencyAmount<Token>>(null)
   const approveAmount = useMemo(() => (zapIn ? inputValue : cTokenAmountRef.current), [inputValue, zapIn])
 
@@ -93,7 +93,7 @@ const useStakeSushiToCreamStrategy = (): StrategyHook => {
         balances[CRXSUSHI.address].toFixed().toBigNumber(CRXSUSHI.decimals).toString()
       )
       setBalances({
-        inputTokenBalance: balances[SHACK[chainId].address],
+        inputTokenBalance: balances[RADIO[chainId].address],
         outputTokenBalance: CurrencyAmount.fromRawAmount(XSHACK[chainId], bal.toString()),
       })
     }

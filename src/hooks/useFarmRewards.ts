@@ -105,7 +105,7 @@ export default function useFarmRewards() {
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
-        token: 'SHACK',
+        token: 'RADIO',
         icon: 'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2.jpg',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,

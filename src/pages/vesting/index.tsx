@@ -59,7 +59,7 @@ const Strategies = () => {
                 <div
                   className={`bg-dark-900 cursor-pointer border border-transparent pl-5 py-2 rounded whitespace-nowrap w-full font-bold h-[48px] flex items-center text-sm`}
                 >
-                  {'SHACK → MEOW'}
+                  {'RADIO → MEOW'}
                 </div>
               </Link>
             </div>
@@ -221,8 +221,8 @@ const ProtocolVesting = () => {
       <div className="relative w-full h-full overflow-hidden rounded bg-dark-900">
         <div className="flex flex-col gap-3 p-4">
           <div className="flex flex-row justify-between">
-            <div className="font-bold text-white">{i18n._(t`Claimable SHACK from Protocols`)}</div>
-            <QuestionHelper text="If you participated in staking progammes from Alpha Homora, Cream, DefiDollar, Dracula, Harvest, Pickle, Yam, or Badger you can claim your vested SHACK directly here" />
+            <div className="font-bold text-white">{i18n._(t`Claimable RADIO from Protocols`)}</div>
+            <QuestionHelper text="If you participated in staking progammes from Alpha Homora, Cream, DefiDollar, Dracula, Harvest, Pickle, Yam, or Badger you can claim your vested RADIO directly here" />
           </div>
           {/* <div style={{ display: 'flex', alignItems: 'baseline' }}> */}
           <div className="flex flex-col items-baseline pb-4">
@@ -232,7 +232,7 @@ const ProtocolVesting = () => {
             {account ? (
               <div className="text-sm text-secondary">
                 {totalLocked ? (
-                  i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} SHACK`)
+                  i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} RADIO`)
                 ) : (
                   <Dots>{i18n._(t`Historical Total Locked: Fetching Total`)}</Dots>
                 )}
@@ -266,7 +266,7 @@ const ProtocolVesting = () => {
             {pendingTreasurySignature ? (
               <Dots>{i18n._(t`Pending Treasury Transfer`)}</Dots>
             ) : (
-              <> {claimConfirmed ? i18n._(t`Claimed`) : i18n._(t`Claim SHACK`)}</>
+              <> {claimConfirmed ? i18n._(t`Claimed`) : i18n._(t`Claim RADIO`)}</>
             )}
 
             {attempting && (
@@ -356,8 +356,8 @@ const WeeklyVesting = () => {
       <div className="relative w-full h-full overflow-hidden rounded bg-dark-900">
         <div className="flex flex-col gap-3 p-4">
           <div className="flex flex-row justify-between">
-            <div className="font-bold text-white">{i18n._(t`Your Claimable SHACK this Week`)}</div>
-            <QuestionHelper text="Your Vested SHACK will be released each week for the next 6 months. The amount released each week is determined by your historical farming rewards. You do not need to harvest each week as unclaimed amounts from each week will continue to accrue onto the next." />
+            <div className="font-bold text-white">{i18n._(t`Your Claimable RADIO this Week`)}</div>
+            <QuestionHelper text="Your Vested RADIO will be released each week for the next 6 months. The amount released each week is determined by your historical farming rewards. You do not need to harvest each week as unclaimed amounts from each week will continue to accrue onto the next." />
           </div>
           {/* <div style={{ display: 'flex', alignItems: 'baseline' }}> */}
           <div className="flex flex-col items-baseline pb-4">
@@ -367,7 +367,7 @@ const WeeklyVesting = () => {
             {account ? (
               <div className="text-sm text-secondary">
                 {totalLocked ? (
-                  i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} SHACK`)
+                  i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} RADIO`)
                 ) : (
                   <Dots>{i18n._(t`Historical Total Locked: Fetching Total`)}</Dots>
                 )}
@@ -401,7 +401,7 @@ const WeeklyVesting = () => {
             {pendingTreasurySignature ? (
               <Dots>{i18n._(t`Pending Treasury Transfer`)}</Dots>
             ) : (
-              <> {claimConfirmed ? i18n._(t`Claimed`) : i18n._(t`Claim SHACK`)}</>
+              <> {claimConfirmed ? i18n._(t`Claimed`) : i18n._(t`Claim RADIO`)}</>
             )}
 
             {attempting && (

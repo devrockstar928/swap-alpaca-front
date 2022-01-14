@@ -1,32 +1,32 @@
 import { I18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, SHACK_ADDRESS } from '@radioshackswap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import { useEffect, useMemo } from 'react'
-import { AXSUSHI, SHACK } from '../../../config/tokens'
+import { AXSUSHI, RADIO } from '../../../config/tokens'
 import { useActiveWeb3React } from '../../../services/web3'
 import { useTokenBalances } from '../../wallet/hooks'
 import { StrategyGeneralInfo, StrategyHook, StrategyTokenDefinitions } from '../types'
 import useBaseStrategy from './useBaseStrategy'
 
 export const GENERAL = (i18n: I18n): StrategyGeneralInfo => ({
-  name: i18n._(t`SHACK → Aave`),
-  steps: [i18n._(t`SHACK`), i18n._(t`xSHACK`), i18n._(t`Aave`)],
+  name: i18n._(t`RADIO → Aave`),
+  steps: [i18n._(t`RADIO`), i18n._(t`xSHACK`), i18n._(t`Aave`)],
   zapMethod: 'stakeSushiToAave',
   unzapMethod: 'unstakeSushiFromAave',
   description: i18n._(
-    t`Stake SHACK for xSHACK and deposit into Aave in one click. xSHACK in Aave (aXSUSHI) can be lent or used as collateral for borrowing.`
+    t`Stake RADIO for xSHACK and deposit into Aave in one click. xSHACK in Aave (aXSUSHI) can be lent or used as collateral for borrowing.`
   ),
-  inputSymbol: i18n._(t`SHACK`),
+  inputSymbol: i18n._(t`RADIO`),
   outputSymbol: i18n._(t`xSHACK in Aave`),
 })
 
 export const tokenDefinitions: StrategyTokenDefinitions = {
   inputToken: {
     chainId: ChainId.MAINNET,
-    address: SHACK_ADDRESS[ChainId.MAINNET],
+    address: RADIO_ADDRESS[ChainId.MAINNET],
     decimals: 18,
-    symbol: 'SHACK',
+    symbol: 'RADIO',
   },
   outputToken: {
     chainId: ChainId.MAINNET,
@@ -39,7 +39,7 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
 const useStakeSushiToAaveStrategy = (): StrategyHook => {
   const { i18n } = useLingui()
   const { account } = useActiveWeb3React()
-  const balances = useTokenBalances(account, [SHACK[ChainId.MAINNET], AXSUSHI])
+  const balances = useTokenBalances(account, [RADIO[ChainId.MAINNET], AXSUSHI])
   const general = useMemo(() => GENERAL(i18n), [i18n])
   const { setBalances, ...strategy } = useBaseStrategy({
     id: 'stakeSushiToAaveStrategy',
@@ -51,7 +51,7 @@ const useStakeSushiToAaveStrategy = (): StrategyHook => {
     if (!balances) return
 
     setBalances({
-      inputTokenBalance: balances[SHACK[ChainId.MAINNET].address],
+      inputTokenBalance: balances[RADIO[ChainId.MAINNET].address],
       outputTokenBalance: balances[AXSUSHI.address],
     })
   }, [balances, setBalances])

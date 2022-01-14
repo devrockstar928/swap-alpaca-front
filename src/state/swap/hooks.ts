@@ -5,7 +5,7 @@ import {
   Currency,
   CurrencyAmount,
   Percent,
-  SHACK_ADDRESS,
+  RADIO_ADDRESS,
   Trade as V2Trade,
   TradeType,
   WNATIVE_ADDRESS,
@@ -243,7 +243,7 @@ export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId 
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
-  const sushi = SHACK_ADDRESS[chainId]
+  const sushi = RADIO_ADDRESS[chainId]
 
   if (inputCurrency === '' && outputCurrency === '') {
     inputCurrency = eth

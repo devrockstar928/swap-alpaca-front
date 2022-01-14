@@ -1,7 +1,7 @@
 import { Popover } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, SHACK_ADDRESS } from '@radioshackswap/sdk'
+import { ChainId, RADIO_ADDRESS } from '@radioshackswap/sdk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -80,7 +80,7 @@ function AppBar(): JSX.Element {
                       library &&
                       library.provider.isMetaMask && (
                         <>
-                          <QuestionHelper text={i18n._(t`Add xSHACK to your MetaMask wallet`)}>
+                          <QuestionHelper text={i18n._(t`Add xRADIO to your MetaMask wallet`)}>
                             <div
                               className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800"
                               onClick={() => {
@@ -113,7 +113,7 @@ function AppBar(): JSX.Element {
                             >
                               <Image
                                 src="/images/tokens/s-radio-square.jpg"
-                                alt="xSHACK"
+                                alt="xRADIO"
                                 width="38px"
                                 height="38px"
                                 objectFit="contain"
@@ -124,17 +124,17 @@ function AppBar(): JSX.Element {
                         </>
                       )}
 
-                    {chainId && chainId in SHACK_ADDRESS && library && library.provider.isMetaMask && (
+                    {chainId && chainId in RADIO_ADDRESS && library && library.provider.isMetaMask && (
                       <>
-                        <QuestionHelper text={i18n._(t`Add SHACK to your MetaMask wallet`)}>
+                        <QuestionHelper text={i18n._(t`Add RADIO to your MetaMask wallet`)}>
                           <div
                             className="hidden rounded-md cursor-pointer sm:inline-flex bg-dark-900 hover:bg-dark-800 p-0.5"
                             onClick={() => {
                               const params: any = {
                                 type: 'ERC20',
                                 options: {
-                                  address: SHACK_ADDRESS[chainId],
-                                  symbol: 'SHACK',
+                                  address: RADIO_ADDRESS[chainId],
+                                  symbol: 'RADIO',
                                   decimals: 18,
                                   image:
                                     'https://user-images.githubusercontent.com/89943761/149034841-2e2a3e0c-cc39-4e4e-8004-7f020d4d8199.png',
@@ -148,7 +148,7 @@ function AppBar(): JSX.Element {
                                   })
                                   .then((success) => {
                                     if (success) {
-                                      console.log('Successfully added SHACK to MetaMask')
+                                      console.log('Successfully added RADIO to MetaMask')
                                     } else {
                                       throw new Error('Something went wrong.')
                                     }
@@ -159,7 +159,7 @@ function AppBar(): JSX.Element {
                           >
                             <Image
                               src="/images/tokens/radio-square.jpg"
-                              alt="SHACK"
+                              alt="RADIO"
                               width="38px"
                               height="38px"
                               objectFit="contain"

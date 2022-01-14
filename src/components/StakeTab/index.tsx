@@ -12,7 +12,7 @@ const StakeTab = ({ staking, swithToStake, switchToUnstake }: StakeTabProps) => 
     <div className="flex rounded-[20px] bg-[#13141D] h-[82px]">
       <div className="flex-1 h-full">
         <button className="w-full h-full" onClick={swithToStake}>
-          <div className={staking ? 'text-white' : 'text-[#3B4553]'}>Stake SHACK</div>
+          <div className={staking ? 'text-white' : 'text-[#3B4553]'}>Stake RADIO</div>
         </button>
       </div>
       <div className="relative flex-1">

@@ -15,8 +15,8 @@ import {
   MERKLE_DISTRIBUTOR_ADDRESS,
   MINICHEF_ADDRESS,
   MULTICALL2_ADDRESS,
+  RADIO_ADDRESS,
   ROUTER_ADDRESS,
-  SHACK_ADDRESS,
   TIMELOCK_ADDRESS,
   WNATIVE_ADDRESS,
 } from '@radioshackswap/sdk'
@@ -133,7 +133,7 @@ export function useMulticall2Contract() {
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && SHACK_ADDRESS[chainId], SHACK_ABI, withSignerIfPossible)
+  return useContract(chainId && RADIO_ADDRESS[chainId], SHACK_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import Input from '../../components/Input'
 import Typography from '../../components/Typography'
-import { SHACK, XSHACK } from '../../config/tokens'
+import { RADIO, XSHACK } from '../../config/tokens'
 import { tryParseAmount } from '../../functions'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
@@ -26,7 +26,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
   const balance = useTokenBalance(account, currency)
   const inputUSDCValue = useUSDCValue(tryParseAmount(fields[field], currencies[field]))
   const balanceUSDCValue = useUSDCValue(balance)
-  const xSHACK = XSHACK[chainId]
+  const xRADIO = XSHACK[chainId]
 
   return (
     <>
@@ -36,13 +36,13 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
             <div className="flex items-center gap-4">
               <Image
                 src={
-                  currency === SHACK[chainId]
+                  currency === RADIO[chainId]
                     ? '/images/tokens/radio-square.jpg'
-                    : currency === xSHACK
+                    : currency === xRADIO
                     ? '/images/tokens/s-radio-square.jpg'
                     : '/images/tokens/nyan-square.jpg'
                 }
-                alt="SHACK"
+                alt="RADIO"
                 width="62px"
                 height="62px"
                 objectFit="contain"
@@ -52,13 +52,13 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
                 <Typography variant="h3" className="leading-6 text-high-emphesis" weight={700}>
                   {currency?.symbol}
                 </Typography>
-                {(currency === SHACK[chainId] || currency === xSHACK) && (
+                {(currency === RADIO[chainId] || currency === xRADIO) && (
                   <Typography
                     variant="xs"
                     className="underline cursor-pointer text-blue"
-                    onClick={() => setCurrency(currency === xSHACK ? SHACK[chainId] : xSHACK, field)}
+                    onClick={() => setCurrency(currency === xRADIO ? RADIO[chainId] : xRADIO, field)}
                   >
-                    {currencies[field] === SHACK[chainId] ? i18n._(t`Use xSHACK`) : i18n._(t`Use SHACK`)}
+                    {currencies[field] === RADIO[chainId] ? i18n._(t`Use xRADIO`) : i18n._(t`Use RADIO`)}
                   </Typography>
                 )}
               </div>

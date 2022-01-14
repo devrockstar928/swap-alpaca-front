@@ -7,7 +7,7 @@ import {
   MASTERCHEF_ADDRESS,
   MASTERCHEF_V2_ADDRESS,
   MINICHEF_ADDRESS,
-  SHACK,
+  RADIO,
 } from '@radioshackswap/sdk'
 import concat from 'lodash/concat'
 import zip from 'lodash/zip'
@@ -93,7 +93,7 @@ export function usePendingSushi(farm) {
 
   const amount = value ? JSBI.BigInt(value.toString()) : undefined
 
-  return amount ? CurrencyAmount.fromRawAmount(SHACK[chainId], amount) : undefined
+  return amount ? CurrencyAmount.fromRawAmount(RADIO[chainId], amount) : undefined
 }
 
 export function usePendingToken(farm, contract) {

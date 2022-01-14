@@ -1,4 +1,4 @@
-import { BAR_ADDRESS, ChainId, Currency, SHACK_ADDRESS, WNATIVE } from '@radioshackswap/sdk'
+import { BAR_ADDRESS, ChainId, Currency, RADIO_ADDRESS, WNATIVE } from '@radioshackswap/sdk'
 import React, { FunctionComponent, useMemo } from 'react'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
@@ -57,7 +57,7 @@ export function getCurrencyLogoUrls(currency) {
     )
   }
 
-  if (currency.chainId in BLOCKCHAIN && currency.address === SHACK_ADDRESS[currency.chainId]) {
+  if (currency.chainId in BLOCKCHAIN && currency.address === RADIO_ADDRESS[currency.chainId]) {
     const SHACKLogo =
       'https://user-images.githubusercontent.com/89943761/149034841-2e2a3e0c-cc39-4e4e-8004-7f020d4d8199.png'
     if (urls.length > 1) {
