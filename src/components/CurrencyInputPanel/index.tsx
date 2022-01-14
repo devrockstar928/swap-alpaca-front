@@ -70,7 +70,6 @@ export default function CurrencyInputPanel({
   const handleDismissSearch = useCallback(() => {
     setModalOpen(false)
   }, [setModalOpen])
-  console.log('onCurrencySelect', currency)
   var inputCurrencyWidth = 'sm:w-2/5'
   var inputValueWidth = 'sm:w-3/5'
 
