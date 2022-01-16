@@ -53,8 +53,8 @@ export default function CurrencySelectPanel({
               {currency ? (
                 <CurrencyLogo currency={currency} size={'54px'} />
               ) : (
-                <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
-                  <div style={{ width: 54, height: 54 }}>
+                <div className="rounded bg-light-700" style={{ maxWidth: 24, maxHeight: 24 }}>
+                  <div style={{ width: 24, height: 24 }}>
                     <Lottie animationData={selectCoinAnimation} autoplay loop />
                   </div>
                 </div>

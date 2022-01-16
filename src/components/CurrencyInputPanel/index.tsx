@@ -93,7 +93,7 @@ export default function CurrencyInputPanel({
               }
             }}
           >
-            <div className="flex">
+            <div className="flex items-center">
               {pair ? (
                 <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={54} margin={true} />
               ) : currency ? (
@@ -101,8 +101,8 @@ export default function CurrencyInputPanel({
                   <CurrencyLogo currency={currency} size={'24px'} />
                 </div>
               ) : (
-                <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
-                  <div style={{ width: 54, height: 54 }}>
+                <div className="rounded bg-light-700" style={{ maxWidth: 24, maxHeight: 24 }}>
+                  <div style={{ width: 24, height: 24 }}>
                     <Lottie animationData={selectCoinAnimation} autoplay loop />
                   </div>
                 </div>
