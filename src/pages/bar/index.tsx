@@ -190,16 +190,13 @@ export default function Stake() {
         />
       </Head>
       <div className="flex flex-col w-full min-h-full">
-        <div className="flex justify-center mb-6">
+        {/* <div className="flex justify-center mb-6">
           <div className="flex px-8 pt-6 bg-gradient-to-br from-[#26313F] to-[#0E0D14] rounded-[32px]">
             <div className="flex flex-col w-full max-w-xl mt-auto mb-2">
               <div className="flex max-w-lg">
                 <div className="self-end mb-3 text-lg font-bold md:text-2xl text-high-emphesis md:mb-7">
                   {i18n._(t`Maximize yield by staking RADIO for sRADIO`)}
                 </div>
-                {/* <div className="self-start pl-6 pr-3 mb-1 min-w-max md:hidden">
-                                <img src={XSushiSignSmall} alt="xsushi sign" />
-                            </div> */}
               </div>
               <div className="max-w-lg pr-3 mb-2 text-sm leading-5 text-gray-500 md:text-base md:mb-4 md:pr-0">
                 {i18n._(t`For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as RADIO
@@ -213,7 +210,7 @@ export default function Stake() {
               <Image src="/images/bar/rocket.png" alt="sRADIO sign" width="100%" height="100%" layout="responsive" />
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col justify-center md:flex-row">
           <div className="flex flex-col w-full max-w-xl mx-auto mb-4 md:m-0">
             {chainId === ChainId.MAINNET && (

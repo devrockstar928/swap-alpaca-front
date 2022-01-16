@@ -91,13 +91,13 @@ export default function Pool() {
         />
       </Head>
 
-      <Alert
+      {/* <Alert
         title={i18n._(t`Liquidity Provider Rewards`)}
         message={i18n._(
           t`Liquidity providers earn a 0.25% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity`
         )}
         type="error"
-      />
+      /> */}
 
       <div className="p-4 space-y-4 rounded bg-dark-900">
         <div className="grid grid-flow-row gap-3">
