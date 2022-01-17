@@ -1,6 +1,6 @@
-import { Currency, Percent, Price } from '@radioshackswap/sdk'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Percent, Price } from '@radioshackswap/sdk'
 import React from 'react'
 import Typography from '../../../components/Typography'
 import { ONE_BIPS } from '../../../constants'
@@ -22,16 +22,18 @@ export default function LiquidityPrice({
 }): JSX.Element {
   const { i18n } = useLingui()
   return (
-    <div className={classNames('flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]', className)}>
-      <div className="text-[#C2C4C8]">
-        <Typography variant="sm" className="select-none">
+    <div
+      className={classNames('flex-1 flex flex-col min-h-[262px] justify-center p-4 h-full min-w-[260px]', className)}
+    >
+      <div className="">
+        <Typography variant="sm" className="select-none font-semibold text-black text-[14px]">
           {i18n._(
             t`${price?.toSignificant(6) ?? '-'} ${currencies[Field.CURRENCY_B]?.symbol} = 1 ${
               currencies[Field.CURRENCY_A]?.symbol
             }`
           )}
         </Typography>
-        <Typography variant="sm" className="select-none">
+        <Typography variant="sm" className="select-none font-semibold text-black text-[14px]">
           {i18n._(
             t`${price?.invert()?.toSignificant(6) ?? '-'} ${currencies[Field.CURRENCY_A]?.symbol} = 1 ${
               currencies[Field.CURRENCY_B]?.symbol
@@ -40,15 +42,14 @@ export default function LiquidityPrice({
         </Typography>
       </div>
 
-      <div className="text-[#C2C4C8] pt-4">
-        <Typography variant="sm" className="select-none text-black">
+      <div className="text-[#565A69] pt-4">
+        <Typography variant="sm" className="select-none">
           {noLiquidity && price
             ? '100'
             : (poolTokenPercentage?.lessThan(ONE_BIPS) ? '<0.01' : poolTokenPercentage?.toFixed(2)) ?? '0'}
           % {i18n._(t`Share of Pool`)}
         </Typography>
-        <Typography variant="sm" className="select-none text-black">
-        </Typography>
+        <Typography variant="sm" className="select-none"></Typography>
       </div>
     </div>
   )
