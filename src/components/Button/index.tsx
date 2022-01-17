@@ -95,8 +95,8 @@ export function ButtonConfirmed({
   if (confirmed) {
     return (
       <Button
-        variant="outlined"
-        color="green"
+        variant="filled"
+        color="gray"
         size="lg"
         className={classNames(disabled && 'cursor-not-allowed', 'border opacity-50')}
         disabled={disabled}
@@ -104,7 +104,7 @@ export function ButtonConfirmed({
       />
     )
   } else {
-    return <Button color={disabled ? 'gray' : 'gradient'} size="lg" disabled={disabled} {...rest} />
+    return <Button color="gray" size="lg" disabled={disabled} {...rest} />
   }
 }
 
