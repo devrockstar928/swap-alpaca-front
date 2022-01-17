@@ -1,10 +1,10 @@
-import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { ArrowDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -17,15 +17,15 @@ import { AutoColumn } from '../../../components/Column'
 import Container from '../../../components/Container'
 import CurrencyLogo from '../../../components/CurrencyLogo'
 import Dots from '../../../components/Dots'
-import RadioWithShadow from '../../../components/RadioWithShadow'
 import NavLink from '../../../components/NavLink'
 import PercentInputPanel from '../../../components/PercentInputPanel'
 import { MinimalPositionCard } from '../../../components/PositionCard'
+import RadioWithShadow from '../../../components/RadioWithShadow'
 import { AutoRow, RowBetween } from '../../../components/Row'
 import Web3Connect from '../../../components/Web3Connect'
-import LiquidityPrice from '../../../features/legacy/liquidity/LiquidityPrice'
 import LiquidityHeader from '../../../features/legacy/liquidity/LiquidityHeader'
 import ExchangeHeader from '../../../features/trade/Header'
+import { classNames } from '../../../functions'
 import { currencyId } from '../../../functions/currency'
 import { calculateGasMargin, calculateSlippageAmount } from '../../../functions/trade'
 import { useCurrency } from '../../../hooks/Tokens'
@@ -34,6 +34,7 @@ import { usePairContract, useRouterContract } from '../../../hooks/useContract'
 import useDebouncedChangeHandler from '../../../hooks/useDebouncedChangeHandler'
 import { useV2LiquidityTokenPermit } from '../../../hooks/useERC20Permit'
 import useTransactionDeadline from '../../../hooks/useTransactionDeadline'
+import { PairState } from '../../../hooks/useV2Pairs'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../../modals/TransactionConfirmationModal'
 import { useActiveWeb3React } from '../../../services/web3'
 import { useWalletModalToggle } from '../../../state/application/hooks'
@@ -41,9 +42,6 @@ import { Field } from '../../../state/burn/actions'
 import { useBurnActionHandlers, useBurnState, useDerivedBurnInfo } from '../../../state/burn/hooks'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useUserSlippageToleranceWithDefault } from '../../../state/user/hooks'
-import { PairState } from '../../../hooks/useV2Pairs'
-import { useDerivedMintInfo, useMintActionHandlers, useMintState } from '../../../state/mint/hooks'
-import { classNames } from '../../../functions'
 
 const DEFAULT_REMOVE_LIQUIDITY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 
@@ -460,9 +458,7 @@ export default function Remove() {
                 pendingText={pendingText}
               />
               <div className="flex flex-col space-y-4">
-                {pair && pairState !== PairState.INVALID && (
-                  <LiquidityHeader input={currencyA} output={currencyB} />
-                )}
+                {pair && pairState !== PairState.INVALID && <LiquidityHeader input={currencyA} output={currencyB} />}
                 <AutoColumn gap="md" className="px-6">
                   {/* <LiquidityHeader input={currencyA} output={currencyB} /> */}
 
@@ -474,7 +470,10 @@ export default function Remove() {
                     />
 
                     <AutoColumn justify="center" className="py-2.5">
-                      <AutoRow className={classNames('justify-center', 'px-4 flex-wrap w-full flex')} style={{ padding: '0 1rem' }}>
+                      <AutoRow
+                        className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}
+                        style={{ padding: '0 1rem' }}
+                      >
                         <button className="z-10 -mt-6 -mb-6 rounded-full">
                           <div className="rounded-md border-2 border-white bg-[#F7F8FA] text-gray text-opacity-80 hover:text-opacity-100 md:flex hover:bg-dark-800">
                             <div className="p-1 rounded-full">
@@ -541,14 +540,13 @@ export default function Remove() {
               </div>
               {pair ? <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} /> : null}
             </div>
-            <div className={'flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]'}>
-            </div>
+            <div className={'flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]'}></div>
           </div>
         </div>
         <RadioButtonGrouping>
           <div style={{ position: 'relative' }}>
             {!account ? (
-              <Web3Connect size="lg" color="blue" className="w-full" />
+              <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
             ) : (
               <div className="grid grid-cols-2 gap-4">
                 <ButtonConfirmed
