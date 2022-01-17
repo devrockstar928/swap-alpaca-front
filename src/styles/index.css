@@ -120,6 +120,26 @@ input:focus {
     color: black;
 }
 
+.terms p {
+  margin: 10px 0;
+}
+.terms .indent {
+  margin: 10px 0 10px 60px;
+}
+.terms h1 {
+  margin: 16px 0;
+  font-weight: bold;
+  font-size: 26px;
+}
+.terms h2 {
+  margin: 16px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+.terms li {
+  list-style-type: circle;
+}
+
 /* *::-webkit-scrollbar {
   width: var(--scrollbar-width);
 }
