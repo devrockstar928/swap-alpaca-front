@@ -538,16 +538,17 @@ export default function Remove() {
                   </div>
                 </AutoColumn>
               </div>
+            </div>
+            <div className={'flex-1 flex flex-col min-h-[262px] justify-between h-full min-w-[260px]'}>
               {pair ? <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} /> : null}
             </div>
-            <div className={'flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]'}></div>
           </div>
         </div>
         {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
           <RadioButtonGrouping>
             <div style={{ position: 'relative' }}>
               {!account ? (
-                <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn"/>
+                <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
               ) : (
                 <div className="grid grid-cols-2 gap-4">
                   <ButtonConfirmed
@@ -588,8 +589,7 @@ export default function Remove() {
               {i18n._(t`You are on the wrong network`)}
             </div>
           </RadioButtonGrouping>
-        )
-        }
+        )}
       </RadioWithShadow>
       <div className="px-4 mb-5">
         <NavLink href="/pool">
