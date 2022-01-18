@@ -9,7 +9,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useCallback, useMemo, useState } from 'react'
-import { Plus } from 'react-feather'
+import { Activity, Plus } from 'react-feather'
 import ReactGA from 'react-ga'
 import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
 import Button, { ButtonConfirmed, ButtonError } from '../../../components/Button'
@@ -543,38 +543,53 @@ export default function Remove() {
             <div className={'flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]'}></div>
           </div>
         </div>
-        <RadioButtonGrouping>
-          <div style={{ position: 'relative' }}>
-            {!account ? (
-              <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
-            ) : (
-              <div className="grid grid-cols-2 gap-4">
-                <ButtonConfirmed
-                  onClick={onAttemptToApprove}
-                  confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
-                  disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
-                >
-                  {approval === ApprovalState.PENDING ? (
-                    <Dots>{i18n._(t`Approving`)}</Dots>
-                  ) : approval === ApprovalState.APPROVED || signatureData !== null ? (
-                    i18n._(t`Approved`)
-                  ) : (
-                    i18n._(t`Approve`)
-                  )}
-                </ButtonConfirmed>
-                <ButtonError
-                  onClick={() => {
-                    setShowConfirm(true)
-                  }}
-                  disabled={!isValid || (signatureData === null && approval !== ApprovalState.APPROVED)}
-                  error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
-                >
-                  {error || i18n._(t`Confirm Withdrawal`)}
-                </ButtonError>
+        {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
+          <RadioButtonGrouping>
+            <div style={{ position: 'relative' }}>
+              {!account ? (
+                <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn"/>
+              ) : (
+                <div className="grid grid-cols-2 gap-4">
+                  <ButtonConfirmed
+                    onClick={onAttemptToApprove}
+                    confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
+                    disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
+                  >
+                    {approval === ApprovalState.PENDING ? (
+                      <Dots>{i18n._(t`Approving`)}</Dots>
+                    ) : approval === ApprovalState.APPROVED || signatureData !== null ? (
+                      i18n._(t`Approved`)
+                    ) : (
+                      i18n._(t`Approve`)
+                    )}
+                  </ButtonConfirmed>
+                  <ButtonError
+                    onClick={() => {
+                      setShowConfirm(true)
+                    }}
+                    disabled={!isValid || (signatureData === null && approval !== ApprovalState.APPROVED)}
+                    error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
+                  >
+                    {error || i18n._(t`Confirm Withdrawal`)}
+                  </ButtonError>
+                </div>
+              )}
+            </div>
+          </RadioButtonGrouping>
+        ) : (
+          <RadioButtonGrouping>
+            <div
+              className="flex items-center justify-center px-4 py-2 font-semibold text-white border rounded bg-opacity-80 border-red bg-red hover:bg-opacity-100"
+              onClick={toggleWalletModal}
+            >
+              <div className="mr-1">
+                <Activity className="w-4 h-4" />
               </div>
-            )}
-          </div>
-        </RadioButtonGrouping>
+              {i18n._(t`You are on the wrong network`)}
+            </div>
+          </RadioButtonGrouping>
+        )
+        }
       </RadioWithShadow>
       <div className="px-4 mb-5">
         <NavLink href="/pool">

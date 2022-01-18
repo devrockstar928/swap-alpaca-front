@@ -2,11 +2,11 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
+import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE, ChainId } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useState } from 'react'
-import { Plus } from 'react-feather'
+import { Activity, Plus } from 'react-feather'
 import ReactGA from 'react-ga'
 import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
 import Button, { ButtonError } from '../../../components/Button'
@@ -419,6 +419,7 @@ export default function Add() {
             )}
           </div>
         </div>
+        {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
         <RadioButtonGrouping>
           {addIsUnsupported ? (
             <Button color="gradient" size="lg" disabled>
@@ -488,6 +489,20 @@ export default function Add() {
             )
           )}
         </RadioButtonGrouping>
+        ) : (
+          <RadioButtonGrouping>
+            <div
+              className="flex items-center justify-center px-4 py-2 font-semibold text-white border rounded bg-opacity-80 border-red bg-red hover:bg-opacity-100"
+              onClick={toggleWalletModal}
+            >
+              <div className="mr-1">
+                <Activity className="w-4 h-4" />
+              </div>
+              {i18n._(t`You are on the wrong network`)}
+            </div>
+          </RadioButtonGrouping>
+        )
+        }
       </RadioWithShadow>
     </Container>
   )
