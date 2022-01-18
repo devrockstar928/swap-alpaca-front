@@ -33,10 +33,10 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
   const isRemove = router.asPath.startsWith('/remove')
 
   return (
-    <div className="flex items-center justify-between mb-4 space-x-3">
-      <div className="grid grid-cols-2 rounded p-3px text-black bg-white h-[46px]">
+    <div className="flex items-center justify-between p-2 m-4 mt-0 space-x-3 bg-[#F7F8FA] rounded-2xl">
+      <div className="grid grid-cols-2 rounded p-3px text-black  h-[46px]">
         <NavLink
-          activeClassName="font-bold text-[#ED1C24]"
+          activeClassName="font-bold text-white bg-[#ED1C24]"
           href={{
             pathname: '/swap',
             query: getQuery(input, output),
@@ -47,7 +47,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
           </a>
         </NavLink>
         <NavLink
-          activeClassName="font-bold bg-white text-[#ED1C24]"
+          activeClassName="font-bold bg-[#ED1C24] text-white"
           href={`/${!isRemove ? 'add' : 'remove'}${input ? `/${currencyId(input)}` : ''}${
             output ? `/${currencyId(output)}` : ''
           }`}
