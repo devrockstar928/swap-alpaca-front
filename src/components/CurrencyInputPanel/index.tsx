@@ -78,7 +78,7 @@ export default function CurrencyInputPanel({
     inputValueWidth = 'sm:w-2/3'
   }
   return (
-    <div id={id} className={classNames(hideInput ? 'p-4' : 'p-3', 'rounded bg-[#F7F8FA]')}>
+    <div id={id} className={classNames('p-2', 'rounded bg-[#F7F8FA]')}>
       <div className="flex flex-col items-center justify-between space-y-3 sm:space-y-0 sm:flex-row">
         <div className={classNames('w-full', inputCurrencyWidth)}>
           <button
