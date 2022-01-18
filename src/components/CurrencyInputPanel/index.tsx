@@ -175,7 +175,7 @@ export default function CurrencyInputPanel({
                 <Button
                   onClick={onMax}
                   size="xs"
-                  className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
+                  className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-[#6EDABC] text-[#6EDABC] whitespace-nowrap"
                 >
                   {i18n._(t`Max`)}
                 </Button>

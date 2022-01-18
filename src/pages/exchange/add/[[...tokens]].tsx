@@ -395,26 +395,27 @@ export default function Add() {
                   />
                 </div>
               </div>
-
-              {!addIsUnsupported ? (
-                pair && !noLiquidity && pairState !== PairState.INVALID ? (
-                  <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
-                ) : null
-              ) : (
-                <UnsupportedCurrencyFooter
-                  show={addIsUnsupported}
-                  currencies={[currencies.CURRENCY_A, currencies.CURRENCY_B]}
-                />
-              )}
             </div>
             {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
-              <div>
-                <LiquidityPrice
-                  currencies={currencies}
-                  price={price}
-                  noLiquidity={noLiquidity}
-                  poolTokenPercentage={poolTokenPercentage}
-                />
+              <div className="">
+                {(!pair || noLiquidity) && (
+                  <LiquidityPrice
+                    currencies={currencies}
+                    price={price}
+                    noLiquidity={noLiquidity}
+                    poolTokenPercentage={poolTokenPercentage}
+                  />
+                )}
+                {!addIsUnsupported ? (
+                  pair && !noLiquidity ? (
+                    <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
+                  ) : null
+                ) : (
+                  <UnsupportedCurrencyFooter
+                    show={addIsUnsupported}
+                    currencies={[currencies.CURRENCY_A, currencies.CURRENCY_B]}
+                  />
+                )}
               </div>
             )}
           </div>
