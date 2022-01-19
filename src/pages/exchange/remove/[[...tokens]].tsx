@@ -40,6 +40,7 @@ import { Field } from '../../../state/burn/actions'
 import { useBurnActionHandlers, useBurnState, useDerivedBurnInfo } from '../../../state/burn/hooks'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useUserSlippageToleranceWithDefault } from '../../../state/user/hooks'
+import { ENABLED_NETWORKS } from '../../../config/networks'
 
 const DEFAULT_REMOVE_LIQUIDITY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 
@@ -531,7 +532,7 @@ export default function Remove() {
             </div>
           </div>
         </div>
-        {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
+        {ENABLED_NETWORKS.includes(chainId) ? (
           <RadioButtonGrouping>
             <div style={{ position: 'relative' }}>
               {!account ? (

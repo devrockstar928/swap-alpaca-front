@@ -41,6 +41,7 @@ import { Field } from '../../../state/mint/actions'
 import { useDerivedMintInfo, useMintActionHandlers, useMintState } from '../../../state/mint/hooks'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useExpertModeManager, useUserSlippageToleranceWithDefault } from '../../../state/user/hooks'
+import { ENABLED_NETWORKS } from '../../../config/networks'
 
 const DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 
@@ -420,7 +421,7 @@ export default function Add() {
             )}
           </div>
         </div>
-        {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
+        {ENABLED_NETWORKS.includes(chainId) ? (
           <RadioButtonGrouping>
             {addIsUnsupported ? (
               <Button color="gradient" size="lg" disabled>

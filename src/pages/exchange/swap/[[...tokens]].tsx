@@ -50,6 +50,7 @@ import {
   useSwapState,
 } from '../../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly, useUserTransactionTTL } from '../../../state/user/hooks'
+import { ENABLED_NETWORKS } from '../../../config/networks'
 
 export default function Swap() {
   const { i18n } = useLingui()
@@ -577,7 +578,7 @@ export default function Swap() {
                 Website: <span className="text-black">https://atlasusv.com</span>
               </div> */}
                 {chainId &&
-                  [ChainId.MAINNET, ChainId.MATIC].includes(chainId) &&
+                ENABLED_NETWORKS.includes(chainId) &&
                   library &&
                   library.provider.isMetaMask && (
                     <QuestionHelper text={i18n._(t`Add ${currencies.OUTPUT.symbol} to your MetaMask wallet`)}>
@@ -588,7 +589,7 @@ export default function Swap() {
             )}
           </div>
         </div>
-        {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
+        {ENABLED_NETWORKS.includes(chainId) ? (
           <RadioButtonGrouping>
             {swapIsUnsupported ? (
               <Button color="red" size="lg" disabled>
