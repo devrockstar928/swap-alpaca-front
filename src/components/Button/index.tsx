@@ -16,6 +16,8 @@ const FILLED = {
   pink: 'bg-gradient-to-r from-pink to-opaque-pink w-full rounded text-high-emphesis opacity-80 hover:opacity-100 disabled:bg-opacity-80',
   gray: 'border rounded shadow-sm focus:ring-2 focus:ring-offset-2 bg-dark-700 bg-opacity-80 w-full text-primary border-dark-800 hover:bg-opacity-100 focus:ring-offset-dark-700 focus:ring-dark-800 disabled:bg-opacity-80',
   green: 'bg-green bg-opacity-80 w-full rounded text-high-emphesis hover:bg-opacity-100 disabled:bg-opacity-80',
+  border:
+    'border-8 border-[#CECECE] border-solid rounded-[16px] bg-white hover:bg-gray-200 text-black shadow-[0_5px_50px_5px_rgba(0,0,0,0.4)]',
   gradient:
     'w-full text-high-emphesis bg-gradient-to-r from-blue to-pink opacity-80 hover:opacity-100 disabled:bg-opacity-80',
 }
@@ -27,6 +29,8 @@ const OUTLINED = {
   pink: 'bg-pink bg-opacity-20 outline-pink rounded text-pink hover:bg-opacity-40 disabled:bg-opacity-20',
   gray: 'bg-dark-700 bg-opacity-20 outline-gray rounded text-gray hover:bg-opacity-40 disabled:bg-opacity-20',
   green: 'bg-green bg-opacity-20 border border-green rounded text-green hover:bg-opacity-40 disabled:bg-opacity-20',
+  border:
+    'border-8 border-[#CECECE] border-solid rounded-[16px] bg-white hover:bg-gray-200 text-black shadow-[0_5px_50px_5px_rgba(0,0,0,0.4)]',
   gradient:
     'border border-transparent border-gradient-r-blue-pink-dark-900 opacity-80 hover:opacity-100 disabled:bg-opacity-20',
 }
@@ -48,7 +52,7 @@ const VARIANT = {
   link: LINK,
 }
 
-export type ButtonColor = 'blue' | 'pink' | 'gradient' | 'gray' | 'default' | 'red' | 'green'
+export type ButtonColor = 'blue' | 'pink' | 'gradient' | 'gray' | 'default' | 'red' | 'green' | 'border'
 
 export type ButtonSize = 'xs' | 'sm' | 'lg' | 'default' | 'none'
 
@@ -74,7 +78,7 @@ function Button({
       className={classNames(
         VARIANT[variant][color],
         variant !== 'empty' && SIZE[size],
-        'rounded disabled:cursor-not-allowed focus:outline-none',
+        'rounded disabled:cursor-not-allowed focus:outline-none test',
         // 'rounded focus:outline-none focus:ring disabled:opacity-50 disabled:cursor-not-allowed font-medium',
         className
       )}
@@ -96,7 +100,7 @@ export function ButtonConfirmed({
     return (
       <Button
         variant="filled"
-        color="gray"
+        color="red"
         size="lg"
         className={classNames(disabled && 'cursor-not-allowed', 'border opacity-50')}
         disabled={disabled}
@@ -104,7 +108,7 @@ export function ButtonConfirmed({
       />
     )
   } else {
-    return <Button color="gray" size="lg" disabled={disabled} {...rest} />
+    return <Button color="red" size="lg" disabled={disabled} {...rest} />
   }
 }
 
@@ -119,6 +123,6 @@ export function ButtonError({
   if (error) {
     return <Button color="red" size="lg" {...rest} />
   } else {
-    return <Button color={disabled ? 'gray' : 'blue'} disabled={disabled} size="lg" {...rest} />
+    return <Button color={disabled ? 'gray' : 'border'} disabled={disabled} size="lg" {...rest} />
   }
 }

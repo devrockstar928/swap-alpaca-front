@@ -439,7 +439,7 @@ export default function Add() {
                     <RowBetween>
                       {approvalA !== ApprovalState.APPROVED && (
                         <Button
-                          color="gray"
+                          color="border"
                           size="lg"
                           variant="filled"
                           onClick={approveACallback}
@@ -457,7 +457,7 @@ export default function Add() {
                       )}
                       {approvalB !== ApprovalState.APPROVED && (
                         <Button
-                          color="gray"
+                          color="border"
                           size="lg"
                           onClick={approveBCallback}
                           disabled={approvalB === ApprovalState.PENDING}
