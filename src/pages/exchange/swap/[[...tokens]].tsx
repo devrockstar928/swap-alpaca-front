@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
+import { Activity } from 'react-feather'
 import AddToMetaMask from 'src/components/AddToMetaMask'
 import RadioButtonGrouping from 'src/components/RadioButtonGrouping'
 import AddressInputPanel from '../../../components/AddressInputPanel'
@@ -587,112 +588,127 @@ export default function Swap() {
             )}
           </div>
         </div>
-        <RadioButtonGrouping>
-          {swapIsUnsupported ? (
-            <Button color="red" size="lg" disabled>
-              {i18n._(t`Unsupported Asset`)}
-            </Button>
-          ) : !account ? (
-            <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
-          ) : showWrap ? (
-            <Button color="gradient" size="lg" disabled={Boolean(wrapInputError)} onClick={onWrap}>
-              {wrapInputError ??
-                (wrapType === WrapType.WRAP
-                  ? i18n._(t`Wrap`)
-                  : wrapType === WrapType.UNWRAP
-                  ? i18n._(t`Unwrap`)
-                  : null)}
-            </Button>
-          ) : routeNotFound && userHasSpecifiedInputOutput ? (
-            <div style={{ textAlign: 'center' }}>
-              <div className="mb-1">{i18n._(t`Insufficient liquidity for this trade`)}</div>
-              {singleHopOnly && <div className="mb-1">{i18n._(t`Try enabling multi-hop trades`)}</div>}
-            </div>
-          ) : showApproveFlow ? (
-            <div>
-              {approvalState !== ApprovalState.APPROVED && (
-                <ButtonConfirmed
-                  onClick={handleApprove}
-                  disabled={approvalState !== ApprovalState.NOT_APPROVED || approvalSubmitted}
-                  size="lg"
-                >
-                  {approvalState === ApprovalState.PENDING ? (
-                    <div className="flex items-center justify-center h-full space-x-2">
-                      <div>Approving</div>
-                      <Loader stroke="white" />
-                    </div>
-                  ) : (
-                    i18n._(t`Approve ${currencies[Field.INPUT]?.symbol}`)
-                  )}
-                </ButtonConfirmed>
-              )}
-              {approvalState === ApprovalState.APPROVED && (
-                <ButtonError
-                  onClick={() => {
-                    if (isExpertMode) {
-                      handleSwap()
-                    } else {
-                      setSwapState({
-                        tradeToConfirm: trade,
-                        attemptingTxn: false,
-                        swapErrorMessage: undefined,
-                        showConfirm: true,
-                        txHash: undefined,
-                      })
+        {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
+          <RadioButtonGrouping>
+            {swapIsUnsupported ? (
+              <Button color="red" size="lg" disabled>
+                {i18n._(t`Unsupported Asset`)}
+              </Button>
+            ) : !account ? (
+              <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn"/>
+            ) : showWrap ? (
+              <Button color="gradient" size="lg" disabled={Boolean(wrapInputError)} onClick={onWrap}>
+                {wrapInputError ??
+                  (wrapType === WrapType.WRAP
+                    ? i18n._(t`Wrap`)
+                    : wrapType === WrapType.UNWRAP
+                      ? i18n._(t`Unwrap`)
+                      : null)}
+              </Button>
+            ) : routeNotFound && userHasSpecifiedInputOutput ? (
+              <div style={{ textAlign: 'center' }}>
+                <div className="mb-1">{i18n._(t`Insufficient liquidity for this trade`)}</div>
+                {singleHopOnly && <div className="mb-1">{i18n._(t`Try enabling multi-hop trades`)}</div>}
+              </div>
+            ) : showApproveFlow ? (
+              <div>
+                {approvalState !== ApprovalState.APPROVED && (
+                  <ButtonConfirmed
+                    onClick={handleApprove}
+                    disabled={approvalState !== ApprovalState.NOT_APPROVED || approvalSubmitted}
+                    size="lg"
+                  >
+                    {approvalState === ApprovalState.PENDING ? (
+                      <div className="flex items-center justify-center h-full space-x-2">
+                        <div>Approving</div>
+                        <Loader stroke="white"/>
+                      </div>
+                    ) : (
+                      i18n._(t`Approve ${currencies[Field.INPUT]?.symbol}`)
+                    )}
+                  </ButtonConfirmed>
+                )}
+                {approvalState === ApprovalState.APPROVED && (
+                  <ButtonError
+                    onClick={() => {
+                      if (isExpertMode) {
+                        handleSwap()
+                      } else {
+                        setSwapState({
+                          tradeToConfirm: trade,
+                          attemptingTxn: false,
+                          swapErrorMessage: undefined,
+                          showConfirm: true,
+                          txHash: undefined,
+                        })
+                      }
+                    }}
+                    style={{
+                      width: '100%',
+                    }}
+                    id="swap-button"
+                    disabled={
+                      !isValid || approvalState !== ApprovalState.APPROVED || (priceImpactSeverity > 3 && !isExpertMode)
                     }
-                  }}
-                  style={{
-                    width: '100%',
-                  }}
-                  id="swap-button"
-                  disabled={
-                    !isValid || approvalState !== ApprovalState.APPROVED || (priceImpactSeverity > 3 && !isExpertMode)
+                    error={isValid && priceImpactSeverity > 2}
+                  >
+                    {priceImpactSeverity > 3 && !isExpertMode
+                      ? i18n._(t`Price Impact High`)
+                      : priceImpactSeverity > 2
+                        ? i18n._(t`Swap Anyway`)
+                        : i18n._(t`Swap`)}
+                  </ButtonError>
+                )}
+              </div>
+            ) : (
+              <ButtonError
+                onClick={() => {
+                  if (isExpertMode) {
+                    handleSwap()
+                  } else {
+                    setSwapState({
+                      tradeToConfirm: trade,
+                      attemptingTxn: false,
+                      swapErrorMessage: undefined,
+                      showConfirm: true,
+                      txHash: undefined,
+                    })
                   }
-                  error={isValid && priceImpactSeverity > 2}
-                >
-                  {priceImpactSeverity > 3 && !isExpertMode
-                    ? i18n._(t`Price Impact High`)
+                }}
+                id="swap-button"
+                disabled={!isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError}
+                error={isValid && priceImpactSeverity > 2 && !swapCallbackError}
+              >
+                {swapInputError
+                  ? swapInputError
+                  : priceImpactSeverity > 3 && !isExpertMode
+                    ? i18n._(t`Price Impact Too High`)
                     : priceImpactSeverity > 2
-                    ? i18n._(t`Swap Anyway`)
-                    : i18n._(t`Swap`)}
-                </ButtonError>
-              )}
-            </div>
-          ) : (
-            <ButtonError
-              onClick={() => {
-                if (isExpertMode) {
-                  handleSwap()
-                } else {
-                  setSwapState({
-                    tradeToConfirm: trade,
-                    attemptingTxn: false,
-                    swapErrorMessage: undefined,
-                    showConfirm: true,
-                    txHash: undefined,
-                  })
-                }
-              }}
-              id="swap-button"
-              disabled={!isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError}
-              error={isValid && priceImpactSeverity > 2 && !swapCallbackError}
+                      ? i18n._(t`Swap Anyway`)
+                      : i18n._(t`Swap`)}
+              </ButtonError>
+            )}
+            {showApproveFlow && (
+              <Column style={{ marginTop: '1rem' }}>
+                <ProgressSteps steps={[approvalState === ApprovalState.APPROVED]}/>
+              </Column>
+            )}
+            {isExpertMode && swapErrorMessage ? <SwapCallbackError error={swapErrorMessage}/> : null}
+          </RadioButtonGrouping>
+        ) : (
+          <RadioButtonGrouping>
+            <div
+              className="flex items-center justify-center px-4 py-2 font-semibold text-white border rounded bg-opacity-80 border-red bg-red hover:bg-opacity-100"
+              onClick={toggleWalletModal}
             >
-              {swapInputError
-                ? swapInputError
-                : priceImpactSeverity > 3 && !isExpertMode
-                ? i18n._(t`Price Impact Too High`)
-                : priceImpactSeverity > 2
-                ? i18n._(t`Swap Anyway`)
-                : i18n._(t`Swap`)}
-            </ButtonError>
-          )}
-          {showApproveFlow && (
-            <Column style={{ marginTop: '1rem' }}>
-              <ProgressSteps steps={[approvalState === ApprovalState.APPROVED]} />
-            </Column>
-          )}
-          {isExpertMode && swapErrorMessage ? <SwapCallbackError error={swapErrorMessage} /> : null}
-        </RadioButtonGrouping>
+              <div className="mr-1">
+                <Activity className="w-4 h-4" />
+              </div>
+              {i18n._(t`You are on the wrong network`)}
+            </div>
+          </RadioButtonGrouping>
+        )
+        }
       </RadioWithShadow>
     </Container>
   )
