@@ -84,3 +84,6 @@ export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
   [ChainId.FUSE]: 'Fuse',
   [ChainId.TELOS]: 'Telos EVM',
 }
+
+
+export const ENABLED_NETWORKS = [ChainId.MAINNET, ChainId.MATIC]

@@ -16,6 +16,7 @@ import QuestionHelper from '../QuestionHelper'
 import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
 import More from './More'
+import { ENABLED_NETWORKS } from '../../config/networks'
 
 // import { ExternalLink, NavLink } from "./Link";
 // import { ReactComponent as Burger } from "../assets/images/burger.svg";
@@ -76,7 +77,7 @@ function AppBar(): JSX.Element {
                 <div className="fixed bottom-0 left-0 z-20 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                     {chainId &&
-                      [ChainId.MAINNET, ChainId.MATIC].includes(chainId) &&
+                    ENABLED_NETWORKS.includes(chainId) &&
                       library &&
                       library.provider.isMetaMask && (
                         <>
