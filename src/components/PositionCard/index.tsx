@@ -1,8 +1,8 @@
-import { CurrencyAmount, JSBI, Pair, Percent, Token } from '@radioshackswap/sdk'
 import { Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { CurrencyAmount, JSBI, Pair, Percent, Token } from '@radioshackswap/sdk'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { BIG_INT_ZERO } from '../../constants'
@@ -59,30 +59,30 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   return (
     <>
       {userPoolBalance && JSBI.greaterThan(userPoolBalance.quotient, JSBI.BigInt(0)) ? (
-        <div className="p-5 rounded bg-dark-800 text-high-emphesis">
+        <div className="p-4 pt-0 ml-6 mr-2 rounded bg-[#F7F8FA] text-[#2E3A59]">
           <AutoColumn gap={'md'}>
             <div className="text-lg">Your Position</div>
-            <div className="flex flex-col md:flex-row md:justify-between">
+            <div className="flex flex-col">
               <div className="flex items-center w-auto space-x-4">
-                <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={40} />
-                <div className="text-2xl font-semibold">
+                <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={32} />
+                <div className="text-base font-semibold">
                   {currency0.symbol}/{currency1.symbol}
                 </div>
               </div>
-              <div className="flex items-center mt-3 space-x-2 text-base md:mt-0">
+              <div className="flex items-center mt-1 space-x-2 text-xs">
                 <div>{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'} </div>
-                <div className="text-secondary">Pool Tokens</div>
+                <div className="text-secondary min-w-[90px]">Pool Tokens</div>
               </div>
             </div>
-            <div className="flex flex-col w-full p-3 mt-3 space-y-1 text-sm rounded bg-dark-900 text-high-emphesis">
+            <div className="flex flex-col w-full mt-1 space-y-1 text-xs rounded text-[#2E3A59]">
               <div className="flex justify-between">
-                <div>{i18n._(t`Your pool share`)}</div>
-                <div className="font-bold">{poolTokenPercentage ? poolTokenPercentage.toFixed(6) + '%' : '-'}</div>
+                <div className="font-semibold">{i18n._(t`Your pool share`)}</div>
+                <div>{poolTokenPercentage ? poolTokenPercentage.toFixed(6) + '%' : '-'}</div>
               </div>
               <div className="flex justify-between">
-                <div>{currency0.symbol}:</div>
+                <div className="font-semibold">{currency0.symbol}:</div>
                 {token0Deposited ? (
-                  <div className="flex space-x-2 font-bold">
+                  <div className="flex space-x-2">
                     <div> {token0Deposited?.toSignificant(6)}</div>
                     <div className="text-secondary">{currency0.symbol}</div>
                   </div>
@@ -91,9 +91,9 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
                 )}
               </div>
               <div className="flex justify-between">
-                <div>{currency1.symbol}:</div>
+                <div className="font-semibold">{currency1.symbol}:</div>
                 {token1Deposited ? (
-                  <div className="flex space-x-2 font-bold">
+                  <div className="flex space-x-2">
                     <div>{token1Deposited?.toSignificant(6)}</div>
                     <div className="text-secondary">{currency1.symbol}</div>
                   </div>

@@ -33,7 +33,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
   const isRemove = router.asPath.startsWith('/remove')
 
   return (
-    <div className="flex items-center justify-between p-2 m-4 mt-0 space-x-3 bg-[#F7F8FA] rounded-2xl">
+    <div className="flex items-center justify-between p-2 m-4 mt-0 mb-2 space-x-3 bg-[#F7F8FA] rounded-2xl">
       <div className="grid grid-cols-2 rounded p-3px text-black  h-[46px]">
         <NavLink
           activeClassName="font-bold text-white bg-[#ED1C24]"

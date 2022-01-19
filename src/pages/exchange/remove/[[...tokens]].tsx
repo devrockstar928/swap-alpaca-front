@@ -1,7 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
-import { ArrowDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@radioshackswap/sdk'
@@ -21,11 +20,10 @@ import NavLink from '../../../components/NavLink'
 import PercentInputPanel from '../../../components/PercentInputPanel'
 import { MinimalPositionCard } from '../../../components/PositionCard'
 import RadioWithShadow from '../../../components/RadioWithShadow'
-import { AutoRow, RowBetween } from '../../../components/Row'
+import { RowBetween } from '../../../components/Row'
 import Web3Connect from '../../../components/Web3Connect'
 import LiquidityHeader from '../../../features/legacy/liquidity/LiquidityHeader'
 import ExchangeHeader from '../../../features/trade/Header'
-import { classNames } from '../../../functions'
 import { currencyId } from '../../../functions/currency'
 import { calculateGasMargin, calculateSlippageAmount } from '../../../functions/trade'
 import { useCurrency } from '../../../hooks/Tokens'
@@ -457,7 +455,7 @@ export default function Remove() {
                 )}
                 pendingText={pendingText}
               />
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-2">
                 {pair && pairState !== PairState.INVALID && <LiquidityHeader input={currencyA} output={currencyB} />}
                 <AutoColumn gap="md" className="px-6">
                   {/* <LiquidityHeader input={currencyA} output={currencyB} /> */}
@@ -469,68 +467,57 @@ export default function Remove() {
                       id="liquidity-percent"
                     />
 
-                    <AutoColumn justify="center" className="py-2.5">
-                      <AutoRow
-                        className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}
-                        style={{ padding: '0 1rem' }}
-                      >
-                        <button className="z-10 -mt-6 -mb-6 rounded-full">
-                          <div className="rounded-md border-2 border-white bg-[#F7F8FA] text-gray text-opacity-80 hover:text-opacity-100 md:flex hover:bg-dark-800">
-                            <div className="p-1 rounded-full">
-                              <ArrowDownIcon width="24px" height="24px" />
-                            </div>
-                          </div>
-                        </button>
-                      </AutoRow>
-                    </AutoColumn>
+                    <AutoColumn justify="center" className="py-1"></AutoColumn>
 
-                    <div id="remove-liquidity-output" className="p-5 rounded">
-                      <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
-                        <div className="w-full text-black sm:w-2/5" style={{ margin: 'auto 0px' }}>
-                          <AutoColumn>
-                            <div>You Will Receive:</div>
-                            {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
-                              <RowBetween className="text-sm">
-                                {oneCurrencyIsETH ? (
-                                  <Link
-                                    href={`/remove/${currencyA?.isNative ? WNATIVE_ADDRESS[chainId] : currencyIdA}/${
-                                      currencyB?.isNative ? WNATIVE_ADDRESS[chainId] : currencyIdB
-                                    }`}
-                                  >
-                                    <a className="text-baseline text-blue opacity-80 hover:opacity-100 focus:opacity-100 whitespace-nowrap">
-                                      Receive W{NATIVE[chainId].symbol}
-                                    </a>
-                                  </Link>
-                                ) : oneCurrencyIsWETH ? (
-                                  <Link
-                                    href={`/remove/${currencyA?.equals(WNATIVE[chainId]) ? 'ETH' : currencyIdA}/${
-                                      currencyB?.equals(WNATIVE[chainId]) ? 'ETH' : currencyIdB
-                                    }`}
-                                  >
-                                    <a className="text-baseline text-blue opacity-80 hover:opacity-100 whitespace-nowrap">
-                                      Receive {NATIVE[chainId].symbol}
-                                    </a>
-                                  </Link>
-                                ) : null}
-                              </RowBetween>
-                            ) : null}
-                          </AutoColumn>
+                    <div id="remove-liquidity-output" className="p-5 pl-2 rounded-2xl bg-[#F7F8FA]">
+                      <div className="flex flex-col justify-center space-y-3 sm:space-y-0 sm:flex-row">
+                        <div className="flex justify-start flex-1 text-black">
+                          <div>
+                            <AutoColumn className="p-2 text-base bg-white rounded-lg">
+                              <div>You Will Receive</div>
+                              {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
+                                <RowBetween className="text-sm">
+                                  {oneCurrencyIsETH ? (
+                                    <Link
+                                      href={`/remove/${currencyA?.isNative ? WNATIVE_ADDRESS[chainId] : currencyIdA}/${
+                                        currencyB?.isNative ? WNATIVE_ADDRESS[chainId] : currencyIdB
+                                      }`}
+                                    >
+                                      <a className="text-baseline text-blue opacity-80 hover:opacity-100 focus:opacity-100 whitespace-nowrap">
+                                        Receive W{NATIVE[chainId].symbol}
+                                      </a>
+                                    </Link>
+                                  ) : oneCurrencyIsWETH ? (
+                                    <Link
+                                      href={`/remove/${currencyA?.equals(WNATIVE[chainId]) ? 'ETH' : currencyIdA}/${
+                                        currencyB?.equals(WNATIVE[chainId]) ? 'ETH' : currencyIdB
+                                      }`}
+                                    >
+                                      <a className="text-baseline text-blue opacity-80 hover:opacity-100 whitespace-nowrap">
+                                        Receive {NATIVE[chainId].symbol}
+                                      </a>
+                                    </Link>
+                                  ) : null}
+                                </RowBetween>
+                              ) : null}
+                            </AutoColumn>
+                          </div>
                         </div>
 
-                        <div className="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0">
-                          <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3">
-                            <CurrencyLogo currency={currencyA} size="46px" />
-                            <AutoColumn>
+                        <div className="flex flex-col flex-1 bg-white rounded-lg">
+                          <div className="flex flex-row items-center justify-between w-full p-2 space-x-3">
+                            <CurrencyLogo currency={currencyA} size="32px" />
+                            <div className="flex flex-row justify-end">
                               <div className="text-black truncate">{formattedAmounts[Field.CURRENCY_A] || '-'}</div>
                               <div className="text-sm text-black">{currencyA?.symbol}</div>
-                            </AutoColumn>
+                            </div>
                           </div>
-                          <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3">
-                            <CurrencyLogo currency={currencyB} size="46px" />
-                            <AutoColumn>
+                          <div className="flex flex-row items-center justify-between w-full px-2 space-x-3">
+                            <CurrencyLogo currency={currencyB} size="32px" />
+                            <div className="flex flex-row">
                               <div className="text-black truncate">{formattedAmounts[Field.CURRENCY_B] || '-'}</div>
                               <div className="text-sm text-black">{currencyB?.symbol}</div>
-                            </AutoColumn>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -538,16 +525,17 @@ export default function Remove() {
                   </div>
                 </AutoColumn>
               </div>
+            </div>
+            <div className={'flex-1 flex flex-col min-h-[262px] justify-between h-full min-w-[260px]'}>
               {pair ? <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} /> : null}
             </div>
-            <div className={'flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]'}></div>
           </div>
         </div>
         {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
           <RadioButtonGrouping>
             <div style={{ position: 'relative' }}>
               {!account ? (
-                <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn"/>
+                <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
               ) : (
                 <div className="grid grid-cols-2 gap-4">
                   <ButtonConfirmed
@@ -588,8 +576,7 @@ export default function Remove() {
               {i18n._(t`You are on the wrong network`)}
             </div>
           </RadioButtonGrouping>
-        )
-        }
+        )}
       </RadioWithShadow>
       <div className="px-4 mb-5">
         <NavLink href="/pool">

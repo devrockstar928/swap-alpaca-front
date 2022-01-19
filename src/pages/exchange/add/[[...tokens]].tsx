@@ -2,7 +2,7 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE, ChainId } from '@radioshackswap/sdk'
+import { ChainId, Currency, CurrencyAmount, currencyEquals, Percent, WNATIVE } from '@radioshackswap/sdk'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback, useState } from 'react'
@@ -347,7 +347,7 @@ export default function Add() {
                 )}
                 pendingText={pendingText}
               />
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-2">
                 {pair && pairState !== PairState.INVALID && (
                   <LiquidityHeader input={currencies[Field.CURRENCY_A]} output={currencies[Field.CURRENCY_B]} />
                 )}
@@ -366,7 +366,7 @@ export default function Add() {
                     showCommonBases
                   />
 
-                  <AutoColumn justify="center" className="py-2.5">
+                  <AutoColumn justify="center" className="py-1">
                     <AutoRow
                       className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}
                       style={{ padding: '0 1rem' }}
@@ -395,100 +395,103 @@ export default function Add() {
                   />
                 </div>
               </div>
-
-              {!addIsUnsupported ? (
-                pair && !noLiquidity && pairState !== PairState.INVALID ? (
-                  <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
-                ) : null
-              ) : (
-                <UnsupportedCurrencyFooter
-                  show={addIsUnsupported}
-                  currencies={[currencies.CURRENCY_A, currencies.CURRENCY_B]}
-                />
-              )}
             </div>
             {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
-              <div>
-                <LiquidityPrice
-                  currencies={currencies}
-                  price={price}
-                  noLiquidity={noLiquidity}
-                  poolTokenPercentage={poolTokenPercentage}
-                />
+              <div className="">
+                {(!pair || noLiquidity) && (
+                  <LiquidityPrice
+                    currencies={currencies}
+                    price={price}
+                    noLiquidity={noLiquidity}
+                    poolTokenPercentage={poolTokenPercentage}
+                  />
+                )}
+                {!addIsUnsupported ? (
+                  pair && !noLiquidity ? (
+                    <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
+                  ) : null
+                ) : (
+                  <UnsupportedCurrencyFooter
+                    show={addIsUnsupported}
+                    currencies={[currencies.CURRENCY_A, currencies.CURRENCY_B]}
+                  />
+                )}
               </div>
             )}
           </div>
         </div>
         {[ChainId.MAINNET, ChainId.MATIC].includes(chainId) ? (
-        <RadioButtonGrouping>
-          {addIsUnsupported ? (
-            <Button color="gradient" size="lg" disabled>
-              {i18n._(t`Unsupported Asset`)}
-            </Button>
-          ) : !account ? (
-            <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
-          ) : (
-            (approvalA === ApprovalState.NOT_APPROVED ||
-              approvalA === ApprovalState.PENDING ||
-              approvalB === ApprovalState.NOT_APPROVED ||
-              approvalB === ApprovalState.PENDING ||
-              isValid) && (
-              <AutoColumn gap={'0px'}>
-                {
-                  <RowBetween>
-                    {approvalA !== ApprovalState.APPROVED && (
-                      <Button
-                        color="gray"
-                        size="lg"
-                        variant="filled"
-                        onClick={approveACallback}
-                        disabled={approvalA === ApprovalState.PENDING}
-                        style={{
-                          width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%',
-                        }}
-                      >
-                        {approvalA === ApprovalState.PENDING ? (
-                          <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_A]?.symbol}`)}</Dots>
-                        ) : (
-                          i18n._(t`Approve ${currencies[Field.CURRENCY_A]?.symbol}`)
-                        )}
-                      </Button>
-                    )}
-                    {approvalB !== ApprovalState.APPROVED && (
-                      <Button
-                        color="gray"
-                        size="lg"
-                        onClick={approveBCallback}
-                        disabled={approvalB === ApprovalState.PENDING}
-                        style={{
-                          width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%',
-                        }}
-                      >
-                        {approvalB === ApprovalState.PENDING ? (
-                          <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_B]?.symbol}`)}</Dots>
-                        ) : (
-                          i18n._(t`Approve ${currencies[Field.CURRENCY_B]?.symbol}`)
-                        )}
-                      </Button>
-                    )}
-                  </RowBetween>
-                }
+          <RadioButtonGrouping>
+            {addIsUnsupported ? (
+              <Button color="gradient" size="lg" disabled>
+                {i18n._(t`Unsupported Asset`)}
+              </Button>
+            ) : !account ? (
+              <Web3Connect size="lg" className="absolute w-1/3 left-[208px] connect-btn" />
+            ) : (
+              (approvalA === ApprovalState.NOT_APPROVED ||
+                approvalA === ApprovalState.PENDING ||
+                approvalB === ApprovalState.NOT_APPROVED ||
+                approvalB === ApprovalState.PENDING ||
+                isValid) && (
+                <AutoColumn gap={'0px'}>
+                  {
+                    <RowBetween>
+                      {approvalA !== ApprovalState.APPROVED && (
+                        <Button
+                          color="border"
+                          size="lg"
+                          variant="filled"
+                          onClick={approveACallback}
+                          disabled={approvalA === ApprovalState.PENDING}
+                          style={{
+                            width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%',
+                          }}
+                        >
+                          {approvalA === ApprovalState.PENDING ? (
+                            <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_A]?.symbol}`)}</Dots>
+                          ) : (
+                            i18n._(t`Approve ${currencies[Field.CURRENCY_A]?.symbol}`)
+                          )}
+                        </Button>
+                      )}
+                      {approvalB !== ApprovalState.APPROVED && (
+                        <Button
+                          color="border"
+                          size="lg"
+                          onClick={approveBCallback}
+                          disabled={approvalB === ApprovalState.PENDING}
+                          style={{
+                            width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%',
+                          }}
+                        >
+                          {approvalB === ApprovalState.PENDING ? (
+                            <Dots>{i18n._(t`Approving ${currencies[Field.CURRENCY_B]?.symbol}`)}</Dots>
+                          ) : (
+                            i18n._(t`Approve ${currencies[Field.CURRENCY_B]?.symbol}`)
+                          )}
+                        </Button>
+                      )}
+                    </RowBetween>
+                  }
 
-                {approvalA === ApprovalState.APPROVED && approvalB === ApprovalState.APPROVED && (
-                  <ButtonError
-                    onClick={() => {
-                      isExpertMode ? onAdd() : setShowConfirm(true)
-                    }}
-                    disabled={!isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED}
-                    error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
-                  >
-                    {error ?? i18n._(t`Confirm Adding Liquidity`)}
-                  </ButtonError>
-                )}
-              </AutoColumn>
-            )
-          )}
-        </RadioButtonGrouping>
+                  {approvalA === ApprovalState.APPROVED && approvalB === ApprovalState.APPROVED && (
+                    <ButtonError
+                      onClick={() => {
+                        isExpertMode ? onAdd() : setShowConfirm(true)
+                      }}
+                      disabled={
+                        !isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED
+                      }
+                      error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
+                    >
+                      {error ?? i18n._(t`Confirm Adding Liquidity`)}
+                    </ButtonError>
+                  )}
+                </AutoColumn>
+              )
+            )}
+          </RadioButtonGrouping>
         ) : (
           <RadioButtonGrouping>
             <div
@@ -501,8 +504,7 @@ export default function Add() {
               {i18n._(t`You are on the wrong network`)}
             </div>
           </RadioButtonGrouping>
-        )
-        }
+        )}
       </RadioWithShadow>
     </Container>
   )

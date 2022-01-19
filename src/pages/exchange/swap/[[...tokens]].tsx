@@ -452,7 +452,7 @@ export default function Swap() {
                   showCommonBases={true}
                   id="swap-currency-input"
                 />
-                <AutoColumn justify="center" className="py-3">
+                <AutoColumn justify="center" className="py-1">
                   <div className={classNames('justify-center', 'px-4 flex-wrap w-full flex')}>
                     <button
                       className="z-10 -mt-6 -mb-6 rounded-full"
@@ -555,7 +555,7 @@ export default function Swap() {
               )}
             </div>
             {currencies.OUTPUT && (
-              <div className="flex-1 flex flex-col min-h-[262px] justify-between p-4 h-full min-w-[260px]">
+              <div className="flex-1 flex flex-col min-h-[220px] justify-between p-4 h-full min-w-[260px]">
                 <div className="text-[#C2C4C8]">
                   Name: <span className="text-black">{currencies.OUTPUT.name}</span>
                 </div>
